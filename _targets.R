@@ -35,7 +35,8 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", 1:50)
+  individual = paste0("i", sprintf("%03d", 1:50))
+  # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
 
@@ -92,28 +93,28 @@ allIndividualEstimatesList <- list(
         options = 15,
         landscapeList = landscape,
         seed = 2023),
-        priority = 0.93), # FUNCTION simulate_individual
+        priority = 0.93)#, # FUNCTION simulate_individual
       
       ## DURATION + FREQUENCY MAP
-      tar_map(
-        unlist = TRUE,
-        values = values_Regime,
-        tar_target(sampDuraFreqData,
-                   subset_duration(
-                     movementData = subset_frequency(movementData = simData$locations,
-                                                     freqPreset = tf),
-                     daysDuration = td),
-                   priority = 0.92),
-        
-        
-        ## SSF
-        tar_target(ssfOUT,
-                   wrapper_indi_ssf(
-                     movementData = sampDuraFreqData,
-                     landscape = landscape,
-                     optionsList = optionsList_sff
-                   ),
-                   priority = 0.9)
+      # tar_map(
+      #   unlist = TRUE,
+      #   values = values_Regime,
+      #   tar_target(sampDuraFreqData,
+      #              subset_duration(
+      #                movementData = subset_frequency(movementData = simData$locations,
+      #                                                freqPreset = tf),
+      #                daysDuration = td),
+      #              priority = 0.92),
+      #   
+      #   
+      #   ## SSF
+      #   tar_target(ssfOUT,
+      #              wrapper_indi_ssf(
+      #                movementData = sampDuraFreqData,
+      #                landscape = landscape,
+      #                optionsList = optionsList_sff
+      #              ),
+      #              priority = 0.9)
         # 
         ## POIS BRANCH POINT
         # tar_target(poisData,
@@ -123,10 +124,12 @@ allIndividualEstimatesList <- list(
         #              optionsList = sampleSize,
         #            ),
         #            priority = 0.9),
-      ) # DURA FREQ
+      # ) # DURA FREQ
     ) # INDI SIM
   ) # LANDSCAPE SIM
+  
 )
+
 
 values_Sample <-
   list(sampleSize = c(5,10,15,25,50))
@@ -138,24 +141,31 @@ sampleIDs <- lapply(values_Sample$sampleSize, function(x){
   sample(1:50, x, replace = FALSE)
 })
 
-######## WILL NEED AN EXTRA COLUMN IN THE DATA TO SEPERATE OUT REGIMES
-sampledData_01 <- tar_combine(
-  combinedMovementData_01,
-  use_names = FALSE,
-  regimeData[eval_select(matches(paste("sampDuraFreqData.*(",
-                                       paste0(
-                                         paste0("\\_i", sampleIDs[[1]]),
-                                         collapse = "|"), ")",
-                                       sep = "")), regimeData)],
-  command = dplyr::bind_rows(!!!.x)
+sampledData_01 <- list(
+  tar_target(landscape, simulate_landscape("BADGER", 2023)), # generate same landscape
+  tar_combine(
+    combinedMovementData_01,
+    use_names = FALSE,
+    regimeData[eval_select(matches(paste("simData.*(",
+                                         paste0(
+                                           paste0("i", sprintf("%03d", sampleIDs[[1]])),
+                                           collapse = "|"), ")",
+                                         sep = "")), regimeData)],
+    command = dplyr::bind_rows(!!!.x)
+  ),
+  tar_target(
+    runPois,
+    run_PoisModel(combinedMovementData_01,
+                  landscape = landscape)
+  )
 )
-
+  
 sampledData_02 <- tar_combine(
   combinedMovementData_02,
   use_names = FALSE,
-  regimeData[eval_select(matches(paste("sampDuraFreqData.*(",
+  regimeData[eval_select(matches(paste("simData.*(",
                                        paste0(
-                                         paste0("\\_i", sampleIDs[[2]]),
+                                         paste0("i", sprintf("%03d", sampleIDs[[2]])),
                                          collapse = "|"), ")",
                                        sep = "")), regimeData)],
   command = dplyr::bind_rows(!!!.x)
@@ -186,9 +196,9 @@ sampledData_02 <- tar_combine(
 sampledData_05 <- tar_combine(
   combinedMovementData_05,
   use_names = FALSE,
-  regimeData[eval_select(matches(paste("sampDuraFreqData.*(",
+  regimeData[eval_select(matches(paste("simData.*(",
                                        paste0(
-                                         paste0("\\_i", sampleIDs[[5]]),
+                                         paste0("i", sprintf("%03d", sampleIDs[[5]])),
                                          collapse = "|"), ")",
                                        sep = "")), regimeData)],
   command = dplyr::bind_rows(!!!.x)
