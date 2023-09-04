@@ -35,7 +35,7 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:50))
+  individual = paste0("i", sprintf("%03d", 1:20))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -64,6 +64,18 @@ optionsList_sff <- list(
   # MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1))
 )
 
+optionsList_area <- list(
+  areaMethod = c("MCP", "AKDE"),
+  areaContour = c(95, 99),
+  Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 2)), digits = 1)),
+  Method_sp = c("rd", "st"),
+  Method_we = exp(seq(log(1), log(10000000), length.out = 2))
+)
+
+optionsList_areaMethods <- list(
+  areaBasedMethod = c("Eisera", "Compana")
+)
+
 # optionsList_pois <- list(
 #   
 # )
@@ -72,11 +84,25 @@ optionsList_ssfCombine <- list(
   weighted = c("weighted", "notweigthed")
 )
 
+optionsList_pois <- list(
+  MethodPois_as = 10
+)
+
+values_Sample <-
+  list(sampleSize = c(5,10,15,25,50))
+# c(5,10,20,40)
+
+set.seed(1)
+
+optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
+  sample(1:50, x, replace = FALSE)
+})
+
 # Targets workflow lists --------------------------------------------------
 
-allIndividualEstimatesList <- list(
+individualSimulationsList <- list(
   ## LANDSCAPE SIMULATION
-  regimeData <- tar_map(
+  individualSimulations <- tar_map(
     unlist = FALSE,
     values = values_SimSpecies,
     tar_target(landscape, simulate_landscape(species, 2023)), # FUNCTION simulate_landscape
@@ -94,210 +120,111 @@ allIndividualEstimatesList <- list(
         landscapeList = landscape,
         seed = 2023),
         priority = 0.93)#, # FUNCTION simulate_individual
-      
-      ## DURATION + FREQUENCY MAP
-      # tar_map(
-      #   unlist = TRUE,
-      #   values = values_Regime,
-      #   tar_target(sampDuraFreqData,
-      #              subset_duration(
-      #                movementData = subset_frequency(movementData = simData$locations,
-      #                                                freqPreset = tf),
-      #                daysDuration = td),
-      #              priority = 0.92),
-      #   
-      #   
-      #   ## SSF
-      #   tar_target(ssfOUT,
-      #              wrapper_indi_ssf(
-      #                movementData = sampDuraFreqData,
-      #                landscape = landscape,
-      #                optionsList = optionsList_sff
-      #              ),
-      #              priority = 0.9)
-        # 
-        ## POIS BRANCH POINT
-        # tar_target(poisData,
-        #            pop_sample(
-        #              movementData = sampDuraFreqData,
-        #              landscape = landscape,
-        #              optionsList = sampleSize,
-        #            ),
-        #            priority = 0.9),
-      # ) # DURA FREQ
     ) # INDI SIM
   ) # LANDSCAPE SIM
   
 )
 
-
-values_Sample <-
-  list(sampleSize = c(5,10,15,25,50))
-# c(5,10,20,40)
-
-set.seed(1)
-
-sampleIDs <- lapply(values_Sample$sampleSize, function(x){
-  sample(1:50, x, replace = FALSE)
-})
-
-sampledData_01 <- list(
-  tar_target(landscape, simulate_landscape("BADGER", 2023)), # generate same landscape
+allIndividualsList <- list(
   tar_combine(
-    combinedMovementData_01,
+    allIndividuals,
     use_names = FALSE,
-    regimeData[eval_select(matches(paste("simData.*(",
-                                         paste0(
-                                           paste0("i", sprintf("%03d", sampleIDs[[1]])),
-                                           collapse = "|"), ")",
-                                         sep = "")), regimeData)],
-    command = dplyr::bind_rows(!!!.x)
-  ),
-  tar_target(
-    runPois,
-    run_PoisModel(combinedMovementData_01,
-                  landscape = landscape)
+    individualSimulations,
+    # command = dplyr::bind_rows(!!!.x))
+    command = list(!!!.x))
+)
+
+
+coreMultiverse <- list(
+  tar_map(
+    unlist = TRUE,
+    values = values_Regime,
+    tar_target(sampDuraFreqData,
+               subset_duration(
+                 movementData = subset_frequency(movementData = allIndividuals,
+                                                 freqPreset = tf),
+                 daysDuration = td),
+               priority = 0.92),
+    tar_target(populationAreas,
+               build_available_polygon(
+                 build_available_area(
+                   movementData = sampDuraFreqData,
+                   optionsList = optionsList_area
+                 )),
+               priority = 0.9),
+    tar_target(areaBasedAvailUse,
+               area_based_extraction(
+                 movementData = sampDuraFreqData,
+                 landscape = individualSimulations[[1]][grep("landscape",
+                                                             names(individualSimulations[[1]]))],
+                 availableAreas = populationAreas
+               ),
+               priority = 0.9),
+    tar_target(areaBasedOUT,
+               area_based_calculations(
+                 avialUseData = areaBasedAvailUse,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_areaMethods
+               ),
+               priority = 0.9),
+    tar_target(ssfOUT,
+               wrapper_indi_ssf(
+                 movementData = sampDuraFreqData,
+                 landscape = individualSimulations[[1]][grep("landscape",
+                                                             names(individualSimulations[[1]]))],
+                 optionsList = optionsList_sff
+               ),
+               priority = 0.9),
+    tar_target(poisOUT,
+               wrapper_pois_model(
+                 movementData = sampDuraFreqData,
+                 landscape = individualSimulations[[1]][grep("landscape",
+                                                             names(individualSimulations[[1]]))],
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9)
   )
 )
-  
-sampledData_02 <- tar_combine(
-  combinedMovementData_02,
-  use_names = FALSE,
-  regimeData[eval_select(matches(paste("simData.*(",
-                                       paste0(
-                                         paste0("i", sprintf("%03d", sampleIDs[[2]])),
-                                         collapse = "|"), ")",
-                                       sep = "")), regimeData)],
-  command = dplyr::bind_rows(!!!.x)
-)
-# 
-# sampledData_03 <- tar_combine(
-#   combinedMovementData_03,
-#   use_names = FALSE,
-#   regimeData[eval_select(matches(paste("sampDuraFreqData.*(",
-#                                        paste0(
-#                                          paste0("\\_i", sampleIDs[[3]]),
-#                                          collapse = "|"), ")",
-#                                        sep = "")), regimeData)],
-#   command = dplyr::bind_rows(!!!.x)
-# )
-# 
-# sampledData_04 <- tar_combine(
-#   combinedMovementData_04,
-#   use_names = FALSE,
-#   regimeData[eval_select(matches(paste("sampDuraFreqData.*(",
-#                                        paste0(
-#                                          paste0("\\_i", sampleIDs[[4]]),
-#                                          collapse = "|"), ")",
-#                                        sep = "")), regimeData)],
-#   command = dplyr::bind_rows(!!!.x)
-# )
-# 
-sampledData_05 <- tar_combine(
-  combinedMovementData_05,
-  use_names = FALSE,
-  regimeData[eval_select(matches(paste("simData.*(",
-                                       paste0(
-                                         paste0("i", sprintf("%03d", sampleIDs[[5]])),
-                                         collapse = "|"), ")",
-                                       sep = "")), regimeData)],
-  command = dplyr::bind_rows(!!!.x)
+
+ssfCompiled <- list(
+  tar_combine(
+    ssfResults,
+    coreMultiverse[[1]][grep("ssfOUT", names(coreMultiverse[[1]]))],
+    command = rbind(!!!.x),
+    priority = 0.8
+  ),
+  tar_target(
+    ssfSampled,
+    sample_ssf_results(
+      ssfResults,
+      sampleGroups = optionsList_samples,
+      optionsList = optionsList_ssfCombine
+    )
+  )
 )
 
-# for(f in c(7,15)){
-#   assign(paste0("sampledData_", f), 
-#     tar_combine(
-#       movementData,
-#       allIndividualEstimatesList[[1]][grep(paste0("sampDuraFreqData_", f),
-#                                            names(allIndividualEstimatesList[[1]]))],
-#       command = rbind(!!!.x))
-#     )
-# }
+poisCompiled <- tar_combine(
+  poisResults,
+  coreMultiverse[[1]][grep("poisOUT", names(coreMultiverse[[1]]))],
+  command = rbind(!!!.x),
+  priority = 0.8
+)
 
-# sampledData <- list(mget(ls(pattern = "sampledData_")))
-
-# ssfCompiled <- tar_combine(
-#   ssfResults,
-#   allIndividualEstimatesList[[1]][grep("ssfOUT", names(allIndividualEstimatesList[[1]]))],
-#   # command = list(!!!.x),
-#   command = rbind(!!!.x),
-#   priority = 0.8
-# )
-
-
-#### ASSINGMENT TO SAMPLES CAN OCCUR HERE WITHIN THE FUNCTION, SIMPLY SUBSET
-#### FROM THE COMPILED DATAFRAME
-# ssfPopulation <- list(
-#   tar_map(
-#     values = optionsList_ssfCombine,
-#     tar_target(ssfPopulation,
-#                combine_indi_estimates(
-#                  indiSSF = ssfResults,
-#                  # samples = c() # SAMPLES HERE
-#                  method = "SSF"),
-#                priority = 0.7)
-#   )
-# )
-
-# pattern <- paste0("sampDuraFreqData_15_0.5_.*(",
-#                   paste(sample(1:4, 2, replace = FALSE), collapse = "|"),
-#                   ")")
-# 
-# values_Sample <- 
-#   list(sampleSize = c(3,3,4))
-# c(5,10,20,40)
-
-# sample(1:4, 2, replace = FALSE)
-
-# movementCombined <- list(
-#   tar_map(
-#     values = values_Sample,
-#     tar_target(
-#       name = movementDataSample,
-#       command = example_function(x, sampleSize),
-#       pattern = paste0("sampDuraFreqData_15_0.5_.*(",
-#                        paste(sample(1:4, sampleSize, replace = FALSE), collapse = "|"),
-#                        ")")
-#     )
-#       # tar_combine(
-#       #   movementData,
-#       #   allIndividualEstimatesList[[1]][grep(paste0("sampDuraFreqData_15_0.5_.*(",
-#       #                                   paste(sample(1:4, 2, replace = FALSE),
-#       #                                         collapse = "|"),
-#       #                                   ")"),
-#       #                            names(allIndividualEstimatesList[[1]]))],
-#       #   # command = list(!!!.x),
-#       #   command = rbind(!!!.x),
-#       #   priority = 0.8
-#       # )
-#   )
-# )
-
-# ## Poisson Model
-# tar_map(
-#   values = optionsList_poisSamples,
-#     tar_target(poisOUT,
-#            wrapper_pop_pois(
-#              movementData = sampDuraFreqData,
-#              landscape = landscape,
-#              optionsList = optionsList_pois
-#            ),
-#            priority = 0.9)
-# )
+areaBeasedCompiled <- tar_combine(
+  areaBasedResults,
+  coreMultiverse[[1]][grep("areaBasedOUT", names(coreMultiverse[[1]]))],
+  command = rbind(!!!.x),
+  priority = 0.8
+)
 
 # All targets lists -------------------------------------------------------
 
-# sampledDataList <- list(mget(ls(pattern = "sampledData_")))
-
-list(allIndividualEstimatesList,
-     # sampledDataList
-     sampledData_01,
-     sampledData_02,
-     # sampledData_03,
-     # sampledData_04,
-     sampledData_05
-     # ssfCompiled,
-     # ssfPopulation
+list(individualSimulationsList,
+     allIndividualsList,
+     coreMultiverse,
+     ssfCompiled,
+     poisCompiled,
+     areaBeasedCompiled
 )
 
 # Examine -----------------------------------------------------------------
