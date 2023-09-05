@@ -1,23 +1,36 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .Random.seed|object|25a9f923de2eff60|||||||||||||||
-allIndividuals|stem|b89a4d749adc2543|b1ccd66ed4663407|1a3417558b7a554e|1967870275||t19605.6570074727s|4c16c20789b677da|510963338|qs|local|vector|||0||
-allIndividualsList|object|63f4afeeb3ecc436|||||||||||||||
-coreMultiverse|object|59da7cfd1ccd8692|||||||||||||||
-individualSimulations|object|f5d144cd0aa14d3f|||||||||||||||
-individualSimulationsList|object|3c6e4fc7ba8fbf72|||||||||||||||
+allIndividuals|stem|d46b8a726e565ed7|b1ccd66ed4663407|7ff3298ac35ef616|1967870275||t19605.8010014278s|f6ea7c481cb6abe9|510962014|qs|local|vector|||0||
+allIndividualsList|object|1dd9fe802beff4bb|||||||||||||||
+coreMultiverse|object|ba9f251a6713e785|||||||||||||||
+individualSimulations|object|f53a17a2b792c3ee|||||||||||||||
+individualSimulationsList|object|b8af0b21e11aecb2|||||||||||||||
 landscape_BADGER|stem|c9ca18d124534766|812745949c3cd6fe|d52b25592c7cc70c|1817666615||t19605.6653947968s|fc2924e3bc37865f|64279473|qs|local|vector|||36.42|package qs was built under R version 4.2.3|
+method_indi_ssf|function|418a62bbf2276322|||||||||||||||
 optionsList_area|object|e60e38c9db9ac8dd|||||||||||||||
 optionsList_areaMethods|object|6ab2c8abbb0ef24c|||||||||||||||
 optionsList_pois|object|14456cb976e1b106|||||||||||||||
 optionsList_samples|object|fca244304d27367f|||||||||||||||
 optionsList_sff|object|c112c225cd86affd|||||||||||||||
 optionsList_ssfCombine|object|19fb603771e759e1|||||||||||||||
-simData_i001_BADGER|stem|52be270223be82db|c36d334a60b71ed3|78a43bb86265d1f2|294808334||t19605.6568893364s|29d34ec868e84f2a|223636961|qs|local|vector|||16.78||
-simData_i002_BADGER|stem|cc50f196bee048f5|5b231a518adf8526|78a43bb86265d1f2|1071611024||t19605.665632803s|27c41d70d5802ca4|223111978|qs|local|vector|||17.44||
-simulate_individual|function|557b3090f99a9a56|||||||||||||||
+sampDuraFreqData_15_1|stem|d82c3cae5ec62a8f|37b39cb3ade4618d|e89afa3c3034b73f|1651523239||t19605.8280251678s|eaebdf8b84b3ce9f|482387814|qs|local|vector|||18.69||
+sampDuraFreqData_15_6|stem|f7bb85ac1638cd87|87770f39b65c191f|e89afa3c3034b73f|1928519544||t19605.838174832s|9dea3b0ac8caa1b2|482380830|qs|local|vector|||18.82||
+sampDuraFreqData_60_1|stem|8422eb14ad02b7ca|029173fac311bb86|e89afa3c3034b73f|1495110650||t19605.8377940555s|a832b65075ccc7dd|482468920|qs|local|vector|||18.64||
+sampDuraFreqData_60_6|stem|f5582b9740c32965|7ca72506aa3b5f4a|e89afa3c3034b73f|-204093084||t19605.8374522388s|1a423281618b78d4|482387466|qs|local|vector|||18.83||
+simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|a8bf3f5fbbd36aae|294808334||t19605.8008751329s|c9af47a89831f9f1|223615775|qs|local|vector|||17.45||
+simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|a8bf3f5fbbd36aae|1071611024||t19605.8006159848s|53d5ce409996b656|223090792|qs|local|vector|||24.48||
+simulate_individual|function|21e0b6b951f30103|||||||||||||||
 simulate_landscape|function|7a6227bff3e4ac19|||||||||||||||
-ssfCompiled|object|181c36f26ae433de|||||||||||||||
+ssfCompiled|object|e78d8986184ed9eb|||||||||||||||
+ssfOUT_15_1|stem|602ba1f8d2396900|7cc402571a7ab61c|43064fdcd7099931|-441416508||t19605.8366366235s|21cb808e5a67bfdb|302|qs|local|vector|||6.32|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|a8e792f933e37d65|1204898056||t19605.8383794065s|cb91aba74fec518e|303|qs|local|vector|||0.22|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_1|stem|59b0f41d407fa968|07e68a5e3765902a|163b9650c6da0ac9|1205403597||t19605.8383393165s|cb91aba74fec518e|303|qs|local|vector|||7.77|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_6|stem|ca6655c178e6e820|99d12dbed04af28c|714d05a7b784a5d2|2118642858||t19605.8383596754s|0e56fdca6a5a4864|301|qs|local|vector|||0.46|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite.|
+ssfResults|stem|9d25c4cc82c8067a|0283523e774a55d6|feb585dc5d2429bf|1439985569||t19605.8383827221s|b0cf0699b1259f5f|522|qs|local|vector|||0||
+subset_duration|function|14c82ee0e580baa0|||||||||||||||
+subset_frequency|function|ca568cee7cde4b60|||||||||||||||
 values_Regime|object|526912577d903d3e|||||||||||||||
 values_Sample|object|9afc229bcfbf46cc|||||||||||||||
 values_SimIndi|object|8e76485af954e6ac|||||||||||||||
 values_SimSpecies|object|90da690c81663e8f|||||||||||||||
+wrapper_indi_ssf|function|28a7617820489b8a|||||||||||||||

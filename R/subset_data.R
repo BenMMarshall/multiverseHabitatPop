@@ -15,14 +15,14 @@ subset_frequency <- function(allIndividualData, freqPreset){
   
   allIndividualDataOUT <- allIndividualData
   
-  for(id in names(allIndividualData)){
-    if(id == "landscape"){
+  for(indiID in names(allIndividualData)){
+    if(indiID == "landscape"){
       {next}
     }
     
-    print(id)
+    print(indiID)
     
-    movementData <- allIndividualData[[id]]$locations
+    movementData <- allIndividualData[[indiID]]$locations
     
     movementData$hour <- as.numeric(substr(movementData$datetime, 12, 13))
     movementData$minute <- as.numeric(substr(movementData$datetime, 15, 16))
@@ -72,7 +72,8 @@ subset_frequency <- function(allIndividualData, freqPreset){
       
     }
     
-    allIndividualDataOUT[[id]]$locations <- sub_OUT
+    allIndividualDataOUT[[indiID]]$trackFreq <- freqPreset
+    allIndividualDataOUT[[indiID]]$locations <- sub_OUT
   } # for loop end
   
   return(allIndividualDataOUT)
@@ -84,21 +85,22 @@ subset_duration <- function(allIndividualData, daysDuration){
   
   allIndividualDataOUT <- allIndividualData
   
-  for(id in names(allIndividualData)){
-    if(id == "landscape"){
+  for(indiID in names(allIndividualData)){
+    if(indiID == "landscape"){
       {next}
     }
     
-    print(id)
+    print(indiID)
     
-    movementData <- allIndividualData[[id]]$locations
+    movementData <- allIndividualData[[indiID]]$locations
     
     sub_OUT <- movementData[movementData$datetime <
                               as.POSIXct("2022-01-02 00:00:00",
                                          format = "%Y-%m-%d %H:%M:%S") + 60*60*24* daysDuration,]
     
     
-    allIndividualDataOUT[[id]]$locations <- sub_OUT
+    allIndividualDataOUT[[indiID]]$trackDura <- daysDuration
+    allIndividualDataOUT[[indiID]]$locations <- sub_OUT
     
   } # for loop end
   

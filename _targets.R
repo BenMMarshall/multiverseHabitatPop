@@ -141,8 +141,8 @@ coreMultiverse <- list(
     values = values_Regime,
     tar_target(sampDuraFreqData,
                subset_duration(
-                 movementData = subset_frequency(
-                   movementData = allIndividuals,
+                 allIndividualData = subset_frequency(
+                   allIndividualData = allIndividuals,
                    freqPreset = tf),
                  daysDuration = td),
                priority = 0.92),
@@ -169,8 +169,8 @@ coreMultiverse <- list(
                priority = 0.9),
     tar_target(ssfOUT,
                wrapper_indi_ssf(
-                 movementData = sampDuraFreqData,
-                 landscape = allIndividualsList$landscape,
+                 allIndividualData = sampDuraFreqData,
+                 # landscape = allIndividualsList$landscape,
                  optionsList = optionsList_sff
                ),
                priority = 0.9),
@@ -227,6 +227,7 @@ list(individualSimulationsList,
 
 # Examine -----------------------------------------------------------------
 
+# targets::tar_make(starts_with("sampDuraFreq"))
 # targets::tar_visnetwork(names = starts_with("combined"))
 # mani <- targets::tar_manifest()
 # pattern <- paste0("ssfOUT.*(",
