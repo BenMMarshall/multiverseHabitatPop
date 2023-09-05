@@ -213,7 +213,7 @@ simulate_individual <- function(
   )
 
   simResults$locations$datetime <- as.POSIXct(simResults$locations$timestep * 60,
-                                              origin = "2022-01-01")
+                                              origin = "2022-01-02 00:00:00")
 
   simResults$locations$hour <- as.numeric(substr(simResults$locations$datetime, 12, 13))
   simResults$locations$minute <- as.numeric(substr(simResults$locations$datetime, 15, 16))

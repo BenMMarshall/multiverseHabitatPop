@@ -1,0 +1,23 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+.Random.seed|object|25a9f923de2eff60|||||||||||||||
+allIndividuals|stem|b89a4d749adc2543|b1ccd66ed4663407|1a3417558b7a554e|1967870275||t19605.6570074727s|4c16c20789b677da|510963338|qs|local|vector|||0||
+allIndividualsList|object|63f4afeeb3ecc436|||||||||||||||
+coreMultiverse|object|59da7cfd1ccd8692|||||||||||||||
+individualSimulations|object|f5d144cd0aa14d3f|||||||||||||||
+individualSimulationsList|object|3c6e4fc7ba8fbf72|||||||||||||||
+landscape_BADGER|stem|c9ca18d124534766|812745949c3cd6fe|d52b25592c7cc70c|1817666615||t19605.6653947968s|fc2924e3bc37865f|64279473|qs|local|vector|||36.42|package qs was built under R version 4.2.3|
+optionsList_area|object|e60e38c9db9ac8dd|||||||||||||||
+optionsList_areaMethods|object|6ab2c8abbb0ef24c|||||||||||||||
+optionsList_pois|object|14456cb976e1b106|||||||||||||||
+optionsList_samples|object|fca244304d27367f|||||||||||||||
+optionsList_sff|object|c112c225cd86affd|||||||||||||||
+optionsList_ssfCombine|object|19fb603771e759e1|||||||||||||||
+simData_i001_BADGER|stem|52be270223be82db|c36d334a60b71ed3|78a43bb86265d1f2|294808334||t19605.6568893364s|29d34ec868e84f2a|223636961|qs|local|vector|||16.78||
+simData_i002_BADGER|stem|cc50f196bee048f5|5b231a518adf8526|78a43bb86265d1f2|1071611024||t19605.665632803s|27c41d70d5802ca4|223111978|qs|local|vector|||17.44||
+simulate_individual|function|557b3090f99a9a56|||||||||||||||
+simulate_landscape|function|7a6227bff3e4ac19|||||||||||||||
+ssfCompiled|object|181c36f26ae433de|||||||||||||||
+values_Regime|object|526912577d903d3e|||||||||||||||
+values_Sample|object|9afc229bcfbf46cc|||||||||||||||
+values_SimIndi|object|8e76485af954e6ac|||||||||||||||
+values_SimSpecies|object|90da690c81663e8f|||||||||||||||

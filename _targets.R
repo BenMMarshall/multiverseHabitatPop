@@ -11,7 +11,7 @@ library(tidyselect)
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble", "qs"), # packages that your targets need to run
+  packages = c("tibble", "qs", "abmAnimalMovement"), # packages that your targets need to run
   garbage_collection = TRUE,
   format = "qs", # storage format
   storage = "worker",
@@ -35,7 +35,7 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:20))
+  individual = paste0("i", sprintf("%03d", 1:2))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -141,8 +141,9 @@ coreMultiverse <- list(
     values = values_Regime,
     tar_target(sampDuraFreqData,
                subset_duration(
-                 movementData = subset_frequency(movementData = allIndividuals,
-                                                 freqPreset = tf),
+                 movementData = subset_frequency(
+                   movementData = allIndividuals,
+                   freqPreset = tf),
                  daysDuration = td),
                priority = 0.92),
     tar_target(populationAreas,
@@ -155,8 +156,7 @@ coreMultiverse <- list(
     tar_target(areaBasedAvailUse,
                area_based_extraction(
                  movementData = sampDuraFreqData,
-                 landscape = individualSimulations[[1]][grep("landscape",
-                                                             names(individualSimulations[[1]]))],
+                 landscape = allIndividualsList$landscape, # MIGHT NOT NEED AS IT IS IN THE OVERALL LIST
                  availableAreas = populationAreas
                ),
                priority = 0.9),
@@ -170,16 +170,14 @@ coreMultiverse <- list(
     tar_target(ssfOUT,
                wrapper_indi_ssf(
                  movementData = sampDuraFreqData,
-                 landscape = individualSimulations[[1]][grep("landscape",
-                                                             names(individualSimulations[[1]]))],
+                 landscape = allIndividualsList$landscape,
                  optionsList = optionsList_sff
                ),
                priority = 0.9),
     tar_target(poisOUT,
                wrapper_pois_model(
                  movementData = sampDuraFreqData,
-                 landscape = individualSimulations[[1]][grep("landscape",
-                                                             names(individualSimulations[[1]]))],
+                 landscape = allIndividualsList$landscape,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
                priority = 0.9)
