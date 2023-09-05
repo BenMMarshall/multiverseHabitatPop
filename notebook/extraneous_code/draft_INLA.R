@@ -23,7 +23,6 @@ library(dplyr)
 library(raster)
 library(amt)
 library(ggplot2)
-library(readr)
 
 # install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
 #install.packages("INLA", lib = .libPaths()[3], 
@@ -31,36 +30,23 @@ library(readr)
 #                 INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
 library(INLA)
 
+targets::tar_load("sampDuraFreqData_15_1")
+
+allIndividualData <- sampDuraFreqData_15_1
+
+landscape <- allIndividualData$landscape
+
+allIndividualData[-1]
+
+movementData <- do.call(rbind, lapply(allIndividualData[-1], function(x){
+  x$locations
+}))
 
 # Read in animal tracking data --------------------------------------------
 
-#snake.data <- read_csv(file = "BUCA_data_ISSF_M01-M36.csv")
-snake.data <- read_csv(file = "BUCA_data_complete.csv",
-                       locale = locale(tz = "Asia/Bangkok"))
-
 # Set datetime as "POSIXct" "POSIXt" format
-class(snake.data$datetime)
-snake.data$datetime <- as.POSIXct(snake.data$datetime, format = "%m/%d/%Y %H:%M")
-class(snake.data$datetime)
-
-# view the data
-snake.data <- snake.data[snake.data$animal %in% c("M02"),]
-
-# Since BUCA32 and BUCA35 have some locations in 47N and 48N
-#subset out the different UTM zone locations
-utm47data <- snake.data[snake.data$UTMzone == "47N",]
-# tell R the utm zone that the data was collected in, and make a SP object
-sp47 <- SpatialPoints(coords= cbind(utm47data[,3], utm47data[,4]), proj4string = CRS("+init=epsg:32647"))
-# now that R knows it was collected in 47N we can convert it to 48N
-sp48convert <- spTransform(sp47, CRS("+init=epsg:32648"))
-# extract the newly converted locations and place them back in the orignal dataframe
-snake.data$x[snake.data$UTMzone == "47N"] <- sp48convert@coords[,1]
-snake.data$y[snake.data$UTMzone == "47N"] <- sp48convert@coords[,2]
-
-##### set projection system
-crs.proj <- CRS("+proj=utm +zone=48 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0")
-
-dat <- snake.data
+movementData$datetime <- as.POSIXct(movementData$datetime, format = "%y-%m-%d %H:%M:%S",
+                                    tz = "UTC")
 
 # Load in raster covariates -----------------------------------------------
 
@@ -82,9 +68,9 @@ names(rp) <- cov.names
 # START OF IMPORTED (and edited) CODE from Muff et al --------------------------------------------------
 
 # select only the information we need
-dat <- dat %>% 
-  select("x" = x, "y" = y,
-         "t" = datetime, "id" = animal) %>% 
+dat <- movementData %>% 
+  dplyr::select("x" = x, "y" = y,
+         "t" = datetime, "id" = id) %>% 
   group_by(id) %>% 
   arrange(t)
 
@@ -104,15 +90,15 @@ dat_all <- dat %>%
 # objects. Check dat_all to see the list of dataframes now has a second
 # dataframe/tibble for the track.
 dat_all <- dat_all %>% 
-  mutate(trk = map(data, function(d) {
-    make_track(d, x, y, t, crs = crs.proj)
+  mutate(trk = map(data, function(d){
+    make_track(d, .x = x, .y = y, .t = t, crs = 32601)
   }))
 
 # Here the summarize_sampling_rate is repeated on each track object to give you
 # an individual level summary.
 dat_all %>% 
   mutate(sr = lapply(trk, summarize_sampling_rate)) %>% 
-  select(id, sr) %>%
+  dplyr::select(id, sr) %>%
   unnest(cols = c(sr))
 
 # So dat_all is set up ready for the generation of random steps and the
@@ -131,32 +117,13 @@ dat_all %>%
 # get the covariate values. After the mutate+map bit is a few lines to compile
 # the data into a single v large dataframe for the model.
 
-# partprep <- dat_all %>% 
-#   mutate(stps = map(trk, ~ .x %>%
-#                       steps() %>% 
-#                       filter(sl_>0) %>% # removing the non-moves, or under GPS error
-#                       random_steps(n = 10) %>% 
-#                       extract_covariates(rp))) %>% 
-#   select(id, stps) %>%
-#   unnest(cols = c(stps))
-# 
-# unique(partprep$id)
-# as.numeric(as.factor(unique(partprep$id)))
-# as.numeric(as.factor(partprep$id))
-# 
-# partprep %>% 
-#   ungroup() %>% 
-#   mutate(id = as.numeric(as.factor(id))) %>% 
-#   pull(id) %>% 
-#   unique()
-
 dat_ssf <- dat_all %>% 
   mutate(stps = map(trk, ~ .x %>%
                       steps() %>% 
                       filter(sl_>0) %>% # removing the non-moves, or under GPS error
                       random_steps(n = 10) %>% 
-                      extract_covariates(rp))) %>% 
-  select(id, stps) %>%
+                      extract_covariates(landscape$classRaster))) %>% 
+  dplyr::select(id, stps) %>%
   unnest(cols = c(stps)) %>% 
   group_by(id) %>% 
   arrange(t1_) %>% 
@@ -168,10 +135,12 @@ dat_ssf <- dat_all %>%
     cos_ta = cos(ta_), 
     log_sl = log(sl_))
 
+# dat_ssf$layer <- paste0("c", dat_ssf$layer)
+# dat_ssf$layer <- factor(dat_ssf$layer) 
+
 # So dat_ssf is the correct format for the modelling. We have the id, a heap of
 # movement columns, and the critical case_ that describes whether they used a
 # location or not.
-
 
 # Running the INLA model --------------------------------------------------
 
@@ -188,50 +157,11 @@ prec.beta.trls <- 1e-4
 
 #Natural
 formula.random.n <- y ~  -1 + 
-  dist_nat + # fixed covariate effect
-  dist_nat:log_sl + # covar iteractions
-  dist_nat:cos_ta + 
+  layer + # fixed covariate effect
+  layer:log_sl + # covar iteractions
+  layer:cos_ta + 
   f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, dist_nat, values = 1:length(unique(dat_ssf$id)), model="iid",
-    hyper = list(theta = list(initial = log(1), fixed = FALSE, 
-                              prior = "pc.prec", param = c(1, 0.05)))) 
-# settlement
-formula.random.s <- y ~  -1 + 
-  dist_settle + # fixed covariate effect
-  dist_settle:log_sl + # covar iteractions
-  dist_settle:cos_ta + 
-  f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, dist_settle, values = 1:length(unique(dat_ssf$id)), model="iid",
-    hyper = list(theta = list(initial = log(1), fixed = FALSE, 
-                              prior = "pc.prec", param = c(1, 0.05)))) 
-
-# road 
-formula.random.r <- y ~  -1 + 
-  dist_road + # fixed covariate effect
-  dist_road:log_sl + # covar iteractions
-  dist_road:cos_ta + 
-  f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, dist_road, values = 1:length(unique(dat_ssf$id)), model="iid",
-    hyper = list(theta = list(initial = log(1), fixed = FALSE, 
-                              prior = "pc.prec", param = c(1, 0.05)))) 
-
-# Buildings
-formula.random.w <- y ~  -1 + 
-  dist_building + # fixed covariate effect
-  dist_building:log_sl + # covar iteractions
-  dist_building:cos_ta + 
-  f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, dist_building, values = 1:length(unique(dat_ssf$id)), model="iid",
-    hyper = list(theta = list(initial = log(1), fixed = FALSE, 
-                              prior = "pc.prec", param = c(1, 0.05)))) 
-
-# Agriculture
-formula.random.aq <- y ~  -1 + 
-  dist_ag + # fixed covariate effect
-  dist_ag:log_sl + # covar iteractions
-  dist_ag:cos_ta + 
-  f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, dist_aq.ag, values = 1:length(unique(dat_ssf$id)), model="iid",
+  f(id, layer, values = 1:length(unique(dat_ssf$id)), model="iid",
     hyper = list(theta = list(initial = log(1), fixed = FALSE, 
                               prior = "pc.prec", param = c(1, 0.05)))) 
 
@@ -241,67 +171,22 @@ formula.random.aq <- y ~  -1 +
 
 # Fit the models -----------------------------------------------------------
 
-##############################################################################################################
-
-#########################   V      ISSUES HERE      V     ISSUES HERE       V     ISSUES HERE
-
-##############################################################################################################
-
 # natural model
-inla.ssf.n <- inla(formula.random.n, family = "Poisson", data = dat_ssf, #verbose=TRUE,
+inla.ssf.n <- inla(formula.random.n,
+                   family = "Poisson",
+                   data = dat_ssf, #verbose=TRUE,
                    control.fixed = list(
                      mean = 0,
                      prec = list(default = prec.beta.trls)))
-
-# settlement model 
-inla.ssf.s <- inla(formula.random.s, family = "Poisson", data = dat_ssf, verbose=TRUE, 
-                   control.fixed = list(
-                     mean = 0,
-                     prec = list(default = prec.beta.trls))
-)
-
-# road model 
-inla.ssf.r <- inla(formula.random.r, family = "Poisson", data = dat_ssf,  verbose=TRUE,
-                   control.fixed = list(
-                     mean = 0,
-                     prec = list(default = prec.beta.trls))
-)
-
-# building model 
-inla.ssf.b <- inla(formula.random.b, family = "Poisson", data = dat_ssf,  verbose=TRUE,
-                   control.fixed = list(
-                     mean = 0,
-                     prec = list(default = prec.beta.trls))
-)
-
-# agriculture
-inla.ssf.a <- inla(formula.random.ag, family = "Poisson", data = dat_ssf, 
-                   control.fixed = list(
-                     mean = 0,
-                     prec = list(default = prec.beta.trls))
-)
-
-
 
 # Model results -----------------------------------------------------------
 
 # We can see a dataframe of the fixed effects here, so each covar and any interaction terms
 inla.ssf.n$summary.fixed
-inla.ssf.s$summary.fixed
-inla.ssf.r$summary.fixed
-inla.ssf.b$summary.fixed
-inla.ssf.a$summary.fixed
-
 
 # "Since variances are parameterized and treated as precisions, the summary of
 # the respective posterior distributions is given for the precisions:"
 inla.ssf.n$summary.hyperpar
-inla.ssf.s$summary.hyperpar
-inla.ssf.r$summary.hyperpar
-inla.ssf.b$summary.hyperpar
-inla.ssf.a$summary.hyperpar
-
-
 
 
 inla_mmarginal <- function(r.out){ 
