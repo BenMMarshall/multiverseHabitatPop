@@ -4,10 +4,10 @@
 \alias{subset_frequency}
 \title{Subset simulated tracking data}
 \usage{
-subset_frequency(movementData, freqPreset)
+subset_frequency(allIndividualData, freqPreset)
 }
 \arguments{
-\item{movementData}{The locations data.frame from the abmAnimalMovement
+\item{allIndividualData}{The simulated data from the abmAnimalMovement
 simulation.}
 
 \item{freqPreset}{Must be one of the following: 0.5, 1.0, 2.0, 6.0, 12.0,

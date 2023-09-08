@@ -156,7 +156,7 @@ coreMultiverse <- list(
     tar_target(areaBasedAvailUse,
                area_based_extraction(
                  movementData = sampDuraFreqData,
-                 landscape = allIndividualsList$landscape, # MIGHT NOT NEED AS IT IS IN THE OVERALL LIST
+                 # landscape = allIndividualsList$landscape, # MIGHT NOT NEED AS IT IS IN THE OVERALL LIST
                  availableAreas = populationAreas
                ),
                priority = 0.9),

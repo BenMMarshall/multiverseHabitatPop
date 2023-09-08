@@ -135,8 +135,8 @@ dat_ssf <- dat_all %>%
     cos_ta = cos(ta_), 
     log_sl = log(sl_))
 
-# dat_ssf$layer <- paste0("c", dat_ssf$layer)
-# dat_ssf$layer <- factor(dat_ssf$layer) 
+dat_ssf$layer <- paste0("c", dat_ssf$layer)
+dat_ssf$layer <- factor(dat_ssf$layer)
 
 # So dat_ssf is the correct format for the modelling. We have the id, a heap of
 # movement columns, and the critical case_ that describes whether they used a
