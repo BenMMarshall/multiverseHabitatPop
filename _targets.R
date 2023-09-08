@@ -68,8 +68,7 @@ optionsList_area <- list(
   areaMethod = c("MCP", "AKDE"),
   areaContour = c(95, 99),
   Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 2)), digits = 1)),
-  Method_sp = c("rd", "st"),
-  Method_we = exp(seq(log(1), log(10000000), length.out = 2))
+  Method_sp = c("rd", "st")
 )
 
 optionsList_areaMethods <- list(
@@ -146,18 +145,17 @@ coreMultiverse <- list(
                    freqPreset = tf),
                  daysDuration = td),
                priority = 0.92),
-    tar_target(populationAreas,
-               build_available_polygon(
-                 build_available_area(
-                   movementData = sampDuraFreqData,
-                   optionsList = optionsList_area
-                 )),
-               priority = 0.9),
+    # tar_target(populationAreas,
+    #            build_available_polygon(
+    #              build_available_area(
+    #                movementData = sampDuraFreqData,
+    #                optionsList = optionsList_area
+    #              )),
+    #            priority = 0.9),
     tar_target(areaBasedAvailUse,
                area_based_extraction(
-                 movementData = sampDuraFreqData,
-                 # landscape = allIndividualsList$landscape, # MIGHT NOT NEED AS IT IS IN THE OVERALL LIST
-                 availableAreas = populationAreas
+                 allIndividualData = sampDuraFreqData,
+                 optionsList = optionsList_area
                ),
                priority = 0.9),
     tar_target(areaBasedOUT,
@@ -176,7 +174,7 @@ coreMultiverse <- list(
                priority = 0.9),
     tar_target(poisOUT,
                wrapper_pois_model(
-                 movementData = sampDuraFreqData,
+                 allIndividualData = sampDuraFreqData,
                  landscape = allIndividualsList$landscape,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),

@@ -1,26 +1,31 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .Random.seed|object|25a9f923de2eff60|||||||||||||||
-allIndividuals|stem|d46b8a726e565ed7|b1ccd66ed4663407|7ff3298ac35ef616|1967870275||t19605.8010014278s|f6ea7c481cb6abe9|510962014|qs|local|vector|||0||
+allIndividuals|stem|79bc1c42390f4dfb|b1ccd66ed4663407|30f010d32ce38007|1967870275||t19608.6529509953s|dfe93075d44f4731|509791269|qs|local|vector|||0||
 allIndividualsList|object|1dd9fe802beff4bb|||||||||||||||
-coreMultiverse|object|ba9f251a6713e785|||||||||||||||
+area_based_extraction|function|1ad90a9aee7376bb|||||||||||||||
+areaBasedAvailUse_15_1|stem|229ef5b47d4a9cf7|3f7f0529f50966c6|13c2b9184b9a8b5f|-1750172829||t19608.684073135s|fd3d94fe2afecb96|520|qs|local|vector|||213.94|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.91040746 849.08271457000001. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
+build_available_area|function|7762b2ec3d2e7353|||||||||||||||
+build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
+coreMultiverse|object|027f44f52b482ef3|||||||||||||||
 individualSimulations|object|f53a17a2b792c3ee|||||||||||||||
 individualSimulationsList|object|b8af0b21e11aecb2|||||||||||||||
-landscape_BADGER|stem|c9ca18d124534766|812745949c3cd6fe|d52b25592c7cc70c|1817666615||t19605.6653947968s|fc2924e3bc37865f|64279473|qs|local|vector|||36.42|package qs was built under R version 4.2.3|
+landscape_BADGER|stem|c8c094fdf4b6aae2|812745949c3cd6fe|4a30383cefdbd23b|1817666615||t19608.6523201487s|2a1ee771edd8105f|63100010|qs|local|vector|||36.44|package qs was built under R version 4.2.3|
 method_indi_ssf|function|418a62bbf2276322|||||||||||||||
-optionsList_area|object|e60e38c9db9ac8dd|||||||||||||||
+optionsList_area|object|533a05c5a052ce4c|||||||||||||||
 optionsList_areaMethods|object|6ab2c8abbb0ef24c|||||||||||||||
 optionsList_pois|object|14456cb976e1b106|||||||||||||||
 optionsList_samples|object|fca244304d27367f|||||||||||||||
 optionsList_sff|object|c112c225cd86affd|||||||||||||||
 optionsList_ssfCombine|object|19fb603771e759e1|||||||||||||||
-sampDuraFreqData_15_1|stem|d82c3cae5ec62a8f|37b39cb3ade4618d|e89afa3c3034b73f|1651523239||t19605.8280251678s|eaebdf8b84b3ce9f|482387814|qs|local|vector|||18.69||
-sampDuraFreqData_15_6|stem|f7bb85ac1638cd87|87770f39b65c191f|e89afa3c3034b73f|1928519544||t19605.838174832s|9dea3b0ac8caa1b2|482380830|qs|local|vector|||18.82||
-sampDuraFreqData_60_1|stem|8422eb14ad02b7ca|029173fac311bb86|e89afa3c3034b73f|1495110650||t19605.8377940555s|a832b65075ccc7dd|482468920|qs|local|vector|||18.64||
-sampDuraFreqData_60_6|stem|f5582b9740c32965|7ca72506aa3b5f4a|e89afa3c3034b73f|-204093084||t19605.8374522388s|1a423281618b78d4|482387466|qs|local|vector|||18.83||
-simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|a8bf3f5fbbd36aae|294808334||t19605.8008751329s|c9af47a89831f9f1|223615775|qs|local|vector|||17.45||
-simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|a8bf3f5fbbd36aae|1071611024||t19605.8006159848s|53d5ce409996b656|223090792|qs|local|vector|||24.48||
+poisOUT_15_6|stem||da7bd3c0e444397a|78c2c8934eae09f2|-197876409||t19608.6545068721s||0|qs|local|vector|||0||could not find function wrapper_pois_model
+sampDuraFreqData_15_1|stem|c3cd88fb9022300e|37b39cb3ade4618d|8a68e8dd5dda0897|1651523239||t19608.6540765594s|6584a7e04331b330|481219517|qs|local|vector|||19.86||
+sampDuraFreqData_15_6|stem|5812364b480286c5|87770f39b65c191f|8a68e8dd5dda0897|1928519544||t19608.6537116492s|0d692b788658515b|481185876|qs|local|vector|||19.81||
+sampDuraFreqData_60_1|stem|f7e266fae3e66d4e|029173fac311bb86|8a68e8dd5dda0897|1495110650||t19608.6544251623s|1f6e862c01af6e5a|481297047|qs|local|vector|||19.65||
+sampDuraFreqData_60_6|stem|9429ed6fc1299476|7ca72506aa3b5f4a|8a68e8dd5dda0897|-204093084||t19608.6533210225s|9b4bd26edde5c10f|481198147|qs|local|vector|||19.87||
+simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|00d457e90597f43c|294808334||t19608.6528196996s|c9af47a89831f9f1|223615775|qs|local|vector|||16.92||
+simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|00d457e90597f43c|1071611024||t19608.6525630594s|53d5ce409996b656|223090792|qs|local|vector|||17.66||
 simulate_individual|function|21e0b6b951f30103|||||||||||||||
-simulate_landscape|function|7a6227bff3e4ac19|||||||||||||||
+simulate_landscape|function|1cff04aac8fa1e86|||||||||||||||
 ssfCompiled|object|e78d8986184ed9eb|||||||||||||||
 ssfOUT_15_1|stem|602ba1f8d2396900|7cc402571a7ab61c|43064fdcd7099931|-441416508||t19605.8366366235s|21cb808e5a67bfdb|302|qs|local|vector|||6.32|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|a8e792f933e37d65|1204898056||t19605.8383794065s|cb91aba74fec518e|303|qs|local|vector|||0.22|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|

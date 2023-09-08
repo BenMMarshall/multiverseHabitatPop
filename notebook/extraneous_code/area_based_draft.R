@@ -7,10 +7,11 @@ landscape <- sampDuraFreqData_15_1$landscape$classRaster
 
 # Settings for variations / choices ---------------------------------------
 
-spSamp <- "random"
-availablePointsPer <- 2
+# spSamp <- "random"
+# availablePointsPer <- 2
 
-areaMethod = c("MCP", "AKDE")
+# areaMethod = c("MCP", "AKDE")
+areaMethod = "MCP"
 areaContour = c(95, 99)
 Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 2)), digits = 1))
 Method_sp = c("rd", "st")
@@ -24,8 +25,19 @@ allIndividualData <- sampDuraFreqData_15_1
 
 # Loop to create individual polygons --------------------------------------
 
+i <- 0
+usedAvailList <- vector("list",
+                        length = 
+                          length(areaMethod) *
+                          length(areaContour) *
+                          length(Method_sp) *
+                          length(Method_ap))
 for(method in areaMethod){
+  
+  print(method)
+  
   for(contour in areaContour){
+    print(contour)
     
     polygonList <- vector("list", length = length(names(allIndividualData)[-1]))
     names(polygonList) <- names(allIndividualData)[-1]
@@ -62,9 +74,7 @@ for(method in areaMethod){
     }
     popPolygon
     print("pop polygon complete")
-    
-    usedAvailList <- vector("list", length = length(Method_sp)*length(Method_ap))
-    i <- 0
+
     for(spSamp in Method_sp){
       print(spSamp)
       for(aPoints in Method_ap){
@@ -89,7 +99,7 @@ for(method in areaMethod){
           # generate points based on the availableArea and the number of points
           suppressWarnings({
             availPoints <- sp::spsample(indiPolygon,
-                                        n = nrow(movementData) * availablePointsPer,
+                                        n = nrow(movementData) * aPoints,
                                         type = ifelse(spSamp == "rd", "random", "stratified"))
           })
           
@@ -123,7 +133,7 @@ for(method in areaMethod){
           ## TYPE II ##
           suppressWarnings({
             availPopPoints <- sp::spsample(popPolygon,
-                                           n = nrow(movementData) * availablePointsPer,
+                                           n = nrow(movementData) * aPoints,
                                            type = ifelse(spSamp == "rd", "random", "stratified"))
           })
           
