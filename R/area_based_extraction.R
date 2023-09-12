@@ -27,7 +27,24 @@ area_based_extraction <- function(allIndividualData, optionsList){
                             length(Method_ap))
   for(method in areaMethod){
     
-    print(method)
+    resourceList <- vector("list", length = length(names(allIndividualData)[-1]))
+    names(resourceList) <- names(allIndividualData)[-1]
+    for(indiID in names(allIndividualData)){
+      if(indiID == "landscape"){
+        {next}
+      }
+      
+      movementData <- allIndividualData[[indiID]]$locations
+      
+      baa <- build_available_area(movementData = movementData,
+                                  method = method,
+                                  SRS_string = "EPSG:32601",
+                                  dBBMMsettings = NULL)
+      
+      resourceList[[indiID]] <- baa
+      
+      print(paste0(indiID, " --- Area Resource --- ", method))
+    }
     
     for(contour in areaContour){
       print(contour)
@@ -35,28 +52,21 @@ area_based_extraction <- function(allIndividualData, optionsList){
       polygonList <- vector("list", length = length(names(allIndividualData)[-1]))
       names(polygonList) <- names(allIndividualData)[-1]
       for(indiID in names(allIndividualData)){
-        
         if(indiID == "landscape"){
           {next}
         }
         
         print(indiID)
         
-        movementData <- allIndividualData[[indiID]]$locations
-        
-        baa <- build_available_area(movementData = movementData,
-                                    method = method,
-                                    SRS_string = "EPSG:32601",
-                                    dBBMMsettings = NULL)
-        
-        bap <- build_available_polygon(areaResource = baa,
+        bap <- build_available_polygon(areaResource = resourceList[[indiID]],
                                        method = method,
                                        contour = contour,
                                        SRS_string = "EPSG:32601")
         
-        print("polygon complete")
         
         polygonList[[indiID]] <- bap
+        
+        print(paste0(indiID, " --- Polygon created --- ", method, " - ", contour))
       } # end indiID polygon generation
       polygonList
       # Loop to create TypeII polygon -------------------------------------------

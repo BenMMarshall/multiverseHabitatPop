@@ -2,8 +2,8 @@ name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iterat
 .Random.seed|object|25a9f923de2eff60|||||||||||||||
 allIndividuals|stem|79bc1c42390f4dfb|b1ccd66ed4663407|30f010d32ce38007|1967870275||t19608.6529509953s|dfe93075d44f4731|509791269|qs|local|vector|||0||
 allIndividualsList|object|1dd9fe802beff4bb|||||||||||||||
-area_based_extraction|function|1ad90a9aee7376bb|||||||||||||||
-areaBasedAvailUse_15_1|stem|229ef5b47d4a9cf7|3f7f0529f50966c6|13c2b9184b9a8b5f|-1750172829||t19608.684073135s|fd3d94fe2afecb96|520|qs|local|vector|||213.94|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.91040746 849.08271457000001. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
+area_based_extraction|function|25a1125648a6ac67|||||||||||||||
+areaBasedAvailUse_15_1|stem|732d692063be0190|3f7f0529f50966c6|51ca51e76dfb6e57|-1750172829||t19608.6934843981s|6faf7cd00812f2b4|516|qs|local|vector|||106.98|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.9104073999999 849.08270637999999. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
 build_available_area|function|7762b2ec3d2e7353|||||||||||||||
 build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
 coreMultiverse|object|027f44f52b482ef3|||||||||||||||
@@ -27,7 +27,7 @@ simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|00d457e90597f43c|1071
 simulate_individual|function|21e0b6b951f30103|||||||||||||||
 simulate_landscape|function|1cff04aac8fa1e86|||||||||||||||
 ssfCompiled|object|e78d8986184ed9eb|||||||||||||||
-ssfOUT_15_1|stem|602ba1f8d2396900|7cc402571a7ab61c|43064fdcd7099931|-441416508||t19605.8366366235s|21cb808e5a67bfdb|302|qs|local|vector|||6.32|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_15_1|stem|d43cdbf2d03c7143|7cc402571a7ab61c|7d13be123d504d3f|-441416508||t19612.686924044s|cb91aba74fec518e|303|qs|local|vector|||7.78|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|a8e792f933e37d65|1204898056||t19605.8383794065s|cb91aba74fec518e|303|qs|local|vector|||0.22|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_60_1|stem|59b0f41d407fa968|07e68a5e3765902a|163b9650c6da0ac9|1205403597||t19605.8383393165s|cb91aba74fec518e|303|qs|local|vector|||7.77|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_60_6|stem|ca6655c178e6e820|99d12dbed04af28c|714d05a7b784a5d2|2118642858||t19605.8383596754s|0e56fdca6a5a4864|301|qs|local|vector|||0.46|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite.|

@@ -72,7 +72,8 @@ optionsList_area <- list(
 )
 
 optionsList_areaMethods <- list(
-  areaBasedMethod = c("Eisera", "Compana")
+  areaBasedMethod = c("Compana"),
+  areaBasedTest = c("randomisation", "parametric")
 )
 
 # optionsList_pois <- list(
@@ -88,7 +89,7 @@ optionsList_pois <- list(
 )
 
 values_Sample <-
-  list(sampleSize = c(5,10,15,25,50))
+  list(sampleSize = rep(c(5,10,15,25,45), each = 3))
 # c(5,10,20,40)
 
 set.seed(1)
@@ -96,6 +97,8 @@ set.seed(1)
 optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
   sample(1:50, x, replace = FALSE)
 })
+
+names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 
 # Targets workflow lists --------------------------------------------------
 
@@ -160,7 +163,7 @@ coreMultiverse <- list(
                priority = 0.9),
     tar_target(areaBasedOUT,
                area_based_calculations(
-                 avialUseData = areaBasedAvailUse,
+                 availUseData = areaBasedAvailUse,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_areaMethods
                ),
