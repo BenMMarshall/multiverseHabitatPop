@@ -148,13 +148,6 @@ coreMultiverse <- list(
                    freqPreset = tf),
                  daysDuration = td),
                priority = 0.92),
-    # tar_target(populationAreas,
-    #            build_available_polygon(
-    #              build_available_area(
-    #                movementData = sampDuraFreqData,
-    #                optionsList = optionsList_area
-    #              )),
-    #            priority = 0.9),
     tar_target(areaBasedAvailUse,
                area_based_extraction(
                  allIndividualData = sampDuraFreqData,

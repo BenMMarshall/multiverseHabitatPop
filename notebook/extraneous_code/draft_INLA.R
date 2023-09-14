@@ -44,39 +44,93 @@ movementData <- do.call(rbind, lapply(allIndividualData[-1], function(x){
 
 # Read in animal tracking data --------------------------------------------
 
-# Set datetime as "POSIXct" "POSIXt" format
-movementData$datetime <- as.POSIXct(movementData$datetime, format = "%y-%m-%d %H:%M:%S",
-                                    tz = "UTC")
+optionsForm <- optionsList$MethodPois_mf
+optionsAPoints <- optionsList$MethodPois_as
 
-# Load in raster covariates -----------------------------------------------
+listLength <- length(optionsForm)*
+  length(optionsAPoints)*
+  length(names(sampleGroups))
 
-## reading inverted tifs from ISSF code
-covariates <- list("Settlement_dist_INVERT.tif",
-                   "Road_dist_INVERT.tif",
-                   "Building_dist_INVERT.tif",
-                   "Agriculture_dist_INVERT.tif",
-                   "Less_Distured_Areas_dist_INVERT.tif")
+companaResultsList <- vector("list", length = listLength)
+i <- 0
 
+for(sampID in names(sampleGroups)){
+  
+  IDs <- optionsList_samples[[sampID]]
+  IDs <- paste0("simData_i", sprintf("%03d", IDs))
+  
+  # select only the information we need
+  dat <- movementData %>% 
+    mutate(datetime = as.POSIXct(datetime, format = "%y-%m-%d %H:%M:%S",
+                                 tz = "UTC")) %>% 
+    dplyr::select("x" = x, "y" = y,
+                  "t" = datetime, "id" = id) %>% 
+    group_by(id) %>% 
+    arrange(t) %>% 
+    filter(id %in% sampleIDs)
+  
+  # separate the individuals out into a list-column of dataframes, each item an animal
+  dat_all <- dat %>% 
+    nest(data = -id) 
+  
+  # map operates a lot like an apply or loop. It repeats the function to each item
+  # in the list. In this case we make all the individual dataframes into track
+  # objects. Check dat_all to see the list of dataframes now has a second
+  # dataframe/tibble for the track.
+  dat_all <- dat_all %>% 
+    mutate(trk = map(data, function(d){
+      make_track(d, .x = x, .y = y, .t = t, crs = 32601)
+    }))
+  
+  # Here the summarize_sampling_rate is repeated on each track object to give you
+  # an individual level summary.
+  # dat_all %>% 
+  #   mutate(sr = lapply(trk, summarize_sampling_rate)) %>% 
+  #   dplyr::select(id, sr) %>%
+  #   unnest(cols = c(sr))
+  
+  # had to modify the code and avoid map to make sure the distributions are based
+  # on a single individual, issues with the sl_ and ta_ being passed to the
+  # fit_distr functions inside map
+  allTracksList <- vector("list", length = length(dat_all$id))
+  for(indiID in dat_all$id){
+    # indiID <- "BADGER_i001"
+    which(dat_all$id == indiID)
+    
+    indiTrack <- dat_all$trk[[which(dat_all$id == indiID)]] %>% 
+      steps() %>% 
+      filter(sl_>0)
+    
+    indiTrackCov <- indiTrack  %>% # removing the non-moves, or under GPS error
+      random_steps(
+        n_control = 10,
+        sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = "gamma"),
+        ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = "vonmises")
+      ) %>% 
+      extract_covariates(landscape$classRaster) %>% 
+      mutate(id = indiID)
+    
+    allTracksList[[indiID]] <- indiTrackCov
+  }
+  poisModelData <- do.call(rbind, allTracksList)
+  
+  poisModelData <- poisModelData %>% 
+    mutate(
+      y = as.numeric(case_),
+      id = as.numeric(factor(id)), 
+      step_id = paste0(id, step_id_, sep = "-"),
+      cos_ta = cos(ta_), 
+      log_sl = log(sl_),
+      layer = factor(paste0("c", layer)))
+  
+  
+  
+  
+  
+  
+  
+}
 
-rp <- stack(x = covariates)
-
-
-cov.names <- c("dist_settle", "dist_road", "dist_building", "dist_ag", 
-               "dist_nat")
-names(rp) <- cov.names 
-
-# START OF IMPORTED (and edited) CODE from Muff et al --------------------------------------------------
-
-# select only the information we need
-dat <- movementData %>% 
-  dplyr::select("x" = x, "y" = y,
-         "t" = datetime, "id" = id) %>% 
-  group_by(id) %>% 
-  arrange(t)
-
-# separate the individuals out into a list-column of dataframes, each item an animal
-dat_all <- dat %>% 
-  nest(-id) 
 
 # if you want to add meta data, like sex, do so here. We had a second dataframe
 # that included metadata
@@ -85,21 +139,6 @@ dat_all <- dat %>%
 #                     snake.meta %>% 
 #                       select(id = deployment.id, sex = animal.sex))
 
-# map operates a lot like an apply or loop. It repeats the function to each item
-# in the list. In this case we make all the individual dataframes into track
-# objects. Check dat_all to see the list of dataframes now has a second
-# dataframe/tibble for the track.
-dat_all <- dat_all %>% 
-  mutate(trk = map(data, function(d){
-    make_track(d, .x = x, .y = y, .t = t, crs = 32601)
-  }))
-
-# Here the summarize_sampling_rate is repeated on each track object to give you
-# an individual level summary.
-dat_all %>% 
-  mutate(sr = lapply(trk, summarize_sampling_rate)) %>% 
-  dplyr::select(id, sr) %>%
-  unnest(cols = c(sr))
 
 # So dat_all is set up ready for the generation of random steps and the
 # extraction of raster covariate values
@@ -117,26 +156,29 @@ dat_all %>%
 # get the covariate values. After the mutate+map bit is a few lines to compile
 # the data into a single v large dataframe for the model.
 
-dat_ssf <- dat_all %>% 
-  mutate(stps = map(trk, ~ .x %>%
-                      steps() %>% 
-                      filter(sl_>0) %>% # removing the non-moves, or under GPS error
-                      random_steps(n = 10) %>% 
-                      extract_covariates(landscape$classRaster))) %>% 
-  dplyr::select(id, stps) %>%
-  unnest(cols = c(stps)) %>% 
-  group_by(id) %>% 
-  arrange(t1_) %>% 
-  ungroup() %>% 
-  mutate(
-    y = as.numeric(case_),
-    id = as.numeric(factor(id)), 
-    step_id = paste0(id, step_id_, sep = "-"),
-    cos_ta = cos(ta_), 
-    log_sl = log(sl_))
 
-dat_ssf$layer <- paste0("c", dat_ssf$layer)
-dat_ssf$layer <- factor(dat_ssf$layer)
+# dat_ssf <- dat_all %>% 
+#   mutate(stps = map(trk, ~ .x %>%
+#                       steps() %>% 
+#                       filter(sl_>0) %>% # removing the non-moves, or under GPS error
+#                       random_steps(
+#                         n_control = 10
+#                       ) %>% 
+#                       extract_covariates(landscape$classRaster))) %>% 
+#   dplyr::select(id, stps) %>%
+#   unnest(cols = c(stps)) %>% 
+#   group_by(id) %>% 
+#   arrange(t1_) %>% 
+#   ungroup() %>% 
+#   mutate(
+#     y = as.numeric(case_),
+#     id = as.numeric(factor(id)), 
+#     step_id = paste0(id, step_id_, sep = "-"),
+#     cos_ta = cos(ta_), 
+#     log_sl = log(sl_))
+
+# dat_ssf$layer <- paste0("c", dat_ssf$layer)
+# dat_ssf$layer <- factor(dat_ssf$layer)
 
 # So dat_ssf is the correct format for the modelling. We have the id, a heap of
 # movement columns, and the critical case_ that describes whether they used a
@@ -174,7 +216,7 @@ formula.random.n <- y ~  -1 +
 # natural model
 inla.ssf.n <- inla(formula.random.n,
                    family = "Poisson",
-                   data = dat_ssf, #verbose=TRUE,
+                   data = poisModelData, #verbose=TRUE,
                    control.fixed = list(
                      mean = 0,
                      prec = list(default = prec.beta.trls)))
@@ -210,166 +252,8 @@ inla_emarginal <- function(r.out){
 inla_emarginal(inla.ssf.n)
 inla_mmarginal(inla.ssf.n)
 
-
-inla_emarginal(inla.ssf.s)
-inla_mmarginal(inla.ssf.s)
-
-
-inla_emarginal(inla.ssf.r)
-inla_mmarginal(inla.ssf.r)
-
-
-inla_emarginal(inla.ssf.b)
-inla_mmarginal(inla.ssf.b)
-
-
-inla_emarginal(inla.ssf.a)
-inla_mmarginal(inla.ssf.a)
-
-
-
-fixed.df.n <- inla.ssf.n$summary.fixed
-fixed.df.s <- inla.ssf.s$summary.fixed
-fixed.df.r <- inla.ssf.r$summary.fixed
-fixed.df.b <- inla.ssf.b$summary.fixed
-fixed.df.a <- inla.ssf.a$summary.fixed
-
-
-
-
 fixed.df.n <- inla.ssf.n$summary.fixed
 fixed.df.n$term <- row.names(fixed.df.n)
 names(fixed.df.n) <- c("mean", "sd", "q025", "q50", "q975",
                        "mode", "kld", "term")
-
-
-fixed.df.s <- inla.ssf.s$summary.fixed
-fixed.df.s$term <- row.names(fixed.df.s)
-names(fixed.df.s) <- c("mean", "sd", "q025", "q50", "q975",
-                       "mode", "kld", "term")
-
-
-fixed.df.r <- inla.ssf.r$summary.fixed
-fixed.df.r$term <- row.names(fixed.df.r)
-names(fixed.df.r) <- c("mean", "sd", "q025", "q50", "q975",
-                       "mode", "kld", "term")
-
-
-fixed.df.b <- inla.ssf.b$summary.fixed
-fixed.df.b$term <- row.names(fixed.df.b)
-names(fixed.df.b) <- c("mean", "sd", "q025", "q50", "q975",
-                       "mode", "kld", "term")
-
-fixed.df.a <- inla.ssf.a$summary.fixed
-fixed.df.a$term <- row.names(fixed.df.a)
-names(fixed.df.a) <- c("mean", "sd", "q025", "q50", "q975",
-                       "mode", "kld", "term")
-
-
-allmods <- rbind(fixed.df.n, fixed.df.s, fixed.df.r, fixed.df.b, fixed.df.a)
-
-
-write_csv(allmods, "Pop_ssf_mods.csv")
-
-
-
-##### figures for population level ssf
-popssf <- read_csv(file = "Pop_ssf_mods.csv")
-
-
-#### Distance_feature plot
-
-popssf %>% 
-  filter(term %in% grep("log_sl|cos_ta", term, value = TRUE,
-                        invert = TRUE)) %>% 
-  #mutate(term = factor(term, levels = c("dist_aq.ag", "dist_forest", 
-  #                                     "dist_road", "dist_settle", "dist_terr.ag", "dist_water"))) %>%
-  arrange(term) %>% 
-  ggplot() +
-  geom_hline(aes(yintercept = 0), linetype = 2, alpha = 0.5) +
-  geom_point(aes(x = term, y = mean, colour = term)) +
-  geom_errorbar(aes(x = term, ymin = q025, ymax = q975,
-                    colour = term),
-                width = 0.25) +
-  #facet_wrap(.~id) +
-  scale_shape_manual(values = c(3, 16)) +
-  #  scale_x_discrete(labels = c("Aq.\nagri.", "For.", "Road", "Settle.",
-  #                                "Ter.\nagri.", "Water")
-  #  ) +
-  labs(x = "Feature", y = expression(beta), colour = "Distance to\nfeature:") +
-  scale_colour_manual(values = c("#56B4E9",
-                                 "#009E73",
-                                 "#000000",
-                                 "#E69F00",
-                                 "#0072B2")) + #,
-  #    labels = c("Aquatic agriculture",
-  #               "Forest",
-  #               "Road",
-  #               "Settlement",
-  #               "Terrestrial agriculture",
-  #               "Water")) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 0.5),
-        strip.background = element_blank(),
-        strip.text = element_text(face = 4, hjust = 0),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_line(colour = "grey65", linetype = 1),
-        panel.grid.minor.y = element_blank(),
-        legend.position = "bottom",
-        legend.title = element_text(face = 2),
-        legend.text = element_text(lineheight = 1),
-        legend.background = element_blank(),
-        axis.title.y = element_text(angle = 0, vjust = 1, face = 2),
-        axis.title.x = element_text(hjust = 0.5, face = 2, margin = margin(10,0,0,0)),
-        plot.title = element_text(face = 4),
-        strip.text.y = element_blank()
-  ) +
-  guides(shape = guide_none())
-
-
-### interaction between step length and feature plot
-
-popssf %>%
-  filter(term %in% grep("log_sl", term, value = TRUE,
-                        invert = FALSE)) %>%
-  arrange(term) %>% 
-  ggplot() +
-  geom_hline(aes(yintercept = 0), linetype = 2, alpha = 0.5) +
-  geom_errorbar(aes(x = term, ymin = q025, ymax = q975,
-                    colour = term),
-                width = 0.25) +
-  geom_point(aes(x = term, y = mean, colour = term)) +
-  #facet_wrap(.~id, scales = "free_y") +
-  #scale_shape_manual(values = c(3, 16)) +
-  #  scale_x_discrete(labels = c("Aq.\nagri.", "For.", "Road", "Settle.",
-  #                              "Ter.\nagri.", "Water")) +
-  labs(x = "Feature", y = expression(beta), colour = "Step length\ninteraction with:") +
-  scale_colour_manual(values = c("#56B4E9",
-                                 "#009E73",
-                                 "#000000",
-                                 "#E69F00",
-                                 "#0072B2")) + #,
-  #   labels = c("Aquatic agriculture",
-  #               "Forest",
-  #              "Road",
-  #             "Settlement",
-  #             "Terrestrial agriculture",
-  #             "Water")) +
-  theme_bw() +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5, vjust = 0.5),
-        strip.background = element_blank(),
-        strip.text = element_text(face = 4, hjust = 0),
-        panel.grid.major.x = element_blank(),
-        panel.grid.minor.x = element_line(colour = "grey65", linetype = 1),
-        panel.grid.minor.y = element_blank(),
-        legend.position = "bottom",
-        legend.title = element_text(face = 2),
-        legend.text = element_text(lineheight = 1),
-        legend.background = element_blank(),
-        axis.title.y = element_text(angle = 0, vjust = 1, face = 2),
-        axis.title.x = element_text(hjust = 0.5, face = 2, margin = margin(10,0,0,0)),
-        plot.title = element_text(face = 4),
-        strip.text.y = element_blank())
-
-
 

@@ -165,7 +165,7 @@ area_based_extraction <- function(allIndividualData, optionsList){
             names(availPopValues_DF) <- paste0("avail_", names(availPopValues_DF))
             
             usedAvailable <- cbind(usedValues_DF, availValues_DF)
-            usedAvailable$id <- indiID
+            usedAvailable$id <- movementData$id[1]
             usedAvailable$type <- "III"
             usedAvailable$method <- method
             usedAvailable$contour <- contour
@@ -175,12 +175,14 @@ area_based_extraction <- function(allIndividualData, optionsList){
             usedAvailable
             
             usedAvailablePop <- cbind(usedValues_DF, availPopValues_DF)
-            usedAvailablePop$id <- indiID
+            usedAvailablePop$id <- movementData$id[1]
             usedAvailablePop$type <- "II"
             usedAvailablePop$method <- method
             usedAvailablePop$contour <- contour
             usedAvailablePop$aPoints <- aPoints
             usedAvailablePop$spSamp <- spSamp
+            usedAvailablePop$trackFreq <- allIndividualData[[indiID]]$trackFreq
+            usedAvailablePop$trackDura <- allIndividualData[[indiID]]$trackDura
             
             usedAvailableAll <- rbind(usedAvailable, usedAvailablePop)
             

@@ -24,7 +24,8 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
     length(optionsContour)*
     length(optionsAPoints)*
     length(optionsSPSamp)*
-    length(optionsTest)
+    length(optionsTest) *
+    length(names(sampleGroups))
   
   companaResultsList <- vector("list", length = listLength)
   i <- 0
@@ -69,6 +70,8 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                 companaResultsDF <- data.frame(
                   sampleID = sampID,
                   sampleSize = length(IDs),
+                  trackFreq = availUseData$trackFreq[1],
+                  trackDura = availUseData$trackDura[1],
                   type = typ,
                   areaMethod = met,
                   contour = con,
