@@ -38,8 +38,9 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
             for(sampID in names(sampleGroups)){
               
               IDs <- optionsList_samples[[sampID]]
-              
-              IDs <- paste0("simData_i", sprintf("%03d", IDs))
+
+              IDs <- paste0(stringr::str_extract(availUseData$id[1], "^.*_i"),
+                            sprintf("%03d", IDs))
               
               use <- availUseData %>% 
                 filter(type == typ,

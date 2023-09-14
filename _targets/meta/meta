@@ -1,23 +1,39 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|25a9f923de2eff60|||||||||||||||
+.Random.seed|object|82f67dc0bf7950bd|||||||||||||||
 allIndividuals|stem|79bc1c42390f4dfb|b1ccd66ed4663407|30f010d32ce38007|1967870275||t19608.6529509953s|dfe93075d44f4731|509791269|qs|local|vector|||0||
-allIndividualsList|object|1dd9fe802beff4bb|||||||||||||||
-area_based_extraction|function|25a1125648a6ac67|||||||||||||||
-areaBasedAvailUse_15_1|stem|732d692063be0190|3f7f0529f50966c6|51ca51e76dfb6e57|-1750172829||t19608.6934843981s|6faf7cd00812f2b4|516|qs|local|vector|||106.98|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.9104073999999 849.08270637999999. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
+allIndividualsList|object|9cd4e26a7052017b|||||||||||||||
+area_based_calculations|function|7adaa78724a08159|||||||||||||||
+area_based_extraction|function|a7614bb6c0d445e9|||||||||||||||
+areaBasedAvailUse_15_1|stem|6c6ac0b9787a5076|3f7f0529f50966c6|2665119532c2e3a7|-1750172829||t19614.6634451271s|813a0d7697333517|548|qs|local|vector|||96.23|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.9104073999999 849.08270637999999. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
+areaBasedAvailUse_15_6|stem|585561a1eebe621d|2ec31aafca03fce7|2d623eccd11ecf0b|-2050959492||t19614.6754790963s|98a1b3498437d52e|529|qs|local|vector|||32.39|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others|
+areaBasedAvailUse_60_1|stem|e4f71f87ac6d7bbc|8ae563ba00899d5b|1fcc27315d76c4d6|63963604||t19614.6750403578s|76c9ef911ac0602c|593|qs|local|vector|||347.97|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others|
+areaBasedAvailUse_60_6|stem|17cf9f608bbd5170|78929acb8d362de0|f5b68d4dc7b1d090|31981060||t19614.6766579494s|1c5dc17b9b1a7ca0|549|qs|local|vector|||91.64|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1110.60380996 902.74614386999997. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
+areaBasedOUT_15_1|stem|822b3b017f961123|b502750dedc07f6e|435df2b4ede4f244|63471836||t19614.6692945082s|c37db96afa07cdd4|1370|qs|local|vector|||2.13||
+areaBasedOUT_15_6|stem|29aac51d21820238|dbeceed7fb2aa4ff|f64679581b639af7|610746913||t19614.6755061759s|c37db96afa07cdd4|1370|qs|local|vector|||1.98||
+areaBasedOUT_60_1|stem|0ec75f794a9a1f21|45360a99ea6035d3|a05764066cfbb28c|-1762884995||t19614.6766843501s|279168da361054c9|1369|qs|local|vector|||1.94||
+areaBasedOUT_60_6|stem|f44f4361f1a32ff8|d7cac1082b96c723|338f224612ca2910|355172109||t19614.6767098314s|e2de213b2244b61a|1373|qs|local|vector|||1.94||
+areaBasedResults|stem|48a6b5b5436f58c2|e6c0e3c128a58a9d|7c5154100bf7f90f|-1629814325||t19614.6767130256s|73845e99b4580adb|4493|qs|local|vector|||0||
 build_available_area|function|7762b2ec3d2e7353|||||||||||||||
 build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
-coreMultiverse|object|027f44f52b482ef3|||||||||||||||
-individualSimulations|object|f53a17a2b792c3ee|||||||||||||||
-individualSimulationsList|object|b8af0b21e11aecb2|||||||||||||||
+coreMultiverse|object|09a16c65c714a9d0|||||||||||||||
+individualSimulations|object|24f66b20aa871c1a|||||||||||||||
+individualSimulationsList|object|6e2ab2c33f4bf747|||||||||||||||
+inla_emarginal|function|ff247354aa4b7ddc|||||||||||||||
+inla_mmarginal|function|e30098e3156a8f15|||||||||||||||
 landscape_BADGER|stem|c8c094fdf4b6aae2|812745949c3cd6fe|4a30383cefdbd23b|1817666615||t19608.6523201487s|2a1ee771edd8105f|63100010|qs|local|vector|||36.44|package qs was built under R version 4.2.3|
 method_indi_ssf|function|418a62bbf2276322|||||||||||||||
+method_pois_inla|function|4a8d803e14b9a125|||||||||||||||
 optionsList_area|object|533a05c5a052ce4c|||||||||||||||
-optionsList_areaMethods|object|6ab2c8abbb0ef24c|||||||||||||||
-optionsList_pois|object|14456cb976e1b106|||||||||||||||
-optionsList_samples|object|fca244304d27367f|||||||||||||||
+optionsList_areaMethods|object|4ce5d305f253f23b|||||||||||||||
+optionsList_pois|object|63a400817f237495|||||||||||||||
+optionsList_samples|object|914d1e5daac69897|||||||||||||||
 optionsList_sff|object|c112c225cd86affd|||||||||||||||
 optionsList_ssfCombine|object|19fb603771e759e1|||||||||||||||
-poisOUT_15_6|stem||da7bd3c0e444397a|78c2c8934eae09f2|-197876409||t19608.6545068721s||0|qs|local|vector|||0||could not find function wrapper_pois_model
+poisOUT_15_1|stem|216e8a922fea6376|70605fe592ba61e4|58f3588899be1fcc|1568208842||t19614.650776832s|b81895e14878e86f|359|qs|local|vector|||2.74|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated|
+poisOUT_15_6|stem|df0f9aca0e181180|a95f47de657ea7c8|fe19b11b2a866f14|-197876409||t19614.679497081s|253d6f95309bef1a|362|qs|local|vector|||1.89|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value|
+poisOUT_60_1|stem|55ae7db87e54df5a|74a5f8af532fffc5|aa73c4d432b301d4|1246697636||t19614.6795849032s|b4cfbff6ad8d48ed|358|qs|local|vector|||5.92|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. NAInf replaced by maximum positive value|
+poisOUT_60_6|stem|c11de74da90c06f1|2833a3d25df486fc|6c98849f96cd921d|-1615346820||t19614.6796279489s|b81895e14878e86f|359|qs|local|vector|||2.02|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value|
+poisResults|stem|80256350b0bebfa5|6e2397e3359b549f|05d95a9d52ce5114|1725291469||t19614.6796320242s|5a04a2bfcda35a41|611|qs|local|vector|||0||
 sampDuraFreqData_15_1|stem|c3cd88fb9022300e|37b39cb3ade4618d|8a68e8dd5dda0897|1651523239||t19608.6540765594s|6584a7e04331b330|481219517|qs|local|vector|||19.86||
 sampDuraFreqData_15_6|stem|5812364b480286c5|87770f39b65c191f|8a68e8dd5dda0897|1928519544||t19608.6537116492s|0d692b788658515b|481185876|qs|local|vector|||19.81||
 sampDuraFreqData_60_1|stem|f7e266fae3e66d4e|029173fac311bb86|8a68e8dd5dda0897|1495110650||t19608.6544251623s|1f6e862c01af6e5a|481297047|qs|local|vector|||19.65||
@@ -26,16 +42,16 @@ simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|00d457e90597f43c|2948
 simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|00d457e90597f43c|1071611024||t19608.6525630594s|53d5ce409996b656|223090792|qs|local|vector|||17.66||
 simulate_individual|function|21e0b6b951f30103|||||||||||||||
 simulate_landscape|function|1cff04aac8fa1e86|||||||||||||||
-ssfCompiled|object|e78d8986184ed9eb|||||||||||||||
+ssfCompiled|object|f951e76972f9e196|||||||||||||||
 ssfOUT_15_1|stem|d43cdbf2d03c7143|7cc402571a7ab61c|7d13be123d504d3f|-441416508||t19612.686924044s|cb91aba74fec518e|303|qs|local|vector|||7.78|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|a8e792f933e37d65|1204898056||t19605.8383794065s|cb91aba74fec518e|303|qs|local|vector|||0.22|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_60_1|stem|59b0f41d407fa968|07e68a5e3765902a|163b9650c6da0ac9|1205403597||t19605.8383393165s|cb91aba74fec518e|303|qs|local|vector|||7.77|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_60_6|stem|ca6655c178e6e820|99d12dbed04af28c|714d05a7b784a5d2|2118642858||t19605.8383596754s|0e56fdca6a5a4864|301|qs|local|vector|||0.46|NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite. . NaNs produced. NaNs produced. NaNs produced. NaNs produced. Loglik converged before variable  1,2  beta may be infinite.|
-ssfResults|stem|9d25c4cc82c8067a|0283523e774a55d6|feb585dc5d2429bf|1439985569||t19605.8383827221s|b0cf0699b1259f5f|522|qs|local|vector|||0||
+ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|cf3fda10d6f33804|1204898056||t19614.6803047125s|cb91aba74fec518e|303|qs|local|vector|||0.37|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_1|stem|2ab41971a1837cb5|07e68a5e3765902a|ac9161ab921df51b|1205403597||t19614.6803468211s|21cb808e5a67bfdb|302|qs|local|vector|||2.09|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_6|stem|95bac3165490e107|99d12dbed04af28c|5956defa3326d28a|2118642858||t19614.6803701187s|cb91aba74fec518e|303|qs|local|vector|||0.45|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfResults|stem|3dfe0fa054352a9e|0283523e774a55d6|7b4b41652325ca77|1439985569||t19614.6803736801s|3ec09374b5058a60|507|qs|local|vector|||0||
 subset_duration|function|14c82ee0e580baa0|||||||||||||||
 subset_frequency|function|ca568cee7cde4b60|||||||||||||||
 values_Regime|object|526912577d903d3e|||||||||||||||
-values_Sample|object|9afc229bcfbf46cc|||||||||||||||
+values_Sample|object|028bb8c87d6c013b|||||||||||||||
 values_SimIndi|object|8e76485af954e6ac|||||||||||||||
 values_SimSpecies|object|90da690c81663e8f|||||||||||||||
 wrapper_indi_ssf|function|28a7617820489b8a|||||||||||||||

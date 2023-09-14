@@ -34,102 +34,172 @@ targets::tar_load("sampDuraFreqData_15_1")
 
 allIndividualData <- sampDuraFreqData_15_1
 
-landscape <- allIndividualData$landscape
-
 allIndividualData[-1]
 
-movementData <- do.call(rbind, lapply(allIndividualData[-1], function(x){
-  x$locations
-}))
+# a <- allIndividualData[names(allIndividualData) %in% c("simData_i001")]
 
-# Read in animal tracking data --------------------------------------------
+
+# sampleGroups <- optionsList_samples
+
+landscape <- allIndividualData$landscape
 
 optionsForm <- optionsList$MethodPois_mf
-optionsAPoints <- optionsList$MethodPois_as
+optionsASteps <- optionsList$MethodPois_as
+optionsStepD <- optionsList$MethodPois_sd
+optionsTurnD <- optionsList$MethodPois_td
 
-listLength <- length(optionsForm)*
-  length(optionsAPoints)*
+listLength <- length(optionsForm) *
+  length(optionsAPoints) *
+  length(optionsStepD) *
+  length(optionsTurnD) *
   length(names(sampleGroups))
 
-companaResultsList <- vector("list", length = listLength)
+inlaOUTList <- vector("list", length = listLength)
 i <- 0
-
 for(sampID in names(sampleGroups)){
-  
+  # sampID <- "samp13"
   IDs <- optionsList_samples[[sampID]]
   IDs <- paste0("simData_i", sprintf("%03d", IDs))
   
+  sampledIndividualData <- allIndividualData[names(allIndividualData) %in% IDs]
+  
+  movementData <- do.call(rbind, lapply(sampledIndividualData, function(x){
+    x$locations
+  }))
+  
   # select only the information we need
-  dat <- movementData %>% 
+  movementData <- movementData %>% 
     mutate(datetime = as.POSIXct(datetime, format = "%y-%m-%d %H:%M:%S",
                                  tz = "UTC")) %>% 
     dplyr::select("x" = x, "y" = y,
                   "t" = datetime, "id" = id) %>% 
     group_by(id) %>% 
-    arrange(t) %>% 
-    filter(id %in% sampleIDs)
+    arrange(t)
   
   # separate the individuals out into a list-column of dataframes, each item an animal
-  dat_all <- dat %>% 
+  movementDataNest <- movementData %>% 
     nest(data = -id) 
   
   # map operates a lot like an apply or loop. It repeats the function to each item
   # in the list. In this case we make all the individual dataframes into track
   # objects. Check dat_all to see the list of dataframes now has a second
   # dataframe/tibble for the track.
-  dat_all <- dat_all %>% 
+  movementDataNest <- movementDataNest %>% 
     mutate(trk = map(data, function(d){
       make_track(d, .x = x, .y = y, .t = t, crs = 32601)
     }))
   
   # Here the summarize_sampling_rate is repeated on each track object to give you
   # an individual level summary.
-  # dat_all %>% 
-  #   mutate(sr = lapply(trk, summarize_sampling_rate)) %>% 
+  # movementData %>%
+  #   mutate(sr = lapply(trk, summarize_sampling_rate)) %>%
   #   dplyr::select(id, sr) %>%
   #   unnest(cols = c(sr))
   
   # had to modify the code and avoid map to make sure the distributions are based
   # on a single individual, issues with the sl_ and ta_ being passed to the
   # fit_distr functions inside map
-  allTracksList <- vector("list", length = length(dat_all$id))
-  for(indiID in dat_all$id){
+  allTracksList <- vector("list", length = length(movementDataNest$id))
+  names(allTracksList) <- movementDataNest$id
+  for(indiID in movementDataNest$id){
     # indiID <- "BADGER_i001"
-    which(dat_all$id == indiID)
+    # which(movementDataNest$id == indiID)
     
-    indiTrack <- dat_all$trk[[which(dat_all$id == indiID)]] %>% 
+    indiTrack <- movementDataNest$trk[[which(movementDataNest$id == indiID)]] %>% 
       steps() %>% 
       filter(sl_>0)
     
-    indiTrackCov <- indiTrack  %>% # removing the non-moves, or under GPS error
-      random_steps(
-        n_control = 10,
-        sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = "gamma"),
-        ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = "vonmises")
-      ) %>% 
-      extract_covariates(landscape$classRaster) %>% 
-      mutate(id = indiID)
-    
-    allTracksList[[indiID]] <- indiTrackCov
+    for(as in optionsASteps){
+      
+      for(sd in optionsStepD){
+        
+        for(td in optionsTurnD){
+          
+          indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
+            random_steps(
+              n_control = ap,
+              sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
+              ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
+            ) %>% 
+            extract_covariates(landscape$classRaster) %>% 
+            mutate(id = indiID)
+          
+          allTracksList[[indiID]] <- indiTrackCov
+        }
+        poisModelData <- do.call(rbind, allTracksList)
+        
+        poisModelData <- poisModelData %>% 
+          mutate(
+            y = as.numeric(case_),
+            id = as.numeric(factor(id)), 
+            step_id = paste0(id, step_id_, sep = "-"),
+            cos_ta = cos(ta_), 
+            log_sl = log(sl_),
+            layer = factor(paste0("c", layer)))
+        
+        # We can run the INLA model using the priors and set-up from Muff et al.
+        # Precision for the priors of slope coefficients
+        prec.beta.trls <- 1e-4
+        
+        for(form in optionsForm){
+          if(form == "mf.is"){
+            
+            inlaFormula <- y ~ -1 + 
+              layer + # fixed covariate effect
+              layer:log_sl + # covar iteractions
+              layer:cos_ta + 
+              f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
+              f(id, layer, values = 1:length(unique(poisModelData$id)), model="iid",
+                hyper = list(theta = list(initial = log(1), fixed = FALSE, 
+                                          prior = "pc.prec", param = c(1, 0.05)))) 
+            
+          } else if(form == "mf.ss"){
+            
+            inlaFormula <- y ~ -1 + 
+              layer + # fixed covariate effect
+              f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
+              f(id, layer, values = 1:length(unique(poisModelData$id)), model="iid",
+                hyper = list(theta = list(initial = log(1), fixed = FALSE, 
+                                          prior = "pc.prec", param = c(1, 0.05)))) 
+          } # if else end
+          
+          # natural model
+          inlaOUT <- inla(inlaFormula,
+                          family = "Poisson",
+                          data = poisModelData, #verbose=TRUE,
+                          control.fixed = list(
+                            mean = 0,
+                            prec = list(default = prec.beta.trls)))
+         
+          inlaResults <- inlaOUT$summary.fixed[2,]
+          inlaResults$term <- row.names(inlaResults)
+          names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
+                                  "mode", "kld", "term")
+          inlaResults$mmarginal <- inla_mmarginal(inlaOUT)
+          inlaResults$emarginal <- inla_emarginal(inlaOUT)
+          
+          optionsInfo <-
+            data.frame(
+              sampleID = sampID,
+              sampleSize = length(IDs),
+              trackFreq = allIndividualData[[indiID]]$trackFreq,
+              trackDura = allIndividualData[[indiID]]$trackDura,
+              analysis = "Poisson",
+              modelForm = form,
+              availablePerStep = as,
+              stepDist = sd,
+              turnDist = td
+            )
+          
+          inlaOUTList[[i]] <- cbind(optionsInfo,
+                                    inlaResults)
+          
+        }
+      }
+    }
   }
-  poisModelData <- do.call(rbind, allTracksList)
-  
-  poisModelData <- poisModelData %>% 
-    mutate(
-      y = as.numeric(case_),
-      id = as.numeric(factor(id)), 
-      step_id = paste0(id, step_id_, sep = "-"),
-      cos_ta = cos(ta_), 
-      log_sl = log(sl_),
-      layer = factor(paste0("c", layer)))
-  
-  
-  
-  
-  
-  
-  
 }
+
 
 
 # if you want to add meta data, like sex, do so here. We had a second dataframe
@@ -186,9 +256,7 @@ for(sampID in names(sampleGroups)){
 
 # Running the INLA model --------------------------------------------------
 
-# We can run the INLA model using the priors and set-up from Muff et al.
-# Precision for the priors of slope coefficients
-prec.beta.trls <- 1e-4
+
 
 # "In the model formula for INLA, we set the stratum-specific intercept variance
 # to $10^6$ (or rather: the precision to $10^{ ^'6}$) by fixing it (`fixed=T`)
@@ -198,28 +266,13 @@ prec.beta.trls <- 1e-4
 ### making formulas for each habitat feature
 
 #Natural
-formula.random.n <- y ~  -1 + 
-  layer + # fixed covariate effect
-  layer:log_sl + # covar iteractions
-  layer:cos_ta + 
-  f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
-  f(id, layer, values = 1:length(unique(dat_ssf$id)), model="iid",
-    hyper = list(theta = list(initial = log(1), fixed = FALSE, 
-                              prior = "pc.prec", param = c(1, 0.05)))) 
+
 
 # Last two parts of the model are the gaussian processes to deal with step_id
 # (each move), and the id of the animal. So steps_id is the covariate, then in
 # the second one is id that is weighted by the raster cov.
 
 # Fit the models -----------------------------------------------------------
-
-# natural model
-inla.ssf.n <- inla(formula.random.n,
-                   family = "Poisson",
-                   data = poisModelData, #verbose=TRUE,
-                   control.fixed = list(
-                     mean = 0,
-                     prec = list(default = prec.beta.trls)))
 
 # Model results -----------------------------------------------------------
 

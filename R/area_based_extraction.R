@@ -109,6 +109,7 @@ area_based_extraction <- function(allIndividualData, optionsList){
             # extract the habitat types each point is located within
             availValues <- raster::extract(landscape, availPoints)
             
+            print("--- Available / Used start")
             availValues_DF <- data.frame(rbind(table(availValues)))
             names(availValues_DF) <- sub("X", "c", names(availValues_DF))
             
@@ -119,6 +120,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
             })
             usedValues_DF <- data.frame(rbind(table(usedValues)))
             names(usedValues_DF) <- sub("X", "c", names(usedValues_DF))
+            
+            print("-- Break 1")
             
             aClass <- names(availValues_DF)
             uClass <- names(usedValues_DF)
@@ -133,6 +136,7 @@ area_based_extraction <- function(allIndividualData, optionsList){
               availValues_DF <- cbind(availValues_DF, toAdd)
             }
             
+            print("-- Break 2")
             ## TYPE II ##
             suppressWarnings({
               availPopPoints <- sp::spsample(popPolygon,
@@ -156,6 +160,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
               availPopValues_DF <- cbind(availPopValues_DF, toAdd)
             }
             
+            print("-- Break 3")
+            
             usedValues_DF <- usedValues_DF[,sort(names(usedValues_DF))]
             availValues_DF <- availValues_DF[,sort(names(availValues_DF))]
             availPopValues_DF <- availPopValues_DF[,sort(names(availPopValues_DF))]
@@ -171,6 +177,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
             usedAvailable$contour <- contour
             usedAvailable$aPoints <- aPoints
             usedAvailable$spSamp <- spSamp
+            usedAvailable$trackFreq <- allIndividualData[[indiID]]$trackFreq
+            usedAvailable$trackDura <- allIndividualData[[indiID]]$trackDura
             
             usedAvailable
             
@@ -183,6 +191,11 @@ area_based_extraction <- function(allIndividualData, optionsList){
             usedAvailablePop$spSamp <- spSamp
             usedAvailablePop$trackFreq <- allIndividualData[[indiID]]$trackFreq
             usedAvailablePop$trackDura <- allIndividualData[[indiID]]$trackDura
+            
+            print("-- Break 4")
+            
+            print(usedAvailable)
+            print(usedAvailablePop)
             
             usedAvailableAll <- rbind(usedAvailable, usedAvailablePop)
             

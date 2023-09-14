@@ -2,91 +2,183 @@
 #'
 #' @name method_pois_inla
 #' @description A
-#' @param availUseData comes from area_based_extraction
+#' @param allIndividualData All simulated movement data
 #' @param sampleGroups list if IDs for the sample groups
 #' @param optionsList options list that will be used to loop through options
-#' @return Population estimates for area based methods.
+#' @return Population estimates using a Poisson model.
 #'
 #' @export
-method_pois_inla <- function(availUseData, sampleGroups, optionsList){
+method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
+  
+  landscape <- allIndividualData$landscape
   
   optionsForm <- optionsList$MethodPois_mf
-  optionsApoints <- optionsList$MethodPois_as
+  optionsASteps <- optionsList$MethodPois_as
+  optionsStepD <- optionsList$MethodPois_sd
+  optionsTurnD <- optionsList$MethodPois_td
   
-  # listLength <- length(optionsType)*
-  #   length(optionsMethod)*
-  #   length(optionsContour)*
-  #   length(optionsAPoints)*
-  #   length(optionsSPSamp)*
-  #   length(optionsTest)
-  # 
-  # companaResultsList <- vector("list", length = listLength)
-  # i <- 0
-  # for(typ in optionsType){
-  #   for(met in optionsMethod){
-  #     for(con in optionsContour){
-  #       for(aPo in optionsAPoints){
-  #         for(spS in optionsSPSamp){
-  #           
-  #           for(sampID in names(sampleGroups)){
-  #             
-  #             IDs <- optionsList_samples[[sampID]]
-  #             
-  #             IDs <- paste0("simData_i", sprintf("%03d", IDs))
-  #             
-  #             use <- availUseData %>% 
-  #               filter(type == typ,
-  #                      method == met,
-  #                      contour == con,
-  #                      aPoints == aPo,
-  #                      spSamp == spS) %>% 
-  #               filter(id %in% IDs) %>% 
-  #               select(used_c0, used_c2)
-  #             
-  #             avail <- availUseData %>% 
-  #               filter(type == typ,
-  #                      method == met,
-  #                      contour == con,
-  #                      aPoints == aPo,
-  #                      spSamp == spS) %>% 
-  #               filter(id %in% IDs) %>% 
-  #               select(avail_c0, avail_c2)
-  #             
-  #             names(use) <- c("c0", "c2")
-  #             names(avail) <- c("c0", "c2")
-  #             
-  #             for(tes in optionsTest){
-  #               
-  #               companaOUT <- compana(used = use, avail = avail,
-  #                                     test = tes)
-  #               
-  #               companaResultsDF <- data.frame(
-  #                 sampleID = sampID,
-  #                 sampleSize = length(IDs),
-  #                 type = typ,
-  #                 areaMethod = met,
-  #                 contour = con,
-  #                 aPoints = aPo,
-  #                 spSamp = spS,
-  #                 test = tes,
-  #                 companaLambda = companaOUT$test["Lambda"],
-  #                 companaP = companaOUT$test["P"]
-  #               )
-  #               
-  #               i <- i+1
-  #               
-  #               companaResultsList[[i]] <- companaResultsDF
-  #               
-  #             } # tes
-  #             
-  #           } # samp
-  #           
-  #         }
-  #       }
-  #     }
-  #   }
-  # }
-  # 
-  # return(do.call(rbind, companaResultsList))
+  listLength <- length(optionsForm) *
+    length(optionsASteps) *
+    length(optionsStepD) *
+    length(optionsTurnD) *
+    length(names(sampleGroups))
   
+  inlaOUTList <- vector("list", length = listLength)
+  i <- 0
+  for(sampID in names(sampleGroups)){
+    # sampID <- "samp13"
+    IDs <- optionsList_samples[[sampID]]
+    IDs <- paste0("simData_i", sprintf("%03d", IDs))
+    
+    sampledIndividualData <- allIndividualData[names(allIndividualData) %in% IDs]
+    
+    movementData <- do.call(rbind, lapply(sampledIndividualData, function(x){
+      x$locations
+    }))
+    
+    print("--- movementData subsampled")
+    
+    # select only the information we need
+    movementData <- movementData %>% 
+      dplyr::mutate(datetime = as.POSIXct(datetime, format = "%y-%m-%d %H:%M:%S",
+                                          tz = "UTC")) %>% 
+      dplyr::select("x" = x, "y" = y,
+                    "t" = datetime, "id" = id) %>% 
+      dplyr::group_by(id) %>% 
+      dplyr::arrange(t)
+    
+    # separate the individuals out into a list-column of dataframes, each item an animal
+    movementDataNest <- movementData %>% 
+      nest(data = -id) 
+    
+    # map operates a lot like an apply or loop. It repeats the function to each item
+    # in the list. In this case we make all the individual dataframes into track
+    # objects. Check dat_all to see the list of dataframes now has a second
+    # dataframe/tibble for the track.
+    movementDataNest <- movementDataNest %>% 
+      mutate(trk = map(data, function(d){
+        make_track(d, .x = x, .y = y, .t = t, crs = 32601)
+      }))
+    
+    # Here the summarize_sampling_rate is repeated on each track object to give you
+    # an individual level summary.
+    # movementData %>%
+    #   mutate(sr = lapply(trk, summarize_sampling_rate)) %>%
+    #   dplyr::select(id, sr) %>%
+    #   unnest(cols = c(sr))
+    
+    for(as in optionsASteps){
+      
+      for(sd in optionsStepD){
+        
+        for(td in optionsTurnD){
+          
+          # had to modify the code and avoid map to make sure the distributions are
+          # based on a single individual, issues with the sl_ and ta_ being passed to
+          # the fit_distr functions inside map
+          allTracksList <- vector("list", length = length(movementDataNest$id))
+          names(allTracksList) <- movementDataNest$id
+          for(indiID in movementDataNest$id){
+            # indiID <- "BADGER_i001"
+            # which(movementDataNest$id == indiID)
+            
+            indiTrack <- movementDataNest$trk[[which(movementDataNest$id == indiID)]] %>% 
+              steps() %>% 
+              filter(sl_>0)
+            
+            indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
+              random_steps(
+                n_control = as,
+                sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
+                ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
+              ) %>% 
+              extract_covariates(landscape$classRaster) %>% 
+              mutate(id = indiID)
+            
+            allTracksList[[indiID]] <- indiTrackCov
+          }
+          poisModelData <- do.call(rbind, allTracksList)
+          
+          print("--- poisModelData generated")
+          
+          poisModelData <- poisModelData %>% 
+            mutate(
+              y = as.numeric(case_),
+              id = as.numeric(factor(id)), 
+              step_id = paste0(id, step_id_, sep = "-"),
+              cos_ta = cos(ta_), 
+              log_sl = log(sl_),
+              layer = factor(paste0("c", layer)))
+          
+          # We can run the INLA model using the priors and set-up from Muff et al.
+          # Precision for the priors of slope coefficients
+          prec.beta.trls <- 1e-4
+          
+          for(form in optionsForm){
+            if(form == "mf.is"){
+              
+              inlaFormula <- y ~ -1 + 
+                layer + # fixed covariate effect
+                layer:log_sl + # covar iteractions
+                layer:cos_ta + 
+                f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
+                f(id, layer, values = 1:length(unique(poisModelData$id)), model="iid",
+                  hyper = list(theta = list(initial = log(1), fixed = FALSE, 
+                                            prior = "pc.prec", param = c(1, 0.05)))) 
+              
+            } else if(form == "mf.ss"){
+              
+              inlaFormula <- y ~ -1 + 
+                layer + # fixed covariate effect
+                f(step_id, model="iid", hyper = list(theta = list(initial = log(1e-6), fixed = TRUE))) +
+                f(id, layer, values = 1:length(unique(poisModelData$id)), model="iid",
+                  hyper = list(theta = list(initial = log(1), fixed = FALSE, 
+                                            prior = "pc.prec", param = c(1, 0.05)))) 
+            } # if else end
+            
+            # natural model
+            inlaOUT <- inla(inlaFormula,
+                            family = "Poisson",
+                            data = poisModelData, #verbose=TRUE,
+                            control.fixed = list(
+                              mean = 0,
+                              prec = list(default = prec.beta.trls)))
+            
+            
+            inlaResults <- inlaOUT$summary.fixed[2,]
+            inlaResults$term <- row.names(inlaResults)
+            names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
+                                    "mode", "kld", "term")
+            inlaResults$mmarginal <- inla_mmarginal(inlaOUT)
+            inlaResults$emarginal <- inla_emarginal(inlaOUT)
+            
+            print(inlaResults)
+            
+            optionsInfo <-
+              data.frame(
+                sampleID = sampID,
+                sampleSize = length(IDs),
+                trackFreq = allIndividualData[[2]]$trackFreq,
+                trackDura = allIndividualData[[2]]$trackDura,
+                analysis = "Poisson",
+                modelForm = form,
+                availablePerStep = as,
+                stepDist = sd,
+                turnDist = td
+              )
+            
+            print(optionsInfo)
+            print("INLA Results")
+            
+            combinedResults <- cbind(optionsInfo,
+                                     inlaResults)
+            i <- i + 1
+            inlaOUTList[[i]] <- combinedResults
+            
+          }
+        }
+      }
+    }
+  }
+  return(do.call(rbind, inlaOUTList))
 }

@@ -11,7 +11,13 @@ library(tidyselect)
 
 # Set target options:
 tar_option_set(
-  packages = c("tibble", "qs", "abmAnimalMovement"), # packages that your targets need to run
+  packages = c("tibble",
+               "qs",
+               "dplyr",
+               "abmAnimalMovement",
+               "INLA",
+               "adehabitatHS",
+               "amt"), # packages that your targets need to run
   garbage_collection = TRUE,
   format = "qs", # storage format
   storage = "worker",
@@ -85,18 +91,29 @@ optionsList_ssfCombine <- list(
 )
 
 optionsList_pois <- list(
+  MethodPois_mf = c("mf.is"),
+  MethodPois_sd = c("gamma"),
+  MethodPois_td = c("vonmises"),
   MethodPois_as = 10
+  # MethodPois_mf = c("mf.is", "mf.ss")
+  # MethodPois_as = 10
+  # MethodPois_sd = c("gamma", "exp")
+  # MethodPois_td = c("vonmises", "unif")
 )
 
-values_Sample <-
-  list(sampleSize = rep(c(5,10,15,25,45), each = 3))
-# c(5,10,20,40)
 
-set.seed(1)
+# Sampling set-up ---------------------------------------------------------
 
-optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
-  sample(1:50, x, replace = FALSE)
-})
+# values_Sample <-
+#   list(sampleSize = rep(c(5,10,15,25,45), each = 3))
+# 
+# set.seed(1)
+# 
+# optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
+#   sample(1:50, x, replace = FALSE)
+# })
+
+optionsList_samples <- list(c(1,2))
 
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 
@@ -164,14 +181,12 @@ coreMultiverse <- list(
     tar_target(ssfOUT,
                wrapper_indi_ssf(
                  allIndividualData = sampDuraFreqData,
-                 # landscape = allIndividualsList$landscape,
                  optionsList = optionsList_sff
                ),
                priority = 0.9),
     tar_target(poisOUT,
-               wrapper_pois_model(
+               method_pois_inla(
                  allIndividualData = sampDuraFreqData,
-                 landscape = allIndividualsList$landscape,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
                priority = 0.9)
