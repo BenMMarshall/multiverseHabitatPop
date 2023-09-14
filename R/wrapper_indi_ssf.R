@@ -67,6 +67,8 @@ wrapper_indi_ssf <- function(
             
             i <- i+1
             
+            # optionsData
+            
             listOUT[[i]] <- data.frame(
               id = movementData$id[1],
               Estimate = ssfOUT$Estimate,
