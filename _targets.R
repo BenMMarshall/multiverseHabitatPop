@@ -197,7 +197,7 @@ ssfCompiled <- list(
   tar_combine(
     ssfResults,
     coreMultiverse[[1]][grep("ssfOUT", names(coreMultiverse[[1]]))],
-    command = rbind(!!!.x),
+    command = list(!!!.x),
     priority = 0.8
   ),
   tar_target(

@@ -25,7 +25,7 @@ wrapper_indi_ssf <- function(
   MethodSSF_as <- optionsList_sff$MethodSSF_as
     
   landscape <- allIndividualData$landscape
-    
+  
   indiSSFResults <- vector("list", length = length(names(allIndividualData))-1)
   names(indiSSFResults) <- names(allIndividualData)[-1]
   for(indiID in names(allIndividualData)){
@@ -37,14 +37,12 @@ wrapper_indi_ssf <- function(
     # indiID <- "simData_i001"
     movementData <- allIndividualData[[indiID]]$locations
     
-    # ssf places
-    listSize <- length(MethodSSF_mf) *
-      length(MethodSSF_sd) *
-      length(MethodSSF_td) *
-      length(MethodSSF_as)
+  # ssf places
+  listSize <- length(MethodSSF_mf) *
+    length(MethodSSF_sd) *
+    length(MethodSSF_td) *
+    length(MethodSSF_as)
     
-    ## loop is better than an apply function as the for loop reduces the number of
-    ## times the AKDE fit is ran
     listOUT <- vector("list",
                       length = listSize)
     i <- 0
@@ -65,15 +63,16 @@ wrapper_indi_ssf <- function(
               availableSteps = as
             )
             
-            i <- i+1
+            ssfDF <- as.data.frame(summary(ssfOUT)$coef)
+            method <- rep("ssf", nrow(ssfDF))
+            ssfDF <- cbind(ssfDF, method)
+            ssfEst <- multiverseHabitat::extract_estimate(ssfDF)
             
-            # optionsData
-            
-            listOUT[[i]] <- data.frame(
+            optionsData <- data.frame(
               id = movementData$id[1],
-              Estimate = ssfOUT$Estimate,
-              Lower = ssfOUT$Estimate - ssfOUT$SE,
-              Upper = ssfOUT$Estimate + ssfOUT$SE,
+              Estimate = ssfEst$Estimate,
+              Lower = ssfEst$Estimate - ssfEst$SE,
+              Upper = ssfEst$Estimate + ssfEst$SE,
               analysis = "ssf",
               modelForm = mf,
               stepDist = sd,
@@ -82,15 +81,21 @@ wrapper_indi_ssf <- function(
               trackFreq = allIndividualData[[indiID]]$trackFreq,
               trackDura = allIndividualData[[indiID]]$trackDura
             )
+            
+            ssfOUT$options <- optionsData
+            
+            i <- i+1
+            listOUT[[i]] <- ssfOUT
             # print(i)
           } # as
         } # sd
       } # td
     } # mf
-    indiSSFResults[[indiID]] <- do.call(rbind, listOUT)
+    indiSSFResults[[indiID]] <- do.call(list, listOUT)
   }
   
-  allIndiSSFResults <- do.call(rbind, indiSSFResults)
+  # allIndiSSFResults <- do.call(list, indiSSFResults)
   
-  return(allIndiSSFResults)
+  # return(allIndiSSFResults)
+  return(indiSSFResults)
 }

@@ -71,9 +71,9 @@ method_indi_ssf <- function(
                           formula = mFormFull,
                           model = TRUE)
 
-  ssfDF <- as.data.frame(summary(ssfOUT)$coef)
-  method <- rep("ssf", nrow(ssfDF))
-  ssfDF <- cbind(ssfDF, method)
-
-  return(multiverseHabitat::extract_estimate(ssfDF))
+  # ssfDF <- as.data.frame(summary(ssfOUT)$coef)
+  # method <- rep("ssf", nrow(ssfDF))
+  # ssfDF <- cbind(ssfDF, method)
+  # return(multiverseHabitat::extract_estimate(ssfDF))
+  return(ssfOUT)
 }

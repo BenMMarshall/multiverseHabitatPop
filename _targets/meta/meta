@@ -21,7 +21,7 @@ individualSimulationsList|object|6e2ab2c33f4bf747|||||||||||||||
 inla_emarginal|function|ff247354aa4b7ddc|||||||||||||||
 inla_mmarginal|function|e30098e3156a8f15|||||||||||||||
 landscape_BADGER|stem|c8c094fdf4b6aae2|812745949c3cd6fe|4a30383cefdbd23b|1817666615||t19608.6523201487s|2a1ee771edd8105f|63100010|qs|local|vector|||36.44|package qs was built under R version 4.2.3|
-method_indi_ssf|function|418a62bbf2276322|||||||||||||||
+method_indi_ssf|function|c524a623e606a814|||||||||||||||
 method_pois_inla|function|4a8d803e14b9a125|||||||||||||||
 optionsList_area|object|533a05c5a052ce4c|||||||||||||||
 optionsList_areaMethods|object|4ce5d305f253f23b|||||||||||||||
@@ -42,16 +42,16 @@ simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|00d457e90597f43c|2948
 simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|00d457e90597f43c|1071611024||t19608.6525630594s|53d5ce409996b656|223090792|qs|local|vector|||17.66||
 simulate_individual|function|21e0b6b951f30103|||||||||||||||
 simulate_landscape|function|1cff04aac8fa1e86|||||||||||||||
-ssfCompiled|object|f951e76972f9e196|||||||||||||||
-ssfOUT_15_1|stem|d43cdbf2d03c7143|7cc402571a7ab61c|7d13be123d504d3f|-441416508||t19612.686924044s|cb91aba74fec518e|303|qs|local|vector|||7.78|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_15_6|stem|416a3d71e74156fc|9f377c4df605224d|cf3fda10d6f33804|1204898056||t19614.6803047125s|cb91aba74fec518e|303|qs|local|vector|||0.37|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_60_1|stem|2ab41971a1837cb5|07e68a5e3765902a|ac9161ab921df51b|1205403597||t19614.6803468211s|21cb808e5a67bfdb|302|qs|local|vector|||2.09|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfOUT_60_6|stem|95bac3165490e107|99d12dbed04af28c|5956defa3326d28a|2118642858||t19614.6803701187s|cb91aba74fec518e|303|qs|local|vector|||0.45|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfResults|stem|3dfe0fa054352a9e|0283523e774a55d6|7b4b41652325ca77|1439985569||t19614.6803736801s|3ec09374b5058a60|507|qs|local|vector|||0||
+ssfCompiled|object|7ba582d4f9187dfd|||||||||||||||
+ssfOUT_15_1|stem|44e55080ed315fdf|7cc402571a7ab61c|a1244bde8b34df66|-441416508||t19614.8492589405s|7f3d1f824558644c|127009955|qs|local|vector|||0.83|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_15_6|stem|0d6f167f45c14a52|9f377c4df605224d|c1b68ba6e9de60a7|1204898056||t19614.8493633547s|f9f3d9fd38513019|126322315|qs|local|vector|||0.23|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_1|stem|2eb580313f0be42a|07e68a5e3765902a|e6138e61358f900e|1205403597||t19614.8494896303s|776fcb3965bc8d9c|129585969|qs|local|vector|||2.16|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfOUT_60_6|stem|7ba3a074fde663c8|99d12dbed04af28c|59ff299d2ff9f15c|2118642858||t19614.8495956796s|4554c342491402f3|126715523|qs|local|vector|||0.45|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
+ssfResults|stem|16df066f0304eaee|d0362cd9f591c223|bfc5a0c3987554ee|1439985569||t19614.8497903632s|0425c0d371d7ef4c|509982894|qs|local|vector|||0||
 subset_duration|function|14c82ee0e580baa0|||||||||||||||
 subset_frequency|function|ca568cee7cde4b60|||||||||||||||
 values_Regime|object|526912577d903d3e|||||||||||||||
 values_Sample|object|028bb8c87d6c013b|||||||||||||||
 values_SimIndi|object|8e76485af954e6ac|||||||||||||||
 values_SimSpecies|object|90da690c81663e8f|||||||||||||||
-wrapper_indi_ssf|function|28a7617820489b8a|||||||||||||||
+wrapper_indi_ssf|function|2d75b530a58bd8ab|||||||||||||||
