@@ -17,7 +17,11 @@ tar_option_set(
                "abmAnimalMovement",
                "INLA",
                "adehabitatHS",
-               "amt"), # packages that your targets need to run
+               "amt",
+               "here",
+               "ggplot2",
+               "patchwork"
+               ), # packages that your targets need to run
   garbage_collection = TRUE,
   format = "qs", # storage format
   storage = "worker",
@@ -58,17 +62,6 @@ values_Regime <- values_Regime %>%
   dplyr::filter(datapoints > 30) %>%
   dplyr::select(td, tf)
 
-optionsList_sff <- list(
-  Method_method = c("ssf"),
-  MethodSSF_mf = c("mf.is"),
-  MethodSSF_sd = c("gamma"),
-  MethodSSF_td = c("vonmises"),
-  MethodSSF_as = 10
-  # MethodSSF_mf = c("mf.is", "mf.ss"),
-  # MethodSSF_sd = c("gamma", "exp"),
-  # MethodSSF_td = c("vonmises", "unif"),
-  # MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1))
-)
 
 optionsList_area <- list(
   areaMethod = c("MCP", "AKDE"),
@@ -82,12 +75,16 @@ optionsList_areaMethods <- list(
   areaBasedTest = c("randomisation", "parametric")
 )
 
-# optionsList_pois <- list(
-#   
-# )
-
-optionsList_ssfCombine <- list(
-  weighted = c("weighted", "notweigthed")
+optionsList_sff <- list(
+  Method_method = c("ssf"),
+  MethodSSF_mf = c("mf.is"),
+  MethodSSF_sd = c("gamma"),
+  MethodSSF_td = c("vonmises"),
+  MethodSSF_as = 10
+  # MethodSSF_mf = c("mf.is", "mf.ss"),
+  # MethodSSF_sd = c("gamma", "exp"),
+  # MethodSSF_td = c("vonmises", "unif"),
+  # MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1))
 )
 
 optionsList_pois <- list(
@@ -204,24 +201,48 @@ ssfCompiled <- list(
     ssfSampled,
     sample_ssf_results(
       ssfResults,
-      sampleGroups = optionsList_samples,
-      optionsList = optionsList_ssfCombine
+      sampleGroups = optionsList_samples
+    )
+  ),
+  tar_target(
+    ssfSpecCurve,
+    generate_spec_curves(
+      outputResults = ssfSampled,
+      method = "ssf"
     )
   )
 )
 
-poisCompiled <- tar_combine(
-  poisResults,
-  coreMultiverse[[1]][grep("poisOUT", names(coreMultiverse[[1]]))],
-  command = rbind(!!!.x),
-  priority = 0.8
+poisCompiled <- list(
+  tar_combine(
+    poisResults,
+    coreMultiverse[[1]][grep("poisOUT", names(coreMultiverse[[1]]))],
+    command = rbind(!!!.x),
+    priority = 0.8
+  ),
+  tar_target(
+    poisSpecCurve,
+    generate_spec_curves(
+      outputResults = poisResults,
+      method = "pois"
+    )
+  )
 )
 
-areaBeasedCompiled <- tar_combine(
-  areaBasedResults,
-  coreMultiverse[[1]][grep("areaBasedOUT", names(coreMultiverse[[1]]))],
-  command = rbind(!!!.x),
-  priority = 0.8
+areaBeasedCompiled <- list(
+  tar_combine(
+    areaBasedResults,
+    coreMultiverse[[1]][grep("areaBasedOUT", names(coreMultiverse[[1]]))],
+    command = rbind(!!!.x),
+    priority = 0.8
+  ),
+  tar_target(
+    areaSpecCurve,
+    generate_spec_curves(
+      outputResults = areaBasedResults,
+      method = "area"
+    )
+  )
 )
 
 # All targets lists -------------------------------------------------------

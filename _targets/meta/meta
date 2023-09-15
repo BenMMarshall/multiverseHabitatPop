@@ -1,7 +1,7 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 .Random.seed|object|82f67dc0bf7950bd|||||||||||||||
 allIndividuals|stem|79bc1c42390f4dfb|b1ccd66ed4663407|30f010d32ce38007|1967870275||t19608.6529509953s|dfe93075d44f4731|509791269|qs|local|vector|||0||
-allIndividualsList|object|9cd4e26a7052017b|||||||||||||||
+allIndividualsList|object|065dd1e7c98147ff|||||||||||||||
 area_based_calculations|function|7adaa78724a08159|||||||||||||||
 area_based_extraction|function|a7614bb6c0d445e9|||||||||||||||
 areaBasedAvailUse_15_1|stem|6c6ac0b9787a5076|3f7f0529f50966c6|2665119532c2e3a7|-1750172829||t19614.6634451271s|813a0d7697333517|548|qs|local|vector|||96.23|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. Nested shells at or near point 1105.9104073999999 849.08270637999999. Invalid objects found consider using set_RGEOS_CheckValidity2L. GEOS support is provided by the sf and terra packages among others|
@@ -13,11 +13,14 @@ areaBasedOUT_15_6|stem|29aac51d21820238|dbeceed7fb2aa4ff|f64679581b639af7|610746
 areaBasedOUT_60_1|stem|0ec75f794a9a1f21|45360a99ea6035d3|a05764066cfbb28c|-1762884995||t19614.6766843501s|279168da361054c9|1369|qs|local|vector|||1.94||
 areaBasedOUT_60_6|stem|f44f4361f1a32ff8|d7cac1082b96c723|338f224612ca2910|355172109||t19614.6767098314s|e2de213b2244b61a|1373|qs|local|vector|||1.94||
 areaBasedResults|stem|48a6b5b5436f58c2|e6c0e3c128a58a9d|7c5154100bf7f90f|-1629814325||t19614.6767130256s|73845e99b4580adb|4493|qs|local|vector|||0||
+areaBeasedCompiled|object|1d1e8f524b330e97|||||||||||||||
+areaSpecCurve|stem|87caf2534bdddbd9|28b703ae536b9545|45bbc0834c14cab9|1652047344||t19615.6850405433s|db614d450bbbe2e0|146885|qs|local|vector|||3.41||
 build_available_area|function|7762b2ec3d2e7353|||||||||||||||
 build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
-coreMultiverse|object|09a16c65c714a9d0|||||||||||||||
-individualSimulations|object|24f66b20aa871c1a|||||||||||||||
-individualSimulationsList|object|6e2ab2c33f4bf747|||||||||||||||
+coreMultiverse|object|de7eaa0e2d759049|||||||||||||||
+generate_spec_curves|function|da1231475328ea53|||||||||||||||
+individualSimulations|object|4f77ddd362e190c0|||||||||||||||
+individualSimulationsList|object|690e0ae62139f725|||||||||||||||
 inla_emarginal|function|ff247354aa4b7ddc|||||||||||||||
 inla_mmarginal|function|e30098e3156a8f15|||||||||||||||
 landscape_BADGER|stem|c8c094fdf4b6aae2|812745949c3cd6fe|4a30383cefdbd23b|1817666615||t19608.6523201487s|2a1ee771edd8105f|63100010|qs|local|vector|||36.44|package qs was built under R version 4.2.3|
@@ -29,25 +32,30 @@ optionsList_pois|object|63a400817f237495|||||||||||||||
 optionsList_samples|object|914d1e5daac69897|||||||||||||||
 optionsList_sff|object|c112c225cd86affd|||||||||||||||
 optionsList_ssfCombine|object|19fb603771e759e1|||||||||||||||
+poisCompiled|object|8e7be48f7ca7907f|||||||||||||||
 poisOUT_15_1|stem|216e8a922fea6376|70605fe592ba61e4|58f3588899be1fcc|1568208842||t19614.650776832s|b81895e14878e86f|359|qs|local|vector|||2.74|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated|
 poisOUT_15_6|stem|df0f9aca0e181180|a95f47de657ea7c8|fe19b11b2a866f14|-197876409||t19614.679497081s|253d6f95309bef1a|362|qs|local|vector|||1.89|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value|
 poisOUT_60_1|stem|55ae7db87e54df5a|74a5f8af532fffc5|aa73c4d432b301d4|1246697636||t19614.6795849032s|b4cfbff6ad8d48ed|358|qs|local|vector|||5.92|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. NAInf replaced by maximum positive value|
 poisOUT_60_6|stem|c11de74da90c06f1|2833a3d25df486fc|6c98849f96cd921d|-1615346820||t19614.6796279489s|b81895e14878e86f|359|qs|local|vector|||2.02|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value|
 poisResults|stem|80256350b0bebfa5|6e2397e3359b549f|05d95a9d52ce5114|1725291469||t19614.6796320242s|5a04a2bfcda35a41|611|qs|local|vector|||0||
+poisSpecCurve|stem|4146ad3917a156fc|d87bc14f3f2ef8b6|6e1705fd158feff8|-238487644||t19615.6850741761s|854fe6f0a4fe46b5|89298|qs|local|vector|||1.1||
 sampDuraFreqData_15_1|stem|c3cd88fb9022300e|37b39cb3ade4618d|8a68e8dd5dda0897|1651523239||t19608.6540765594s|6584a7e04331b330|481219517|qs|local|vector|||19.86||
 sampDuraFreqData_15_6|stem|5812364b480286c5|87770f39b65c191f|8a68e8dd5dda0897|1928519544||t19608.6537116492s|0d692b788658515b|481185876|qs|local|vector|||19.81||
 sampDuraFreqData_60_1|stem|f7e266fae3e66d4e|029173fac311bb86|8a68e8dd5dda0897|1495110650||t19608.6544251623s|1f6e862c01af6e5a|481297047|qs|local|vector|||19.65||
 sampDuraFreqData_60_6|stem|9429ed6fc1299476|7ca72506aa3b5f4a|8a68e8dd5dda0897|-204093084||t19608.6533210225s|9b4bd26edde5c10f|481198147|qs|local|vector|||19.87||
+sample_ssf_results|function|9a4598de518efe5a|||||||||||||||
 simData_i001_BADGER|stem|a004572578204e77|c36d334a60b71ed3|00d457e90597f43c|294808334||t19608.6528196996s|c9af47a89831f9f1|223615775|qs|local|vector|||16.92||
 simData_i002_BADGER|stem|34f6337155ba4745|5b231a518adf8526|00d457e90597f43c|1071611024||t19608.6525630594s|53d5ce409996b656|223090792|qs|local|vector|||17.66||
 simulate_individual|function|21e0b6b951f30103|||||||||||||||
 simulate_landscape|function|1cff04aac8fa1e86|||||||||||||||
-ssfCompiled|object|7ba582d4f9187dfd|||||||||||||||
+ssfCompiled|object|8fdc8d94c3d93c16|||||||||||||||
 ssfOUT_15_1|stem|44e55080ed315fdf|7cc402571a7ab61c|a1244bde8b34df66|-441416508||t19614.8492589405s|7f3d1f824558644c|127009955|qs|local|vector|||0.83|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_15_6|stem|0d6f167f45c14a52|9f377c4df605224d|c1b68ba6e9de60a7|1204898056||t19614.8493633547s|f9f3d9fd38513019|126322315|qs|local|vector|||0.23|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_60_1|stem|2eb580313f0be42a|07e68a5e3765902a|e6138e61358f900e|1205403597||t19614.8494896303s|776fcb3965bc8d9c|129585969|qs|local|vector|||2.16|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_60_6|stem|7ba3a074fde663c8|99d12dbed04af28c|59ff299d2ff9f15c|2118642858||t19614.8495956796s|4554c342491402f3|126715523|qs|local|vector|||0.45|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfResults|stem|16df066f0304eaee|d0362cd9f591c223|bfc5a0c3987554ee|1439985569||t19614.8497903632s|0425c0d371d7ef4c|509982894|qs|local|vector|||0||
+ssfSampled|stem|113d9c8bfea6ca1a|ca55c6f7ea526b57|d58bc081999c9663|-1360199467||t19615.6355770471s|b44c136b29c9a3ce|606|qs|local|vector|||0.17||
+ssfSpecCurve|stem|c0935af4afe3325e|bc168bd7dcce9399|93a086689ba59b18|1042035600||t19615.6850579428s|6454ce2994dc458f|88713|qs|local|vector|||1.2||
 subset_duration|function|14c82ee0e580baa0|||||||||||||||
 subset_frequency|function|ca568cee7cde4b60|||||||||||||||
 values_Regime|object|526912577d903d3e|||||||||||||||
