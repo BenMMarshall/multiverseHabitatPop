@@ -213,6 +213,12 @@ ssfCompiled <- list(
       outputResults = ssfSampled,
       method = "ssf"
     )
+  ),
+  tar_target(
+    ssfBrms,
+    run_brms(
+      resultsData = ssfSampled
+    )
   )
 )
 
@@ -229,6 +235,12 @@ poisCompiled <- list(
       outputResults = poisResults,
       method = "pois"
     )
+  ),
+  tar_target(
+    poisBrms,
+    run_brms(
+      resultsData = poisResults
+    )
   )
 )
 
@@ -244,6 +256,12 @@ areaBeasedCompiled <- list(
     generate_spec_curves(
       outputResults = areaBasedResults,
       method = "area"
+    )
+  ),
+  tar_target(
+    areaBrms,
+    run_brms(
+      resultsData = areaBasedResults
     )
   )
 )
