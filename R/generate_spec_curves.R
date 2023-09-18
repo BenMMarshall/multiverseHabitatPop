@@ -27,12 +27,12 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$trackFreq)),
       sort(unique(outputResults$trackDura)),
       sort(unique(outputResults$modelFormula)),
-      sort(unique(outputResults$availableSteps)),
+      sort(unique(outputResults$availablePerStep)),
       sort(unique(outputResults$stepDist)),
       sort(unique(outputResults$turnDist))))
     
     outputPlotData <- outputResults %>% 
-      dplyr::select(-method, -sampleID) %>% 
+      dplyr::select(-analysis, -sampleID) %>% 
       dplyr::mutate(across(1:8, as.character)) %>% 
       tidyr::pivot_longer(cols = 1:8, names_to = "variable") %>% 
       dplyr::mutate(
@@ -71,8 +71,8 @@ generate_spec_curves <- function(outputResults, method){
       unique(outputResults$type),
       unique(outputResults$areaMethod),
       sort(unique(outputResults$contour)),
-      sort(unique(outputResults$aPoints)),
-      sort(unique(outputResults$spSamp)),
+      sort(unique(outputResults$availablePoints)),
+      sort(unique(outputResults$samplingPattern)),
       sort(unique(outputResults$test))))
     
     outputPlotData <- outputResults %>% 
@@ -85,8 +85,8 @@ generate_spec_curves <- function(outputResults, method){
           variable == "trackFreq" ~ "Tracking Frequency (points/hour)",
           variable == "sampleSize" ~ "Sample Size (n)",
           variable == "type" ~ "Type II or Type III Habitat Selection",
-          variable == "aPoints" ~ "Available Points Multiplier",
-          variable == "spSamp" ~ "Sampling Pattern",
+          variable == "availablePoints" ~ "Available Points Multiplier",
+          variable == "samplingPattern" ~ "Sampling Pattern",
           variable == "test" ~ "Compana Test Method",
           variable == "contour" ~ "Available Area Contour (%)",
           variable == "areaMethod" ~ "Available Area Method"
@@ -113,7 +113,7 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$sampleSize)),
       sort(unique(outputResults$trackFreq)),
       sort(unique(outputResults$trackDura)),
-      sort(unique(outputResults$modelForm)),
+      sort(unique(outputResults$modelFormula)),
       sort(unique(outputResults$availablePerStep)),
       sort(unique(outputResults$stepDist)),
       sort(unique(outputResults$turnDist))))

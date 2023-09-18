@@ -161,7 +161,7 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
                 trackFreq = allIndividualData[[2]]$trackFreq,
                 trackDura = allIndividualData[[2]]$trackDura,
                 analysis = "Poisson",
-                modelForm = form,
+                modelFormula = form,
                 availablePerStep = as,
                 stepDist = sd,
                 turnDist = td

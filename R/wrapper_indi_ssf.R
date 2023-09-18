@@ -74,7 +74,7 @@ wrapper_indi_ssf <- function(
               Lower = ssfEst$Estimate - ssfEst$SE,
               Upper = ssfEst$Estimate + ssfEst$SE,
               analysis = "ssf",
-              modelForm = mf,
+              modelFormula = mf,
               stepDist = sd,
               turnDist = td,
               availablePerStep = as,

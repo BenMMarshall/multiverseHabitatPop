@@ -13,8 +13,8 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
   optionsType <- unique(availUseData$type)
   optionsMethod <- unique(availUseData$method)
   optionsContour <- unique(availUseData$contour)
-  optionsAPoints <- unique(availUseData$aPoints)
-  optionsSPSamp <- unique(availUseData$spSamp)
+  optionsAPoints <- unique(availUseData$availablePoints)
+  optionsSPSamp <- unique(availUseData$samplingPattern)
   
   # optionsList$areaBasedMethod
   optionsTest <- optionsList$areaBasedTest
@@ -43,22 +43,22 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                             sprintf("%03d", IDs))
               
               use <- availUseData %>% 
-                filter(type == typ,
+                dplyr::filter(type == typ,
                        method == met,
                        contour == con,
-                       aPoints == aPo,
-                       spSamp == spS) %>% 
-                filter(id %in% IDs) %>% 
-                select(used_c0, used_c2)
+                       availablePoints == aPo,
+                       samplingPattern == spS) %>% 
+                dplyr::filter(id %in% IDs) %>% 
+                dplyr::select(used_c0, used_c2)
               
               avail <- availUseData %>% 
-                filter(type == typ,
+                dplyr::filter(type == typ,
                        method == met,
                        contour == con,
-                       aPoints == aPo,
-                       spSamp == spS) %>% 
-                filter(id %in% IDs) %>% 
-                select(avail_c0, avail_c2)
+                       availablePoints == aPo,
+                       samplingPattern == spS) %>% 
+                dplyr::filter(id %in% IDs) %>% 
+                dplyr::select(avail_c0, avail_c2)
               
               names(use) <- c("c0", "c2")
               names(avail) <- c("c0", "c2")
@@ -76,8 +76,8 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                   type = typ,
                   areaMethod = met,
                   contour = con,
-                  aPoints = aPo,
-                  spSamp = spS,
+                  availablePoints = aPo,
+                  samplingPattern = spS,
                   test = tes,
                   companaLambda = companaOUT$test["Lambda"],
                   companaP = companaOUT$test["P"]

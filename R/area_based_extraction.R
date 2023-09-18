@@ -175,8 +175,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
             usedAvailable$type <- "III"
             usedAvailable$method <- method
             usedAvailable$contour <- contour
-            usedAvailable$aPoints <- aPoints
-            usedAvailable$spSamp <- spSamp
+            usedAvailable$availablePoints <- aPoints
+            usedAvailable$samplingPattern <- spSamp
             usedAvailable$trackFreq <- allIndividualData[[indiID]]$trackFreq
             usedAvailable$trackDura <- allIndividualData[[indiID]]$trackDura
             
@@ -187,8 +187,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
             usedAvailablePop$type <- "II"
             usedAvailablePop$method <- method
             usedAvailablePop$contour <- contour
-            usedAvailablePop$aPoints <- aPoints
-            usedAvailablePop$spSamp <- spSamp
+            usedAvailablePop$availablePoints <- aPoints
+            usedAvailablePop$samplingPattern <- spSamp
             usedAvailablePop$trackFreq <- allIndividualData[[indiID]]$trackFreq
             usedAvailablePop$trackDura <- allIndividualData[[indiID]]$trackDura
             

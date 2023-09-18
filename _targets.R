@@ -14,8 +14,10 @@ tar_option_set(
   packages = c("tibble",
                "qs",
                "dplyr",
+               "stringr",
                "abmAnimalMovement",
                "INLA",
+               "MuMIn",
                "adehabitatHS",
                "amt",
                "here",
@@ -45,7 +47,7 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:2))
+  individual = paste0("i", sprintf("%03d", 1:3))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -77,25 +79,24 @@ optionsList_areaMethods <- list(
 
 optionsList_sff <- list(
   Method_method = c("ssf"),
-  MethodSSF_mf = c("mf.is"),
-  MethodSSF_sd = c("gamma"),
-  MethodSSF_td = c("vonmises"),
-  MethodSSF_as = 10
-  # MethodSSF_mf = c("mf.is", "mf.ss"),
-  # MethodSSF_sd = c("gamma", "exp"),
-  # MethodSSF_td = c("vonmises", "unif"),
+  # MethodSSF_mf = c("mf.is"),
+  # MethodSSF_sd = c("gamma"),
+  # MethodSSF_td = c("vonmises"),
+  MethodSSF_as = c(2, 10),
+  MethodSSF_mf = c("mf.is", "mf.ss"),
+  MethodSSF_sd = c("gamma", "exp"),
+  MethodSSF_td = c("vonmises", "unif")
   # MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1))
 )
 
 optionsList_pois <- list(
-  MethodPois_mf = c("mf.is"),
-  MethodPois_sd = c("gamma"),
-  MethodPois_td = c("vonmises"),
-  MethodPois_as = 10
-  # MethodPois_mf = c("mf.is", "mf.ss")
-  # MethodPois_as = 10
-  # MethodPois_sd = c("gamma", "exp")
-  # MethodPois_td = c("vonmises", "unif")
+  # MethodPois_mf = c("mf.is"),
+  # MethodPois_sd = c("gamma"),
+  # MethodPois_td = c("vonmises"),
+  MethodPois_as = c(2, 10),
+  MethodPois_mf = c("mf.is", "mf.ss"),
+  MethodPois_sd = c("gamma", "exp"),
+  MethodPois_td = c("vonmises", "unif")
 )
 
 
@@ -110,7 +111,8 @@ optionsList_pois <- list(
 #   sample(1:50, x, replace = FALSE)
 # })
 
-optionsList_samples <- list(c(1,2))
+optionsList_samples <- list(c(1,2),
+                            c(1,2,3))
 
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 
@@ -201,7 +203,8 @@ ssfCompiled <- list(
     ssfSampled,
     sample_ssf_results(
       ssfResults,
-      sampleGroups = optionsList_samples
+      sampleGroups = optionsList_samples,
+      optionsList = optionsList_sff
     )
   ),
   tar_target(
