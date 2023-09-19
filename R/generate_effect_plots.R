@@ -123,6 +123,7 @@ generate_effect_plots <- function(modelsList){
     
     print(paste0(x, " --- Done"))
     
+    return(effectsPlot)
   })
   
   return(effectsPlotList)

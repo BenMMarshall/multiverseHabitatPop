@@ -289,6 +289,11 @@ brmModelOutputs <- list(
   tar_target(
     effectPlots,
     generate_effect_plots(modelsList = modelsBrms)
+  ),
+  tar_target(
+    rmdRender,
+    render_rmd(modelExtracts, effectPlots),
+    cue = tar_cue(mode = "always")
   )
 )
 

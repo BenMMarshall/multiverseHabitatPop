@@ -1,0 +1,98 @@
+---
+title: "Applying a Multiverse to Population Habitat Analyses"
+author1: "Benjamin Michael Marshall*"
+author2: "Alexander Bradley Duthie**"
+affiliation1: "Biological and Environmental Sciences, Faculty of Natural Sciences, University of Stirling, Stirling, FK9 4LA, Scotland, UK"
+affiliation2: "-"
+corresponding1: "benjaminmichaelmarshall@gmail.com"
+corresponding2: "alexander.duthie@stir.ac.uk"
+date: "`r Sys.Date()`"
+output:
+  bookdown::pdf_document2:
+    template: main.tex
+    keep_tex: true
+    highlight: monochrome
+    fig_caption: true
+    dev: pdf
+  bookdown::html_document2:
+    theme: yeti
+    highlight: monochrome
+    fig_caption: true
+link-citations: yes
+linkcolor: gray
+# bibliography: [multiverse_refs.bib, packages_refs.bib]
+csl: peerj.csl
+editor_options: 
+  markdown: 
+    wrap: sentence
+abstract: abc
+keywords: Movement ecology, simulation, compana, resource selection functions, step selection function, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
+---
+
+# Introduction
+
+abc
+
+# Methods
+
+test
+test
+
+# Results
+
+## Specification Curves
+
+(Fig. \@ref(fig:specCurveArea)).
+
+```{r specCurveArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
+knitr::include_graphics(here::here("notebook", "figures", "area_specCurve.png"))
+```
+
+(Fig. \@ref(fig:specCurveSSF)).
+
+```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
+knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
+```
+
+(Fig. \@ref(fig:specCurvePois)).
+
+```{r specCurvePois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
+knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
+```
+
+## Model Results
+
+The conditional *R^2^* values differed for the three models. The Compana results model had a conditional *R^2^* of `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "areaBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "ssfBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`, and the Poisson model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "poisBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`.
+
+The marginal *R^2^* represents the bulk of the conditional *R^2^* suggesting an important role for the fixed/population effects. The Compana results model had a conditional *R^2^* of `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "areaBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "ssfBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`, and the Poisson model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "poisBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`.
+
+```{r test}
+
+
+
+
+
+```
+The sample size was negatively correlated with deviation from the median estimate ($\beta$ `r round(modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.value, digits = 2)`; 95% HDCI `r paste(round(c(modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.lower, modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.upper), digits = 2), collapse = " - ")`).
+
+
+(Fig. \@ref(fig:effectPlotArea)).
+
+```{r effectPlotArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+
+knitr::include_graphics(here::here("notebook", "figures", "areaBrms_effectsPlot.png"))
+```
+
+(Fig. \@ref(fig:effectPlotSSF)).
+
+```{r effectPlotSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "ssfBrms_effectsPlot.png"))
+```
+
+(Fig. \@ref(fig:effectPlotPois)).
+
+```{r effectPlotPois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "poisBrms_effectsPlot.png"))
+```
+
+# Discussion

@@ -1,0 +1,35 @@
+---
+title: "Applying a Multiverse to Population Habitat Analyses"
+author1: "Benjamin Michael Marshall*"
+author2: "Alexander Bradley Duthie**"
+affiliation1: "Biological and Environmental Sciences, Faculty of Natural Sciences, University of Stirling, Stirling, FK9 4LA, Scotland, UK"
+affiliation2: "-"
+corresponding1: "benjaminmichaelmarshall@gmail.com"
+corresponding2: "alexander.duthie@stir.ac.uk"
+date: "2023-09-19"
+output:
+  bookdown::pdf_document2:
+    template: main.tex
+    keep_tex: true
+    highlight: monochrome
+    fig_caption: true
+    dev: pdf
+  bookdown::html_document2:
+    theme: yeti
+    highlight: monochrome
+    fig_caption: true
+link-citations: yes
+linkcolor: gray
+# bibliography: [multiverse_refs.bib, packages_refs.bib]
+csl: peerj.csl
+editor_options: 
+  markdown: 
+    wrap: sentence
+abstract: abc
+keywords: Movement ecology, simulation, compana, resource selection functions, step selection function, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
+---
+
+abc
+
+test
+test
