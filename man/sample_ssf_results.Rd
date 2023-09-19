@@ -4,7 +4,7 @@
 \alias{sample_ssf_results}
 \title{Sample individual SSF models}
 \usage{
-sample_ssf_results(ssfResults, sampleGroups)
+sample_ssf_results(ssfResults, sampleGroups, optionsList)
 }
 \arguments{
 \item{ssfResults}{all sff models and corresponding options data.frame}

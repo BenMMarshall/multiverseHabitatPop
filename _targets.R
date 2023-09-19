@@ -22,8 +22,10 @@ tar_option_set(
                "amt",
                "here",
                "ggplot2",
-               "patchwork"
-               ), # packages that your targets need to run
+               "patchwork",
+               "bayesplot",
+               "tidybayes"
+  ), # packages that your targets need to run
   garbage_collection = TRUE,
   format = "qs", # storage format
   storage = "worker",
@@ -244,7 +246,7 @@ poisCompiled <- list(
   )
 )
 
-areaBeasedCompiled <- list(
+areaBasedCompiled <- list(
   tar_combine(
     areaBasedResults,
     coreMultiverse[[1]][grep("areaBasedOUT", names(coreMultiverse[[1]]))],
@@ -266,6 +268,31 @@ areaBeasedCompiled <- list(
   )
 )
 
+brmModelOutputs <- list(
+  tar_combine(
+    modelsBrms,
+    # manually pull out the brms model outputs
+    list(ssfCompiled[[4]],
+         areaBasedCompiled[[3]],
+         poisCompiled[[3]]),
+    command = list(!!!.x),
+    priority = 0.5
+  ),
+  tar_target(
+    diagnosticPlots,
+    diagnostics_brms(modelsList = modelsBrms)
+  ),
+  tar_target(
+    modelExtracts,
+    extract_model_values(modelsList = modelsBrms)
+  ),
+  tar_target(
+    effectPlots,
+    generate_effect_plots(modelsList = modelsBrms)
+  )
+)
+
+
 # All targets lists -------------------------------------------------------
 
 list(individualSimulationsList,
@@ -273,7 +300,8 @@ list(individualSimulationsList,
      coreMultiverse,
      ssfCompiled,
      poisCompiled,
-     areaBeasedCompiled
+     areaBasedCompiled,
+     brmModelOutputs
 )
 
 # Examine -----------------------------------------------------------------
