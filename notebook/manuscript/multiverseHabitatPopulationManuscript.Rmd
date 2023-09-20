@@ -20,7 +20,7 @@ output:
     fig_caption: true
 link-citations: yes
 linkcolor: gray
-# bibliography: [multiverse_refs.bib, packages_refs.bib]
+bibliography: [multiversePop_refs.bib, packages_refs.bib]
 csl: peerj.csl
 editor_options: 
   markdown: 
@@ -35,8 +35,46 @@ abc
 
 # Methods
 
-test
-test
+## Simulating the Scenarios
+
+NLMR `r paste0("v.", packageVersion("NLMR"))` package [@NLMR], and the animal movement using abmAnimalMovement `r paste0("v.", packageVersion("abmAnimalMovement"))` [@abmAnimalMovement].
+
+* Landscape simulation.
+
+* abmAnimalMovement settings
+
+## Sampling and Analysis Options
+
+* targets construction
+targets `r paste0("v.", packageVersion("targets"))` and tarchetypes `r paste0("v.", packageVersion("tarchetypes"))` R packages [@targets; @tarchetypes]
+
+### Sampling
+
+* tracking regime
+
+* sample size
+
+### Analysis
+
+* area based: compana, area method, contour, available points, space sampling, type II/III, compana test
+*adehabitatHS* `r paste0("v.", packageVersion("adehabitatHS"))` [@adehabitatHS],
+ctmm package `r paste0("v.", packageVersion("ctmm"))` [@ctmm]
+
+* ssf: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles, Model Averaging Method
+
+amt `r paste0("v.", packageVersion("amt"))` [@amt]
+
+* poisson: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
+
+INLA `r paste0("v.", packageVersion("INLA"))` [@rue_approximate_2009; @lindgren_explicit_2011; @martins_bayesian_2013; @rue_bayesian_2017; @kourounis_towards_2018]
+
+@muff_accounting_2020
+
+## Assessing the multiverse
+
+* spec curves
+
+* brm models: one per each analysis method
 
 # Results
 
@@ -96,3 +134,42 @@ knitr::include_graphics(here::here("notebook", "figures", "poisBrms_effectsPlot.
 ```
 
 # Discussion
+
+## Limitations
+
+## Conclusions
+
+# Acknowledgements
+
+BMM was funded by the Natural Environment Research Council (NERC) via the IAPETUS2 Doctoral Training Partnership.
+
+# Software availablity
+
+In addition to packages already mentioned in the methods we also used the following.
+
+We used *R* `r paste0("v.", version$major, ".", version$minor)` [@base] via *RStudio* v.2023.6.2.561 [@rstudio]. <!-- version has to be manually added because rstudioapi doesn't work in targets -->
+We used *here* `r paste0("v.", packageVersion("here"))` [@here] and *qs* `r paste0("v.", packageVersion("qs"))` [@qs] to manage directory addresses and saved objects.
+
+We used *raster* `r paste0("v.", packageVersion("raster"))` [@raster] and *RandomFields* `r paste0("v.", packageVersion("RandomFields"))` [@RandomFields] to aid landscape raster creation alongside NLMR `r paste0("v.", packageVersion("NLMR"))` [@NLMR].
+
+We used *ggplot2* `r paste0("v.", packageVersion("ggplot2"))` for creating figures [@ggplot2], with the expansions: *patchwork* `r paste0("v.", packageVersion("patchwork"))` [@patchwork], *ggridges* `r paste0("v.", packageVersion("ggridges"))` [@ggridges], and *ggdist* `r paste0("v.", packageVersion("ggdist"))` [@ggdist].
+
+We used *brms* `r paste0("v.", packageVersion("brms"))` [@brms] to run Bayesian models, with dianogistics generated used *bayesplot* `r paste0("v.", packageVersion("bayesplot"))` [@bayesplot], *tidybayes* `r paste0("v.", packageVersion("tidybayes"))` [@tidybayes], and *performance* `r paste0("v.", packageVersion("performance"))` [@performance].
+
+We used the *dplyr* `r paste0("v.", packageVersion("dplyr"))` [@dplyr], *tibble* `r paste0("v.", packageVersion("tibble"))` [@tibble],
+<!-- *reshape2* `r paste0("v.", packageVersion("reshape2"))` [@reshape2], -->
+and *stringr* `r paste0("v.", packageVersion("stringr"))` [@stringr] packages for data manipulation.
+
+We used *sp* `r paste0("v.", packageVersion("sp"))` [@sp], *adehabitatHR* `r paste0("v.", packageVersion("adehabitatHR"))` [@adehabitatHR], *move* `r paste0("v.", packageVersion("move"))` [@move] for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
+
+We used rmarkdown `r paste0("v.", packageVersion("rmarkdown"))` [@rmarkdown2023; @rmarkdown2018; @rmarkdown2020], bookdown `r paste0("v.", packageVersion("bookdown"))` [@bookdown2016; @R-bookdown], tinytex `r paste0("v.", packageVersion("tinytex"))` [@tinytex2019; @tinytex2023], and knitr `r paste0("v.", packageVersion("knitr"))` [@knitr2015; @knitr2014; @knitr2023] packages to generate type-set outputs.
+
+We generated R package citations with the aid of *grateful* `r paste0("v.", packageVersion("grateful"))` [@grateful].
+
+# Data availabilty
+
+<!-- add zenodo archived snapshot of github -->
+
+# Supplementary Material
+
+# References
