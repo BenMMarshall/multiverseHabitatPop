@@ -81,14 +81,27 @@ abc
 \hypertarget{simulating-the-scenarios}{%
 \subsection{Simulating the Scenarios}\label{simulating-the-scenarios}}
 
-NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}), and the animal movement using abmAnimalMovement v.0.1.3.0 (\protect\hyperlink{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}).
-
 \begin{itemize}
 \item
   Landscape simulation.
 \item
   abmAnimalMovement settings
 \end{itemize}
+
+We used the animal movement using abmAnimalMovement v.0.1.3.0 (\protect\hyperlink{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}) to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
+The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guie the animals decisions.
+We used the NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}) to generate the three required resource/environmental rasters: movement resistance, foraging quality, and shelter site quality.
+The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (differing in movement characteristics and resource prioritisation), and site fidelity.
+For the purposes of this study we used one of the pre-created example pseudo-species: Badger, described in the package manuscript.
+In brief, the badger is a terrestrial species occupying several shelter sites, with a 8-12 hour activity cycle with minor seasonal variation, and is subject to differing movement resistance across the landscape.
+
+For the purposes of the analysis we simplified the landscape information into categories --akin to the sort of land-use information more frequently available to researchers of animal movement.
+We focused on foraging quality because it influences the greatest amounts of movement compared to sheltering or exploratory movements.
+We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
+
+We used that simulated landscape and abmAnimalMovement to simulate a population of \_\_\_, that later can be sampled from.
+All individuals of this population had the same simulation settings apart from starting location.
+Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
 
 \hypertarget{sampling-and-analysis-options}{%
 \subsection{Sampling and Analysis Options}\label{sampling-and-analysis-options}}
@@ -97,8 +110,10 @@ NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}), and t
 \tightlist
 \item
   targets construction
-  targets v.0.14.2 and tarchetypes v.0.7.4 R packages (\protect\hyperlink{ref-targets}{Landau, 2021a},\protect\hyperlink{ref-tarchetypes}{b})
 \end{itemize}
+
+To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.0.14.2 and tarchetypes v.0.7.4 R packages (\protect\hyperlink{ref-targets}{Landau, 2021a},\protect\hyperlink{ref-tarchetypes}{b}).
+These packages allowed branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice.
 
 \hypertarget{sampling}{%
 \subsubsection{Sampling}\label{sampling}}
@@ -110,8 +125,23 @@ NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}), and t
   sample size
 \end{itemize}
 
+The first decision in most animal movement studies will be concerning tracking regime.
+This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
+Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (
+), and the total duration of tracking (
+).
+We created subsampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 datapoints per individual.
+
+An important component of assessing population level habitat selection is the number of individuals included in analysis.
+Therefore, we randomly generated a number of samples from our population of \_\_\_ simulated individuals.
+We varied these samples sizes from \_\_\_ to \_\_\_ individuals, and ran \_\_\_ repeats for each size.
+A sample never mixed tracking regimes.
+
 \hypertarget{analysis}{%
 \subsubsection{Analysis}\label{analysis}}
+
+Building on the decisions concerning tracking regime and population sampling, our multiverse expanded dramatically by exploring four primary analysis routes.
+These routes included an area based approach using Compana analysis, and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
 
 \begin{itemize}
 \item
@@ -123,6 +153,14 @@ NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}), and t
 \end{itemize}
 
 amt v.0.1.7 (\protect\hyperlink{ref-amt}{Signer, Fieberg \& Avgar, 2019})
+
+\begin{itemize}
+\tightlist
+\item
+  twoStep: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
+\end{itemize}
+
+TwoStepCLogit v.1.2.5 (\protect\hyperlink{ref-TwoStepCLogit}{Craiu et al., 2016})
 
 \begin{itemize}
 \tightlist
@@ -144,6 +182,18 @@ Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020})
   brm models: one per each analysis method
 \end{itemize}
 
+Specification curves provide an overview of the estimates of a given range of analyses.
+Tighter more steep curves suggest greater agreement between all the analysis end points.
+Here we also plotted the estimates against the different decisions that results in the estimates, allowing direct comparison on how the decision impacts the variation in the estimates.
+
+To better detect the impact of decisions, while accounting for the random variation stemming from the differences in individuals/samples, we ran a number of Bayesian Regression Models.
+The Bayesian Regression Models aimed to describe how much of the deviation from a median answer could be explained by the various sampling and analysis decisions.
+For each analysis route we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
+All continuous variables were scaled to help determine their relative importance to each other.
+For the area based Compana approach the population effects included: the continuous variable contourScaled; and the categoric predictors samplingPatternst, testrandomisation, areaMethodMCP, and typeIII.
+For the step-based approaches they all included: modelFormulamf.ss, stepDistgamma, turnDistvonmises.
+The step-selection model approach also included: averagingMethodNaiveaverage.
+
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
@@ -160,6 +210,12 @@ Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020})
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{Spec curve}\label{fig:specCurveSSF}
+\end{figure}
+
+(Fig. \ref{fig:specCurveTwoStep}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{Spec curve}\label{fig:specCurveTwoStep}
 \end{figure}
 
 (Fig. \ref{fig:specCurvePois}).
@@ -187,6 +243,12 @@ The sample size was negatively correlated with deviation from the median estimat
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/ssfBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotSSF}
+\end{figure}
+
+(Fig. \ref{fig:effectPlotTwoStep}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/twoStepBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotTwoStep}
 \end{figure}
 
 (Fig. \ref{fig:effectPlotPois}).
@@ -261,6 +323,9 @@ Calenge C, Scott Fortmann-Roe contributions from. 2023. \emph{\href{https://CRAN
 
 \leavevmode\vadjust pre{\hypertarget{ref-qs}{}}%
 Ching T. 2023. \emph{\href{https://CRAN.R-project.org/package=qs}{{qs}: Quick serialization of r objects}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-TwoStepCLogit}{}}%
+Craiu RV, Duchesne T, Fortin D, Baillargeon S. 2016. \emph{\href{https://CRAN.R-project.org/package=TwoStepCLogit}{TwoStepCLogit: Conditional logistic regression: A two-step estimation method}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ctmm}{}}%
 Fleming CH, Calabrese JM. 2023. \emph{{ctmm}: Continuous-time movement modeling}.

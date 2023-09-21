@@ -127,6 +127,43 @@ run_brms <- function(resultsData){
                             "absDelta_pois.txt")
     modelFile <- here::here("notebook", "modelOutput",
                             "absDelta_pois")
+    
+  } else if(resultsData$analysis[1] == "TwoStep"){
+    
+    modelData <- resultsData %>% 
+      # track freq translated into the more intuitive track per hour
+      dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
+      dplyr::mutate(medEst = median(twoStepBeta),
+                    absDeltaEst = twoStepBeta - medEst) %>% 
+      dplyr::mutate(
+        sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
+        trackFreqScaled = (trackFreq-mean(trackFreq))/sd(trackFreq),
+        trackDuraScaled = (trackDura-mean(trackDura))/sd(trackDura),
+        availablePerStepScaled  = (availablePerStep - mean(availablePerStep))/sd(availablePerStep)
+      )
+    
+    formAbsDelta <- brms::bf(
+      absDeltaEst ~ 1 + sampleSizeScaled + trackFreqScaled + trackDuraScaled +
+        modelFormula + stepDist + turnDist + availablePerStepScaled +
+        (1|sampleID)
+    )
+    
+    brmpriors <- c(
+      # data quantity decreases deviation from median effect
+      brms::set_prior("cauchy(-0.1, 3)", coef = "sampleSizeScaled"),
+      brms::set_prior("cauchy(-0.1, 3)", coef = "trackFreqScaled"),
+      brms::set_prior("cauchy(-0.1, 3)", coef = "trackDuraScaled"),
+      brms::set_prior("cauchy(-0.1, 3)", coef = "availablePerStepScaled"),
+      # other kept as weak positive priors
+      brms::set_prior("cauchy(0.1, 3)", coef = "modelFormulamf.ss"),
+      brms::set_prior("cauchy(0.1, 3)", coef = "stepDistgamma"),
+      brms::set_prior("cauchy(0.1, 3)", coef = "turnDistvonmises")
+    )
+    
+    modelSave <- here::here("notebook", "modelOutput",
+                            "absDelta_twoStep.txt")
+    modelFile <- here::here("notebook", "modelOutput",
+                            "absDelta_twoStep")
   }
   
   modOUT_absDelta <- brms::brm(formula = formAbsDelta,

@@ -17,6 +17,7 @@ tar_option_set(
                "stringr",
                "abmAnimalMovement",
                "INLA",
+               "TwoStepCLogit",
                "MuMIn",
                "adehabitatHS",
                "amt",
@@ -154,7 +155,6 @@ allIndividualsList <- list(
     command = list(!!!.x))
 )
 
-
 coreMultiverse <- list(
   tar_map(
     unlist = TRUE,
@@ -187,6 +187,12 @@ coreMultiverse <- list(
                priority = 0.9),
     tar_target(poisOUT,
                method_pois_inla(
+                 allIndividualData = sampDuraFreqData,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9),
+    tar_target(twoStepOUT,
+               method_twoStep(
                  allIndividualData = sampDuraFreqData,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
@@ -246,6 +252,28 @@ poisCompiled <- list(
   )
 )
 
+twoStepCompiled <- list(
+  tar_combine(
+    twoStepResults,
+    coreMultiverse[[1]][grep("twoStep", names(coreMultiverse[[1]]))],
+    command = rbind(!!!.x),
+    priority = 0.8
+  ),
+  tar_target(
+    twoStepSpecCurve,
+    generate_spec_curves(
+      outputResults = twoStepResults,
+      method = "twoStep"
+    )
+  ),
+  tar_target(
+    twoStepBrms,
+    run_brms(
+      resultsData = twoStepResults
+    )
+  )
+)
+
 areaBasedCompiled <- list(
   tar_combine(
     areaBasedResults,
@@ -274,7 +302,8 @@ brmModelOutputs <- list(
     # manually pull out the brms model outputs
     list(ssfCompiled[[4]],
          areaBasedCompiled[[3]],
-         poisCompiled[[3]]),
+         poisCompiled[[3]],
+         twoStepCompiled[[3]]),
     command = list(!!!.x),
     priority = 0.5
   ),
@@ -293,7 +322,8 @@ brmModelOutputs <- list(
   tar_target(
     rmdRender,
     render_rmd(modelExtracts, effectPlots),
-    cue = tar_cue(mode = "always")
+    cue = tar_cue(mode = "always"),
+    priority = 0.1
   )
 )
 
@@ -305,6 +335,7 @@ list(individualSimulationsList,
      coreMultiverse,
      ssfCompiled,
      poisCompiled,
+     twoStepCompiled,
      areaBasedCompiled,
      brmModelOutputs
 )

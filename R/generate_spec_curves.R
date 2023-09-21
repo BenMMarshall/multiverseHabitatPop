@@ -139,6 +139,47 @@ generate_spec_curves <- function(outputResults, method){
       dplyr::ungroup() %>% 
       mutate("estimate" = mean)
     
+  } else if(method == "twoStep"){
+    
+    # TwoStep models ----------------------------------------------------------
+    
+    outputResults <- outputResults %>% 
+      mutate("estimate" = twoStepBeta)
+    
+    outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
+    outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
+    
+    levelOrdering <- unique(c(
+      unique(outputResults$sampleID),
+      sort(unique(outputResults$sampleSize)),
+      sort(unique(outputResults$trackFreq)),
+      sort(unique(outputResults$trackDura)),
+      sort(unique(outputResults$modelFormula)),
+      sort(unique(outputResults$availablePerStep)),
+      sort(unique(outputResults$stepDist)),
+      sort(unique(outputResults$turnDist))))
+    
+    outputPlotData <- outputResults %>% 
+      dplyr::select(-analysis, -sampleID) %>% 
+      dplyr::mutate(across(1:7, as.character)) %>% 
+      tidyr::pivot_longer(cols = 1:7, names_to = "variable") %>% 
+      dplyr::mutate(
+        variable = case_when(
+          variable == "trackDura" ~ "Tracking Duration (days)",
+          variable == "trackFreq" ~ "Tracking Frequency (points/hour)",
+          variable == "sampleSize" ~ "Sample Size (n)",
+          variable == "modelForm" ~ "Model Formula (SSF or iSSF)",
+          variable == "availablePerStep" ~ "Available Points per Step",
+          variable == "stepDist" ~ "Distribution of Step Lengths",
+          variable == "turnDist" ~ "Distribution of Turn Angles"
+        ),
+        # sampleID = as.factor(sampleID),
+        value = factor(value, levels = levelOrdering)) %>%
+      dplyr::group_by(variable, value) %>%
+      dplyr::mutate(d_medEst = twoStepBeta - median(outputResults$twoStepBeta, na.rm = TRUE)) %>%
+      dplyr::ungroup() %>% 
+      mutate("estimate" = twoStepBeta)
+    
   }
   
   # PLOTS -------------------------------------------------------------------

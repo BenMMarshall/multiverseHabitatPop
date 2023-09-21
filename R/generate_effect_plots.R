@@ -56,8 +56,8 @@ generate_effect_plots <- function(modelsList){
     # labelLocationText <- c(-1.45, 1.1)
     labelLocation <- data.frame(gradLimits)
     labelLocationText <- data.frame(gradLimits + c(0.05, -0.05))
-    labelText <- c("Lower \npreference estimates",
-                   "Higher \npreference estimates")
+    labelText <- c("Closer to median\npreference estimate",
+                   "Farther from median\npreference estimate")
     gradAdj <- c(0, 0)
     
     (effectsPlot <- modelEffectData %>%

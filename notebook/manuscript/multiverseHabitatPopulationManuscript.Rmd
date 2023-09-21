@@ -37,16 +37,33 @@ abc
 
 ## Simulating the Scenarios
 
-NLMR `r paste0("v.", packageVersion("NLMR"))` package [@NLMR], and the animal movement using abmAnimalMovement `r paste0("v.", packageVersion("abmAnimalMovement"))` [@abmAnimalMovement].
-
 * Landscape simulation.
 
 * abmAnimalMovement settings
 
+We used the animal movement using abmAnimalMovement `r paste0("v.", packageVersion("abmAnimalMovement"))` [@abmAnimalMovement] to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
+The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guie the animals decisions.
+We used the NLMR `r paste0("v.", packageVersion("NLMR"))` package [@NLMR] to generate the three required resource/environmental rasters: movement resistance, foraging quality, and shelter site quality.
+The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (differing in movement characteristics and resource prioritisation), and site fidelity.
+For the purposes of this study we used one of the pre-created example pseudo-species: Badger, described in the package manuscript.
+In brief, the badger is a terrestrial species occupying several shelter sites, with a 8-12 hour activity cycle with minor seasonal variation, and is subject to differing movement resistance across the landscape.
+
+For the purposes of the analysis we simplified the landscape information into categories –akin to the sort of land-use information more frequently available to researchers of animal movement.
+We focused on foraging quality because it influences the greatest amounts of movement compared to sheltering or exploratory movements.
+<!-- SHOULD WE CHANGE THE FACTOR 1 becuase it is easier to remember? -->
+We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
+
+<!-- pop size needs infilling -->
+We used that simulated landscape and abmAnimalMovement to simulate a population of ___, that later can be sampled from.
+All individuals of this population had the same simulation settings apart from starting location.
+Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
+
 ## Sampling and Analysis Options
 
 * targets construction
-targets `r paste0("v.", packageVersion("targets"))` and tarchetypes `r paste0("v.", packageVersion("tarchetypes"))` R packages [@targets; @tarchetypes]
+
+To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets `r paste0("v.", packageVersion("targets"))` and tarchetypes `r paste0("v.", packageVersion("tarchetypes"))` R packages [@targets; @tarchetypes].
+These packages allowed branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice.
 
 ### Sampling
 
@@ -54,7 +71,25 @@ targets `r paste0("v.", packageVersion("targets"))` and tarchetypes `r paste0("v
 
 * sample size
 
+The first decision in most animal movement studies will be concerning tracking regime.
+This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
+Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (
+<!-- frequncies here -->
+), and the total duration of tracking (
+<!-- durations here -->
+).
+We created subsampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 datapoints per individual.
+
+An important component of assessing population level habitat selection is the number of individuals included in analysis.
+<!-- sample size info here -->
+Therefore, we randomly generated a number of samples from our population of ___ simulated individuals.
+We varied these samples sizes from ___ to ___ individuals, and ran ___ repeats for each size.
+A sample never mixed tracking regimes.
+
 ### Analysis
+
+Building on the decisions concerning tracking regime and population sampling, our multiverse expanded dramatically by exploring four primary analysis routes.
+These routes included an area based approach using Compana analysis, and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
 
 * area based: compana, area method, contour, available points, space sampling, type II/III, compana test
 *adehabitatHS* `r paste0("v.", packageVersion("adehabitatHS"))` [@adehabitatHS],
@@ -63,6 +98,10 @@ ctmm package `r paste0("v.", packageVersion("ctmm"))` [@ctmm]
 * ssf: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles, Model Averaging Method
 
 amt `r paste0("v.", packageVersion("amt"))` [@amt]
+
+* twoStep: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
+
+TwoStepCLogit `r paste0("v.", packageVersion("TwoStepCLogit"))` [@TwoStepCLogit]
 
 * poisson: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
 
@@ -75,6 +114,19 @@ INLA `r paste0("v.", packageVersion("INLA"))` [@rue_approximate_2009; @lindgren_
 * spec curves
 
 * brm models: one per each analysis method
+
+Specification curves provide an overview of the estimates of a given range of analyses.
+Tighter more steep curves suggest greater agreement between all the analysis end points.
+Here we also plotted the estimates against the different decisions that results in the estimates, allowing direct comparison on how the decision impacts the variation in the estimates.
+
+To better detect the impact of decisions, while accounting for the random variation stemming from the differences in individuals/samples, we ran a number of Bayesian Regression Models.
+The Bayesian Regression Models aimed to describe how much of the deviation from a median answer could be explained by the various sampling and analysis decisions.
+For each analysis route we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
+All continuous variables were scaled to help determine their relative importance to each other.
+<!-- add actually varaition in variables -->
+For the area based Compana approach the population effects included: the continuous variable contourScaled; and the categoric predictors samplingPatternst, testrandomisation, areaMethodMCP, and typeIII.
+For the step-based approaches they all included: modelFormulamf.ss, stepDistgamma, turnDistvonmises.
+The step-selection model approach also included: averagingMethodNaiveaverage.
 
 # Results
 
@@ -90,6 +142,12 @@ knitr::include_graphics(here::here("notebook", "figures", "area_specCurve.png"))
 
 ```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
+```
+
+(Fig. \@ref(fig:specCurveTwoStep)).
+
+```{r specCurveTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
+knitr::include_graphics(here::here("notebook", "figures", "twoStep_specCurve.png"))
 ```
 
 (Fig. \@ref(fig:specCurvePois)).
@@ -125,6 +183,12 @@ knitr::include_graphics(here::here("notebook", "figures", "areaBrms_effectsPlot.
 
 ```{r effectPlotSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
 knitr::include_graphics(here::here("notebook", "figures", "ssfBrms_effectsPlot.png"))
+```
+
+(Fig. \@ref(fig:effectPlotTwoStep)).
+
+```{r effectPlotTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "twoStepBrms_effectsPlot.png"))
 ```
 
 (Fig. \@ref(fig:effectPlotPois)).
