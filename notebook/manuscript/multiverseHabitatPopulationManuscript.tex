@@ -38,6 +38,44 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %% lines to get the code chunks working
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textbf{#1}}
+\newcommand{\AnnotationTok}[1]{\textit{#1}}
+\newcommand{\AttributeTok}[1]{#1}
+\newcommand{\BaseNTok}[1]{#1}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textit{#1}}
+\newcommand{\CommentVarTok}[1]{\textit{#1}}
+\newcommand{\ConstantTok}[1]{#1}
+\newcommand{\ControlFlowTok}[1]{\textbf{#1}}
+\newcommand{\DataTypeTok}[1]{\underline{#1}}
+\newcommand{\DecValTok}[1]{#1}
+\newcommand{\DocumentationTok}[1]{\textit{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{#1}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{#1}
+\newcommand{\FunctionTok}[1]{#1}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textit{#1}}
+\newcommand{\KeywordTok}[1]{\textbf{#1}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{#1}
+\newcommand{\OtherTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textbf{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{#1}
+\newcommand{\SpecialStringTok}[1]{#1}
+\newcommand{\StringTok}[1]{#1}
+\newcommand{\VariableTok}[1]{#1}
+\newcommand{\VerbatimStringTok}[1]{#1}
+\newcommand{\WarningTok}[1]{\textit{#1}}
 
 %% lines to enable bulletpoints in a new notation style
 \providecommand{\tightlist}{%
@@ -78,6 +116,12 @@ abc
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{optionsCompleteList }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"optionsCompleteList.rds"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
 \hypertarget{simulating-the-scenarios}{%
 \subsection{Simulating the Scenarios}\label{simulating-the-scenarios}}
 
@@ -99,7 +143,7 @@ For the purposes of the analysis we simplified the landscape information into ca
 We focused on foraging quality because it influences the greatest amounts of movement compared to sheltering or exploratory movements.
 We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
 
-We used that simulated landscape and abmAnimalMovement to simulate a population of \_\_\_, that later can be sampled from.
+We used that simulated landscape and abmAnimalMovement to simulate a population of 3, that later can be sampled from.
 All individuals of this population had the same simulation settings apart from starting location.
 Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
 
@@ -127,14 +171,12 @@ These packages allowed branching workflow pipeline, while keeping track of objec
 
 The first decision in most animal movement studies will be concerning tracking regime.
 This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
-Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (
-), and the total duration of tracking (
-).
-We created subsampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 datapoints per individual.
+Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (1 to 0.17 points per hour), and the total duration of tracking (15 to 60 days).
+We created sub-sampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 data points per individual.
 
 An important component of assessing population level habitat selection is the number of individuals included in analysis.
-Therefore, we randomly generated a number of samples from our population of \_\_\_ simulated individuals.
-We varied these samples sizes from \_\_\_ to \_\_\_ individuals, and ran \_\_\_ repeats for each size.
+Therefore, we randomly generated a number of samples from our population of 3 simulated individuals.
+We varied these samples sizes from 2 to 3 individuals, and ran 1 repeats for each size.
 A sample never mixed tracking regimes.
 
 \hypertarget{analysis}{%
@@ -144,55 +186,110 @@ Building on the decisions concerning tracking regime and population sampling, ou
 These routes included an area based approach using Compana analysis, and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
 
 \begin{itemize}
+\tightlist
 \item
   area based: compana, area method, contour, available points, space sampling, type II/III, compana test
-  \emph{adehabitatHS} v.0.3.16 (\protect\hyperlink{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}),
-  ctmm package v.0.6.1 (\protect\hyperlink{ref-ctmm}{Fleming \& Calabrese, 2023})
+\end{itemize}
+
+We ran the Compana analysis (Compositional Analysis of Habitat Use) using the \emph{adehabitatHS} v.0.3.16 (\protect\hyperlink{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}).
+Compana allows for the assessment of habitat selection of multiple animals in defined habitat types; it also allows habitat selection to be estimated at different scales.
+We explored two scales in the multiverse: selection within the home range (Type III), and selection within an overall population available area (Type II).
+The former design (Type III) requires availability habitats to be defined on an individual-by-individual basis, while the latter (Type II) design uses a summarised population level availability.
+
+To define availability, we created home range polygons then sampled points within, recovering the corresponding habitat at those points.
+The home range (aka availability) polygons can be generated via many different processes.
+We selected to explore MCP and AKDE (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
+We used the \emph{ctmm} v.0.6.1 (\protect\hyperlink{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.20 (\protect\hyperlink{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
+The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
+For the best model we followed recommendations of , opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
+There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
+We avoided a deeper exploration as the impact of the internal AKDE choices are likely smaller than those between area methods (e.g., compared to MCPs), and the AKDE creation can more guided by the underlying data.
+By comparison the MCPs have very few options inpacting their creation.
+Mainly MCP size varies based on the percentage of outliers excluded from the polygon area.
+For all area methods we vary this percentage: 95\%, 99\%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
+We selected these contour values as they are the most frequently used in spatial studies
+
+Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: 4), we created the sample/population available areas by combining all polygons.
+We used this combined polygon for the type II design, where all individuals have the same availability.
+
+We used the availability polygons to define the extent within which we sampled habitat characteristics.
+The habitat characteristics were extracted from the classified landscape raster at various points.
+We varied both the number of points generated (1 to 10), as well as the pattern of how they were distributed within the polygon (random or stratified).
+
+The final decision in the area based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
+The former uses randomisation tests to estimate the habitat selection, while the latter uses chi-squared.
+
+\begin{itemize}
+\tightlist
 \item
   ssf: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles, Model Averaging Method
-\end{itemize}
-
-amt v.0.1.7 (\protect\hyperlink{ref-amt}{Signer, Fieberg \& Avgar, 2019})
-
-\begin{itemize}
-\tightlist
 \item
   twoStep: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
-\end{itemize}
-
-TwoStepCLogit v.1.2.5 (\protect\hyperlink{ref-TwoStepCLogit}{Craiu et al., 2016})
-
-\begin{itemize}
-\tightlist
 \item
   poisson: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
 \end{itemize}
 
-INLA v.23.4.24 (\protect\hyperlink{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \protect\hyperlink{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \protect\hyperlink{ref-martins_bayesian_2013}{Martins et al., 2013}; \protect\hyperlink{ref-rue_bayesian_2017}{Rue et al., 2017}; \protect\hyperlink{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018})
+The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
+As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
-Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020})
+The first decision is the number of random steps generated per observed step; we ranged this from 2 to 10.
+The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
+We chose to explore the impacts of different distributions.
+For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
+
+All the step-based methods require the definition of a formula, where use/available is predicted by the habitat characteristics at those locations.
+Model formulation opens up many possible alternative routes of analysis, but for this exploration we focus on the impacts of integrating step and turn angle interactions with habitat characteristics.
+We ran two versions of all models, one with no interactions and one where both step lengths and turn angles interaction with the habitat classification.
+Previous work has suggested that the integrated (i.e., model with interactions) performs better
+
+A key component of all the population approaches is how they translate a highly structured dataset into a overall summary.
+We ran individual step selection models using the amt v.0.1.7 (\protect\hyperlink{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore rudimentary summary methods.
+The individual step selection models need to be averaged in some manner to extract a population mean selection.
+We explore two simple options for achieving this: a naive mean of the final estimates (i.e., a mean of the estimated betas), and a model average using the \emph{MuMIn} v.1.47.5 package (\protect\hyperlink{ref-MuMIn}{Bartoń, 2023}).
+The \emph{MuMIn} model average approach is weighted based on AICc.
+However, AICc is not directly comparable between models fitted with different datasets.
+As the model formulas are identically complex and the datasets equal in data quantity, the differences in AIC are purely describing the goodness of fit to the different datasets.
+Therefore, the model average provided is weighted by model fit.
+
+The difficulties model averaging models based on different data has led to the creation of models that account for the individual variably in the model formula.
+A Two-Step Conditional Regression is one such solution, where strata (time steps) and clusters (individual animals) are accounted for.
+We implemented these models using the \emph{TwoStepCLogit} v.1.2.5 (\protect\hyperlink{ref-TwoStepCLogit}{Craiu et al., 2016}) package.
+
+More recently Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) have suggested a reformulation of the step selection models to provide faster reliable estimations of population habitat selection.
+The suggestion is to reformulate the model as a Poisson model, but critically with fixed .
+To avoid the slow convergence of MCMC estimation, Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) make use of integrated nested Laplace approximation (INLA) to approximate Bayesian inference.
+We followed the code provided by Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.4.24 (\protect\hyperlink{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \protect\hyperlink{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \protect\hyperlink{ref-martins_bayesian_2013}{Martins et al., 2013}; \protect\hyperlink{ref-rue_bayesian_2017}{Rue et al., 2017}; \protect\hyperlink{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
 
 \hypertarget{assessing-the-multiverse}{%
 \subsection{Assessing the multiverse}\label{assessing-the-multiverse}}
 
 \begin{itemize}
+\tightlist
 \item
   spec curves
-\item
-  brm models: one per each analysis method
 \end{itemize}
 
 Specification curves provide an overview of the estimates of a given range of analyses.
 Tighter more steep curves suggest greater agreement between all the analysis end points.
 Here we also plotted the estimates against the different decisions that results in the estimates, allowing direct comparison on how the decision impacts the variation in the estimates.
 
+\begin{itemize}
+\tightlist
+\item
+  brm models: one per each analysis method
+\end{itemize}
+
 To better detect the impact of decisions, while accounting for the random variation stemming from the differences in individuals/samples, we ran a number of Bayesian Regression Models.
 The Bayesian Regression Models aimed to describe how much of the deviation from a median answer could be explained by the various sampling and analysis decisions.
 For each analysis route we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
-All continuous variables were scaled to help determine their relative importance to each other.
-For the area based Compana approach the population effects included: the continuous variable contourScaled; and the categoric predictors samplingPatternst, testrandomisation, areaMethodMCP, and typeIII.
-For the step-based approaches they all included: modelFormulamf.ss, stepDistgamma, turnDistvonmises.
-The step-selection model approach also included: averagingMethodNaiveaverage.
+All continuous variables were scaled to help determine their relative importance to each other: (x - mean(x))/sd(x).
+For the area based Compana approach the population effects included: the continuous variable contour (continuous); and the categoric predictors sampling pattern (random, stratified), test (randomisation, parametric), area method (AKDE, MCP), and design type (II, III).
+For the step-based approaches they all included: model formula (integrated, non-integrated), step distribution (gamma, exponential), turn distribution (Von Mises, uniform).
+The step-selection model approach also included: averaging method (naive, MuMIn average).
+
+We ran the Bayesian Regression Models using the \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) package.
+Once complete, we checked model convergence using rhat values, acf, and trace plots.
+After assessment of the model convergence measures, we modified the running parameters .
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -283,12 +380,12 @@ We used \emph{raster} v.3.6.14 (\protect\hyperlink{ref-raster}{Hijmans, 2023}) a
 
 We used \emph{ggplot2} v.3.4.2 for creating figures (\protect\hyperlink{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\protect\hyperlink{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\protect\hyperlink{ref-ggridges}{Wilke, 2022}), and \emph{ggdist} v.3.2.0 (\protect\hyperlink{ref-ggdist}{Kay, 2023a}).
 
-We used \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) to run Bayesian models, with dianogistics generated used \emph{bayesplot} v.1.10.0 (\protect\hyperlink{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.2 (\protect\hyperlink{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.2 (\protect\hyperlink{ref-performance}{Lüdecke et al., 2021}).
+We used \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.10.0 (\protect\hyperlink{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.2 (\protect\hyperlink{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.2 (\protect\hyperlink{ref-performance}{Lüdecke et al., 2021}).
 
 We used the \emph{dplyr} v.1.0.10 (\protect\hyperlink{ref-dplyr}{Wickham et al., 2023}), \emph{tibble} v.3.1.8 (\protect\hyperlink{ref-tibble}{Müller \& Wickham, 2023}),
 and \emph{stringr} v.1.5.0 (\protect\hyperlink{ref-stringr}{Wickham, 2022}) packages for data manipulation.
 
-We used \emph{sp} v.1.5.1 (\protect\hyperlink{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{adehabitatHR} v.0.4.20 (\protect\hyperlink{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}), \emph{move} v.4.1.12 (\protect\hyperlink{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
+We used \emph{sp} v.1.5.1 (\protect\hyperlink{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{move} v.4.1.12 (\protect\hyperlink{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
 
 We used rmarkdown v.2.19 (\protect\hyperlink{ref-rmarkdown2018}{Xie, Allaire \& Grolemund, 2018}; \protect\hyperlink{ref-rmarkdown2020}{Xie, Dervieux \& Riederer, 2020}; \protect\hyperlink{ref-rmarkdown2023}{Allaire et al., 2023}), bookdown v.0.33 (\protect\hyperlink{ref-bookdown2016}{Xie, 2016}, \protect\hyperlink{ref-R-bookdown}{2022}), tinytex v.0.44 (\protect\hyperlink{ref-tinytex2019}{Xie, 2019}, \protect\hyperlink{ref-tinytex2023}{2023a}), and knitr v.1.41 (\protect\hyperlink{ref-knitr2014}{Xie, 2014}, \protect\hyperlink{ref-knitr2015}{2015}, \protect\hyperlink{ref-knitr2023}{2023b}) packages to generate type-set outputs.
 
@@ -308,6 +405,9 @@ We generated R package citations with the aid of \emph{grateful} v.0.1.13 (\prot
 \begin{CSLReferences}{1}{0}
 \leavevmode\vadjust pre{\hypertarget{ref-rmarkdown2023}{}}%
 Allaire J, Xie Y, Dervieux C, McPherson J, Luraschi J, Ushey K, Atkins A, Wickham H, Cheng J, Chang W, Iannone R. 2023. \emph{\href{https://github.com/rstudio/rmarkdown}{{rmarkdown}: Dynamic documents for r}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-MuMIn}{}}%
+Bartoń K. 2023. \emph{\href{https://CRAN.R-project.org/package=MuMIn}{MuMIn: Multi-model inference}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-sp}{}}%
 Bivand RS, Pebesma E, Gomez-Rubio V. 2013. \emph{\href{https://asdar-book.org/}{Applied spatial data analysis with {R}, second edition}}. Springer, NY.

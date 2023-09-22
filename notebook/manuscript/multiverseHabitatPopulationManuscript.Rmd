@@ -35,6 +35,10 @@ abc
 
 # Methods
 
+``` {r openOptions}
+optionsCompleteList <- readRDS(here::here("data", "optionsCompleteList.rds"))
+```
+
 ## Simulating the Scenarios
 
 * Landscape simulation.
@@ -53,8 +57,7 @@ We focused on foraging quality because it influences the greatest amounts of mov
 <!-- SHOULD WE CHANGE THE FACTOR 1 becuase it is easier to remember? -->
 We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
 
-<!-- pop size needs infilling -->
-We used that simulated landscape and abmAnimalMovement to simulate a population of ___, that later can be sampled from.
+We used that simulated landscape and abmAnimalMovement to simulate a population of  `r length(optionsCompleteList$individuals$individual)`, that later can be sampled from.
 All individuals of this population had the same simulation settings apart from starting location.
 Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
 
@@ -73,17 +76,12 @@ These packages allowed branching workflow pipeline, while keeping track of objec
 
 The first decision in most animal movement studies will be concerning tracking regime.
 This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
-Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (
-<!-- frequncies here -->
-), and the total duration of tracking (
-<!-- durations here -->
-).
-We created subsampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 datapoints per individual.
+Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (`r paste0(round(1/min(optionsCompleteList$regime$tf), digits = 2), " to ", round(1/max(optionsCompleteList$regime$tf), digits = 2))` points per hour), and the total duration of tracking (`r paste0(min(optionsCompleteList$regime$td), " to ", max(optionsCompleteList$regime$td))` days).
+We created sub-sampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 data points per individual.
 
 An important component of assessing population level habitat selection is the number of individuals included in analysis.
-<!-- sample size info here -->
-Therefore, we randomly generated a number of samples from our population of ___ simulated individuals.
-We varied these samples sizes from ___ to ___ individuals, and ran ___ repeats for each size.
+Therefore, we randomly generated a number of samples from our population of `r length(optionsCompleteList$individuals$individual)` simulated individuals.
+We varied these samples sizes from `r paste0(min(sapply(optionsCompleteList$samples, length)), " to ", max(sapply(optionsCompleteList$samples, length)))` individuals, and ran `r optionsCompleteList$repeats` repeats for each size.
 A sample never mixed tracking regimes.
 
 ### Analysis
@@ -92,41 +90,97 @@ Building on the decisions concerning tracking regime and population sampling, ou
 These routes included an area based approach using Compana analysis, and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
 
 * area based: compana, area method, contour, available points, space sampling, type II/III, compana test
-*adehabitatHS* `r paste0("v.", packageVersion("adehabitatHS"))` [@adehabitatHS],
-ctmm package `r paste0("v.", packageVersion("ctmm"))` [@ctmm]
+
+We ran the Compana analysis (Compositional Analysis of Habitat Use) using the *adehabitatHS* `r paste0("v.", packageVersion("adehabitatHS"))` [@adehabitatHS].
+Compana allows for the assessment of habitat selection of multiple animals in defined habitat types; it also allows habitat selection to be estimated at different scales.
+We explored two scales in the multiverse: selection within the home range (Type III), and selection within an overall population available area (Type II).
+The former design (Type III) requires availability habitats to be defined on an individual-by-individual basis, while the latter (Type II) design uses a summarised population level availability.
+<!-- Aebischer, N. J. and Robertson, P. A. (1992) Practical aspects of compositional analysis as applied to pheasant habitat utilisation. pp. 285–293 In: Priede, G. and Swift, S. M. Wildlife telemetry, remote monitoring and tracking of animals. -->
+<!-- Aebischer, N. J., Robertson, P. A. and Kenward, R. E. (1993) Compositional analysis of habitat use from animal radiotracking data. Ecology, 74, 1313–1325. -->
+<!-- Johnson, D. H. (1980) The comparison of usage and availability measurements for evaluating resource preference. Ecology, 61, 65–71. -->
+
+To define availability, we created home range polygons then sampled points within, recovering the corresponding habitat at those points.
+The home range (aka availability) polygons can be generated via many different processes.
+We selected to explore `r paste(optionsCompleteList$area$areaMethod, collapse = " and ")` (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
+We used the *ctmm* `r paste0("v.", packageVersion("ctmm"))` [@ctmm] package for the creation of AKDEs, and the  *adehabitatHR* `r paste0("v.", packageVersion("adehabitatHR"))` [@adehabitatHR] package for the MCPs.
+The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
+For the best model we followed recommendations of <!-- INES PAPER HERE -->, opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
+There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
+We avoided a deeper exploration as the impact of the internal AKDE choices are likely smaller than those between area methods (e.g., compared to MCPs), and the AKDE creation can more guided by the underlying data.
+By comparison the MCPs have very few options inpacting their creation.
+Mainly MCP size varies based on the percentage of outliers excluded from the polygon area.
+For all area methods we vary this percentage: `r paste(optionsCompleteList$area$areaContour, collapse = "%, ")`%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
+We selected these contour values as they are the most frequently used in spatial studies <!-- CRANE ET AL HERE -->
+
+Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: `r nrow(optionsCompleteList$regime)`), we created the sample/population available areas by combining all polygons.
+We used this combined polygon for the type II design, where all individuals have the same availability.
+
+We used the availability polygons to define the extent within which we sampled habitat characteristics.
+The habitat characteristics were extracted from the classified landscape raster at various points.
+We varied both the number of points generated (`r paste0(min(optionsCompleteList$area$Method_ap), " to ", max(optionsCompleteList$area$Method_ap))`), as well as the pattern of how they were distributed within the polygon (random or stratified).
+
+The final decision in the area based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
+The former uses randomisation tests to estimate the habitat selection, while the latter uses chi-squared.
 
 * ssf: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles, Model Averaging Method
-
-amt `r paste0("v.", packageVersion("amt"))` [@amt]
-
 * twoStep: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
-
-TwoStepCLogit `r paste0("v.", packageVersion("TwoStepCLogit"))` [@TwoStepCLogit]
-
 * poisson: Model Formula (SSF or iSSF), Available Points per Step, Distribution of Step Lengths, Distribution of Turn Angles
 
-INLA `r paste0("v.", packageVersion("INLA"))` [@rue_approximate_2009; @lindgren_explicit_2011; @martins_bayesian_2013; @rue_bayesian_2017; @kourounis_towards_2018]
+The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
+As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
-@muff_accounting_2020
+The first decision is the number of random steps generated per observed step; we ranged this from `r paste0(min(optionsCompleteList$ssf$MethodSSF_as), " to ", max(optionsCompleteList$ssf$MethodSSF_as))`.
+The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
+We chose to explore the impacts of different distributions.
+For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
+
+All the step-based methods require the definition of a formula, where use/available is predicted by the habitat characteristics at those locations.
+Model formulation opens up many possible alternative routes of analysis, but for this exploration we focus on the impacts of integrating step and turn angle interactions with habitat characteristics.
+We ran two versions of all models, one with no interactions and one where both step lengths and turn angles interaction with the habitat classification.
+Previous work has suggested that the integrated (i.e., model with interactions) performs better <!-- CITE paper on iSSF, and make sure to clarify the extact benefit -->
+
+A key component of all the population approaches is how they translate a highly structured dataset into a overall summary.
+We ran individual step selection models using the amt `r paste0("v.", packageVersion("amt"))` [@amt] package, to explore rudimentary summary methods. <!-- there is a paper suggesting exploring the or modelling the effects is an ok route to go -->
+The individual step selection models need to be averaged in some manner to extract a population mean selection.
+We explore two simple options for achieving this: a naive mean of the final estimates (i.e., a mean of the estimated betas), and a model average using the *MuMIn* `r paste0("v.", packageVersion("MuMIn"))` package [@MuMIn].
+The *MuMIn* model average approach is weighted based on AICc.
+However, AICc is not directly comparable between models fitted with different datasets.
+As the model formulas are identically complex and the datasets equal in data quantity, the differences in AIC are purely describing the goodness of fit to the different datasets.
+Therefore, the model average provided is weighted by model fit.
+
+The difficulties model averaging models based on different data has led to the creation of models that account for the individual variably in the model formula.
+A Two-Step Conditional Regression is one such solution, where strata (time steps) and clusters (individual animals) are accounted for.
+<!-- NEED MORE DETAILS HERE -->
+<!-- Craiu, R.V., Duchesne, T., Fortin, D. and Baillargeon, S. (2011), Conditional Logistic Regression with Longitudinal Follow-up and Individual-Level Random Coefficients: A Stable and Efficient Two-Step Estimation Method, Journal of Computational and Graphical Statistics. 20(3), 767-784. -->
+We implemented these models using the *TwoStepCLogit* `r paste0("v.", packageVersion("TwoStepCLogit"))` [@TwoStepCLogit] package.
+
+More recently @muff_accounting_2020 have suggested a reformulation of the step selection models to provide faster reliable estimations of population habitat selection.
+The suggestion is to reformulate the model as a Poisson model, but critically with fixed <!-- fill in specifics here --> .
+To avoid the slow convergence of MCMC estimation, @muff_accounting_2020 make use of integrated nested Laplace approximation (INLA) to approximate Bayesian inference.
+We followed the code provided by @muff_accounting_2020 and made use of *INLA* `r paste0("v.", packageVersion("INLA"))` [@rue_approximate_2009; @lindgren_explicit_2011; @martins_bayesian_2013; @rue_bayesian_2017; @kourounis_towards_2018] to run Poisson models to estimate habitat selection.
 
 ## Assessing the multiverse
 
 * spec curves
 
-* brm models: one per each analysis method
-
 Specification curves provide an overview of the estimates of a given range of analyses.
 Tighter more steep curves suggest greater agreement between all the analysis end points.
 Here we also plotted the estimates against the different decisions that results in the estimates, allowing direct comparison on how the decision impacts the variation in the estimates.
 
+* brm models: one per each analysis method
+
 To better detect the impact of decisions, while accounting for the random variation stemming from the differences in individuals/samples, we ran a number of Bayesian Regression Models.
 The Bayesian Regression Models aimed to describe how much of the deviation from a median answer could be explained by the various sampling and analysis decisions.
 For each analysis route we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
-All continuous variables were scaled to help determine their relative importance to each other.
-<!-- add actually varaition in variables -->
-For the area based Compana approach the population effects included: the continuous variable contourScaled; and the categoric predictors samplingPatternst, testrandomisation, areaMethodMCP, and typeIII.
-For the step-based approaches they all included: modelFormulamf.ss, stepDistgamma, turnDistvonmises.
-The step-selection model approach also included: averagingMethodNaiveaverage.
+All continuous variables were scaled to help determine their relative importance to each other: (x - mean(x))/sd(x).
+<!-- add actually variation in variables -->
+For the area based Compana approach the population effects included: the continuous variable contour (continuous); and the categoric predictors sampling pattern (random, stratified), test (randomisation, parametric), area method (AKDE, MCP), and design type (II, III).
+For the step-based approaches they all included: model formula (integrated, non-integrated), step distribution (gamma, exponential), turn distribution (Von Mises, uniform).
+The step-selection model approach also included: averaging method (naive, MuMIn average).
+
+We ran the Bayesian Regression Models using the *brms* `r paste0("v.", packageVersion("brms"))` [@brms] package.
+Once complete, we checked model convergence using rhat values, acf, and trace plots.
+After assessment of the model convergence measures, we modified the running parameters <!-- [FINAL VALUES HERE: warmup = 200, iter = 1000, chains = 4, adapt_delta = 0.90, max_treedepth = 15] -->.
 
 # Results
 
@@ -218,13 +272,13 @@ We used *raster* `r paste0("v.", packageVersion("raster"))` [@raster] and *Rando
 
 We used *ggplot2* `r paste0("v.", packageVersion("ggplot2"))` for creating figures [@ggplot2], with the expansions: *patchwork* `r paste0("v.", packageVersion("patchwork"))` [@patchwork], *ggridges* `r paste0("v.", packageVersion("ggridges"))` [@ggridges], and *ggdist* `r paste0("v.", packageVersion("ggdist"))` [@ggdist].
 
-We used *brms* `r paste0("v.", packageVersion("brms"))` [@brms] to run Bayesian models, with dianogistics generated used *bayesplot* `r paste0("v.", packageVersion("bayesplot"))` [@bayesplot], *tidybayes* `r paste0("v.", packageVersion("tidybayes"))` [@tidybayes], and *performance* `r paste0("v.", packageVersion("performance"))` [@performance].
+We used *brms* `r paste0("v.", packageVersion("brms"))` [@brms] to run Bayesian models, with diagnostics generated used *bayesplot* `r paste0("v.", packageVersion("bayesplot"))` [@bayesplot], *tidybayes* `r paste0("v.", packageVersion("tidybayes"))` [@tidybayes], and *performance* `r paste0("v.", packageVersion("performance"))` [@performance].
 
 We used the *dplyr* `r paste0("v.", packageVersion("dplyr"))` [@dplyr], *tibble* `r paste0("v.", packageVersion("tibble"))` [@tibble],
 <!-- *reshape2* `r paste0("v.", packageVersion("reshape2"))` [@reshape2], -->
 and *stringr* `r paste0("v.", packageVersion("stringr"))` [@stringr] packages for data manipulation.
 
-We used *sp* `r paste0("v.", packageVersion("sp"))` [@sp], *adehabitatHR* `r paste0("v.", packageVersion("adehabitatHR"))` [@adehabitatHR], *move* `r paste0("v.", packageVersion("move"))` [@move] for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
+We used *sp* `r paste0("v.", packageVersion("sp"))` [@sp], *move* `r paste0("v.", packageVersion("move"))` [@move] for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
 
 We used rmarkdown `r paste0("v.", packageVersion("rmarkdown"))` [@rmarkdown2023; @rmarkdown2018; @rmarkdown2020], bookdown `r paste0("v.", packageVersion("bookdown"))` [@bookdown2016; @R-bookdown], tinytex `r paste0("v.", packageVersion("tinytex"))` [@tinytex2019; @tinytex2023], and knitr `r paste0("v.", packageVersion("knitr"))` [@knitr2015; @knitr2014; @knitr2023] packages to generate type-set outputs.
 

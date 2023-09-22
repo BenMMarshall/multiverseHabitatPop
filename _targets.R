@@ -105,8 +105,10 @@ optionsList_pois <- list(
 
 # Sampling set-up ---------------------------------------------------------
 
+repeats <- 1
+
 # values_Sample <-
-#   list(sampleSize = rep(c(5,10,15,25,45), each = 3))
+#   list(sampleSize = rep(c(5,10,15,25,45), each = repeats))
 # 
 # set.seed(1)
 # 
@@ -118,6 +120,20 @@ optionsList_samples <- list(c(1,2),
                             c(1,2,3))
 
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
+
+optionsCompleteList <- list(
+  "species" = values_SimSpecies,
+  "individuals" = values_SimIndi,
+  "regime" = values_Regime,
+  "samples" = optionsList_samples,
+  "repeats" = repeats,
+  "pois" = optionsList_pois,
+  "ssf" = optionsList_sff,
+  "area" = optionsList_area,
+  "areaMethods" = optionsList_areaMethods
+)
+
+saveRDS(optionsCompleteList, file = here::here("data", "optionsCompleteList.rds"))
 
 # Targets workflow lists --------------------------------------------------
 
