@@ -34,48 +34,54 @@ keywords: Movement ecology, simulation, compana, resource selection functions, s
 * science relies on repeatability
 
 Science is reliant on results being repeatable, reliable, and generalisable.
-Efforts to achieve this often consistent of removing idiosyncrasies of studies; we remove confounding variables, control for non-target variables; and conduct replicates.
+Efforts to achieve this often consistent of removing idiosyncrasies of studies; we remove confounding variables, control for non-target variables; and conduct replicants.
 Despite best efforts we can never create a fully generalisable study.
 
 * exploring why things are and are not repeatable is important
 
 The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations of further studies.
 However, the re-examination of previous work can lead to questions over the reliability of results and therefore, the assumptions subsequent work relies upon.
-Prominent replication studies have shown that previously "text-book" examples in multiple disciplines may need further study.
-While other disciplines' replication rates have been more closely examined, there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist.
+Prominent replication studies have shown that previously "text-book" examples in multiple disciplines may need further study [CITE OTHERS HERE; @sanchez-tojar_meta-analysis_2018].
+While other disciplines' replication rates have been more closely examined (see @kelly_rate_2019 for ecological replication rates), there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist [@Brembs2018; @fanelli_pressures_2010; @smaldino_natural_2016; @ware_significance_2015].
 
 * for some disciplines testing repeatability practically is tricky, therefore we must be sure to maximise the utility of existing data and know it's limitations
 
 For disciplines where direct replications are more common and feasible, replication efforts can have an immediate feedback role in science.
 Ecological systems, particularly wild, are complex and impossible to fully control leading to ecologists frequent reliance on "natural experiments".
-Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on ??? conceptual or ___ replications ??? <!-- check term -->.
-These replciaton effort are still valuable, and valued by the scientific community, while also aiding to guage the reliably of proposed patterns, theories, or laws.
+Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on conceptual or quasi replications [@fraser_role_2020; @palmer_quasi-replication_2000].
+In broader terms, undertaking studies that subject and method differ from the original sutdy, the where the research questions are conceptually similar [@kelly_rate_2019; @nakagawa_replicating_2015].
+These replication efforts are still valuable, and valued by the scientific community [@fraser_role_2020], while also aiding to gauge the reliably of proposed patterns, theories, or laws.
 
 * animal movement is one such domain
 
-Animal movement is field of study that replications are very difficult to conduct.
-Tracking animals is costly and come with serious ethical considerations, especially for animals where the tracking equipment impacts their health, mobility, and behaviour.
+Animal movement is field of study that replications are difficult to conduct.
+Tracking animals is costly and come with serious ethical considerations, especially for animals where the tracking equipment can impact their health, mobility, and behaviour [@portugal_externally_2022; @homberger_strong_2021; @Sperry2009].
 Therefore, there is a strong incentive to extract the maximum value for every tracked animal, and to ensure that all results are as reliable as possible.
 
 * habitat preference/selection is key to conservation so being confident in the generalisably is important to making the correct decisions
 
-The findings from animal movement studies are known to be integrated into conservation plans.
-For the correct conservation decisions to be made they must be based on reliable information.
-A key component for protecting species is identifying that species requirements.
-Suitable habitat (as defined in various ways) is a fundamental requirement, and the protection/restoration of suitable habitat is often one of the most actionable of conservation responses.
+The findings from animal movement studies can be linked with landscape management and integrated into conservation plans [@Fraser2018; @doherty_coupling_2018].
+For the correct conservation decisions to be made they must be based on reliable information. 
+A key component for protecting species is identifying that species requirements; the examination of movement can reveal those requirements [@mueller_how_2011; @doherty_animal_2019].
+Suitable habitat (as defined in various ways) is a fundamental requirement, and the protection/restoration of suitable habitat is an actionable conservation response.
 
 * multiple analyst projects can highlight the alternative conclusions from the same dataset, multiverses are a way we can explore the options and consistency that stem from a single dataset in lieu of proper repeats
 
-As demonstrated by many analyst projects different answers can originate from the same dataset, and even the same question.
+As demonstrated by many analyst projects different answers can originate from the same dataset, and even the same question [e.g., @silberzahn_many_2018; @huntingtonklein_influence_2021].
+Such research degrees of freedom [or flexibility in analysis; @forstmeier_detecting_2017] can be the result of difference in question interpretation [@auspurg_has_2021], as well as the analysis approach taken [@bastiaansen_time_2020; @gelman_garden_2013].
 When drawing information to be used in a conservation plan, it would be advisable to know whether decisions would be different had the data been examined in a different way.
+Previous exploration have shown that research degrees of freedom are sufficiently large to alter effect strength and the final conclusions [@salis_how_2021; @desbureaux_subjective_2021].
+
 While many analyst type projects represent an ideal, actually capable of capturing the variation in results stemming from the researchers themselves, the logistics of conducting one make them less feasible on broader scales.
-An alternative, albeit with its own set of limitations, would be to conduct a multiverse analysis.
+An alternative, albeit with its own set of limitations, would be to conduct a multiverse analysis [@steegen_increasing_2016].
 Multiverse analyses consistent of a suite of analysis pathways, where diverging analysis decisions create a compounding set of possible answers to a give question.
-Multiverses cannot provide evidence for the correct answer, but allow researchers to explore the sensitivity of their conclusions to any number of analytical variables.
+Multiverses cannot provide evidence for the correct answer, but can allow researchers to explore the sensitivity of their conclusions to any number of analytical variables [@rijnhart_assessing_2021].
+Part of this exploration can disentangle the variation stemming from different sampling or analysis choices, compared to variation stemming directly from the effect of interest [@steegen_increasing_2016; @forstmeier_detecting_2017; @simonsohn_small_2015].
+This can particularly true when we use the multiverse in a synthetic or simulated environment where we are able to hold the effect of interest constant.
 
 * here we conduct a multiverse for population level habitat selection analysis, to explore how sampling and analytical decisions can impact the detection of habitat selection
 
-Previously we explored how individual habitat selection estimates were impacted by decisions regarding sampling and analysis.
+Previously we explored how individual habitat selection estimates were impacted by decisions regarding sampling and analysis <!-- first multiverse preprint cite here -->.
 Broadly we found that sampling (data quantity) was more important than analysis decisions when estimating habitat selection, and that more modern analysis methods tend to produce less variable results.
 Here we build upon those findings to target population level habitat selection analyses. We use simulated animal data with a known habitat preference to explore the impacts of sampling and analysis choice in recovering the direction of that predefined preference.
 
