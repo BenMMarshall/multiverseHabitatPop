@@ -40,16 +40,18 @@ Despite best efforts we can never create a fully generalisable study.
 * exploring why things are and are not repeatable is important
 
 The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations of further studies.
-However, the re-examination of previous work can lead to questions over the reliability of results and therefore, the assumptions subsequent work relies upon.
-Prominent replication studies have shown that previously "text-book" examples in multiple disciplines may need further study [CITE OTHERS HERE; @sanchez-tojar_meta-analysis_2018].
-While other disciplines' replication rates have been more closely examined (see @kelly_rate_2019 for ecological replication rates), there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist [@Brembs2018; @fanelli_pressures_2010; @smaldino_natural_2016; @ware_significance_2015].
+However, the re-examination of foundational work reveals the need to repeatedly question and retest the assumptions subsequent work relies upon.
+While other disciplines' replication rates have been more closely examined [@open_science_collaboration_estimating_2015; @freedman_economics_2015; see @kelly_rate_2019 for ecological replication rates], there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist [@Brembs2018; @fanelli_pressures_2010; @smaldino_natural_2016; @ware_significance_2015].
+Replication studies and meta-analyses have shown that previously results in ecology and evolution may need further study [@parker_what_2013; @seguin_no_2012; @sanchez-tojar_meta-analysis_2018].
+In general, it appears that initial findings are more extreme than those subsequently, and that their initial momentum in regards to research direction is slow to reorient [@jennions_relationships_2002; @barto_dissemination_2012].
+
 
 * for some disciplines testing repeatability practically is tricky, therefore we must be sure to maximise the utility of existing data and know it's limitations
 
-For disciplines where direct replications are more common and feasible, replication efforts can have an immediate feedback role in science.
-Ecological systems, particularly wild, are complex and impossible to fully control leading to ecologists frequent reliance on "natural experiments".
+For disciplines where direct replications are more common and feasible, replication efforts can play a feedback role in science [@open_science_collaboration_estimating_2015; @freedman_economics_2015].
+Ecological systems, particularly wild, are complex and impossible to fully control leading to ecologists' frequent reliance on "natural experiments".
 Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on conceptual or quasi replications [@fraser_role_2020; @palmer_quasi-replication_2000].
-In broader terms, undertaking studies that subject and method differ from the original sutdy, the where the research questions are conceptually similar [@kelly_rate_2019; @nakagawa_replicating_2015].
+In broader terms, undertaking studies that subject and method differ from the original study, the where the research questions are conceptually similar [@kelly_rate_2019; @nakagawa_replicating_2015].
 These replication efforts are still valuable, and valued by the scientific community [@fraser_role_2020], while also aiding to gauge the reliably of proposed patterns, theories, or laws.
 
 * animal movement is one such domain

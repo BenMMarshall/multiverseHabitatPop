@@ -108,12 +108,12 @@ optionsList_pois <- list(
 repeats <- 1
 
 # values_Sample <-
-#   list(sampleSize = rep(c(5,10,15,25,45), each = repeats))
-# 
+#   list(sampleSize = rep(c(2,3,5), each = repeats))
+
 # set.seed(1)
-# 
+
 # optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
-#   sample(1:50, x, replace = FALSE)
+#   sample(1:length(values_SimIndi$individual), x, replace = FALSE)
 # })
 
 optionsList_samples <- list(c(1,2),
