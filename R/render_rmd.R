@@ -7,7 +7,11 @@
 #' @return Nothing, PDF (or output) will be saved to a folder.
 #'
 #' @export
-render_rmd <- function(modelExtracts, effectPlots){
+render_rmd <- function(modelExtracts, effectPlots,
+                       areaSpecCurve,
+                       twoStepSpecCurve,
+                       poisSpecCurve,
+                       ssfSpecCurve){
   
   rmarkdown::render(input = here::here("notebook", "manuscript",
                                        "multiverseHabitatPopulationManuscript.Rmd"),

@@ -23,14 +23,15 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
     length(optionsASteps) *
     length(optionsStepD) *
     length(optionsTurnD) *
-    length(names(sampleGroups)) *
-    length(names(ssfResults))
+    length(names(sampleGroups)) 
+    # length(names(ssfResults))
   
   ssfSampledList <- vector("list", length = listLength)
   i <- 0
-  for(regime in names(ssfResults)){
-    # regime <- "ssfOUT_15_1"
-    ssfRegimeResults <- ssfResults[[regime]]
+  # for(regime in names(ssfResults)){
+  #   # regime <- "ssfOUT_15_1"
+  #   ssfRegimeResults <- ssfResults[[regime]]
+    ssfRegimeResults <- ssfResults
     
     for(sampID in names(sampleGroups)){
       # sampID <- names(optionsList_samples)[1]
@@ -195,7 +196,7 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
     #   
     # }
     
-  } # regime loop
+  # } # regime loop
   return(do.call(rbind, ssfSampledList))
   
 }

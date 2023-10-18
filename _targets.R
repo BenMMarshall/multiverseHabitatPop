@@ -50,7 +50,7 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:10))
+  individual = paste0("i", sprintf("%03d", 1:20))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -58,8 +58,8 @@ values_SimIndi <- tibble(
 values_Regime <- tidyr::expand_grid(
   # td = c(7, 15, 30, 60, 120, 240),
   # tf = c(0.5, 1.0, 2.0, 6.0, 12.0, 24.0, 48.0, 168.0)
-  td = c(15, 60),
-  tf = c(1, 6)
+  td = c(7, 15, 30, 60),
+  tf = c(1.0, 2.0, 6.0, 12.0)
 )
 # have to filter out certain combos that have too little data to work with
 values_Regime <- values_Regime %>%
@@ -71,7 +71,7 @@ values_Regime <- values_Regime %>%
 optionsList_area <- list(
   areaMethod = c("MCP", "AKDE"),
   areaContour = c(95, 99),
-  Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 2)), digits = 1)),
+  Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 4)), digits = 1)),
   Method_sp = c("rd", "st")
 )
 
@@ -85,18 +85,19 @@ optionsList_sff <- list(
   # MethodSSF_mf = c("mf.is"),
   # MethodSSF_sd = c("gamma"),
   # MethodSSF_td = c("vonmises"),
-  MethodSSF_as = c(2, 10),
+  # MethodSSF_as = c(2, 10),
+  MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
   MethodSSF_mf = c("mf.is", "mf.ss"),
   MethodSSF_sd = c("gamma", "exp"),
   MethodSSF_td = c("vonmises", "unif")
-  # MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1))
 )
 
 optionsList_pois <- list(
   # MethodPois_mf = c("mf.is"),
   # MethodPois_sd = c("gamma"),
   # MethodPois_td = c("vonmises"),
-  MethodPois_as = c(2, 10),
+  # MethodPois_as = c(2, 10),
+  MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
   MethodPois_mf = c("mf.is", "mf.ss"),
   MethodPois_sd = c("gamma", "exp"),
   MethodPois_td = c("vonmises", "unif")
@@ -108,7 +109,7 @@ optionsList_pois <- list(
 repeats <- 2
 
 values_Sample <-
-  list(sampleSize = rep(c(3,5,10), each = repeats))
+  list(sampleSize = rep(c(3,5,10,20), each = repeats))
 
 set.seed(2023)
 
@@ -201,6 +202,13 @@ coreMultiverse <- list(
                  optionsList = optionsList_sff
                ),
                priority = 0.9),
+    tar_target(ssfSampled,
+               sample_ssf_results(
+                 ssfOUT,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_sff
+               ),
+               priority = 0.9),
     tar_target(poisOUT,
                method_pois_inla(
                  allIndividualData = sampDuraFreqData,
@@ -219,29 +227,21 @@ coreMultiverse <- list(
 ssfCompiled <- list(
   tar_combine(
     ssfResults,
-    coreMultiverse[[1]][grep("ssfOUT", names(coreMultiverse[[1]]))],
-    command = list(!!!.x),
+    coreMultiverse[[1]][grep("ssfSampled", names(coreMultiverse[[1]]))],
+    command = rbind(!!!.x),
     priority = 0.8
-  ),
-  tar_target(
-    ssfSampled,
-    sample_ssf_results(
-      ssfResults,
-      sampleGroups = optionsList_samples,
-      optionsList = optionsList_sff
-    )
   ),
   tar_target(
     ssfSpecCurve,
     generate_spec_curves(
-      outputResults = ssfSampled,
+      outputResults = ssfResults,
       method = "ssf"
     )
   ),
   tar_target(
     ssfBrms,
     run_brms(
-      resultsData = ssfSampled
+      resultsData = ssfResults
     )
   )
 )
@@ -316,10 +316,11 @@ brmModelOutputs <- list(
   tar_combine(
     modelsBrms,
     # manually pull out the brms model outputs
-    list(ssfCompiled[[4]],
-         areaBasedCompiled[[3]],
-         poisCompiled[[3]],
-         twoStepCompiled[[3]]),
+    list(
+      ssfCompiled[[3]],
+      areaBasedCompiled[[3]],
+      poisCompiled[[3]],
+      twoStepCompiled[[3]]),
     command = list(!!!.x),
     priority = 0.5
   ),
@@ -337,7 +338,11 @@ brmModelOutputs <- list(
   ),
   tar_target(
     rmdRender,
-    render_rmd(modelExtracts, effectPlots),
+    render_rmd(modelExtracts, effectPlots,
+               areaSpecCurve,
+               twoStepSpecCurve,
+               poisSpecCurve,
+               ssfSpecCurve),
     cue = tar_cue(mode = "always"),
     priority = 0.1
   )

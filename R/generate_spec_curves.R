@@ -41,7 +41,7 @@ generate_spec_curves <- function(outputResults, method){
           variable == "trackFreq" ~ "Tracking Frequency (points/hour)",
           variable == "sampleSize" ~ "Sample Size (n)",
           variable == "modelFormula" ~ "Model Formula (SSF or iSSF)",
-          variable == "availableSteps" ~ "Available Points per Step",
+          variable == "availablePerStep" ~ "Available Points per Step",
           variable == "stepDist" ~ "Distribution of Step Lengths",
           variable == "turnDist" ~ "Distribution of Turn Angles",
           variable == "averagingMethod" ~ "Model Averaging Method"
@@ -127,7 +127,7 @@ generate_spec_curves <- function(outputResults, method){
           variable == "trackDura" ~ "Tracking Duration (days)",
           variable == "trackFreq" ~ "Tracking Frequency (points/hour)",
           variable == "sampleSize" ~ "Sample Size (n)",
-          variable == "modelForm" ~ "Model Formula (SSF or iSSF)",
+          variable == "modelFormula" ~ "Model Formula (SSF or iSSF)",
           variable == "availablePerStep" ~ "Available Points per Step",
           variable == "stepDist" ~ "Distribution of Step Lengths",
           variable == "turnDist" ~ "Distribution of Turn Angles"
@@ -168,7 +168,7 @@ generate_spec_curves <- function(outputResults, method){
           variable == "trackDura" ~ "Tracking Duration (days)",
           variable == "trackFreq" ~ "Tracking Frequency (points/hour)",
           variable == "sampleSize" ~ "Sample Size (n)",
-          variable == "modelForm" ~ "Model Formula (SSF or iSSF)",
+          variable == "modelFormula" ~ "Model Formula (SSF or iSSF)",
           variable == "availablePerStep" ~ "Available Points per Step",
           variable == "stepDist" ~ "Distribution of Step Lengths",
           variable == "turnDist" ~ "Distribution of Turn Angles"

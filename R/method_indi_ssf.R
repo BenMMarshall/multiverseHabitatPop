@@ -74,7 +74,8 @@ method_indi_ssf <- function(
   print("break 3")
 
   ssfOUT <- amt::fit_issf(data = modelData,
-                          formula = mFormFull)
+                          formula = mFormFull,
+                          model = TRUE)
 
   # ssfDF <- as.data.frame(summary(ssfOUT)$coef)
   # method <- rep("ssf", nrow(ssfDF))
