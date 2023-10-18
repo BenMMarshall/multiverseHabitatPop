@@ -1,0 +1,1009 @@
+[1] "simData_i001"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] 2023-10-18 13:07:23.404980 | > call 2 (0.004s wait)
+rgeos version: 0.6-4, (SVN revision 699)
+ GEOS runtime version: 3.8.0-CAPI-1.13.1 
+ Please note that rgeos will be retired during October 2023,
+plan transition to sf or terra functions using GEOS at your earliest convenience.
+See https://r-spatial.org/r/2023/05/15/evolution4.html for details.
+ Linking to sp version: 1.6-0 
+ Polygon checking: TRUE 
+
+Minimum sampling interval of 6 hours in BADGER_i001
+Minimum sampling interval of 6 hours in BADGER_i002
+Minimum sampling interval of 6 hours in BADGER_i003
+2023-10-18 13:07:46.291056 | > call 3 (0.005s wait)
+2023-10-18 13:07:48.057161 | > call 4 (0.006s wait)
+2023-10-18 13:10:22.140457 | > call 5 (0.008s wait)
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+2023-10-18 13:10:57.258509 | > call 6 (0.024s wait)
+`summarise()` has grouped output by 'variable'. You can override using the
+`.groups` argument.
+2023-10-18 13:10:59.333699 | > call 7 (0.105s wait)
+2023-10-18 13:10:59.827486 | > call 8 (0.051s wait)
+2023-10-18 13:11:00.366713 | > call 9 (0.085s wait)
+2023-10-18 13:11:00.899309 | > call 10 (0.070s wait)
+2023-10-18 13:11:01.445197 | > call 11 (0.088s wait)
+2023-10-18 13:11:01.975638 | > call 12 (0.089s wait)
+2023-10-18 13:11:02.497280 | > call 13 (0.076s wait)
+2023-10-18 13:11:03.168264 | > call 14 (0.238s wait)
+2023-10-18 13:11:03.696667 | > call 15 (0.102s wait)
+2023-10-18 13:11:04.255338 | > call 16 (0.108s wait)
+2023-10-18 13:11:04.748383 | > call 17 (0.081s wait)
+2023-10-18 13:11:05.251225 | > call 18 (0.051s wait)
+2023-10-18 13:11:05.800552 | > call 19 (0.106s wait)
+2023-10-18 13:11:06.358540 | > call 20 (0.114s wait)
+2023-10-18 13:11:06.904899 | > call 21 (0.091s wait)
+2023-10-18 13:11:07.448267 | > call 22 (0.077s wait)
+2023-10-18 13:11:07.943991 | > call 23 (0.075s wait)
+2023-10-18 13:11:08.483220 | > call 24 (0.130s wait)
+2023-10-18 13:11:08.997660 | > call 25 (0.101s wait)
+2023-10-18 13:11:09.553538 | > call 26 (0.132s wait)
+2023-10-18 13:11:10.225599 | > call 27 (0.200s wait)
+2023-10-18 13:11:10.705712 | > call 28 (0.051s wait)
+2023-10-18 13:11:11.280987 | > call 29 (0.135s wait)
+2023-10-18 13:11:11.820141 | > call 30 (0.087s wait)
+2023-10-18 13:11:12.359986 | > call 31 (0.110s wait)
+2023-10-18 13:11:12.959840 | > call 32 (0.177s wait)
+2023-10-18 13:11:13.561691 | > call 33 (0.163s wait)
+2023-10-18 13:11:14.083605 | > call 34 (0.068s wait)
+2023-10-18 13:11:14.613972 | > call 35 (0.073s wait)
+2023-10-18 13:11:15.244840 | > call 36 (0.179s wait)
+2023-10-18 13:11:15.785453 | > call 37 (0.101s wait)
+2023-10-18 13:11:16.336561 | > call 38 (0.097s wait)
+2023-10-18 13:11:16.859773 | > call 39 (0.077s wait)
+2023-10-18 13:11:17.447170 | > call 40 (0.134s wait)
+2023-10-18 13:11:17.935020 | > call 41 (0.059s wait)
+2023-10-18 13:11:18.513498 | > call 42 (0.124s wait)
+2023-10-18 13:11:19.025340 | > call 43 (0.051s wait)
+2023-10-18 13:11:19.538831 | > call 44 (0.084s wait)
+2023-10-18 13:11:20.038170 | > call 45 (0.051s wait)
+2023-10-18 13:11:20.545687 | > call 46 (0.053s wait)
+2023-10-18 13:11:21.142744 | > call 47 (0.180s wait)
+2023-10-18 13:11:21.651333 | > call 48 (0.064s wait)
+2023-10-18 13:11:22.419064 | > call 49 (0.313s wait)
+2023-10-18 13:11:22.975342 | > call 50 (0.117s wait)
+2023-10-18 13:11:23.484541 | > call 51 (0.053s wait)
+2023-10-18 13:11:24.030470 | > call 52 (0.102s wait)
+2023-10-18 13:11:24.557997 | > call 53 (0.097s wait)
+2023-10-18 13:11:25.020617 | > call 54 (0.068s wait)
+2023-10-18 13:11:25.633992 | > call 55 (0.179s wait)
+2023-10-18 13:11:26.178926 | > call 56 (0.097s wait)
+2023-10-18 13:11:26.768882 | > call 57 (0.140s wait)
+2023-10-18 13:11:27.304995 | > call 58 (0.091s wait)
+2023-10-18 13:11:27.924566 | > call 59 (0.160s wait)
+2023-10-18 13:11:28.422463 | > call 60 (0.067s wait)
+2023-10-18 13:11:28.925158 | > call 61 (0.051s wait)
+2023-10-18 13:11:29.433032 | > call 62 (0.066s wait)
+2023-10-18 13:11:29.948812 | > call 63 (0.063s wait)
+2023-10-18 13:11:30.503473 | > call 64 (0.114s wait)
+2023-10-18 13:11:31.219407 | > call 65 (0.269s wait)
+2023-10-18 13:11:31.773631 | > call 66 (0.111s wait)
+2023-10-18 13:11:32.319728 | > call 67 (0.103s wait)
+2023-10-18 13:11:32.832195 | > call 68 (0.051s wait)
+2023-10-18 13:11:33.375552 | > call 69 (0.091s wait)
+2023-10-18 13:11:33.911172 | > call 70 (0.096s wait)
+2023-10-18 13:11:34.570091 | > call 71 (0.225s wait)
+2023-10-18 13:11:35.141762 | > call 72 (0.148s wait)
+2023-10-18 13:11:35.664678 | > call 73 (0.084s wait)
+2023-10-18 13:11:36.220808 | > call 74 (0.091s wait)
+2023-10-18 13:11:36.692701 | > call 75 (0.052s wait)
+2023-10-18 13:11:37.176100 | > call 76 (0.051s wait)
+2023-10-18 13:11:37.700665 | > call 77 (0.051s wait)
+2023-10-18 13:11:38.173454 | > call 78 (0.051s wait)
+2023-10-18 13:11:38.682524 | > call 79 (0.087s wait)
+2023-10-18 13:11:39.186084 | > call 80 (0.080s wait)
+2023-10-18 13:11:39.682811 | > call 81 (0.062s wait)
+2023-10-18 13:11:40.270273 | > call 82 (0.160s wait)
+2023-10-18 13:11:40.754509 | > call 83 (0.051s wait)
+2023-10-18 13:11:41.250966 | > call 84 (0.062s wait)
+2023-10-18 13:11:41.811081 | > call 85 (0.109s wait)
+2023-10-18 13:11:42.291077 | > call 86 (0.051s wait)
+2023-10-18 13:11:42.808446 | > call 87 (0.062s wait)
+2023-10-18 13:11:43.375417 | > call 88 (0.142s wait)
+2023-10-18 13:11:43.849575 | > call 89 (0.051s wait)
+2023-10-18 13:11:44.360654 | > call 90 (0.094s wait)
+2023-10-18 13:11:44.833971 | > call 91 (0.058s wait)
+2023-10-18 13:11:45.308455 | > call 92 (0.056s wait)
+2023-10-18 13:11:45.827807 | > call 93 (0.086s wait)
+2023-10-18 13:11:46.425333 | > call 94 (0.132s wait)
+2023-10-18 13:11:46.924815 | > call 95 (0.051s wait)
+2023-10-18 13:11:47.625454 | > call 96 (0.238s wait)
+2023-10-18 13:11:48.144007 | > call 97 (0.108s wait)
+2023-10-18 13:11:48.627321 | > call 98 (0.051s wait)
+2023-10-18 13:11:49.135346 | > call 99 (0.051s wait)
+2023-10-18 13:11:49.627988 | > call 100 (0.051s wait)
+2023-10-18 13:11:50.101334 | > call 101 (0.051s wait)
+2023-10-18 13:11:50.617112 | > call 102 (0.085s wait)
+2023-10-18 13:11:51.126495 | > call 103 (0.052s wait)
+2023-10-18 13:11:51.650649 | > call 104 (0.071s wait)
+2023-10-18 13:11:52.146980 | > call 105 (0.051s wait)
+2023-10-18 13:11:52.658750 | > call 106 (0.051s wait)
+2023-10-18 13:11:53.144978 | > call 107 (0.051s wait)
+2023-10-18 13:11:53.616391 | > call 108 (0.050s wait)
+2023-10-18 13:11:54.127022 | > call 109 (0.051s wait)
+2023-10-18 13:11:54.654602 | > call 110 (0.109s wait)
+2023-10-18 13:11:55.179707 | > call 111 (0.064s wait)
+2023-10-18 13:11:55.646417 | > call 112 (0.050s wait)
+2023-10-18 13:11:56.184249 | > call 113 (0.093s wait)
+2023-10-18 13:11:56.775352 | > call 114 (0.140s wait)
+2023-10-18 13:11:57.286333 | > call 115 (0.067s wait)
+2023-10-18 13:11:57.858226 | > call 116 (0.097s wait)
+2023-10-18 13:11:58.581940 | > call 117 (0.265s wait)
+2023-10-18 13:11:59.075166 | > call 118 (0.051s wait)
+2023-10-18 13:11:59.589414 | > call 119 (0.051s wait)
+2023-10-18 13:12:00.093819 | > call 120 (0.056s wait)
+2023-10-18 13:12:00.625182 | > call 121 (0.064s wait)
+2023-10-18 13:12:01.276419 | > call 122 (0.202s wait)
+2023-10-18 13:12:01.828245 | > call 123 (0.118s wait)
+2023-10-18 13:12:02.419742 | > call 124 (0.117s wait)
+2023-10-18 13:12:03.170973 | > call 125 (0.281s wait)
+2023-10-18 13:12:03.722269 | > call 126 (0.100s wait)
+2023-10-18 13:12:04.319726 | > call 127 (0.133s wait)
+2023-10-18 13:12:04.868487 | > call 128 (0.099s wait)
+2023-10-18 13:12:05.458672 | > call 129 (0.099s wait)
+2023-10-18 13:12:05.961452 | > call 130 (0.059s wait)
+2023-10-18 13:12:06.458327 | > call 131 (0.060s wait)
+2023-10-18 13:12:07.013065 | > call 132 (0.126s wait)
+2023-10-18 13:12:07.557128 | > call 133 (0.106s wait)
+2023-10-18 13:12:08.068037 | > call 134 (0.051s wait)
+2023-10-18 13:12:08.678025 | > call 135 (0.173s wait)
+2023-10-18 13:12:09.216839 | > call 136 (0.072s wait)
+2023-10-18 13:12:09.711129 | > call 137 (0.051s wait)
+2023-10-18 13:12:10.268568 | > call 138 (0.107s wait)
+2023-10-18 13:12:10.863941 | > call 139 (0.139s wait)
+2023-10-18 13:12:11.390915 | > call 140 (0.077s wait)
+2023-10-18 13:12:11.865058 | > call 141 (0.053s wait)
+2023-10-18 13:12:12.418220 | > call 142 (0.103s wait)
+2023-10-18 13:12:13.004795 | > call 143 (0.117s wait)
+2023-10-18 13:12:13.533597 | > call 144 (0.090s wait)
+2023-10-18 13:12:14.154313 | > call 145 (0.179s wait)
+2023-10-18 13:12:14.682418 | > call 146 (0.064s wait)
+2023-10-18 13:12:15.202844 | > call 147 (0.053s wait)
+2023-10-18 13:12:15.730185 | > call 148 (0.088s wait)
+2023-10-18 13:12:16.292012 | > call 149 (0.130s wait)
+2023-10-18 13:12:16.880866 | > call 150 (0.126s wait)
+2023-10-18 13:12:17.419786 | > call 151 (0.103s wait)
+2023-10-18 13:12:17.893099 | > call 152 (0.000s wait)
+2023-10-18 13:12:17.893410 | shutting down worker
+2023-10-18 13:12:17.893497 | 
+Total: 152 in 297.50s [user], 36.45s [system], 359.42s [elapsed]
+Warning messages:
+1: GEOS support is provided by the sf and terra packages among others 
+2: GEOS support is provided by the sf and terra packages among others 
+3: GEOS support is provided by the sf and terra packages among others 
+4: GEOS support is provided by the sf and terra packages among others 
+5: GEOS support is provided by the sf and terra packages among others 
+6: GEOS support is provided by the sf and terra packages among others 
+7: GEOS support is provided by the sf and terra packages among others 
+8: GEOS support is provided by the sf and terra packages among others 
+blePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      173      279 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      169      280 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      161      285 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "BADGER_i001"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i001 --- Area Resource --- AKDE"
+[1] "BADGER_i002"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i002 --- Area Resource --- AKDE"
+[1] "BADGER_i003"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i003 --- Area Resource --- AKDE"
+[1] 95
+[1] "simData_i001"
+[1] 95
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 95"
+[1] "simData_i002"
+[1] 95
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 95"
+[1] "simData_i003"
+[1] 95
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 95"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35        8       37 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       16       29 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       14       31 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       18       27 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       17       28 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       19       26 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      122      328 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      144      306 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      194      256 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      160      290 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      182      268 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      168      282 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       11       31 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       18       26 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       16       24 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       16       28 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       15       28 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       16       30 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      101      350 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      166      284 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      195      251 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      157      293 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      192      258 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      159      287 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] 99
+[1] "simData_i001"
+[1] 99
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 99"
+[1] "simData_i002"
+[1] 99
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 99"
+[1] "simData_i003"
+[1] 99
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 99"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       13       32 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       16       29 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       21       24 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       20       25 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       24       21 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       18       27 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         6        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       84      366 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      189      261 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      195      255 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      204      246 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      237      213 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      165      285 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         6        15
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35        9       38 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35       18       27 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       20       21 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37       24       22 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       24       20 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25       19       25 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         6        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      122      333 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      10      35      182      262 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      200      250 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1       8      37      199      256 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      203      248 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      20      25      180      270 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         6        15
+[1] "1 --- mf.is - 15 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 15 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 15 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 15 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 15 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 15 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 15 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 15 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 15 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 15 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 15 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 15 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 15 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 15 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 15 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 15 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 15 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 15 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 15 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 15 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 15 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 15 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 15 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 15 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 15 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 15 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 15 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 15 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 15 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 15 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 15 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 15 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 15 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 15 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 15 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 15 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 15 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 15 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 15 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 15 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 15 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 15 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 15 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 15 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 15 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 15 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 15 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 15 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 15 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 15 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 15 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 15 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 15 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 15 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 15 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 15 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 15 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 15 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 15 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 15 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 15 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 15 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 15 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 15 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 60 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 60 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 60 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 60 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 60 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 60 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 60 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 60 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 60 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 60 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 60 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 60 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 60 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 60 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 60 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 60 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 60 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 60 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 60 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 60 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 60 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 60 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 60 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 60 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 60 - 1 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 60 - 1 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 60 - 1 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 60 - 1 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 60 - 1 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 60 - 1 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 60 - 1 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 60 - 1 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 60 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 60 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 60 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 60 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 60 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 60 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 60 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 60 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 60 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 60 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 60 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 60 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 60 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 60 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 60 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 60 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "1 --- mf.is - 60 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "2 --- mf.is - 60 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "3 --- mf.is - 60 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "4 --- mf.is - 60 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "5 --- mf.is - 60 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "6 --- mf.is - 60 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "7 --- mf.is - 60 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "8 --- mf.is - 60 - 6 - exp - unif - 10"
+[1] TRUE
+[1] "9 --- mf.ss - 60 - 6 - gamma - vonmises - 2"
+[1] TRUE
+[1] "10 --- mf.ss - 60 - 6 - gamma - vonmises - 10"
+[1] TRUE
+[1] "11 --- mf.ss - 60 - 6 - gamma - unif - 2"
+[1] TRUE
+[1] "12 --- mf.ss - 60 - 6 - gamma - unif - 10"
+[1] TRUE
+[1] "13 --- mf.ss - 60 - 6 - exp - vonmises - 2"
+[1] TRUE
+[1] "14 --- mf.ss - 60 - 6 - exp - vonmises - 10"
+[1] TRUE
+[1] "15 --- mf.ss - 60 - 6 - exp - unif - 2"
+[1] TRUE
+[1] "16 --- mf.ss - 60 - 6 - exp - unif - 10"
+[1] TRUE

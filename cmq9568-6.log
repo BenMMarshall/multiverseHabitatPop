@@ -1,0 +1,5 @@
+[1] "simData_i001"
+.362899 | Master: tcp://nd85ed30123f4:9568
+2023-10-18 12:25:24.364059 | connecting to: tcp://nd85ed30123f4:9568
+2023-10-18 12:25:24.404340 | > call 1 (0.004s wait)
+Error in w$poll() : Unexpected peer disconnect

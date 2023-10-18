@@ -30,45 +30,45 @@ subset_frequency <- function(allIndividualData, freqPreset){
     
     if(freqPreset == 0.5){
       # every 0.5 hours
-      sub_OUT <- movementData[movementData$minute == 0 |
-                                movementData$minute == 30,]
+      sub_OUT <- movementData[which(movementData$minute == 0 |
+                                      movementData$minute == 30),]
       
     } else if(freqPreset == 1){
       # every 1 hours
-      sub_OUT <- movementData[movementData$minute == 0,]
+      sub_OUT <- movementData[which(movementData$minute == 0),]
       
     } else if(freqPreset == 2){
       # every 2 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                movementData$hour %% 2 == 0,]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      movementData$hour %% 2 == 0),]
       
     } else if(freqPreset == 6){
       # every 6 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                movementData$hour %% 6 == 0,]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      movementData$hour %% 6 == 0),]
       
     } else if(freqPreset == 12){
       # every 12 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                (movementData$hour == 6 |
-                                   movementData$hour == 18),]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      (movementData$hour == 6 |
+                                         movementData$hour == 18)),]
       
     } else if(freqPreset == 24){
       # every 24 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                movementData$hour == 12,]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      movementData$hour == 12),]
       
     } else if(freqPreset == 48){
       # every 48 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                movementData$hour == 12 &
-                                movementData$yday %% 2 == 0,]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      movementData$hour == 12 &
+                                      movementData$yday %% 2 == 0),]
       
     } else if(freqPreset == 168){
       # every 168 hours
-      sub_OUT <- movementData[movementData$minute == 0 &
-                                movementData$hour == 12 &
-                                movementData$yday %% 7 == 0,]
+      sub_OUT <- movementData[which(movementData$minute == 0 &
+                                      movementData$hour == 12 &
+                                      movementData$yday %% 7 == 0),]
       
     }
     
@@ -94,9 +94,9 @@ subset_duration <- function(allIndividualData, daysDuration){
     
     movementData <- allIndividualData[[indiID]]$locations
     
-    sub_OUT <- movementData[movementData$datetime <
-                              as.POSIXct("2022-01-02 00:00:00",
-                                         format = "%Y-%m-%d %H:%M:%S") + 60*60*24* daysDuration,]
+    sub_OUT <- movementData[which(movementData$datetime <
+                                    as.POSIXct("2022-01-02 00:00:00",
+                                               format = "%Y-%m-%d %H:%M:%S") + 60*60*24* daysDuration),]
     
     
     allIndividualDataOUT[[indiID]]$trackDura <- daysDuration

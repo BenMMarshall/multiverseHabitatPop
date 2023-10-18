@@ -50,7 +50,7 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:3))
+  individual = paste0("i", sprintf("%03d", 1:10))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -105,19 +105,19 @@ optionsList_pois <- list(
 
 # Sampling set-up ---------------------------------------------------------
 
-repeats <- 1
+repeats <- 2
 
-# values_Sample <-
-#   list(sampleSize = rep(c(2,3,5), each = repeats))
+values_Sample <-
+  list(sampleSize = rep(c(3,5,10), each = repeats))
 
-# set.seed(1)
+set.seed(2023)
 
-# optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
-#   sample(1:length(values_SimIndi$individual), x, replace = FALSE)
-# })
+optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
+  sample(1:length(values_SimIndi$individual), x, replace = FALSE)
+})
 
-optionsList_samples <- list(c(1,2),
-                            c(1,2,3))
+# optionsList_samples <- list(c(1,2),
+#                             c(1,2,3))
 
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 
@@ -359,6 +359,9 @@ list(individualSimulationsList,
 # Examine -----------------------------------------------------------------
 
 # targets::tar_make(starts_with("sampDuraFreq"))
+# targets::tar_make(ends_with("esults"))
+# targets::tar_make_clustermq(names = ends_with("esults"), workers = 3, log_worker = TRUE)
+# targets::tar_make_clustermq(workers = 6, log_worker = TRUE)
 # targets::tar_visnetwork(names = starts_with("combined"))
 # mani <- targets::tar_manifest()
 # pattern <- paste0("ssfOUT.*(",

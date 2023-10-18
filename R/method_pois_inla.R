@@ -26,7 +26,8 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
   inlaOUTList <- vector("list", length = listLength)
   i <- 0
   for(sampID in names(sampleGroups)){
-    # sampID <- "samp13"
+    print(sampID)
+    # sampID <- "samp1"
     IDs <- optionsList_samples[[sampID]]
     IDs <- paste0("simData_i", sprintf("%03d", IDs))
     
@@ -40,25 +41,31 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
     
     # select only the information we need
     movementData <- movementData %>% 
-      dplyr::mutate(datetime = as.POSIXct(datetime, format = "%y-%m-%d %H:%M:%S",
+      dplyr::mutate(datetime = as.POSIXct(datetime, format = "%Y-%m-%d %H:%M:%S",
                                           tz = "UTC")) %>% 
       dplyr::select("x" = x, "y" = y,
                     "t" = datetime, "id" = id) %>% 
       dplyr::group_by(id) %>% 
       dplyr::arrange(t)
     
+    print("break 1")
+    
     # separate the individuals out into a list-column of dataframes, each item an animal
     movementDataNest <- movementData %>% 
-      nest(data = -id) 
+      tidyr::nest(moveData = -id)
+    
+    print(sum(is.na(movementData$t)))
     
     # map operates a lot like an apply or loop. It repeats the function to each item
     # in the list. In this case we make all the individual dataframes into track
     # objects. Check dat_all to see the list of dataframes now has a second
     # dataframe/tibble for the track.
     movementDataNest <- movementDataNest %>% 
-      mutate(trk = map(data, function(d){
+      mutate(trk = purrr::map(.x = moveData, .f = function(d){
         make_track(d, .x = x, .y = y, .t = t, crs = 32601)
       }))
+    
+    print("break 2")
     
     # Here the summarize_sampling_rate is repeated on each track object to give you
     # an individual level summary.
@@ -79,6 +86,7 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
           allTracksList <- vector("list", length = length(movementDataNest$id))
           names(allTracksList) <- movementDataNest$id
           for(indiID in movementDataNest$id){
+            print(indiID)
             # indiID <- "BADGER_i001"
             # which(movementDataNest$id == indiID)
             
@@ -136,21 +144,43 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
                                             prior = "pc.prec", param = c(1, 0.05)))) 
             } # if else end
             
+            # print(sum(poisModelData$y[poisModelData$layer == "c0"]))
+            # print(sum(poisModelData$y[poisModelData$layer == "c2"]))
+            # print(sum(is.na(poisModelData$y)))
+            # print(sum(is.na(poisModelData$log_sl)))
+            # print(sum(is.na(poisModelData$cos_ta)))
+            # print(sum(is.na(poisModelData$id)))
+            
             # natural model
-            inlaOUT <- inla(inlaFormula,
-                            family = "Poisson",
-                            data = poisModelData, #verbose=TRUE,
-                            control.fixed = list(
-                              mean = 0,
-                              prec = list(default = prec.beta.trls)))
+            inlaOUT <- try(
+              inla(inlaFormula,
+                   family = "Poisson",
+                   data = poisModelData, #verbose=TRUE,
+                   control.fixed = list(
+                     mean = 0,
+                     prec = list(default = prec.beta.trls)),
+                   control.inla = list(control.vb = list(emergency = 30)))
+            )
             
-            
-            inlaResults <- inlaOUT$summary.fixed[2,]
-            inlaResults$term <- row.names(inlaResults)
-            names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
-                                    "mode", "kld", "term")
-            inlaResults$mmarginal <- inla_mmarginal(inlaOUT)
-            inlaResults$emarginal <- inla_emarginal(inlaOUT)
+            if(class(inlaOUT)[1] == "try-error"){
+              
+              inlaResults <- as.data.frame(t(rep(NA, 7)))
+              inlaResults$term <- "layerc2"
+              names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
+                                      "mode", "kld", "term")
+              inlaResults$mmarginal <- NA
+              inlaResults$emarginal <- NA
+              
+            } else {
+              
+              inlaResults <- inlaOUT$summary.fixed[2,]
+              inlaResults$term <- row.names(inlaResults)
+              names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
+                                      "mode", "kld", "term")
+              inlaResults$mmarginal <- inla_mmarginal(inlaOUT)
+              inlaResults$emarginal <- inla_emarginal(inlaOUT)
+              
+            }
             
             print(inlaResults)
             

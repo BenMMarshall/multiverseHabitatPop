@@ -129,6 +129,7 @@ Despite best efforts we can never create a fully generalisable study.
 
 The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations of further studies.
 However, the re-examination of foundational work reveals the need to repeatedly question and retest the assumptions subsequent work relies upon.
+
 While other disciplines' replication rates have been more closely examined (\protect\hyperlink{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \protect\hyperlink{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}; see \protect\hyperlink{ref-kelly_rate_2019}{Kelly, 2019} for ecological replication rates), there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist (\protect\hyperlink{ref-fanelli_pressures_2010}{Fanelli, 2010}; \protect\hyperlink{ref-ware_significance_2015}{Ware \& Munafò, 2015}; \protect\hyperlink{ref-smaldino_natural_2016}{Smaldino \& McElreath, 2016}; \protect\hyperlink{ref-Brembs2018}{Brembs, 2018}).
 Replication studies and meta-analyses have shown that previously results in ecology and evolution may need further study (\protect\hyperlink{ref-seguin_no_2012}{Seguin \& Forstmeier, 2012}; \protect\hyperlink{ref-parker_what_2013}{Parker, 2013}; \protect\hyperlink{ref-sanchez-tojar_meta-analysis_2018}{Sánchez-Tójar et al., 2018}).
 In general, it appears that initial findings are more extreme than those subsequently, and that their initial momentum in regards to research direction is slow to reorient (\protect\hyperlink{ref-jennions_relationships_2002}{Jennions \& Møller, 2002}; \protect\hyperlink{ref-barto_dissemination_2012}{Barto \& Rillig, 2012}).
@@ -141,9 +142,12 @@ In general, it appears that initial findings are more extreme than those subsequ
 
 For disciplines where direct replications are more common and feasible, replication efforts can play a feedback role in science (\protect\hyperlink{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \protect\hyperlink{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}).
 Ecological systems, particularly wild, are complex and impossible to fully control leading to ecologists' frequent reliance on ``natural experiments''.
+
 Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on conceptual or quasi replications (\protect\hyperlink{ref-palmer_quasi-replication_2000}{Palmer, 2000}; \protect\hyperlink{ref-fraser_role_2020}{Fraser et al., 2020}).
 In broader terms, undertaking studies that subject and method differ from the original study, the where the research questions are conceptually similar (\protect\hyperlink{ref-nakagawa_replicating_2015}{Nakagawa \& Parker, 2015}; \protect\hyperlink{ref-kelly_rate_2019}{Kelly, 2019}).
 These replication efforts are still valuable, and valued by the scientific community (\protect\hyperlink{ref-fraser_role_2020}{Fraser et al., 2020}), while also aiding to gauge the reliably of proposed patterns, theories, or laws.
+
+Ecology and evolution, due to the high task uncertainty, tends to towards a system of organic self-correction, where the complexity of study systems can explain away the differences between studies (i.e., inconsistencies replication), leaving the integration of past and subsequent findings more open to interpretation. .
 
 \begin{itemize}
 \tightlist
@@ -151,7 +155,7 @@ These replication efforts are still valuable, and valued by the scientific commu
   animal movement is one such domain
 \end{itemize}
 
-Animal movement is field of study that replications are difficult to conduct.
+Animal movement, like many aspects of ecology, is field of study that replications are difficult to conduct.
 Tracking animals is costly and come with serious ethical considerations, especially for animals where the tracking equipment can impact their health, mobility, and behaviour (\protect\hyperlink{ref-Sperry2009}{Sperry et al., 2009}; \protect\hyperlink{ref-homberger_strong_2021}{Homberger et al., 2021}; \protect\hyperlink{ref-portugal_externally_2022}{Portugal \& White, 2022}).
 Therefore, there is a strong incentive to extract the maximum value for every tracked animal, and to ensure that all results are as reliable as possible.
 
@@ -237,7 +241,7 @@ Therefore, the variation between individuals is due to stochasticity rather than
   targets construction
 \end{itemize}
 
-To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.0.14.2 and tarchetypes v.0.7.4 R packages (\protect\hyperlink{ref-targets}{Landau, 2021a},\protect\hyperlink{ref-tarchetypes}{b}).
+To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.1.1.2 and tarchetypes v.0.7.6 R packages (\protect\hyperlink{ref-targets}{Landau, 2021a},\protect\hyperlink{ref-tarchetypes}{b}).
 These packages allowed branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice.
 
 \hypertarget{sampling}{%
@@ -272,7 +276,7 @@ These routes included an area based approach using Compana analysis, and three s
   area based: compana, area method, contour, available points, space sampling, type II/III, compana test
 \end{itemize}
 
-We ran the Compana analysis (Compositional Analysis of Habitat Use) using the \emph{adehabitatHS} v.0.3.16 (\protect\hyperlink{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}).
+We ran the Compana analysis (Compositional Analysis of Habitat Use) using the \emph{adehabitatHS} v.0.3.17 (\protect\hyperlink{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}).
 Compana allows for the assessment of habitat selection of multiple animals in defined habitat types; it also allows habitat selection to be estimated at different scales.
 We explored two scales in the multiverse: selection within the home range (Type III), and selection within an overall population available area (Type II).
 The former design (Type III) requires availability habitats to be defined on an individual-by-individual basis, while the latter (Type II) design uses a summarised population level availability.
@@ -280,7 +284,7 @@ The former design (Type III) requires availability habitats to be defined on an 
 To define availability, we created home range polygons then sampled points within, recovering the corresponding habitat at those points.
 The home range (aka availability) polygons can be generated via many different processes.
 We selected to explore MCP and AKDE (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
-We used the \emph{ctmm} v.0.6.1 (\protect\hyperlink{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.20 (\protect\hyperlink{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
+We used the \emph{ctmm} v.1.1.1 (\protect\hyperlink{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.21 (\protect\hyperlink{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
 The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
 For the best model we followed recommendations of , opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
 There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
@@ -324,7 +328,7 @@ We ran two versions of all models, one with no interactions and one where both s
 Previous work has suggested that the integrated (i.e., model with interactions) performs better
 
 A key component of all the population approaches is how they translate a highly structured dataset into a overall summary.
-We ran individual step selection models using the amt v.0.1.7 (\protect\hyperlink{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore rudimentary summary methods.
+We ran individual step selection models using the amt v.0.2.1.0 (\protect\hyperlink{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore rudimentary summary methods.
 The individual step selection models need to be averaged in some manner to extract a population mean selection.
 We explore two simple options for achieving this: a naive mean of the final estimates (i.e., a mean of the estimated betas), and a model average using the \emph{MuMIn} v.1.47.5 package (\protect\hyperlink{ref-MuMIn}{Bartoń, 2023}).
 The \emph{MuMIn} model average approach is weighted based on AICc.
@@ -339,7 +343,7 @@ We implemented these models using the \emph{TwoStepCLogit} v.1.2.5 (\protect\hyp
 More recently Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) have suggested a reformulation of the step selection models to provide faster reliable estimations of population habitat selection.
 The suggestion is to reformulate the model as a Poisson model, but critically with fixed .
 To avoid the slow convergence of MCMC estimation, Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) make use of integrated nested Laplace approximation (INLA) to approximate Bayesian inference.
-We followed the code provided by Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.4.24 (\protect\hyperlink{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \protect\hyperlink{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \protect\hyperlink{ref-martins_bayesian_2013}{Martins et al., 2013}; \protect\hyperlink{ref-rue_bayesian_2017}{Rue et al., 2017}; \protect\hyperlink{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
+We followed the code provided by Muff, Signer \& Fieberg (\protect\hyperlink{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.9.9 (\protect\hyperlink{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \protect\hyperlink{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \protect\hyperlink{ref-martins_bayesian_2013}{Martins et al., 2013}; \protect\hyperlink{ref-rue_bayesian_2017}{Rue et al., 2017}; \protect\hyperlink{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
 
 \hypertarget{assessing-the-multiverse}{%
 \subsection{Assessing the multiverse}\label{assessing-the-multiverse}}
@@ -454,23 +458,23 @@ BMM was funded by the Natural Environment Research Council (NERC) via the IAPETU
 
 In addition to packages already mentioned in the methods we also used the following.
 
-We used \emph{R} v.4.2.2 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.6.2.561 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
+We used \emph{R} v.4.3.1 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.6.2.561 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
 We used \emph{here} v.1.0.1 (\protect\hyperlink{ref-here}{Müller, 2020}) and \emph{qs} v.0.25.5 (\protect\hyperlink{ref-qs}{Ching, 2023}) to manage directory addresses and saved objects.
 
-We used \emph{raster} v.3.6.14 (\protect\hyperlink{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\protect\hyperlink{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}).
+We used \emph{raster} v.3.6.20 (\protect\hyperlink{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\protect\hyperlink{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}).
 
-We used \emph{ggplot2} v.3.4.2 for creating figures (\protect\hyperlink{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\protect\hyperlink{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\protect\hyperlink{ref-ggridges}{Wilke, 2022}), and \emph{ggdist} v.3.2.0 (\protect\hyperlink{ref-ggdist}{Kay, 2023a}).
+We used \emph{ggplot2} v.3.4.2 for creating figures (\protect\hyperlink{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\protect\hyperlink{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\protect\hyperlink{ref-ggridges}{Wilke, 2022}), and \emph{ggdist} v.3.3.0 (\protect\hyperlink{ref-ggdist}{Kay, 2023a}).
 
-We used \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.10.0 (\protect\hyperlink{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.2 (\protect\hyperlink{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.2 (\protect\hyperlink{ref-performance}{Lüdecke et al., 2021}).
+We used \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.10.0 (\protect\hyperlink{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.4 (\protect\hyperlink{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.3 (\protect\hyperlink{ref-performance}{Lüdecke et al., 2021}).
 
-We used the \emph{dplyr} v.1.0.10 (\protect\hyperlink{ref-dplyr}{Wickham et al., 2023}), \emph{tibble} v.3.1.8 (\protect\hyperlink{ref-tibble}{Müller \& Wickham, 2023}),
+We used the \emph{dplyr} v.1.1.2 (\protect\hyperlink{ref-dplyr}{Wickham et al., 2023}), \emph{tibble} v.3.2.1 (\protect\hyperlink{ref-tibble}{Müller \& Wickham, 2023}),
 and \emph{stringr} v.1.5.0 (\protect\hyperlink{ref-stringr}{Wickham, 2022}) packages for data manipulation.
 
-We used \emph{sp} v.1.5.1 (\protect\hyperlink{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{move} v.4.1.12 (\protect\hyperlink{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
+We used \emph{sp} v.1.6.0 (\protect\hyperlink{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{move} v.4.1.12 (\protect\hyperlink{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
 
-We used rmarkdown v.2.19 (\protect\hyperlink{ref-rmarkdown2018}{Xie, Allaire \& Grolemund, 2018}; \protect\hyperlink{ref-rmarkdown2020}{Xie, Dervieux \& Riederer, 2020}; \protect\hyperlink{ref-rmarkdown2023}{Allaire et al., 2023}), bookdown v.0.33 (\protect\hyperlink{ref-bookdown2016}{Xie, 2016}, \protect\hyperlink{ref-R-bookdown}{2022}), tinytex v.0.44 (\protect\hyperlink{ref-tinytex2019}{Xie, 2019}, \protect\hyperlink{ref-tinytex2023}{2023a}), and knitr v.1.41 (\protect\hyperlink{ref-knitr2014}{Xie, 2014}, \protect\hyperlink{ref-knitr2015}{2015}, \protect\hyperlink{ref-knitr2023}{2023b}) packages to generate type-set outputs.
+We used rmarkdown v.2.21 (\protect\hyperlink{ref-rmarkdown2018}{Xie, Allaire \& Grolemund, 2018}; \protect\hyperlink{ref-rmarkdown2020}{Xie, Dervieux \& Riederer, 2020}; \protect\hyperlink{ref-rmarkdown2023}{Allaire et al., 2023}), bookdown v.0.34 (\protect\hyperlink{ref-bookdown2016}{Xie, 2016}, \protect\hyperlink{ref-R-bookdown}{2022}), tinytex v.0.45 (\protect\hyperlink{ref-tinytex2019}{Xie, 2019}, \protect\hyperlink{ref-tinytex2023}{2023a}), and knitr v.1.42 (\protect\hyperlink{ref-knitr2014}{Xie, 2014}, \protect\hyperlink{ref-knitr2015}{2015}, \protect\hyperlink{ref-knitr2023}{2023b}) packages to generate type-set outputs.
 
-We generated R package citations with the aid of \emph{grateful} v.0.1.13 (\protect\hyperlink{ref-grateful}{Francisco Rodríguez-Sánchez, Connor P. Jackson \& Shaurita D. Hutchins, 2023}).
+We generated R package citations with the aid of \emph{grateful} v.0.2.0 (\protect\hyperlink{ref-grateful}{Francisco Rodríguez-Sánchez, Connor P. Jackson \& Shaurita D. Hutchins, 2023}).
 
 \hypertarget{data-availabilty}{%
 \section{Data availabilty}\label{data-availabilty}}

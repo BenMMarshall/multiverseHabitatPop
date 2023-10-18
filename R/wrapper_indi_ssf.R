@@ -47,12 +47,13 @@ wrapper_indi_ssf <- function(
                       length = listSize)
     i <- 0
     for(mf in MethodSSF_mf){
-      
+      # mf <- MethodSSF_mf[1]
       for(sd in MethodSSF_sd){
-        
+        # sd <- MethodSSF_sd[1]
         for(td in MethodSSF_td){
-          
+          # td <- MethodSSF_td[1]
           for(as in MethodSSF_as){
+            # as <- MethodSSF_as[1]
             
             ssfOUT <- method_indi_ssf(
               movementData = movementData,

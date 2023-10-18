@@ -27,6 +27,8 @@ method_indi_ssf <- function(
     stop("amt not installed")
   }
 
+  print("break 1")
+  
   movementData$t <- as.POSIXct(movementData$datetime)
   movementTrack <- amt::make_track(tbl = movementData, .x = x, .y = y, .t = t, crs = 32601)
   movementSteps <- amt::steps(movementTrack)
@@ -41,6 +43,8 @@ method_indi_ssf <- function(
   # stepDist <- "gamma"
   # turnDist <- "vonmises"
   # availableSteps <- 5
+  
+  print("break 2")
   
   modelData <- amt::random_steps(movementSteps,
                                  n_control = availableSteps,
@@ -66,10 +70,11 @@ method_indi_ssf <- function(
       strata(step_id_)
 
   }
+  
+  print("break 3")
 
   ssfOUT <- amt::fit_issf(data = modelData,
-                          formula = mFormFull,
-                          model = TRUE)
+                          formula = mFormFull)
 
   # ssfDF <- as.data.frame(summary(ssfOUT)$coef)
   # method <- rep("ssf", nrow(ssfDF))

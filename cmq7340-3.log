@@ -1,0 +1,816 @@
+[1] "simData_i001"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] "break 2"
+[1] "break 3"
+[1] "break 1"
+[1] 2023-10-18 13:07:04.282062 | > call 2 (0.008s wait)
+2023-10-18 13:07:20.588859 | > call 3 (0.006s wait)
+2023-10-18 13:07:33.809467 | > call 4 (0.005s wait)
+rgeos version: 0.6-4, (SVN revision 699)
+ GEOS runtime version: 3.8.0-CAPI-1.13.1 
+ Please note that rgeos will be retired during October 2023,
+plan transition to sf or terra functions using GEOS at your earliest convenience.
+See https://r-spatial.org/r/2023/05/15/evolution4.html for details.
+ Linking to sp version: 1.6-0 
+ Polygon checking: TRUE 
+
+Minimum sampling interval of 1 hours in BADGER_i001
+Default grid size of 1 hours chosen for bandwidth(...,fast=TRUE).
+Minimum sampling interval of 1 hours in BADGER_i002
+Default grid size of 1 hours chosen for bandwidth(...,fast=TRUE).
+Minimum sampling interval of 1 hours in BADGER_i003
+Default grid size of 1 hours chosen for bandwidth(...,fast=TRUE).
+2023-10-18 13:10:39.048759 | > call 5 (0.253s wait)
+2023-10-18 13:10:40.854134 | > call 6 (0.102s wait)
+2023-10-18 13:10:41.914514 | > call 7 (0.122s wait)
+2023-10-18 13:10:47.140337 | > call 8 (0.054s wait)
+2023-10-18 13:10:47.710176 | > call 9 (0.051s wait)
+2023-10-18 13:10:48.279299 | > call 10 (0.052s wait)
+2023-10-18 13:10:48.839316 | > call 11 (0.052s wait)
+2023-10-18 13:10:49.383959 | > call 12 (0.051s wait)
+2023-10-18 13:10:49.954190 | > call 13 (0.052s wait)
+2023-10-18 13:10:50.511067 | > call 14 (0.051s wait)
+2023-10-18 13:10:51.044280 | > call 15 (0.052s wait)
+2023-10-18 13:10:51.741059 | > call 16 (0.185s wait)
+2023-10-18 13:10:52.308661 | > call 17 (0.051s wait)
+2023-10-18 13:10:52.875345 | > call 18 (0.066s wait)
+2023-10-18 13:10:53.495266 | > call 19 (0.123s wait)
+2023-10-18 13:10:54.108641 | > call 20 (0.109s wait)
+2023-10-18 13:10:54.672017 | > call 21 (0.051s wait)
+2023-10-18 13:10:55.232376 | > call 22 (0.058s wait)
+2023-10-18 13:10:55.808557 | > call 23 (0.110s wait)
+2023-10-18 13:10:56.515693 | > call 24 (0.241s wait)
+2023-10-18 13:10:57.068431 | > call 25 (0.051s wait)
+2023-10-18 13:10:57.631766 | > call 26 (0.051s wait)
+2023-10-18 13:10:58.154084 | > call 27 (0.051s wait)
+2023-10-18 13:10:58.652808 | > call 28 (0.051s wait)
+2023-10-18 13:10:59.185241 | > call 29 (0.052s wait)
+2023-10-18 13:10:59.744284 | > call 30 (0.051s wait)
+2023-10-18 13:11:00.297279 | > call 31 (0.051s wait)
+2023-10-18 13:11:00.847221 | > call 32 (0.052s wait)
+2023-10-18 13:11:01.390052 | > call 33 (0.051s wait)
+2023-10-18 13:11:01.912536 | > call 34 (0.051s wait)
+2023-10-18 13:11:02.554512 | > call 35 (0.172s wait)
+2023-10-18 13:11:03.096807 | > call 36 (0.056s wait)
+2023-10-18 13:11:03.617911 | > call 37 (0.051s wait)
+2023-10-18 13:11:04.370709 | > call 38 (0.253s wait)
+2023-10-18 13:11:04.881227 | > call 39 (0.068s wait)
+2023-10-18 13:11:05.474910 | > call 40 (0.099s wait)
+2023-10-18 13:11:06.099511 | > call 41 (0.139s wait)
+2023-10-18 13:11:06.792537 | > call 42 (0.239s wait)
+2023-10-18 13:11:07.311707 | > call 43 (0.051s wait)
+2023-10-18 13:11:08.021334 | > call 44 (0.243s wait)
+2023-10-18 13:11:08.607713 | > call 45 (0.121s wait)
+2023-10-18 13:11:09.240906 | > call 46 (0.171s wait)
+2023-10-18 13:11:09.834758 | > call 47 (0.092s wait)
+2023-10-18 13:11:10.428000 | > call 48 (0.121s wait)
+2023-10-18 13:11:10.968284 | > call 49 (0.064s wait)
+2023-10-18 13:11:11.570914 | > call 50 (0.114s wait)
+2023-10-18 13:11:12.132516 | > call 51 (0.103s wait)
+2023-10-18 13:11:12.875829 | > call 52 (0.286s wait)
+2023-10-18 13:11:13.415217 | > call 53 (0.052s wait)
+2023-10-18 13:11:13.957102 | > call 54 (0.051s wait)
+2023-10-18 13:11:14.544580 | > call 55 (0.079s wait)
+2023-10-18 13:11:15.098774 | > call 56 (0.064s wait)
+2023-10-18 13:11:15.672644 | > call 57 (0.094s wait)
+2023-10-18 13:11:16.248672 | > call 58 (0.082s wait)
+2023-10-18 13:11:16.785839 | > call 59 (0.051s wait)
+2023-10-18 13:11:17.590129 | > call 60 (0.316s wait)
+2023-10-18 13:11:18.104498 | > call 61 (0.051s wait)
+2023-10-18 13:11:18.661325 | > call 62 (0.051s wait)
+2023-10-18 13:11:19.243185 | > call 63 (0.069s wait)
+2023-10-18 13:11:19.809884 | > call 64 (0.074s wait)
+2023-10-18 13:11:20.400061 | > call 65 (0.089s wait)
+2023-10-18 13:11:21.006049 | > call 66 (0.159s wait)
+2023-10-18 13:11:21.557418 | > call 67 (0.052s wait)
+2023-10-18 13:11:22.155750 | > call 68 (0.101s wait)
+2023-10-18 13:11:22.784831 | > call 69 (0.153s wait)
+2023-10-18 13:11:23.332942 | > call 70 (0.051s wait)
+2023-10-18 13:11:23.886134 | > call 71 (0.058s wait)
+2023-10-18 13:11:24.447042 | > call 72 (0.087s wait)
+2023-10-18 13:11:25.109113 | > call 73 (0.208s wait)
+2023-10-18 13:11:25.769915 | > call 74 (0.164s wait)
+2023-10-18 13:11:26.307164 | > call 75 (0.051s wait)
+2023-10-18 13:11:26.870462 | > call 76 (0.082s wait)
+2023-10-18 13:11:27.414912 | > call 77 (0.051s wait)
+2023-10-18 13:11:28.171348 | > call 78 (0.264s wait)
+2023-10-18 13:11:28.718487 | > call 79 (0.051s wait)
+2023-10-18 13:11:29.265704 | > call 80 (0.051s wait)
+2023-10-18 13:11:29.817608 | > call 81 (0.051s wait)
+2023-10-18 13:11:30.433287 | > call 82 (0.109s wait)
+2023-10-18 13:11:31.000259 | > call 83 (0.051s wait)
+2023-10-18 13:11:31.545266 | > call 84 (0.051s wait)
+2023-10-18 13:11:32.115810 | > call 85 (0.076s wait)
+2023-10-18 13:11:32.656693 | > call 86 (0.064s wait)
+2023-10-18 13:11:33.232810 | > call 87 (0.072s wait)
+2023-10-18 13:11:33.763346 | > call 88 (0.067s wait)
+2023-10-18 13:11:34.358550 | > call 89 (0.114s wait)
+2023-10-18 13:11:34.867292 | > call 90 (0.051s wait)
+2023-10-18 13:11:35.424908 | > call 91 (0.071s wait)
+2023-10-18 13:11:35.989448 | > call 92 (0.051s wait)
+2023-10-18 13:11:36.599193 | > call 93 (0.120s wait)
+2023-10-18 13:11:53.275808 | > call 94 (0.119s wait)
+2023-10-18 13:11:54.186752 | > call 95 (0.069s wait)
+2023-10-18 13:11:54.849479 | > call 96 (0.051s wait)
+2023-10-18 13:11:55.418056 | > call 97 (0.051s wait)
+2023-10-18 13:11:55.967703 | > call 98 (0.051s wait)
+2023-10-18 13:11:56.526916 | > call 99 (0.051s wait)
+2023-10-18 13:11:57.077068 | > call 100 (0.051s wait)
+2023-10-18 13:11:57.644183 | > call 101 (0.052s wait)
+2023-10-18 13:11:58.277760 | > call 102 (0.051s wait)
+2023-10-18 13:11:58.802628 | > call 103 (0.051s wait)
+2023-10-18 13:11:59.369829 | > call 104 (0.051s wait)
+2023-10-18 13:11:59.985493 | > call 105 (0.051s wait)
+2023-10-18 13:12:00.552323 | > call 106 (0.051s wait)
+2023-10-18 13:12:01.156038 | > call 107 (0.082s wait)
+2023-10-18 13:12:01.740120 | > call 108 (0.082s wait)
+2023-10-18 13:12:02.339139 | > call 109 (0.080s wait)
+2023-10-18 13:12:02.911559 | > call 110 (0.051s wait)
+2023-10-18 13:12:03.453299 | > call 111 (0.057s wait)
+2023-10-18 13:12:04.107298 | > call 112 (0.138s wait)
+2023-10-18 13:12:04.665340 | > call 113 (0.057s wait)
+2023-10-18 13:12:05.232941 | > call 114 (0.056s wait)
+2023-10-18 13:12:05.837386 | > call 115 (0.087s wait)
+2023-10-18 13:12:06.553041 | > call 116 (0.216s wait)
+2023-10-18 13:12:07.149915 | > call 117 (0.109s wait)
+2023-10-18 13:12:07.695487 | > call 118 (0.051s wait)
+2023-10-18 13:12:08.498488 | > call 119 (0.287s wait)
+2023-10-18 13:12:09.074965 | > call 120 (0.070s wait)
+2023-10-18 13:12:09.619390 | > call 121 (0.051s wait)
+2023-10-18 13:12:10.185464 | > call 122 (0.051s wait)
+2023-10-18 13:12:10.772880 | > call 123 (0.076s wait)
+2023-10-18 13:12:11.540577 | > call 124 (0.260s wait)
+2023-10-18 13:12:12.074944 | > call 125 (0.051s wait)
+2023-10-18 13:12:12.635162 | > call 126 (0.054s wait)
+2023-10-18 13:12:13.230048 | > call 127 (0.087s wait)
+2023-10-18 13:12:13.969589 | > call 128 (0.260s wait)
+2023-10-18 13:12:14.544559 | > call 129 (0.083s wait)
+2023-10-18 13:12:15.138300 | > call 130 (0.086s wait)
+2023-10-18 13:12:15.822884 | > call 131 (0.187s wait)
+2023-10-18 13:12:16.353014 | > call 132 (0.051s wait)
+2023-10-18 13:12:16.942185 | > call 133 (0.078s wait)
+2023-10-18 13:12:17.512198 | > call 134 (0.062s wait)
+Error in w$poll() : Unexpected peer disconnect
+In addition: Warning messages:
+1: GEOS support is provided by the sf and terra packages among others 
+2: GEOS support is provided by the sf and terra packages among others 
+3: GEOS support is provided by the sf and terra packages among others 
+4: GEOS support is provided by the sf and terra packages among others 
+5: GEOS support is provided by the sf and terra packages among others 
+6: GEOS support is provided by the sf and terra packages among others 
+7: GEOS support is provided by the sf and terra packages among others 
+8: GEOS support is provided by the sf and terra packages among others 
+     st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      505      870 BADGER_i003   II    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     3112    10685 BADGER_i001  III    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     5043     8729 BADGER_i001   II    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5857     7927 BADGER_i002  III    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5060     8729 BADGER_i002   II    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6028     7780 BADGER_i003  III    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     5067     8738 BADGER_i003   II    MCP      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] 99
+[1] "simData_i001"
+[1] "simData_i001 --- Polygon created --- MCP - 99"
+[1] "simData_i002"
+[1] "simData_i002 --- Polygon created --- MCP - 99"
+[1] "simData_i003"
+[1] "simData_i003 --- Polygon created --- MCP - 99"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      421      959 BADGER_i001  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      564      816 BADGER_i001   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      659      721 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      563      817 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      667      713 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      556      824 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     4320     9480 BADGER_i001  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     5697     8103 BADGER_i001   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6310     7490 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5710     8090 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6826     6974 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     5771     8029 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      442      938 BADGER_i001  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      564      826 BADGER_i001   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      609      766 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      575      807 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      689      693 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      588      790 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     4325     9472 BADGER_i001  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     5799     8004 BADGER_i001   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6250     7541 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5781     8028 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6741     7049 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     5756     8047 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "BADGER_i001"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i001 --- Area Resource --- AKDE"
+[1] "BADGER_i002"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i002 --- Area Resource --- AKDE"
+[1] "BADGER_i003"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i003 --- Area Resource --- AKDE"
+[1] 95
+[1] "simData_i001"
+[1] 95
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 95"
+[1] "simData_i002"
+[1] 95
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 95"
+[1] "simData_i003"
+[1] 95
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 95"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      372     1008 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      523      857 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      559      821 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      538      842 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      604      776 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      520      860 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     3647    10153 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     5359     8441 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5618     8182 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5399     8401 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6270     7530 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     5345     8455 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      377     1005 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      542      837 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      545      833 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      515      860 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      632      751 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      523      853 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     3721    10085 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     5350     8445 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5633     8162 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     5390     8397 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6198     7611 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     5333     8481 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] 99
+[1] "simData_i001"
+[1] 99
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 99"
+[1] "simData_i002"
+[1] 99
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 99"
+[1] "simData_i003"
+[1] 99
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 99"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      443      937 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      635      745 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      601      779 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      588      792 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      728      652 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      593      787 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     4479     9321 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     6043     7757 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6061     7739 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6078     7722 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     7208     6592 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6018     7782 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        60
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      443      935 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113      585      792 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      615      769 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018      637      736 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      727      650 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949      615      767 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        60
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     4484     9319 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     267    1113     6057     7731 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6146     7640 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     362    1018     6101     7705 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     7134     6661 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     431     949     6011     7793 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        60

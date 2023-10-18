@@ -1,0 +1,108 @@
+[1] "simData_i001"
+.644542 | Master: tcp://nd85ed30123f4:9277
+2023-10-18 12:21:44.645706 | connecting to: tcp://nd85ed30123f4:9277
+2023-10-18 12:21:44.685965 | > call 1 (0.006s wait)
+Loading required package: raster
+
+Attaching package: ‘raster’
+
+The following object is masked from ‘package:amt’:
+
+    select
+
+The following object is masked from ‘package:MASS’:
+
+    select
+
+The following object is masked from ‘package:dplyr’:
+
+    select
+
+Loading required package: RandomFields
+Loading required package: RandomFieldsUtils
+Consider the use of one of 
+	RFoptions(install.control=list(force=FALSE))
+	RFoptions(install.control=list(repos=NULL))
+	RFoptions(install.control=NULL)
+If you use it, the package might run faster the next time it is loaded.
+Recompilation is at your own risk. There is currently no guarantee that it will work.
+In case of problems:  Please contact the maintainer martin.schlather@math.uni-mannheim.de.
+
+
+Attaching package: ‘RandomFields’
+
+The following objects are masked from ‘package:RandomFieldsUtils’:
+
+    checkExamples, RFoptions
+
+Loading required package: NLMR
+2023-10-18 12:22:13.179064 | > call 2 (0.177s wait)
+2023-10-18 12:22:23.274356 | > call 3 (0.359s wait)
+2023-10-18 12:22:23.849822 | > call 4 (0.261s wait)
+2023-10-18 12:22:24.511649 | > call 5 (0.353s wait)
+2023-10-18 12:22:24.902879 | > call 6 (0.084s wait)
+2023-10-18 12:22:25.606279 | > call 7 (0.355s wait)
+2023-10-18 12:22:26.024097 | > call 8 (0.073s wait)
+2023-10-18 12:22:26.504186 | > call 9 (0.188s wait)
+2023-10-18 12:22:26.910100 | > call 10 (0.113s wait)
+2023-10-18 12:22:27.320100 | > call 11 (0.090s wait)
+2023-10-18 12:22:27.696812 | > call 12 (0.054s wait)
+2023-10-18 12:22:28.331793 | > call 13 (0.340s wait)
+2023-10-18 12:22:28.741347 | > call 14 (0.111s wait)
+2023-10-18 12:22:29.229786 | > call 15 (0.160s wait)
+2023-10-18 12:22:29.652145 | > call 16 (0.110s wait)
+2023-10-18 12:22:30.066151 | > call 17 (0.102s wait)
+2023-10-18 12:22:30.481904 | > call 18 (0.096s wait)
+2023-10-18 12:22:30.925554 | > call 19 (0.124s wait)
+2023-10-18 12:22:31.595880 | > call 20 (0.333s wait)
+2023-10-18 12:22:32.001656 | > call 21 (0.076s wait)
+2023-10-18 12:22:32.565457 | > call 22 (0.237s wait)
+2023-10-18 12:22:33.018450 | > call 23 (0.130s wait)
+2023-10-18 12:22:33.517747 | > call 24 (0.175s wait)
+2023-10-18 12:22:34.044532 | > call 25 (0.195s wait)
+2023-10-18 12:22:34.614500 | > call 26 (0.254s wait)
+2023-10-18 12:22:35.131039 | > call 27 (0.205s wait)
+2023-10-18 12:22:35.663087 | > call 28 (0.217s wait)
+2023-10-18 12:22:36.194018 | > call 29 (0.214s wait)
+2023-10-18 12:22:36.726722 | > call 30 (0.228s wait)
+2023-10-18 12:22:37.367905 | > call 31 (0.314s wait)
+2023-10-18 12:22:37.776824 | > call 32 (0.068s wait)
+2023-10-18 12:22:38.302082 | > call 33 (0.210s wait)
+2023-10-18 12:22:38.664131 | > call 34 (0.052s wait)
+2023-10-18 12:22:39.083165 | > call 35 (0.052s wait)
+2023-10-18 12:22:39.489327 | > call 36 (0.052s wait)
+2023-10-18 12:22:39.927886 | > call 37 (0.052s wait)
+2023-10-18 12:22:40.314262 | > call 38 (0.052s wait)
+2023-10-18 12:22:40.716069 | > call 39 (0.052s wait)
+2023-10-18 12:22:41.168890 | > call 40 (0.052s wait)
+2023-10-18 12:22:41.606586 | > call 41 (0.052s wait)
+2023-10-18 12:22:42.036250 | > call 42 (0.052s wait)
+2023-10-18 12:22:42.492976 | > call 43 (0.052s wait)
+2023-10-18 12:22:42.931251 | > call 44 (0.052s wait)
+2023-10-18 12:22:43.356422 | > call 45 (0.052s wait)
+2023-10-18 12:22:43.825680 | > call 46 (0.051s wait)
+2023-10-18 12:22:44.279416 | > call 47 (0.051s wait)
+2023-10-18 12:22:44.755813 | > call 48 (0.051s wait)
+2023-10-18 12:22:45.174755 | > call 49 (0.051s wait)
+2023-10-18 12:22:45.534052 | > call 50 (0.051s wait)
+2023-10-18 12:22:45.885910 | > call 51 (0.052s wait)
+2023-10-18 12:22:46.240422 | > call 52 (0.051s wait)
+2023-10-18 12:22:46.619968 | > call 53 (0.052s wait)
+2023-10-18 12:22:46.974498 | > call 54 (0.052s wait)
+2023-10-18 12:22:47.327690 | > call 55 (0.051s wait)
+2023-10-18 12:22:47.706460 | > call 56 (0.052s wait)
+2023-10-18 12:22:48.071616 | > call 57 (0.052s wait)
+2023-10-18 12:22:48.424951 | > call 58 (0.052s wait)
+2023-10-18 12:22:48.782149 | > call 59 (0.052s wait)
+2023-10-18 12:22:49.162610 | > call 60 (0.052s wait)
+2023-10-18 12:22:49.517770 | > call 61 (0.051s wait)
+2023-10-18 12:22:49.895420 | > call 62 (0.052s wait)
+2023-10-18 12:22:50.286824 | > call 63 (0.051s wait)
+2023-10-18 12:22:50.706186 | > call 64 (0.052s wait)
+2023-10-18 12:22:51.073466 | > call 65 (0.052s wait)
+2023-10-18 12:22:51.430279 | > call 66 (0.052s wait)
+2023-10-18 12:22:51.827182 | > call 67 (0.052s wait)
+2023-10-18 12:22:52.181321 | > call 68 (0.052s wait)
+2023-10-18 12:22:52.545245 | > call 69 (0.052s wait)
+2023-10-18 12:22:52.882945 | > call 70 (0.004s wait)
+Error in w$poll() : Unexpected peer disconnect

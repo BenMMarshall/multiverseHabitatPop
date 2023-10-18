@@ -1,0 +1,1056 @@
+[1] "simData_i001 --- Area Resource --- MCP"
+[1] "simData_i002 --- Area Resource --- MCP"
+[1] "simData_i003 --- Area Resource --- MCP"
+[1] 95
+[1] "simData_i001"
+[1] "simData_i001 --- rgeos version: 0.6-4, (SVN revision 699)
+ GEOS runtime version: 3.8.0-CAPI-1.13.1 
+ Please note that rgeos will be retired during October 2023,
+plan transition to sf or ter[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2Minimum sampling interval of 1 hours in BADGER_i001
+Minimum sampling interval of 1 hours in BADGER_i002
+Minimum sampling interval of 1 hours in BADGER_i003
+polygonList[[p]] is invalid
+2023-10-18 13:07:40.463621 | > call 2 (0.007s wait)
+2023-10-18 13:07:42.047683 | > call 3 (0.007s wait)
+2023-10-18 13:09:49.784965 | > call 4 (0.011s wait)
+2023-10-18 13:09:50.714058 | > call 5 (0.005s wait)
+2023-10-18 13:09:55.967260 | > call 6 (0.248s wait)
+2023-10-18 13:09:56.549607 | > call 7 (0.078s wait)
+2023-10-18 13:09:57.101751 | > call 8 (0.052s wait)
+2023-10-18 13:09:57.649111 | > call 9 (0.052s wait)
+2023-10-18 13:09:58.183262 | > call 10 (0.051s wait)
+2023-10-18 13:09:58.728764 | > call 11 (0.052s wait)
+2023-10-18 13:09:59.270343 | > call 12 (0.051s wait)
+2023-10-18 13:09:59.798546 | > call 13 (0.052s wait)
+2023-10-18 13:10:00.322283 | > call 14 (0.051s wait)
+2023-10-18 13:10:00.855515 | > call 15 (0.051s wait)
+2023-10-18 13:10:01.400620 | > call 16 (0.052s wait)
+2023-10-18 13:10:01.933144 | > call 17 (0.078s wait)
+2023-10-18 13:10:02.476009 | > call 18 (0.051s wait)
+2023-10-18 13:10:03.007802 | > call 19 (0.051s wait)
+2023-10-18 13:10:03.524648 | > call 20 (0.052s wait)
+2023-10-18 13:10:04.158751 | > call 21 (0.144s wait)
+2023-10-18 13:10:04.695898 | > call 22 (0.052s wait)
+2023-10-18 13:10:05.234831 | > call 23 (0.052s wait)
+2023-10-18 13:10:05.776651 | > call 24 (0.052s wait)
+2023-10-18 13:10:06.305619 | > call 25 (0.052s wait)
+2023-10-18 13:10:06.833449 | > call 26 (0.051s wait)
+2023-10-18 13:10:07.361029 | > call 27 (0.051s wait)
+2023-10-18 13:10:07.894311 | > call 28 (0.051s wait)
+2023-10-18 13:10:08.446085 | > call 29 (0.052s wait)
+2023-10-18 13:10:08.982943 | > call 30 (0.052s wait)
+2023-10-18 13:10:09.649329 | > call 31 (0.188s wait)
+2023-10-18 13:10:10.186608 | > call 32 (0.052s wait)
+2023-10-18 13:10:10.725513 | > call 33 (0.051s wait)
+2023-10-18 13:10:11.271218 | > call 34 (0.051s wait)
+2023-10-18 13:10:11.869841 | > call 35 (0.052s wait)
+2023-10-18 13:10:12.421422 | > call 36 (0.051s wait)
+2023-10-18 13:10:13.002266 | > call 37 (0.051s wait)
+2023-10-18 13:10:13.596200 | > call 38 (0.051s wait)
+2023-10-18 13:10:14.177466 | > call 39 (0.051s wait)
+2023-10-18 13:10:14.768380 | > call 40 (0.051s wait)
+2023-10-18 13:10:15.356767 | > call 41 (0.051s wait)
+2023-10-18 13:10:15.957199 | > call 42 (0.051s wait)
+2023-10-18 13:10:16.514934 | > call 43 (0.051s wait)
+2023-10-18 13:10:17.100672 | > call 44 (0.052s wait)
+2023-10-18 13:10:17.682108 | > call 45 (0.051s wait)
+2023-10-18 13:10:18.292296 | > call 46 (0.051s wait)
+2023-10-18 13:10:18.850388 | > call 47 (0.051s wait)
+2023-10-18 13:10:19.436643 | > call 48 (0.052s wait)
+2023-10-18 13:10:20.038803 | > call 49 (0.051s wait)
+2023-10-18 13:10:20.607535 | > call 50 (0.052s wait)
+2023-10-18 13:10:21.151269 | > call 51 (0.051s wait)
+2023-10-18 13:10:21.728925 | > call 52 (0.051s wait)
+2023-10-18 13:10:22.302401 | > call 53 (0.051s wait)
+2023-10-18 13:10:22.942597 | > call 54 (0.083s wait)
+2023-10-18 13:10:23.607468 | > call 55 (0.103s wait)
+2023-10-18 13:10:24.224536 | > call 56 (0.052s wait)
+2023-10-18 13:10:24.834154 | > call 57 (0.051s wait)
+2023-10-18 13:10:25.456119 | > call 58 (0.051s wait)
+2023-10-18 13:10:26.058558 | > call 59 (0.052s wait)
+2023-10-18 13:10:26.673418 | > call 60 (0.051s wait)
+2023-10-18 13:10:27.300756 | > call 61 (0.052s wait)
+2023-10-18 13:10:28.008346 | > call 62 (0.129s wait)
+2023-10-18 13:10:28.578754 | > call 63 (0.052s wait)
+2023-10-18 13:10:29.136712 | > call 64 (0.052s wait)
+2023-10-18 13:10:29.677657 | > call 65 (0.052s wait)
+2023-10-18 13:10:30.239321 | > call 66 (0.051s wait)
+2023-10-18 13:10:30.811480 | > call 67 (0.051s wait)
+2023-10-18 13:10:31.386228 | > call 68 (0.051s wait)
+2023-10-18 13:10:31.933326 | > call 69 (0.051s wait)
+2023-10-18 13:10:32.501104 | > call 70 (0.051s wait)
+2023-10-18 13:10:33.070394 | > call 71 (0.051s wait)
+2023-10-18 13:10:33.615737 | > call 72 (0.051s wait)
+2023-10-18 13:10:34.178173 | > call 73 (0.051s wait)
+2023-10-18 13:10:34.730493 | > call 74 (0.051s wait)
+2023-10-18 13:10:35.284886 | > call 75 (0.051s wait)
+2023-10-18 13:10:35.930919 | > call 76 (0.144s wait)
+2023-10-18 13:10:36.550042 | > call 77 (0.111s wait)
+2023-10-18 13:10:37.121971 | > call 78 (0.051s wait)
+2023-10-18 13:10:37.678235 | > call 79 (0.051s wait)
+2023-10-18 13:10:38.256545 | > call 80 (0.052s wait)
+2023-10-18 13:10:38.837742 | > call 81 (0.052s wait)
+2023-10-18 13:10:39.373187 | > call 82 (0.051s wait)
+2023-10-18 13:10:40.009603 | > call 83 (0.083s wait)
+2023-10-18 13:10:40.583635 | > call 84 (0.051s wait)
+2023-10-18 13:10:41.175108 | > call 85 (0.051s wait)
+2023-10-18 13:10:41.892628 | > call 86 (0.162s wait)
+2023-10-18 13:10:42.496399 | > call 87 (0.051s wait)
+2023-10-18 13:10:43.055109 | > call 88 (0.051s wait)
+2023-10-18 13:10:43.592369 | > call 89 (0.051s wait)
+2023-10-18 13:10:44.172762 | > call 90 (0.051s wait)
+2023-10-18 13:10:44.780391 | > call 91 (0.051s wait)
+2023-10-18 13:10:45.424416 | > call 92 (0.110s wait)
+2023-10-18 13:10:46.016509 | > call 93 (0.051s wait)
+2023-10-18 13:10:46.610287 | > call 94 (0.051s wait)
+2023-10-18 13:10:47.216464 | > call 95 (0.051s wait)
+2023-10-18 13:10:47.839518 | > call 96 (0.084s wait)
+2023-10-18 13:10:48.446222 | > call 97 (0.051s wait)
+2023-10-18 13:10:49.039156 | > call 98 (0.051s wait)
+2023-10-18 13:10:49.603137 | > call 99 (0.051s wait)
+2023-10-18 13:10:50.196921 | > call 100 (0.052s wait)
+2023-10-18 13:10:50.791960 | > call 101 (0.075s wait)
+2023-10-18 13:10:51.364929 | > call 102 (0.051s wait)
+2023-10-18 13:10:51.920203 | > call 103 (0.051s wait)
+2023-10-18 13:10:52.535386 | > call 104 (0.051s wait)
+2023-10-18 13:10:53.134732 | > call 105 (0.059s wait)
+2023-10-18 13:10:53.705712 | > call 106 (0.051s wait)
+2023-10-18 13:10:54.323152 | > call 107 (0.087s wait)
+2023-10-18 13:10:54.903488 | > call 108 (0.051s wait)
+2023-10-18 13:10:55.504535 | > call 109 (0.059s wait)
+2023-10-18 13:10:56.061961 | > call 110 (0.051s wait)
+2023-10-18 13:10:56.632180 | > call 111 (0.079s wait)
+2023-10-18 13:10:57.217674 | > call 112 (0.052s wait)
+2023-10-18 13:10:57.801222 | > call 113 (0.051s wait)
+2023-10-18 13:10:58.326794 | > call 114 (0.052s wait)
+2023-10-18 13:10:58.840203 | > call 115 (0.051s wait)
+2023-10-18 13:10:59.407666 | > call 116 (0.052s wait)
+2023-10-18 13:10:59.988638 | > call 117 (0.052s wait)
+2023-10-18 13:11:00.558461 | > call 118 (0.051s wait)
+2023-10-18 13:11:01.124637 | > call 119 (0.052s wait)
+2023-10-18 13:11:01.803841 | > call 120 (0.162s wait)
+2023-10-18 13:11:02.408951 | > call 121 (0.095s wait)
+2023-10-18 13:11:02.959298 | > call 122 (0.051s wait)
+2023-10-18 13:11:03.528876 | > call 123 (0.069s wait)
+2023-10-18 13:11:04.107978 | > call 124 (0.051s wait)
+2023-10-18 13:11:04.826192 | > call 125 (0.229s wait)
+2023-10-18 13:11:05.408251 | > call 126 (0.051s wait)
+2023-10-18 13:11:05.990176 | > call 127 (0.051s wait)
+2023-10-18 13:11:06.535977 | > call 128 (0.051s wait)
+2023-10-18 13:11:07.089998 | > call 129 (0.051s wait)
+2023-10-18 13:11:07.817921 | > call 130 (0.217s wait)
+2023-10-18 13:11:08.374755 | > call 131 (0.052s wait)
+2023-10-18 13:11:09.128992 | > call 132 (0.242s wait)
+2023-10-18 13:11:09.687548 | > call 133 (0.052s wait)
+2023-10-18 13:11:10.350963 | > call 134 (0.154s wait)
+2023-10-18 13:11:10.912222 | > call 135 (0.051s wait)
+2023-10-18 13:11:11.485931 | > call 136 (0.051s wait)
+2023-10-18 13:11:12.046162 | > call 137 (0.051s wait)
+2023-10-18 13:11:12.589265 | > call 138 (0.056s wait)
+2023-10-18 13:11:13.178278 | > call 139 (0.092s wait)
+2023-10-18 13:11:13.840917 | > call 140 (0.119s wait)
+2023-10-18 13:11:14.426030 | > call 141 (0.051s wait)
+2023-10-18 13:11:15.005576 | > call 142 (0.051s wait)
+2023-10-18 13:11:15.586237 | > call 143 (0.051s wait)
+2023-10-18 13:11:16.152642 | > call 144 (0.053s wait)
+2023-10-18 13:11:16.724645 | > call 145 (0.051s wait)
+2023-10-18 13:11:17.305347 | > call 146 (0.051s wait)
+2023-10-18 13:11:17.862843 | > call 147 (0.063s wait)
+2023-10-18 13:11:18.451261 | > call 148 (0.059s wait)
+2023-10-18 13:11:19.122061 | > call 149 (0.140s wait)
+2023-10-18 13:11:19.698834 | > call 150 (0.051s wait)
+2023-10-18 13:11:20.277257 | > call 151 (0.051s wait)
+2023-10-18 13:11:20.892528 | > call 152 (0.117s wait)
+2023-10-18 13:11:21.468052 | > call 153 (0.051s wait)
+2023-10-18 13:11:22.044785 | > call 154 (0.051s wait)
+2023-10-18 13:11:22.638965 | > call 155 (0.099s wait)
+2023-10-18 13:11:23.195482 | > call 156 (0.050s wait)
+2023-10-18 13:11:23.777047 | > call 157 (0.051s wait)
+2023-10-18 13:11:24.336881 | > call 158 (0.051s wait)
+2023-10-18 13:11:24.938837 | > call 159 (0.113s wait)
+2023-10-18 13:11:25.496728 | > call 160 (0.051s wait)
+2023-10-18 13:11:26.067732 | > call 161 (0.051s wait)
+2023-10-18 13:11:26.650534 | > call 162 (0.052s wait)
+2023-10-18 13:11:27.223739 | > call 163 (0.051s wait)
+2023-10-18 13:11:27.797390 | > call 164 (0.050s wait)
+2023-10-18 13:11:28.363500 | > call 165 (0.051s wait)
+2023-10-18 13:11:28.985073 | > call 166 (0.100s wait)
+2023-10-18 13:11:29.575929 | > call 167 (0.052s wait)
+2023-10-18 13:11:30.154012 | > call 168 (0.051s wait)
+2023-10-18 13:11:30.709745 | > call 169 (0.052s wait)
+2023-10-18 13:11:31.284894 | > call 170 (0.051s wait)
+2023-10-18 13:11:31.976920 | > call 171 (0.168s wait)
+2023-10-18 13:11:32.546775 | > call 172 (0.051s wait)
+2023-10-18 13:11:33.138757 | > call 173 (0.051s wait)
+2023-10-18 13:11:33.836718 | > call 174 (0.199s wait)
+2023-10-18 13:11:34.438989 | > call 175 (0.066s wait)
+2023-10-18 13:11:35.002324 | > call 176 (0.051s wait)
+2023-10-18 13:11:35.555701 | > call 177 (0.051s wait)
+2023-10-18 13:11:36.139646 | > call 178 (0.051s wait)
+2023-10-18 13:11:36.641858 | > call 179 (0.004s wait)
+2023-10-18 13:11:58.700335 | > call 180 (0.151s wait)
+2023-10-18 13:11:59.658853 | > call 181 (0.053s wait)
+2023-10-18 13:12:00.404140 | > call 182 (0.051s wait)
+2023-10-18 13:12:01.014604 | > call 183 (0.052s wait)
+2023-10-18 13:12:01.609045 | > call 184 (0.067s wait)
+2023-10-18 13:12:02.188317 | > call 185 (0.051s wait)
+2023-10-18 13:12:02.774500 | > call 186 (0.051s wait)
+2023-10-18 13:12:03.365491 | > call 187 (0.068s wait)
+2023-10-18 13:12:03.988250 | > call 188 (0.082s wait)
+2023-10-18 13:12:04.561462 | > call 189 (0.054s wait)
+2023-10-18 13:12:05.156162 | > call 190 (0.051s wait)
+2023-10-18 13:12:05.743658 | > call 191 (0.051s wait)
+2023-10-18 13:12:06.313257 | > call 192 (0.051s wait)
+2023-10-18 13:12:06.901710 | > call 193 (0.071s wait)
+2023-10-18 13:12:07.495303 | > call 194 (0.060s wait)
+2023-10-18 13:12:08.215842 | > call 195 (0.162s wait)
+2023-10-18 13:12:08.803253 | > call 196 (0.064s wait)
+2023-10-18 13:12:09.392867 | > call 197 (0.051s wait)
+2023-10-18 13:12:09.987306 | > call 198 (0.051s wait)
+2023-10-18 13:12:10.714438 | > call 199 (0.178s wait)
+2023-10-18 13:12:11.306402 | > call 200 (0.056s wait)
+2023-10-18 13:12:11.982918 | > call 201 (0.171s wait)
+2023-10-18 13:12:12.572678 | > call 202 (0.052s wait)
+2023-10-18 13:12:13.161444 | > call 203 (0.051s wait)
+2023-10-18 13:12:13.726539 | > call 204 (0.051s wait)
+2023-10-18 13:12:14.298589 | > call 205 (0.051s wait)
+2023-10-18 13:12:14.909550 | > call 206 (0.079s wait)
+2023-10-18 13:12:15.519373 | > call 207 (0.051s wait)
+2023-10-18 13:12:16.075353 | > call 208 (0.051s wait)
+2023-10-18 13:12:16.636345 | > call 209 (0.051s wait)
+2023-10-18 13:12:17.220659 | > call 210 (0.052s wait)
+2023-10-18 13:12:17.783018 | > call 211 (0.002s wait)
+2023-10-18 13:12:17.783397 | shutting down worker
+2023-10-18 13:12:17.783490 | 
+Total: 211 in 230.54s [user], 4.76s [system], 359.31s [elapsed]
+Warning messages:
+1: NA/Inf replaced by maximum positive value 
+2: The `facets` argument of `facet_grid()` is deprecated as of ggplot2 2.2.0.
+ℹ Please use the `rows` argument instead.
+ℹ The deprecated feature was likely used in the bayesplot package.
+  Please report the issue at <https://github.com/stan-dev/bayesplot/issues/>. 
+type method contour
+1      81     264      160      182 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      112      230 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      140      206 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      133      215 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      836     2610 BADGER_i001  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275     1204     2242 BADGER_i001   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1579     1858 BADGER_i002  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1250     2205 BADGER_i002   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1371     2081 BADGER_i003  III    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1255     2198 BADGER_i003   II    MCP      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "BADGER_i001"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i001 --- Area Resource --- AKDE"
+[1] "BADGER_i002"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i002 --- Area Resource --- AKDE"
+[1] "BADGER_i003"
+[1] "teleObj"
+[1] "vario"
+[1] "guess"
+[1] "fit"
+[1] "area"
+[1] "simData_i003 --- Area Resource --- AKDE"
+[1] 95
+[1] "simData_i001"
+[1] 95
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 95"
+[1] "simData_i002"
+[1] 95
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 95"
+[1] "simData_i003"
+[1] 95
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 95"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275       74      271 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      112      233 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      164      181 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      120      225 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      146      199 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      131      214 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      864     2586 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275     1235     2215 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1598     1852 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1203     2247 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1363     2087 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1221     2229 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275       71      275 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      115      229 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      158      184 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      113      230 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      140      201 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      114      221 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      830     2623 BADGER_i001  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275     1210     2233 BADGER_i001   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1592     1845 BADGER_i002  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1234     2220 BADGER_i002   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1348     2112 BADGER_i003  III   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1212     2247 BADGER_i003   II   AKDE      95
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] 99
+[1] "simData_i001"
+[1] 99
+[1] TRUE
+[1] "simData_i001 --- Polygon created --- AKDE - 99"
+[1] "simData_i002"
+[1] 99
+[1] TRUE
+[1] "simData_i002 --- Polygon created --- AKDE - 99"
+[1] "simData_i003"
+[1] 99
+[1] TRUE
+[1] "simData_i003 --- Polygon created --- AKDE - 99"
+[1] "pop polygon complete"
+[1] "rd"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      104      241 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      142      203 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      171      174 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      119      226 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      149      196 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      148      197 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              rd         1        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      978     2472 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275     1333     2117 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1672     1778 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1314     2136 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1590     1860 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1385     2065 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              rd         1        15
+[1] "st"
+[1] 1
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275       97      250 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      133      216 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      173      166 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264      133      211 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      154      181 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243      143      202 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1               1              st         1        15
+[1] 10
+[1] "simData_i001"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275      928     2517 BADGER_i001  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      70     275     1314     2137 BADGER_i001   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i002"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1623     1792 BADGER_i002  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1      81     264     1305     2143 BADGER_i002   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "simData_i003"
+[1] "--- Available / Used start"
+[1] "-- Break 1"
+[1] "-- Break 2"
+[1] "-- Break 3"
+[1] "-- Break 4"
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1545     1909 BADGER_i003  III   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+  used_c0 used_c2 avail_c0 avail_c2          id type method contour
+1     102     243     1320     2118 BADGER_i003   II   AKDE      99
+  availablePoints samplingPattern trackFreq trackDura
+1              10              st         1        15
+[1] "samp1"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50    q975      mode          kld
+layerc2 -1.193626 18.39631 -37.26697 -1.193622 34.8797 -1.193621 5.516438e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 3.594698e-05 0.04253078
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025      q50     q975     mode          kld
+layerc2 -1.355718 18.39788 -37.43216 -1.35571 34.72068 -1.35571 5.517865e-11
+           term     mmarginal  emarginal
+layerc2 layerc2 -1.983506e-07 0.03682084
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.24045 18.39624 -37.31367 -1.240447 34.83275 -1.240447 5.516559e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 4.382861e-06 0.03904716
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode         kld
+layerc2 -1.360224 18.39785 -37.43662 -1.360217 34.71612 -1.360217 5.51793e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 1.474842e-05 0.03563034
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.8586733 18.39625 -36.93192 -0.8586637 35.21452 -0.8586636
+                 kld    term    mmarginal  emarginal
+layerc2 5.516762e-11 layerc2 8.763361e-06 0.03594251
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.405955 18.39782 -37.48225 -1.405958 34.67036 -1.405958 5.515965e-11
+           term   mmarginal  emarginal
+layerc2 layerc2 3.10547e-05 0.06564109
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.9123034 18.39661 -36.98627 -0.9122936 35.16161 -0.9122936
+                 kld    term    mmarginal  emarginal
+layerc2 5.515956e-11 layerc2 6.576123e-05 0.05492977
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.418414 18.39791 -37.49489 -1.418416 34.65808 -1.418416 5.515892e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 5.279083e-06 0.06895357
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50    q975      mode          kld
+layerc2 -2.442228 18.39589 -38.51475 -2.442229 33.6303 -2.442229 5.517424e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 1.870427e-05 0.02853843
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean     sd      q025       q50     q975      mode          kld
+layerc2 -2.559342 18.398 -38.63602 -2.559334 33.51729 -2.559334 5.517744e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.992952e-05 0.04475617
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.45149 18.39586 -38.52395 -2.451491 33.62098 -2.451491 5.517491e-11
+           term    mmarginal emarginal
+layerc2 layerc2 9.382123e-07 0.0303296
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.563332 18.39776 -38.63955 -2.563326 33.51284 -2.563326 5.518184e-11
+           term    mmarginal emarginal
+layerc2 layerc2 3.747988e-05 0.0324748
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+             mean       sd      q025      q50     q975     mode         kld
+layerc2 -2.070822 18.39588 -38.14334 -2.07082 34.00168 -2.07082 5.51753e-11
+           term    mmarginal emarginal
+layerc2 layerc2 5.525821e-05 0.0361215
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+             mean       sd     q025       q50     q975      mode          kld
+layerc2 -2.547189 18.39801 -38.6239 -2.547179 33.52947 -2.547179 5.517837e-11
+           term    mmarginal emarginal
+layerc2 layerc2 4.398217e-05 0.0479279
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.071848 18.39598 -38.14455 -2.071846 34.00084 -2.071846 5.517305e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 9.699065e-07 0.03362368
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.627624 18.39747 -38.70323 -2.627628 33.44801 -2.627628 5.516746e-11
+           term    mmarginal emarginal
+layerc2 layerc2 2.784014e-05 0.0574126
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+[1] "samp2"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.24356 15.19167 -31.03292 -1.243564 28.54582 -1.243564 5.523443e-11
+           term    mmarginal emarginal
+layerc2 layerc2 8.297518e-05 0.0394106
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50    q975      mode          kld
+layerc2 -1.552831 15.19083 -31.34054 -1.552835 28.2349 -1.552835 5.525853e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 5.924459e-05 0.01847827
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.306515 15.19156 -31.09564 -1.306519 28.48263 -1.306519 5.523676e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.427951e-05 0.03639417
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.542761 15.19074 -31.33029 -1.542765 28.24479 -1.542765 5.525992e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 4.845737e-05 0.01740784
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025        q50     q975       mode
+layerc2 -0.991068 15.19124 -30.77957 -0.9910698 28.79745 -0.9910698
+                 kld    term    mmarginal  emarginal
+layerc2 5.524326e-11 layerc2 1.830648e-05 0.02810887
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.514162 15.19092 -31.30203 -1.514167 28.27373 -1.514167 5.524858e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 6.735303e-05 0.02043505
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.042645 15.19143 -30.83154 -1.042647 28.74626 -1.042647 5.523986e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.844201e-05 0.03291885
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50    q975      mode          kld
+layerc2 -1.539741 15.19089 -31.32756 -1.539745 28.2481 -1.539745 5.525837e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.176624e-05 0.02101934
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.519453 15.19119 -32.30785 -2.519457 27.26897 -2.519457 5.524439e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 4.447509e-05 0.02805871
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean       sd     q025       q50     q975      mode          kld
+layerc2 -2.776695 15.19073 -32.5642 -2.776699 27.01083 -2.776699 5.526101e-11
+           term   mmarginal  emarginal
+layerc2 layerc2 3.43015e-05 0.01853488
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.514955 15.19097 -32.30293 -2.514958 27.27304 -2.514958 5.524816e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 1.150228e-05 0.02237143
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.764312 15.19104 -32.55242 -2.764318 27.02383 -2.764318 5.524619e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.710663e-05 0.02382145
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.177561 15.19168 -31.96692 -2.177566 27.61183 -2.177566 5.523515e-11
+           term   mmarginal  emarginal
+layerc2 layerc2 0.000102713 0.04069206
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.76304 15.19088 -32.55083 -2.763045 27.02478 -2.763045 5.524935e-11
+           term   mmarginal  emarginal
+layerc2 layerc2 3.81307e-06 0.01967475
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i002"
+[1] "BADGER_i003"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.206917 15.19152 -31.99598 -2.206922 27.58217 -2.206922 5.523823e-11
+           term   mmarginal emarginal
+layerc2 layerc2 4.22739e-05 0.0369046
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.766023 15.19085 -32.55375 -2.766028 27.02173 -2.766028 5.525032e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.949511e-05 0.01890871
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          3         1        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"

@@ -1,0 +1,770 @@
+[1] "samp1"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025        q50     q975       mode
+layerc2 -0.934958 42.41407 -84.10476 -0.9349526 82.23482 -0.9349526
+                 kld    term    mmarginal emarginal
+layerc2 5.526534e-11 layerc2 0.0001256309 0.1725846
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1     
+
+	*** max_correction = 27.61 >= 25.00, so 'vb.correction' is aborted
+	*** Please (re-)consider your model, priors, confounding, etc.
+	*** You can change the emergency value (current value=25.00) by 
+	*** 	'control.inla=list(control.vb=list(emergency=...))'
+
+
+
+	*** max_correction = 27.78 >= 25.00, so 'vb.correction' is aborted
+	*** Please (re-)consider your model, priors, confounding, etc.
+	*** You can change the emergency value (current value=25.00) by 
+	*** 	'control.inla=list(control.vb=list(emergency=...))'
+
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+Default GSL error handler invoked.
+Aborted (core dumped)
+Error in inla.inlaprogram.has.crashed() : 
+  The inla-program exited with an error. Unless you interupted it yourself, please rerun with verbose=TRUE and check the output carefully.
+  If this does not help, please contact the developers at <help@r-inla.org>.
+
+
+	*** max_correction = 27.62 >= 25.00, so 'vb.correction' is aborted
+	*** Please (re-)consider your model, priors, confounding, etc.
+	*** You can change the emergency value (current value=25.00) by 
+	*** 	'control.inla=list(control.vb=list(emergency=...))'
+
+
+
+	*** max_correction = 28.31 >= 25.00, so 'vb.correction' is aborted
+	*** Please (re-)consider your model, priors, confounding, etc.
+	*** You can change the emergency value (current value=25.00) by 
+	*** 	'control.inla=list(control.vb=list(emergency=...))'
+
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+gsl: interp.c:83: ERROR: x values must be strictly increasing
+Default GSL error handler invoked.
+Aborted (core dumped)
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.267251 42.41377 -84.43648 -1.267239 81.90191 -1.267238 5.526488e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0002746871 0.1981164
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.7455703 42.41284 -83.91297 -0.7455569 82.42176 -0.7455569
+                 kld    term    mmarginal emarginal
+layerc2 5.526504e-11 layerc2 0.0002777617 0.1993802
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.597478 42.41494 -84.76897 -1.597478 81.57401 -1.597478 5.526282e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.05096279 0.3250691
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025      q50    q975     mode          kld
+layerc2 -1.632746 42.41387 -84.80218 -1.63273 81.5366 -1.63273 5.526337e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.04191678 0.2989426
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025      q50    q975     mode          kld
+layerc2 -1.486975 42.41458 -84.65778 -1.48697 81.6838 -1.48697 5.526401e-11
+           term   mmarginal emarginal
+layerc2 layerc2 0.001172647 0.2746825
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.600334 42.41348 -84.76901 -1.600319 81.56826 -1.600319 5.526412e-11
+           term   mmarginal emarginal
+layerc2 layerc2 0.001057887  0.265418
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.242401 42.41359 -85.41128 -2.242389 80.92641 -2.242388 5.526484e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0004193736   0.21166
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.63828 42.41252 -84.80506 -1.638269 81.52843 -1.638269 5.526536e-11
+           term   mmarginal emarginal
+layerc2 layerc2 0.000223662 0.1787654
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i005"
+[1] "BADGER_i009"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50    q975      mode          kld
+layerc2 -2.173679 42.41393 -85.34324 -2.173666 80.9958 -2.173666 5.526446e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0007073511 0.2411484
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.602926 42.41299 -84.77064 -1.602912 81.56471 -1.602912 5.526463e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0005446764 0.2209147
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp1          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+[1] "samp2"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 0.1372368 42.41284 -83.03016 0.1372469 83.30457 0.1372469 5.526554e-11
+           term    mmarginal emarginal
+layerc2 layerc2 6.300876e-05 0.1116315
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.5674168 42.41212 -83.73343 -0.5674028 82.59851 -0.5674027
+                 kld    term    mmarginal emarginal
+layerc2 5.526488e-11 layerc2 6.973453e-05 0.1462537
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+              mean       sd      q025       q50     q975      mode          kld
+layerc2 -0.5609737 42.41317 -83.72903 -0.560962 82.60701 -0.560962 5.526517e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0001213343 0.1651803
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+              mean       sd      q025       q50     q975       mode
+layerc2 -0.6708897 42.41266 -83.83794 -0.670877 82.49609 -0.6708769
+                 kld    term    mmarginal emarginal
+layerc2 5.526475e-11 layerc2 0.0002138274 0.1864819
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+             mean       sd      q025      q50     q975     mode          kld
+layerc2 -1.065683 42.41308 -84.23356 -1.06567 82.10212 -1.06567 5.526542e-11
+           term    mmarginal emarginal
+layerc2 layerc2 7.003145e-05 0.1371225
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.5718225 42.41172 -83.73704 -0.5718107 82.59333 -0.5718107
+                 kld    term    mmarginal emarginal
+layerc2 5.526541e-11 layerc2 3.702817e-05 0.1103584
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.9317778 42.41242 -84.09837 -0.9317652 82.23474 -0.9317652
+                 kld    term    mmarginal emarginal
+layerc2 5.526561e-11 layerc2 5.826198e-05 0.1009672
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.5541519 42.41185 -83.71962 -0.5541394 82.61124 -0.5541393
+                 kld    term    mmarginal emarginal
+layerc2 5.526584e-11 layerc2 3.520825e-05 0.1222187
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+             mean      sd      q025     q50     q975    mode          kld
+layerc2 -1.073811 42.4126 -84.24075 -1.0738 82.09306 -1.0738 5.526589e-11
+           term   mmarginal emarginal
+layerc2 layerc2 5.82615e-05  0.114302
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.344487 42.41188 -84.51002 -1.344475 81.82097 -1.344475 5.526575e-11
+           term    mmarginal emarginal
+layerc2 layerc2 7.071572e-05 0.1322799
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.8078259 42.41205 -83.97368 -0.8078156 82.35797 -0.8078156
+                 kld    term    mmarginal  emarginal
+layerc2 5.526607e-11 layerc2 4.784381e-05 0.08022018
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.415683 42.41153 -84.58051 -1.415673 81.74908 -1.415673 5.526617e-11
+           term    mmarginal  emarginal
+layerc2 layerc2 2.225925e-05 0.09674525
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.880267 42.41236 -85.04674 -1.880253 81.28613 -1.880253 5.526578e-11
+           term    mmarginal emarginal
+layerc2 layerc2 4.976622e-05 0.1150145
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.404163 42.41186 -84.56965 -1.404151 81.76125 -1.404151 5.526557e-11
+           term    mmarginal emarginal
+layerc2 layerc2 7.027765e-05 0.1296289
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i003"
+[1] "BADGER_i008"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.839946 42.41225 -85.00619 -1.839934 81.32623 -1.839934 5.526582e-11
+           term    mmarginal emarginal
+layerc2 layerc2 4.849313e-05 0.1056208
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.413917 42.41169 -84.57907 -1.413905 81.75117 -1.413905 5.526599e-11
+           term    mmarginal emarginal
+layerc2 layerc2 3.377748e-05 0.1134417
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp2          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+[1] "samp3"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.7629308 42.41544 -83.93543 -0.7629233 82.40953 -0.7629232
+                 kld    term   mmarginal emarginal
+layerc2 5.526177e-11 layerc2 0.003345242 0.3676336
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+             mean       sd     q025       q50     q975      mode          kld
+layerc2 -1.014626 42.41518 -84.1866 -1.014623 82.15733 -1.014623 5.526043e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1073705 0.4542943
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+            mean       sd      q025        q50     q975       mode          kld
+layerc2 -0.72646 42.41745 -83.90286 -0.7264605 82.44995 -0.7264605 5.525755e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1730707   0.58374
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+              mean      sd      q025        q50     q975       mode
+layerc2 -0.9493807 42.4178 -84.12647 -0.9493811 82.22771 -0.9493811
+                 kld    term mmarginal emarginal
+layerc2 5.525538e-11 layerc2 0.2326218 0.6881926
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode         kld
+layerc2 -1.157251 42.41684 -84.33248 -1.157245 82.01795 -1.157245 5.52594e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1258732 0.5074575
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.000935 42.41636 -84.17522 -1.000931 82.17333 -1.000931 5.525862e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1569832 0.5525784
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean      sd      q025       q50     q975      mode         kld
+layerc2 -1.157782 42.4151 -84.32959 -1.157779 82.01401 -1.157779 5.52614e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.0701869 0.3865085
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.8766841 42.41515 -84.04862 -0.8766736 82.29519 -0.8766735
+                 kld    term mmarginal emarginal
+layerc2 5.526152e-11 layerc2 0.0894883 0.4210365
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.502339 42.41705 -84.67798 -1.502336 81.67328 -1.502336 5.525884e-11
+           term mmarginal emarginal
+layerc2 layerc2  0.161862 0.5551846
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025     q50     q975    mode          kld
+layerc2 -1.824903 42.41592 -84.99833 -1.8249 81.34851 -1.8249 5.525925e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1464599  0.524131
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.495792 42.41515 -84.66771 -1.495789 81.67611 -1.495789 5.526176e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.08190391 0.3943279
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.746369 42.41496 -84.91792 -1.746359 81.42513 -1.746359 5.526203e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.09100436 0.4129371
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd     q025       q50     q975      mode          kld
+layerc2 -1.980156 42.41517 -85.1521 -1.980153 81.19177 -1.980153 5.526173e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.08939294 0.4123953
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025      q50     q975     mode          kld
+layerc2 -1.721059 42.41493 -84.89255 -1.72105 81.45038 -1.72105 5.526186e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.08926395 0.4096845
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i002"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.997816 42.41538 -85.17017 -1.997814 81.17452 -1.997814 5.526143e-11
+           term mmarginal emarginal
+layerc2 layerc2 0.1017318 0.4358906
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.739578 42.41506 -84.91133 -1.739568 81.43212 -1.739568 5.526151e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.09513913 0.4218791
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp3          2         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+[1] "samp4"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025      q50     q975     mode         kld
+layerc2 -1.009348 36.91443 -73.39492 -1.00934 71.37617 -1.00934 5.52664e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0004269954 0.1442316
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.016575 36.91418 -73.40164 -1.016569 71.36845 -1.016569 5.526482e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.05474523 0.2600721
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.7646011 36.91499 -73.15126 -0.7645961 71.62203 -0.7645961
+                 kld    term mmarginal emarginal
+layerc2 5.526505e-11 layerc2 0.0028471 0.2372992
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.9728437 36.91417 -73.35788 -0.9728378 71.41216 -0.9728378
+                 kld    term  mmarginal emarginal
+layerc2 5.526519e-11 layerc2 0.05376469 0.2587475
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.746717 36.91485 -74.13309 -1.746711 70.63962 -1.746711 5.526482e-11
+           term   mmarginal emarginal
+layerc2 layerc2 0.002316081  0.235501
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.034117 36.91432 -73.41945 -1.034111 71.35118 -1.034111 5.526474e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.06220063 0.2735291
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean      sd      q025       q50     q975      mode         kld
+layerc2 -1.938791 36.9142 -74.32391 -1.938781 70.44627 -1.938781 5.52661e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0006519448 0.1589404
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.8472091 36.91335 -73.23066 -0.8471998 71.53619 -0.8471998
+                kld    term    mmarginal emarginal
+layerc2 5.52663e-11 layerc2 0.0007532713 0.1628447
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2      exp     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.938131 36.91506 -74.32491 -1.938131 70.44865 -1.938131 5.526417e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.08327847 0.3032941
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.913428 36.91468 -74.29947 -1.913422 70.47258 -1.913422 5.526433e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.09224682 0.3198559
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+            mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.92548 36.91515 -74.31243 -1.925481 70.46147 -1.925481 5.526357e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.09111379 0.3169392
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+            mean       sd      q025       q50    q975      mode          kld
+layerc2 -1.95778 36.91461 -74.34369 -1.957775 70.4281 -1.957775 5.526418e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.09048481 0.3148816
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -2.590409 36.91508 -74.97723 -2.590403 69.79638 -2.590403 5.526446e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.08642902 0.3093009
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+             mean       sd      q025       q50     q975      mode         kld
+layerc2 -1.926043 36.91422 -74.31118 -1.926038 70.45907 -1.926038 5.52647e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.07125422  0.276171
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd     q025       q50     q975      mode          kld
+layerc2 -2.492001 36.91461 -74.8779 -2.491996 69.89387 -2.491996 5.526488e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.06587511 0.2654085
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+             mean       sd    q025       q50     q975      mode        kld
+layerc2 -1.933061 36.91412 -74.318 -1.933056 70.45185 -1.933056 5.5265e-11
+           term  mmarginal emarginal
+layerc2 layerc2 0.06574912 0.2651508
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp4          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1               10      exp     unif
+[1] "INLA Results"
+[1] "samp5"
+[1] "--- movementData subsampled"
+[1] "break 1"
+[1] 0
+[1] "break 2"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode
+layerc2 -0.8533175 36.91485 -73.23969 -0.8533124 71.53302 -0.8533124
+                 kld    term   mmarginal emarginal
+layerc2 5.526515e-11 layerc2 0.002097142 0.2185921
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp5          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+             mean       sd      q025        q50     q975       mode
+layerc2 -0.997939 36.91459 -73.38381 -0.9979328 71.38789 -0.9979328
+                 kld    term  mmarginal emarginal
+layerc2 5.526426e-11 layerc2 0.07946551 0.3025533
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp5          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma vonmises
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+              mean       sd      q025        q50     q975       mode        kld
+layerc2 -0.8714352 36.91434 -73.25681 -0.8714313 71.51392 -0.8714312 5.5266e-11
+           term    mmarginal emarginal
+layerc2 layerc2 0.0008723597 0.1670723
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp5          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+              mean      sd      q025        q50     q975       mode
+layerc2 -0.8979441 36.9135 -73.28168 -0.8979346 71.48574 -0.8979345
+                 kld    term  mmarginal emarginal
+layerc2 5.526553e-11 layerc2 0.00117248 0.1795911
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp5          3         6        60  Poisson        mf.ss
+  availablePerStep stepDist turnDist
+1                2    gamma     unif
+[1] "INLA Results"
+[1] "BADGER_i001"
+[1] "BADGER_i005"
+[1] "BADGER_i010"
+[1] "--- poisModelData generated"
+             mean       sd      q025       q50     q975      mode          kld
+layerc2 -1.739157 36.86693 -74.03156 -1.739157 70.55324 -1.739157 5.526469e-11
+           term   mmarginal emarginal
+layerc2 layerc2 0.002532885 0.2369859
+  sampleID sampleSize trackFreq trackDura analysis modelFormula
+1    samp5          3         6        60  Poisson        mf.is
+  availablePerStep stepDist turnDist
+1                2      exp vonmises
+[1] "INLA Results"
+
+ *** inla.core.safe:  inla.program has crashed: rerun to get better initial values. try=1/1 
+
+ *** inla.core.safe:  rerun with improved initial values 

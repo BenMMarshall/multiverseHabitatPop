@@ -10,7 +10,7 @@
 render_rmd <- function(modelExtracts, effectPlots){
   
   rmarkdown::render(input = here::here("notebook", "manuscript",
-                                       "multiverseHabitatPopulationManuscript.rmd"),
+                                       "multiverseHabitatPopulationManuscript.Rmd"),
                     output_file = here::here("notebook", "manuscript",
                                              "multiverseHabitatPopulationManuscript.pdf"))
 }
