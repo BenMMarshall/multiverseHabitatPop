@@ -31,7 +31,7 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
   # for(regime in names(ssfResults)){
   #   # regime <- "ssfOUT_15_1"
   #   ssfRegimeResults <- ssfResults[[regime]]
-    ssfRegimeResults <- ssfResults
+  ssfRegimeResults <- ssfResults
     
     for(sampID in names(sampleGroups)){
       # sampID <- names(optionsList_samples)[1]
@@ -44,17 +44,11 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
       #                                    "^.*_i"),
       #               sprintf("%03d", IDs))
       
+      
+      #### THIS NEEDDS TO GET SAMPLED INDIVIDUALS FROM sampDuraFreqData_xx_x data
+      
       ssfSampleListStart <- ssfRegimeResults[names(ssfRegimeResults) %in% IDs]
       
-      # length(ssfSampleList$simData_i001)
-      
-      # sampleModelList <- lapply(ssfSampleListStart, function(x){
-      #   x[[1]]$model
-      # })
-      # sampleEstList <- lapply(ssfSampleListStart, function(x){
-      #   x[[1]]$options
-      # })
-      # sampleEst <- do.call(rbind, sampleEstList)
       
       sampleEstList_all <- lapply(ssfSampleListStart, function(x){
         zList <- lapply(x, function(y){
@@ -87,6 +81,14 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
                 # turn <- unique(sampleEst$turnDist)[1]
                 for(as in unique(sampleEst_all$availablePerStep)){
                   # as <- unique(sampleEst$availablePerStep)[1]
+                  
+                  
+                  
+                  #### THIS IS WHERE INDI LOOP SHOULD BE TO GENERATED SSF MODELS
+                  #INTO A LIST FOR AVERAGING WRAPPER function can be used if the
+                  #loops are removed? or dont remove and only supply signle
+                  #setting ie step turn etc above %>%
+                  
                   
                   currentOptions <- sampleEst_all %>% 
                     dplyr::filter(

@@ -48,8 +48,6 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
       dplyr::group_by(id) %>% 
       dplyr::arrange(t)
     
-    print("break 1")
-    
     # separate the individuals out into a list-column of dataframes, each item an animal
     movementDataNest <- movementData %>% 
       tidyr::nest(moveData = -id)
@@ -64,8 +62,6 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
       mutate(trk = purrr::map(.x = moveData, .f = function(d){
         make_track(d, .x = x, .y = y, .t = t, crs = 32601)
       }))
-    
-    print("break 2")
     
     # Here the summarize_sampling_rate is repeated on each track object to give you
     # an individual level summary.

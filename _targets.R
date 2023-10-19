@@ -366,7 +366,7 @@ list(individualSimulationsList,
 # targets::tar_make(starts_with("sampDuraFreq"))
 # targets::tar_make(ends_with("esults"))
 # targets::tar_make_clustermq(names = ends_with("esults"), workers = 3, log_worker = TRUE)
-# targets::tar_make_clustermq(workers = 6, log_worker = TRUE)
+# targets::tar_make_clustermq(workers = 3, log_worker = TRUE)
 # targets::tar_visnetwork(names = starts_with("combined"))
 # mani <- targets::tar_manifest()
 # pattern <- paste0("ssfOUT.*(",
