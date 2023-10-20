@@ -97,7 +97,7 @@ optionsList_pois <- list(
   # MethodPois_sd = c("gamma"),
   # MethodPois_td = c("vonmises"),
   # MethodPois_as = c(2, 10),
-  MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
+  MethodPois_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
   MethodPois_mf = c("mf.is", "mf.ss"),
   MethodPois_sd = c("gamma", "exp"),
   MethodPois_td = c("vonmises", "unif")
@@ -196,15 +196,15 @@ coreMultiverse <- list(
                  optionsList = optionsList_areaMethods
                ),
                priority = 0.9),
-    tar_target(ssfOUT,
-               wrapper_indi_ssf(
-                 allIndividualData = sampDuraFreqData,
-                 optionsList = optionsList_sff
-               ),
-               priority = 0.9),
+    # tar_target(ssfOUT,
+    #            wrapper_indi_ssf(
+    #              allIndividualData = sampDuraFreqData,
+    #              optionsList = optionsList_sff
+    #            ),
+    #            priority = 0.9),
     tar_target(ssfSampled,
                sample_ssf_results(
-                 ssfOUT,
+                 sampDuraFreqData,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_sff
                ),
@@ -360,18 +360,4 @@ list(individualSimulationsList,
      areaBasedCompiled,
      brmModelOutputs
 )
-
-# Examine -----------------------------------------------------------------
-
-# targets::tar_make(starts_with("sampDuraFreq"))
-# targets::tar_make(ends_with("esults"))
-# targets::tar_make_clustermq(names = ends_with("esults"), workers = 3, log_worker = TRUE)
-# targets::tar_make_clustermq(workers = 3, log_worker = TRUE)
-# targets::tar_visnetwork(names = starts_with("combined"))
-# mani <- targets::tar_manifest()
-# pattern <- paste0("ssfOUT.*(",
-#                   paste(sample(1:4, 2, replace = FALSE), collapse = "|"),
-#                   ")_BADGER")
-# mani$name[grep("ssfOUT.*4_BADGER", mani$name)]
-# mani$name[grep(pattern, mani$name)]
 

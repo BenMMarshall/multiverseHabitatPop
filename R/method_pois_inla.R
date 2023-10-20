@@ -99,6 +99,22 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
               extract_covariates(landscape$classRaster) %>% 
               mutate(id = indiID)
             
+            # print(unique(indiTrackCov$layer))
+            # need a while loop to dodge the very very rare instances of NA from generated steps
+            while(any(is.na(unique(indiTrackCov$layer)))){
+              
+              indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
+                random_steps(
+                  n_control = as,
+                  sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
+                  ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
+                ) %>% 
+                extract_covariates(landscape$classRaster) %>% 
+                mutate(id = indiID)
+              
+              # print(unique(indiTrackCov$layer))
+            }
+            
             allTracksList[[indiID]] <- indiTrackCov
           }
           poisModelData <- do.call(rbind, allTracksList)

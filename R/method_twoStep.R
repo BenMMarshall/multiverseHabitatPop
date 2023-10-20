@@ -26,7 +26,10 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
   twoStepOUTList <- vector("list", length = listLength)
   i <- 0
   for(sampID in names(sampleGroups)){
-    # sampID <- "samp13"
+    
+    print(sampID)
+    
+    # sampID <- "samp4"
     IDs <- optionsList_samples[[sampID]]
     IDs <- paste0("simData_i", sprintf("%03d", IDs))
     
@@ -68,19 +71,21 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
     #   unnest(cols = c(sr))
     
     for(as in optionsASteps){
-      
+      # as <- 158
       for(sd in optionsStepD){
-        
+        # sd <- "exp"
         for(td in optionsTurnD){
-          
+          # td <- "unif"
           # had to modify the code and avoid map to make sure the distributions are
           # based on a single individual, issues with the sl_ and ta_ being passed to
           # the fit_distr functions inside map
           allTracksList <- vector("list", length = length(movementDataNest$id))
           names(allTracksList) <- movementDataNest$id
           for(indiID in movementDataNest$id){
-            # indiID <- "BADGER_i001"
+            # indiID <- "BADGER_i005"
             # which(movementDataNest$id == indiID)
+            
+            # print(indiID)
             
             indiTrack <- movementDataNest$trk[[which(movementDataNest$id == indiID)]] %>% 
               steps() %>% 
@@ -94,6 +99,22 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
               ) %>% 
               extract_covariates(landscape$classRaster) %>% 
               mutate(id = indiID)
+            
+            # print(unique(indiTrackCov$layer))
+            # need a while loop to dodge the very very rare instances of NA from generated steps
+            while(any(is.na(unique(indiTrackCov$layer)))){
+              
+              indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
+                random_steps(
+                  n_control = as,
+                  sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
+                  ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
+                ) %>% 
+                extract_covariates(landscape$classRaster) %>% 
+                mutate(id = indiID)
+              
+              # print(unique(indiTrackCov$layer))
+            }
             
             allTracksList[[indiID]] <- indiTrackCov
           }
@@ -109,6 +130,9 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
               cos_ta = cos(ta_), 
               log_sl = log(sl_),
               layer = factor(paste0("c", layer)))
+          
+          # print(paste(as, sd, td))
+          # print(unique(popModelData$layer))
           
           for(form in optionsForm){
             if(form == "mf.is"){

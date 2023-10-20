@@ -13,3 +13,19 @@ install.packages(pkgs=pkgFile, type="source", repos=NULL)
 
 # Delete package tarball
 unlink(pkgFile)
+
+
+
+url <- "https://cran.r-project.org/src/contrib/Archive/amt/amt_0.1.6.tar.gz"
+pkgFile <- "amt_0.1.6.tar.gz"
+download.file(url = url, destfile = pkgFile)
+
+# Expand the zip file using whatever system functions are preferred
+
+# look at the DESCRIPTION file in the expanded package directory
+
+# Install package
+install.packages(pkgs=pkgFile, type="source", repos=NULL)
+
+# Delete package tarball
+unlink(pkgFile)

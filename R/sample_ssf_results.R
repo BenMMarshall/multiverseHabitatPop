@@ -7,12 +7,7 @@
 #' @return Population estimates for SSF based methods.
 #'
 #' @export
-sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
-  # sampleGroups <- optionsList_samples
-  # ssfSampledList <- vector("list", length = length(names(ssfResults)) *
-  #                            length(names(sampleGroups)))
-  # names(ssfSampledList) <- do.call(paste0, expand.grid(names(ssfResults),
-  #                                                      paste0("_", names(sampleGroups))))
+sample_ssf_results <- function(allIndividualData, sampleGroups, optionsList){
   
   optionsForm <- optionsList$MethodSSF_mf
   optionsASteps <- optionsList$MethodSSF_as
@@ -31,11 +26,12 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
   # for(regime in names(ssfResults)){
   #   # regime <- "ssfOUT_15_1"
   #   ssfRegimeResults <- ssfResults[[regime]]
-  ssfRegimeResults <- ssfResults
+  # ssfRegimeResults <- ssfResults
     
     for(sampID in names(sampleGroups)){
       # sampID <- names(optionsList_samples)[1]
       
+      print(sampID)
       IDs <- sampleGroups[[sampID]]
       IDs <- paste0("simData_i", sprintf("%03d", IDs))
       
@@ -44,19 +40,9 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
       #                                    "^.*_i"),
       #               sprintf("%03d", IDs))
       
-      
       #### THIS NEEDDS TO GET SAMPLED INDIVIDUALS FROM sampDuraFreqData_xx_x data
-      
-      ssfSampleListStart <- ssfRegimeResults[names(ssfRegimeResults) %in% IDs]
-      
-      
-      sampleEstList_all <- lapply(ssfSampleListStart, function(x){
-        zList <- lapply(x, function(y){
-          y$options
-        })
-        z <- do.call(rbind, zList)
-      })
-      sampleEst_all <- do.call(rbind, sampleEstList_all)
+      sampledIndividualData <- allIndividualData[names(allIndividualData) %in% IDs]
+      sampledIndividualData$landscape <- allIndividualData$landscape
       
       # mf <- "mf.ss"
       # td <- 15
@@ -65,54 +51,38 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
       # turn <- "vonmises"
       # as <- 2
       
-      
-      for(mf in unique(sampleEst_all$modelFormula)){
+      for(mf in optionsForm){
         # mf <- unique(sampleEst$modelFormula)[1]
         
         # trackDura and trackFreq loops not stricktly required because regime is
         # top level list, but helpful for subsetting and carrying forward info
-        for(td in unique(sampleEst_all$trackDura)){
+        for(td in unique(sampledIndividualData[[1]]$trackDura)){
           # td<- unique(sampleEst$trackDura)[1]
-          for(tf in unique(sampleEst_all$trackFreq)){
+          for(tf in unique(sampledIndividualData[[1]]$trackFreq)){
             # tf <- unique(sampleEst$trackFreq)[1]
-            for(step in unique(sampleEst_all$stepDist)){
+            for(step in optionsStepD){
               # step <- unique(sampleEst$stepDist)[1]
-              for(turn in unique(sampleEst_all$turnDist)){
+              for(turn in optionsTurnD){
                 # turn <- unique(sampleEst$turnDist)[1]
-                for(as in unique(sampleEst_all$availablePerStep)){
+                for(as in optionsASteps){
                   # as <- unique(sampleEst$availablePerStep)[1]
                   
-                  
-                  
-                  #### THIS IS WHERE INDI LOOP SHOULD BE TO GENERATED SSF MODELS
-                  #INTO A LIST FOR AVERAGING WRAPPER function can be used if the
-                  #loops are removed? or dont remove and only supply signle
-                  #setting ie step turn etc above %>%
-                  
-                  
-                  currentOptions <- sampleEst_all %>% 
-                    dplyr::filter(
-                      modelFormula == mf,
-                      trackDura == td,
-                      trackFreq == tf,
-                      stepDist == step,
-                      turnDist == turn,
-                      availablePerStep == as
-                    )
-                  
-                  optionsIndex <- as.numeric(str_extract(row.names(currentOptions),
-                                                         "(?<=\\.).{1,}$"))[1]
-                  
-                  print(
-                    paste0(optionsIndex, " --- ",
-                           mf, " - ", td, " - ", tf, " - ", step, " - ", turn, " - ", as)
+                  optionsList_sffTemp <- list(
+                    Method_method = c("ssf"),
+                    MethodSSF_as = as,
+                    MethodSSF_mf = mf,
+                    MethodSSF_sd = step,
+                    MethodSSF_td = turn
                   )
                   
-                  sampleModelList <- lapply(ssfSampleListStart, function(x){
-                    x[[optionsIndex]]$model
+                  ssfResultsIndividuals <- wrapper_indi_ssf(allIndividualData = sampledIndividualData,
+                                                            optionsList = optionsList_sffTemp)
+                  
+                  sampleModelList <- lapply(ssfResultsIndividuals, function(x){
+                    x[[1]]$model
                   })
-                  sampleEstList_sample <- lapply(ssfSampleListStart, function(x){
-                    x[[optionsIndex]]$options
+                  sampleEstList_sample <- lapply(ssfResultsIndividuals, function(x){
+                    x[[1]]$options
                   })
                   sampleEst_sample <- do.call(rbind, sampleEstList_sample)
                   
@@ -122,6 +92,12 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
                             sampleEst_sample$stepDist == step,
                             sampleEst_sample$turnDist == turn,
                             sampleEst_sample$availablePerStep == as))
+                  print(paste(tf,
+                              td,
+                              mf,
+                              step,
+                              turn,
+                              as, sep = " - "))
                   
                   # calculate CI surrounding the naive mean
                   nEst <- length(sampleEst_sample$Estimate)
@@ -139,8 +115,6 @@ sample_ssf_results <- function(ssfResults, sampleGroups, optionsList){
                   if(class(modelAvgOUTCI)[1] == "try-error"){
                     modelAvgOUTCI <- matrix(NA, 2, 2)
                   }
-                  
-                  # ssfResults$ssfOUT_15_1$simData_i001[[1]]$options$trackFreq
                   
                   modelAvgData <- data.frame(
                     sampleID = sampID,
