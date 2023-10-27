@@ -71,10 +71,11 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
     #   unnest(cols = c(sr))
     
     for(as in optionsASteps){
-      
+      # as <- optionsASteps[1]
       for(sd in optionsStepD){
-        
+        # sd <- optionsStepD[1]
         for(td in optionsTurnD){
+          # td <- optionsTurnD[1]
           
           # had to modify the code and avoid map to make sure the distributions are
           # based on a single individual, issues with the sl_ and ta_ being passed to
@@ -128,13 +129,17 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
               step_id = paste0(id, step_id_, sep = "-"),
               cos_ta = cos(ta_), 
               log_sl = log(sl_),
-              layer = factor(paste0("c", layer)))
+              layer = factor(paste0("c", layer),
+                             levels = c("c0", "c2")))
+          
+          as.numeric(poisModelData$layer)
           
           # We can run the INLA model using the priors and set-up from Muff et al.
           # Precision for the priors of slope coefficients
           prec.beta.trls <- 1e-4
           
           for(form in optionsForm){
+            # form <- optionsForm[1]
             if(form == "mf.is"){
               
               inlaFormula <- y ~ -1 + 
@@ -176,8 +181,8 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
             
             if(class(inlaOUT)[1] == "try-error"){
               
-              inlaResults <- as.data.frame(t(rep(NA, 7)))
-              inlaResults$term <- "layerc2"
+              inlaResults <- as.data.frame(matrix(NA, 2, 7))
+              inlaResults$term <- c("layerc2", "layerc0")
               names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
                                       "mode", "kld", "term")
               inlaResults$mmarginal <- NA
@@ -185,7 +190,7 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
               
             } else {
               
-              inlaResults <- inlaOUT$summary.fixed[2,]
+              inlaResults <- inlaOUT$summary.fixed[1:2,]
               inlaResults$term <- row.names(inlaResults)
               names(inlaResults) <- c("mean", "sd", "q025", "q50", "q975",
                                       "mode", "kld", "term")

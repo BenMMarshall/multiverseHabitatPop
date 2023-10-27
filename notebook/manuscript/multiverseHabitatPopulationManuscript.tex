@@ -256,7 +256,7 @@ These packages allowed branching workflow pipeline, while keeping track of objec
 
 The first decision in most animal movement studies will be concerning tracking regime.
 This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
-Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (1 to 0.17 points per hour), and the total duration of tracking (15 to 60 days).
+Here we aimed to cover a range of tracking regimes that vary in the frequency of location fixes (1 to 0.08 points per hour), and the total duration of tracking (7 to 60 days).
 We created sub-sampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 data points per individual.
 
 An important component of assessing population level habitat selection is the number of individuals included in analysis.
@@ -294,7 +294,7 @@ Mainly MCP size varies based on the percentage of outliers excluded from the pol
 For all area methods we vary this percentage: 95\%, 99\%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
 We selected these contour values as they are the most frequently used in spatial studies
 
-Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: 4), we created the sample/population available areas by combining all polygons.
+Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: 13), we created the sample/population available areas by combining all polygons.
 We used this combined polygon for the type II design, where all individuals have the same availability.
 
 We used the availability polygons to define the extent within which we sampled habitat characteristics.
@@ -317,7 +317,7 @@ The former uses randomisation tests to estimate the habitat selection, while the
 The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
 As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
-The first decision is the number of random steps generated per observed step; we ranged this from 2 to 10.
+The first decision is the number of random steps generated per observed step; we ranged this from 5 to 50.
 The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
 We chose to explore the impacts of different distributions.
 For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
@@ -409,34 +409,27 @@ After assessment of the model convergence measures, we modified the running para
 \hypertarget{model-results}{%
 \subsection{Model Results}\label{model-results}}
 
-The conditional \emph{R\textsuperscript{2}} values differed for the three models. The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.33; whereas the SSF model returned 0.59, and the Poisson model returned 0.94.
+\begin{verbatim}
+## <environment: 0x56189e75eff0>
+\end{verbatim}
 
-The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} suggesting an important role for the fixed/population effects. The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.48; whereas the SSF model returned 0.51, and the Poisson model returned 0.83.
+The conditional \emph{R\textsuperscript{2}} values differed for the three models.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.72; whereas the SSF model returned 0.51; the Two-Step model returned 0; and the Poisson model returned 0.84.
 
-The sample size was negatively correlated with deviation from the median estimate (\(\beta\) -0.03; 95\% HDCI -1.15 - 1.8).
+The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} suggesting an important role for the fixed/population effects.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.17; whereas the SSF model returned 0.47; the Two-Step model returned 0; and the Poisson model returned 0.81
+
+The sample size was negatively correlated with deviation from the median estimate (\(\beta\) 0.03; 95\% HDCI -0.04 - 0.12).
+
+(Fig. \ref{fig:allEffectsPlot}).
 
 (Fig. \ref{fig:effectPlotArea}).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/areaBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotArea}
-\end{figure}
-
 (Fig. \ref{fig:effectPlotSSF}).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ssfBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotSSF}
-\end{figure}
-
 (Fig. \ref{fig:effectPlotTwoStep}).
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{../figures/twoStepBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotTwoStep}
-\end{figure}
-
 (Fig. \ref{fig:effectPlotPois}).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/poisBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotPois}
+\includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Beta coefs}\label{fig:allEffectsPlot}
 \end{figure}
 
 \hypertarget{discussion}{%
@@ -479,8 +472,28 @@ We generated R package citations with the aid of \emph{grateful} v.0.2.0 (\prote
 \hypertarget{data-availabilty}{%
 \section{Data availabilty}\label{data-availabilty}}
 
+\clearpage
+
 \hypertarget{supplementary-material}{%
 \section{Supplementary Material}\label{supplementary-material}}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/areaBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotArea}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/ssfBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotSSF}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/twoStepBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotTwoStep}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../figures/poisBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotPois}
+\end{figure}
+
+\clearpage
 
 \hypertarget{references}{%
 \section*{References}\label{references}}

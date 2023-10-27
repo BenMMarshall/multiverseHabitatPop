@@ -34,22 +34,37 @@ generate_effect_plots <- function(modelsList){
       filter(!variable %in% c("b_Intercept"),
              !str_detect(variable, ":")) %>%
       mutate(
-        variable = case_when(
+        variable = factor(case_when(
           variable == "b_trackDuraScaled" ~ "\u03B2 Tracking Duration",
           variable == "b_trackFreqScaled" ~ "\u03B2 Tracking Frequency",
-          variable == "b_sampleSizeScaled" ~ "\u03B2 Available Area: AKDE",
+          variable == "b_sampleSizeScaled" ~ "\u03B2 Sample Size",
           variable == "b_modelFormulamf.ss" ~ "\u03B2 Model Formula: Not Integrated",
           variable == "b_stepDistgamma" ~ "\u03B2 Step Distribution: Gamma",
           variable == "b_turnDistvonmises" ~ "\u03B2 Turn Distribution: Von Mises",
-          variable == "b_availablePerStepScaled" ~ "\u03B2 Available Area Contour",
-          variable == "b_averagingMethodNaiveaverage" ~ "\u03B2 Available Points Per Step",
+          variable == "b_availablePerStepScaled" ~ "\u03B2 Available Points Per Step",
+          variable == "b_averagingMethodNaiveaverage" ~ "\u03B2 Averaging Method: Naive",
           variable == "b_areaMethodMCP" ~ "\u03B2 Available Area: MCP",
           variable == "b_samplingPatternst" ~ "\u03B2 Sampling Pattern: Stratified",
           variable == "b_typeIII" ~ "\u03B2 Desigen Type: III",
           variable == "b_contourScaled" ~ "\u03B2 Available Area Contour",
           variable == "b_availablePointsScaled" ~ "\u03B2 Available Points Multipiler",
           variable == "b_testrandomisation" ~ "\u03B2 Compana Test: Randomisation"
-        )
+        ), levels = rev(c(
+          "\u03B2 Sample Size",
+          "\u03B2 Tracking Duration",
+          "\u03B2 Tracking Frequency",
+          "\u03B2 Model Formula: Not Integrated",
+          "\u03B2 Step Distribution: Gamma",
+          "\u03B2 Turn Distribution: Von Mises",
+          "\u03B2 Available Points Per Step",
+          "\u03B2 Averaging Method: Naive",
+          "\u03B2 Available Area: MCP",
+          "\u03B2 Available Area Contour",
+          "\u03B2 Desigen Type: III",
+          "\u03B2 Available Points Multipiler",
+          "\u03B2 Sampling Pattern: Stratified",
+          "\u03B2 Compana Test: Randomisation"
+        )))
       )
     
     # labelLocation <- c(-1.5, 1.15)

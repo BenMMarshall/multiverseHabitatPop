@@ -23,6 +23,7 @@ tar_option_set(
                "amt",
                "here",
                "ggplot2",
+               "ggtext",
                "patchwork",
                "bayesplot",
                "tidybayes"
@@ -86,7 +87,7 @@ optionsList_sff <- list(
   # MethodSSF_sd = c("gamma"),
   # MethodSSF_td = c("vonmises"),
   # MethodSSF_as = c(2, 10),
-  MethodSSF_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
+  MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
   MethodSSF_mf = c("mf.is", "mf.ss"),
   MethodSSF_sd = c("gamma", "exp"),
   MethodSSF_td = c("vonmises", "unif")
@@ -97,7 +98,7 @@ optionsList_pois <- list(
   # MethodPois_sd = c("gamma"),
   # MethodPois_td = c("vonmises"),
   # MethodPois_as = c(2, 10),
-  MethodPois_as = as.integer(round(exp(seq(log(5), log(500), length.out = 5)), digits = 1)),
+  MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
   MethodPois_mf = c("mf.is", "mf.ss"),
   MethodPois_sd = c("gamma", "exp"),
   MethodPois_td = c("vonmises", "unif")
@@ -121,6 +122,9 @@ optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
 #                             c(1,2,3))
 
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
+
+# remove the repeats of the full sample as they are all the same
+optionsList_samples <- optionsList_samples[1:(length(optionsList_samples)-(repeats-1))]
 
 optionsCompleteList <- list(
   "species" = values_SimSpecies,
@@ -337,8 +341,12 @@ brmModelOutputs <- list(
     generate_effect_plots(modelsList = modelsBrms)
   ),
   tar_target(
+    allEffectPlots,
+    generate_allEffect_plots(modelExtracts = modelExtracts)
+  ),
+  tar_target(
     rmdRender,
-    render_rmd(modelExtracts, effectPlots,
+    render_rmd(modelExtracts, effectPlots, allEffectPlots,
                areaSpecCurve,
                twoStepSpecCurve,
                poisSpecCurve,

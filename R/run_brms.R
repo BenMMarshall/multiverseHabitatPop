@@ -7,7 +7,7 @@
 #'
 #' @export
 run_brms <- function(resultsData){
-  
+  # resultsData <- poisResults
   if("companaLambda" %in% names(resultsData)){
     
     modelData <- resultsData %>% 
@@ -92,6 +92,18 @@ run_brms <- function(resultsData){
                             "absDelta_ssf")
     
   } else if(resultsData$analysis[1] == "Poisson"){
+    
+    prefDiffDF <- resultsData %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
+                          turnDist)) %>% 
+      group_by(key) %>% 
+      summarise(prefDiff = diff(mean))
+    
+    resultsData <- resultsData %>% 
+      filter(term == "layerc2") %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
+                          turnDist)) %>% 
+      left_join(prefDiffDF)
     
     modelData <- resultsData %>% 
       # track freq translated into the more intuitive track per hour

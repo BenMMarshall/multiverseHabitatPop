@@ -277,44 +277,32 @@ knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
 
 ## Model Results
 
-The conditional *R^2^* values differed for the three models. The Compana results model had a conditional *R^2^* of `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "areaBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "ssfBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`, and the Poisson model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "poisBrms" & modelExtracts$r2Outputs$Component == "conditional"], digits = 2)`.
-
-The marginal *R^2^* represents the bulk of the conditional *R^2^* suggesting an important role for the fixed/population effects. The Compana results model had a conditional *R^2^* of `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "areaBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "ssfBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`, and the Poisson model returned `r round(modelExtracts$r2Outputs$R2[modelExtracts$r2Outputs$model == "poisBrms" & modelExtracts$r2Outputs$Component == "marginal"], digits = 2)`.
-
-```{r test}
-
-
-
-
-
+```{r loadModelExtracts, echo=FALSE, message=FALSE, warning=FALSE}
+list2env(modelExtracts, envir = environment())
 ```
-The sample size was negatively correlated with deviation from the median estimate ($\beta$ `r round(modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.value, digits = 2)`; 95% HDCI `r paste(round(c(modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.lower, modelExtracts$betasOutputs[modelExtracts$betasOutputs$model == "ssfBrms" & modelExtracts$betasOutputs$.variable == "b_sampleSizeScaled",]$.upper), digits = 2), collapse = " - ")`).
 
+The conditional *R^2^* values differed for the three models. 
+The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "conditional"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "conditional"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "conditional"], digits = 2)`.
+
+The marginal *R^2^* represents the bulk of the conditional *R^2^* suggesting an important role for the fixed/population effects.
+The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "marginal"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "marginal"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "marginal"], digits = 2)`
+
+
+The sample size was negatively correlated with deviation from the median estimate ($\beta$ `r round(betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.value, digits = 2)`; 95% HDCI `r paste(round(c(betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.lower, betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.upper), digits = 2), collapse = " - ")`).
+
+(Fig. \@ref(fig:allEffectsPlot)).
 
 (Fig. \@ref(fig:effectPlotArea)).
-
-```{r effectPlotArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
-
-knitr::include_graphics(here::here("notebook", "figures", "areaBrms_effectsPlot.png"))
-```
-
 (Fig. \@ref(fig:effectPlotSSF)).
-
-```{r effectPlotSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
-knitr::include_graphics(here::here("notebook", "figures", "ssfBrms_effectsPlot.png"))
-```
-
 (Fig. \@ref(fig:effectPlotTwoStep)).
-
-```{r effectPlotTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
-knitr::include_graphics(here::here("notebook", "figures", "twoStepBrms_effectsPlot.png"))
-```
-
 (Fig. \@ref(fig:effectPlotPois)).
 
-```{r effectPlotPois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
-knitr::include_graphics(here::here("notebook", "figures", "poisBrms_effectsPlot.png"))
+
+```{r allEffectsPlot, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+
+knitr::include_graphics(here::here("notebook", "figures", "_allEffectsPlot.png"))
 ```
+
 
 # Discussion
 
@@ -353,6 +341,30 @@ We generated R package citations with the aid of *grateful* `r paste0("v.", pack
 
 <!-- add zenodo archived snapshot of github -->
 
+\clearpage
+
 # Supplementary Material
+
+```{r effectPlotArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+
+knitr::include_graphics(here::here("notebook", "figures", "areaBrms_effectsPlot.png"))
+```
+
+
+```{r effectPlotSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "ssfBrms_effectsPlot.png"))
+```
+
+
+```{r effectPlotTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "twoStepBrms_effectsPlot.png"))
+```
+
+
+```{r effectPlotPois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
+knitr::include_graphics(here::here("notebook", "figures", "poisBrms_effectsPlot.png"))
+```
+
+\clearpage
 
 # References

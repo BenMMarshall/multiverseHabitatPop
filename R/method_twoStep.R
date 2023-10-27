@@ -129,9 +129,10 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
               step_id = paste0(id, step_id_, sep = "-"),
               cos_ta = cos(ta_), 
               log_sl = log(sl_),
-              layer = factor(paste0("c", layer)))
+              layer = factor(paste0("c", layer),
+                             levels = c("c0", "c2")))
           
-          # print(paste(as, sd, td))
+          print(paste(sampID, as, sd, td))
           # print(unique(popModelData$layer))
           
           for(form in optionsForm){
@@ -145,7 +146,7 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
                                        cluster(id),
                                      data = popModelData,
                                      random = ~ layer,
-                                     all.m.1 = FALSE,
+                                     all.m.1 = TRUE,
                                      D = "UN(1)")
               
             } else if(form == "mf.ss"){
@@ -156,7 +157,7 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
                                        cluster(id),
                                      data = popModelData,
                                      random = ~ layer,
-                                     all.m.1 = FALSE,
+                                     all.m.1 = TRUE,
                                      D = "UN(1)")
               
             } # if else end
@@ -178,6 +179,8 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
             
             i <- i + 1
             twoStepOUTList[[i]] <- optionsInfo
+            
+            rm(twoStepOUT)
             
           }
         }

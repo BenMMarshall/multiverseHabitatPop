@@ -7,7 +7,7 @@
 #' @return Nothing, PDF (or output) will be saved to a folder.
 #'
 #' @export
-render_rmd <- function(modelExtracts, effectPlots,
+render_rmd <- function(modelExtracts, effectPlots, allEffectPlots,
                        areaSpecCurve,
                        twoStepSpecCurve,
                        poisSpecCurve,

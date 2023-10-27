@@ -102,8 +102,32 @@ generate_spec_curves <- function(outputResults, method){
     
     # Poisson models ----------------------------------------------------------
     
+    # outputResults <- poisResults
+    
+    prefDiffDF <- outputResults %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
+                          turnDist)) %>% 
+      group_by(key) %>% 
+      summarise(prefDiff = diff(mean))
+    
     outputResults <- outputResults %>% 
-      mutate("estimate" = mean)
+      filter(term == "layerc2") %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
+                          turnDist)) %>% 
+      left_join(prefDiffDF) %>% 
+      # track freq translated into the more intuitive track per hour
+      dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
+      dplyr::mutate(medEst = median(mean),
+                    absDeltaEst = mean - medEst) %>% 
+      dplyr::mutate(
+        sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
+        trackFreqScaled = (trackFreq - mean(trackFreq))/sd(trackFreq),
+        trackDuraScaled = (trackDura - mean(trackDura))/sd(trackDura),
+        availablePerStepScaled  = (availablePerStep - mean(availablePerStep))/sd(availablePerStep)
+      )
+    
+    outputResults <- outputResults %>% 
+      mutate("estimate" = prefDiff)
     
     outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
     outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
@@ -135,9 +159,9 @@ generate_spec_curves <- function(outputResults, method){
         # sampleID = as.factor(sampleID),
         value = factor(value, levels = levelOrdering)) %>%
       dplyr::group_by(variable, value) %>%
-      dplyr::mutate(d_medEst = mean - median(outputResults$mean, na.rm = TRUE)) %>%
+      dplyr::mutate(d_medEst = prefDiff - median(outputResults$prefDiff, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = mean)
+      mutate("estimate" = prefDiff)
     
   } else if(method == "twoStep"){
     
