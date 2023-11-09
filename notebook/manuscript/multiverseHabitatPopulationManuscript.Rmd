@@ -26,7 +26,7 @@ editor_options:
   markdown: 
     wrap: sentence
 abstract: abc
-keywords: Movement ecology, simulation, compana, resource selection functions, step selection function, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
+keywords: Movement ecology, simulation, compana, step selection function, two-step, poisson, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
 ---
 
 # Introduction
@@ -100,7 +100,7 @@ Here we build upon those findings to target population level habitat selection a
 
 # Methods
 
-``` {r openOptions}
+``` {r openOptions, include=FALSE}
 optionsCompleteList <- readRDS(here::here("data", "optionsCompleteList.rds"))
 ```
 
@@ -251,13 +251,25 @@ After assessment of the model convergence measures, we modified the running para
 
 ## Specification Curves
 
-(Fig. \@ref(fig:specCurveArea)).
+The specification curves provide an overview of all the analysis end points.
+The area based method – Compositional Analysis (Compana) – returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \@ref(fig:specCurveArea)).
+Despite this overall agreement, the final estimates ranged all the way down to minimal preference that are failing to detect the simulated preference.
+When broken down by decision, all decisions bar higher sample sizes, appear to have a large range in final estimates.
+The sample size decisions has a clear reduction in possible answers when the sample is 10 or 20 individuals.
 
 ```{r specCurveArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "area_specCurve.png"))
 ```
 
-(Fig. \@ref(fig:specCurveSSF)).
+The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees with the simulated parametrisation (Fig. \@ref(fig:specCurveSSF)).
+Unlike the Compana curve, the SSF curve has far fewer results that indicate very low habitat preference.
+However, the SSF method did results in estimates indicating avoidance of habitat 2 that contradicts the underlying simulated process; these negative preference results are in a small minority.
+The clearest structure in the estimates resulting from different decisions belong to changes in sample size and tracking regime.
+The tracking regime decisions, frequency and duration, appear to shift the overall range of estimates but with limited impact on the variation.
+Sample size increases, by comparison, appear to reduce the spread of estimates produced.
+Outside of the sampling decisions, the choice to naively average or to average using AIC weights leads to differing spreads of estimates.
+The naively estimated summaries are much more tightly grouped with no estimates failing to correctly detect positive preference.
+
 
 ```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
@@ -269,7 +281,12 @@ knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
 knitr::include_graphics(here::here("notebook", "figures", "twoStep_specCurve.png"))
 ```
 
-(Fig. \@ref(fig:specCurvePois)).
+The Poisson based approach, like those before, shows that the vast majority of analysis pathways will result in the correct identification of positive preference for habitat 2 (Fig. \@ref(fig:specCurvePois)).
+Unlike the previous analyses the tracking duration did not have as clear an impact on the spread of estimates.
+Sample size and tracking frequency did, with larger sample sizes and higher frequency leading to overall decreases in estimate spread.
+Of particular note is that all the failures to detect positive preference occur when the sample size is three.
+The analysis decisions appear largely un-impactful, particularly the number of points per step.
+Model formulation did have an impact, with the integrated formulation was more consistent at retrieving positive preference, but the spread was much larger.
 
 ```{r specCurvePois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
@@ -277,36 +294,73 @@ knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
 
 ## Model Results
 
-```{r loadModelExtracts, echo=FALSE, message=FALSE, warning=FALSE}
+```{r loadModelExtracts, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 list2env(modelExtracts, envir = environment())
 ```
 
-The conditional *R^2^* values differed for the three models. 
-The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "conditional"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "conditional"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "conditional"], digits = 2)`.
+<!-- The conditional *R^2^* values differed for the three models.  -->
+<!-- The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "conditional"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "conditional"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "conditional"], digits = 2)`. -->
 
-The marginal *R^2^* represents the bulk of the conditional *R^2^* suggesting an important role for the fixed/population effects.
-The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "marginal"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "marginal"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "marginal"], digits = 2)`
+<!-- The marginal *R^2^* represents the bulk of the conditional *R^2^* suggesting an important role for the fixed/population effects. -->
+<!-- The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "marginal"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "marginal"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "marginal"], digits = 2)` -->
 
+We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. \@ref(fig:allEffectsPlot), and whether those decisions can predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
+The models provide a means to account for the variation that originates from stochasticity in the simulation and sampling; the shear number of final estimates can obscure patterns in specification curves.
 
-The sample size was negatively correlated with deviation from the median estimate ($\beta$ `r round(betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.value, digits = 2)`; 95% HDCI `r paste(round(c(betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.lower, betasOutputs[betasOutputs$model == "ssfBrms" & betasOutputs$.variable == "b_sampleSizeScaled",]$.upper), digits = 2), collapse = " - ")`).
+``` {r prepareInTextBetas, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
-(Fig. \@ref(fig:allEffectsPlot)).
+betasOutputs <- betasOutputs %>% 
+  mutate(inTextBeta = 
+           paste0(
+             format(round(.value, digits = 2), nsmall = 2),
+             "; 95% HDCI ",
+             format(round(.lower, digits = 2), nsmall = 2), " - ",
+                    format(round(.upper, digits = 2), nsmall = 2)),
+         betaKey = paste("beta", model, .variable, sep = "_")
+           )
+betaList <- setNames(split(betasOutputs$inTextBeta, seq(nrow(betasOutputs))), betasOutputs$betaKey)
+list2env(betaList, envir = environment())
 
-(Fig. \@ref(fig:effectPlotArea)).
-(Fig. \@ref(fig:effectPlotSSF)).
-(Fig. \@ref(fig:effectPlotTwoStep)).
-(Fig. \@ref(fig:effectPlotPois)).
+```
 
+The area-based Compana approach seemed more insensitive to sample size than the other methods ($\beta$ `r beta_areaBrms_b_sampleSizeScaled`), instead benefiting from increases in tracking duration ($\beta$ `r beta_areaBrms_b_trackDuraScaled`) and frequency ($\beta$ `r beta_areaBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotArea)).
+This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to a reduction in deviation from the median estimate: sample size ($\beta$ `r beta_poisBrms_b_sampleSizeScaled`), tracking duration ($\beta$ `r beta_poisBrms_b_trackDuraScaled`), and tracking frequency ($\beta$ `r beta_poisBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotPois)). 
+The other two methods fall in-between with the sampling having a smaller impact.
+The Step Selection model approach still benefited from increasing sampling duration ($\beta$ `r beta_ssfBrms_b_trackFreqScaled`) and frequency, but the impact on increasing sample size was not apparent ($\beta$ `r beta_ssfBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotSSF)).
+
+<!-- NEEDS CHECKING, the spec curve shows that bizzare result -->
+<!-- The Two-step approach appears the least senetivie to sampling decisions, with only tracking frequency reveal to have a clear effect (Fig. \@ref(fig:effectPlotTwoStep)). -->
+<!-- Strangely the increases in tracking frequency led to a greater deviation from the median result. -->
+
+The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step ($beta$ `r beta_poisBrms_b_availablePerStepScaled`).
+This clear effect highlights the limitations of relying solely on the specification curves, where this pattern was not clearly visible.
+Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate ($beta$ `r beta_ssfBrms_b_averagingMethodNaiveaverage`).
+
+The most mixed decision is the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
+Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach ($beta$ `r beta_ssfBrms_b_averagingMethodNaiveaverage`), but a contrasting effect for both the Two-step ($beta$ `r beta_twoStepBrms_b_modelFormulamf.ss`) and Poisson approaches ($beta$ `r beta_poisBrms_b_averagingMethodNaiveaverage`) where the not integrated formula tends to reduce the spread of estimates (Fig. \@ref(fig:effectPlotSSF).
+
+The area based approach had a number of unique decisions.
+Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. \@ref(fig:effectPlotArea)).
+In brief, the use of MCPs ($beta$ `r beta_areaBrms_b_areaMethodMCP`), larger contours (areas) ($beta$ `r beta_areaBrms_b_contourScaled`), and type III designs ($beta$ `r beta_areaBrms_b_typeIII`) tended to lead to more variable results.
+The use of larger contours and type III designs appear to contradict each other, as one would tend towards a larger area, whereas the latter would be a more limited area based.
 
 ```{r allEffectsPlot, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"}
-
 knitr::include_graphics(here::here("notebook", "figures", "_allEffectsPlot.png"))
 ```
 
-
 # Discussion
+<!-- sampling important, holds the biggest gains for poisson and step selection (less so for other methods) -->
+<!-- different methods benefit differently to different decisions, ie no one size fits all -->
+<!-- overall spec curves suggest poisson and ssf are the most stable with the fewer instances of null answers -->
+
+<!-- highlights the possibilities of trade off dura - freq - sample size. e.g., SSF is better to focus on tracking regime, poisson sees gains from all of them -->
+<!-- highligths the need to watch out for some methods - two-step - as they appear much more sensitive to analysis choices than other methods -->
 
 ## Limitations
+
+<!-- cannot examine everything -->
+<!-- strength of selection makes exporting these results tricky -->
+<!-- convergence to a common answers =/= convergence to correct answer, models better reflecting reality will be better, but in lieu of that confidence agreement is the best we have? -->
 
 ## Conclusions
 

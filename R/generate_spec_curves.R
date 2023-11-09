@@ -115,8 +115,6 @@ generate_spec_curves <- function(outputResults, method){
       mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
                           turnDist)) %>% 
       left_join(prefDiffDF) %>% 
-      # track freq translated into the more intuitive track per hour
-      dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::mutate(medEst = median(mean),
                     absDeltaEst = mean - medEst) %>% 
       dplyr::mutate(
