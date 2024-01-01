@@ -25,7 +25,7 @@ csl: peerj.csl
 editor_options: 
   markdown: 
     wrap: sentence
-abstract: abc
+abstract: Science needs to be repeatable --- but we know different researchers get different answers --- animal movement vulnerable because of high task uncertainty --- need consistent answers for hab pref for conservation/application --- how much variation can come from habitat preference --- we ran a multiverse --- different methods differently sensitive to different decisions - sampling and model formula e.g. --- but all did well picking up positive selection --- general guide suggesting caution, but no reason to panic(?)
 keywords: Movement ecology, simulation, compana, step selection function, two-step, poisson, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
 ---
 
@@ -149,6 +149,8 @@ Therefore, we randomly generated a number of samples from our population of `r l
 We varied these samples sizes from `r paste0(min(sapply(optionsCompleteList$samples, length)), " to ", max(sapply(optionsCompleteList$samples, length)))` individuals, and ran `r optionsCompleteList$repeats` repeats for each size.
 A sample never mixed tracking regimes.
 
+<!-- POSSIBLE EXPANSION - The current multiverse(s) are examining movement data with a known positive preference, but it would be very easy to re-run the whole thing with no preference. I think this could be done by just scrambling the classified raster used in the habitat preference analyses –breaking any connection between the movement (and the underlying foraging, resting, movement layers) and the simplified layers used for the analyses. I am going to focus on getting what I have tidied up and the preprint better before exploring this, but it does strike me as an interesting and simple angle to explore: what does the variation look like when there is no preference? Adding this to the paper I think would give more of an insight into whether the variation can cause false positives; as it stands now, the papers are more about spotting the variation causing false negatives (given a certain hard to define level of habitat preference). So in lieu of being able to run a suite of scenarios with different habitat preference strengths, a comparison of zero preference to some-positive preference might be the next best thing. -->
+
 ### Analysis
 
 Building on the decisions concerning tracking regime and population sampling, our multiverse expanded dramatically by exploring four primary analysis routes.
@@ -169,13 +171,13 @@ The home range (aka availability) polygons can be generated via many different p
 We selected to explore `r paste(optionsCompleteList$area$areaMethod, collapse = " and ")` (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
 We used the *ctmm* `r paste0("v.", packageVersion("ctmm"))` [@ctmm] package for the creation of AKDEs, and the  *adehabitatHR* `r paste0("v.", packageVersion("adehabitatHR"))` [@adehabitatHR] package for the MCPs.
 The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
-For the best model we followed recommendations of <!-- INES PAPER HERE -->, opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
+For the best model we followed recommendations of @silva_autocorrelationinformed_2022, opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
 There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
 We avoided a deeper exploration as the impact of the internal AKDE choices are likely smaller than those between area methods (e.g., compared to MCPs), and the AKDE creation can more guided by the underlying data.
 By comparison the MCPs have very few options inpacting their creation.
 Mainly MCP size varies based on the percentage of outliers excluded from the polygon area.
 For all area methods we vary this percentage: `r paste(optionsCompleteList$area$areaContour, collapse = "%, ")`%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
-We selected these contour values as they are the most frequently used in spatial studies <!-- CRANE ET AL HERE -->
+We selected these contour values as they are the most frequently used in spatial studies [@crane_lots_2021].
 
 Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: `r nrow(optionsCompleteList$regime)`), we created the sample/population available areas by combining all polygons.
 We used this combined polygon for the type II design, where all individuals have the same availability.
@@ -349,20 +351,63 @@ knitr::include_graphics(here::here("notebook", "figures", "_allEffectsPlot.png")
 ```
 
 # Discussion
+
+The multiverse approach highlights the diverse array of answers one can obtain even when analysing the same data, simulated using the same parameters.
+Fortunately the vast majority of the answers from the <!-- add number here --> analysis end points agree, and correctly recover the positive habitat selection programmed into the simulated animals.
+This broad agreement is cause of optimism, suggesting that the potentially deviating analysis choices made my researchers largely converge to an agreement –albeit within this given simulated scenario and given habitat preference strength.
+
 <!-- sampling important, holds the biggest gains for poisson and step selection (less so for other methods) -->
+Very much mirroring previous multiverse efforts, the largest effect on whether an estimate was close to the median estimate came from decisions concerning sampling.
+The summarised Step Selection (SSF) approach as well as the Poisson model benefited the most from increasing the data quantity.
+
 <!-- different methods benefit differently to different decisions, ie no one size fits all -->
 <!-- overall spec curves suggest poisson and ssf are the most stable with the fewer instances of null answers -->
 
 <!-- highlights the possibilities of trade off dura - freq - sample size. e.g., SSF is better to focus on tracking regime, poisson sees gains from all of them -->
 <!-- highligths the need to watch out for some methods - two-step - as they appear much more sensitive to analysis choices than other methods -->
 
-## Limitations
+<!-- model formulation was warned against in the Poisson model describing paper - issf vs ssf, the multiverse backs that up -->
+
+## Multiverse in context
 
 <!-- cannot examine everything -->
-<!-- strength of selection makes exporting these results tricky -->
+While the multiverse can help us explore the possible answers that can come from a given dataset, they cannot provide guidance on which of those answers is correct.
+The creation of the multiverse is subject to the same decision making procedure that any single given pathway is: what decisions to include, how to vary the choices.
+Therefore, the overall median or mean answer is heavily dependent on the construction of the multiverse.
+Additionally, the choices and resulting analysis pathways are not equally as valid, nor equally likely to be undertaken by a researcher.
+This means the multiverse of answers may provide some insight on spread of estimates, but should not be directly interpreted as providing more or less support for a given estimate based on the distribution of estimates.
 <!-- convergence to a common answers =/= convergence to correct answer, models better reflecting reality will be better, but in lieu of that confidence agreement is the best we have? -->
+We can take this issue further, reminding ourselves that agreement is not necessarily a reliable proxy for accuracy [@devezer_case_2021].
+A better model reflecting the mechanistic reality of the study system is preferable to a suite of models that agree but converge on a less accurate answer.
+An example in the conducted multiverse: we used AKDEs and MCPs as two alternative definitions of availability for the area based method.
+Arguably we should have excluded the MCP choice in favour of the AKDE choice, as the latter does a better job at capturing the movement processes/patterns underlying animal space-use.
+Despite this the frequency of MCP use in spatial ecology [@crane_lots_2021], we felt, warranted its inclusion as a conceivable choice.
+Judgement calls such as this are unavoidable, and determining whether a model better reflects the underlying system is exceptionally difficult outside of simulated "known-truth" scenarios.
+
+When we are uncertain of the mechanism, or unable to truly model the vast complexity of the system (very frequent in ecology), then informed agreement may be our best option.
+Recent efforts looking at how many researchers answer the same question from the same dataset reveals that these judgement calls result in different answers [@gould_same_2023].
+In many ways the more organic real-world results from @gould_same_2023 reflect the multiverse results presented here –a general agreement on direction, but variation in uncertainty and magnitude.
+What differs, is that here we know the simulated correct answer is a positive effect, in @gould_same_2023 the truth is unknown and so we rely on the good agreement of many independent informed analyses.
+The logistics of organising <!--245(?)--> researchers to assess uncertainty in analyses is infeasible on a broader scale.
+The multiverse approach presents a complementary method for assessing the scope of research choice on final results –albeit more vulnerable to the individual researcher's biases and potentially limited to analyses with lower computational costs. 
+
+<!-- strength of selection makes exporting these results tricky -->
+We have avoided suggesting rules or guides based on these results, instead suggesting broad trends.
+The diverse array of species tracked and the habitat's which they reside makes specific guidance nigh impossible without informed assumptions tailored to a given study system.
+We simulated a nocturnal badger-like animal for this exploration.
+This simualted badger occupied a number of shelter sites and routinely returned to them.
+A routine use of shelter site in a the preferred habitat would mean that missing those sites/locations is unlikely with a reasonably frequent tracking regime.
+Alternatively, one can imagine an animal with more limited site fidelity, where the use of preferred habitat is more fleeting or temporally inconsistent.
+In this instance one may find a reduction in tracking frequency to dramatically alter the estimates retrieved.
+Previous work with SSF has already highlighted the importance of more random locations per step for identifying use of smaller/rarer habitat types [@thurfjell_applications_2014].
+Some methods, such as Resource Selection Functions, have the means of estimating the required data quantity to detect a given strength of selection in a given landscape, and provide a guide to how consistent results would be from that dataset [@street_solving_2021].
+These methods still require informed decisions to be made concerning the strength of selection that is of interest as well as how to define the landscape, but complement the goal of the multiverse assessment with a more rigorously mathematical approach.
 
 ## Conclusions
+
+We would the following questions be asked concerning the outputs of a multiverse: how much variation in estimates is cause for concern? Are there estimates that would alter the final conclusions?
+
+<!-- Only be careful as the one contradicting the others might be right even in the minority -->
 
 # Acknowledgements
 
@@ -372,12 +417,12 @@ BMM was funded by the Natural Environment Research Council (NERC) via the IAPETU
 
 In addition to packages already mentioned in the methods we also used the following.
 
-We used *R* `r paste0("v.", version$major, ".", version$minor)` [@base] via *RStudio* v.2023.6.2.561 [@rstudio]. <!-- version has to be manually added because rstudioapi doesn't work in targets -->
+We used *R* `r paste0("v.", version$major, ".", version$minor)` [@base] via *RStudio* v.2023.09.1 [@rstudio]. <!-- version has to be manually added because rstudioapi doesn't work in targets -->
 We used *here* `r paste0("v.", packageVersion("here"))` [@here] and *qs* `r paste0("v.", packageVersion("qs"))` [@qs] to manage directory addresses and saved objects.
 
 We used *raster* `r paste0("v.", packageVersion("raster"))` [@raster] and *RandomFields* `r paste0("v.", packageVersion("RandomFields"))` [@RandomFields] to aid landscape raster creation alongside NLMR `r paste0("v.", packageVersion("NLMR"))` [@NLMR].
 
-We used *ggplot2* `r paste0("v.", packageVersion("ggplot2"))` for creating figures [@ggplot2], with the expansions: *patchwork* `r paste0("v.", packageVersion("patchwork"))` [@patchwork], *ggridges* `r paste0("v.", packageVersion("ggridges"))` [@ggridges], and *ggdist* `r paste0("v.", packageVersion("ggdist"))` [@ggdist].
+We used *ggplot2* `r paste0("v.", packageVersion("ggplot2"))` for creating figures [@ggplot2], with the expansions: *patchwork* `r paste0("v.", packageVersion("patchwork"))` [@patchwork], *ggridges* `r paste0("v.", packageVersion("ggridges"))` [@ggridges], *ggdist* `r paste0("v.", packageVersion("ggdist"))` [@ggdist], and *ggtext* `r paste0("v.", packageVersion("ggtext"))` [@ggtext].
 
 We used *brms* `r paste0("v.", packageVersion("brms"))` [@brms] to run Bayesian models, with diagnostics generated used *bayesplot* `r paste0("v.", packageVersion("bayesplot"))` [@bayesplot], *tidybayes* `r paste0("v.", packageVersion("tidybayes"))` [@tidybayes], and *performance* `r paste0("v.", packageVersion("performance"))` [@performance].
 
