@@ -1,0 +1,7 @@
+2024-02-08 10:54:53.446395 | Master: tcp://nd85ed30123f4:9234
+2024-02-08 10:54:53.449392 | connecting to: tcp://nd85ed30123f4:9234
+2024-02-08 10:54:53.508675 | > call 1 (0.004s wait)
+`summarise()` has grouped output by 'variable'. You can override using the
+`.groups` argument.
+2024-02-08 10:54:59.157545 | > call 2 (0.835s wait)
+Error in w$poll() : Unexpected peer disconnect

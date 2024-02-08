@@ -48,7 +48,7 @@ method_indi_ssf <- function(
                                  ta_distr = amt::fit_distr(movementSteps$ta_, turnDist))
 
   modelData <- amt::extract_covariates(modelData,
-                                       landscape$classRaster,
+                                       landscape,
                                        where = "end")
 
   modelData$values <- paste0("c", modelData$layer)

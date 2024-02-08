@@ -143,14 +143,19 @@ simulate_landscape <- function(
   classLandscape[classLandscape[] <= 0.5 & classLandscape[] > 0.3] <- 0
   classLandscape[classLandscape[] <= 0.3] <- 0
 
-
   classLandscapeList <- list(
     "classified" = matrix(data = raster::getValues(classLandscape),
                           nrow = row,
-                          ncol = col))
-
+                          ncol = col),
+    "classifiedScram" = matrix(data = sample(raster::getValues(classLandscape),
+                                             length(raster::getValues(classLandscape))),
+                               nrow = row,
+                               ncol = col)
+  )
+  
   landscapeLayersList$classified <- classLandscapeList$classified
-
+  landscapeLayersList$classifiedScram <- classLandscapeList$classifiedScram
+  
   classRaster <- raster::raster(nrows = nrow(landscapeLayersList$classified),
                                 ncols = ncol(landscapeLayersList$classified),
                                 xmn = 0, xmx = nrow(landscapeLayersList$classified),
@@ -160,23 +165,49 @@ simulate_landscape <- function(
                                 vals = t(landscapeLayersList$classified))
   # and flip to full match the raster with the matrix used in the sims
   classRaster <- raster::flip(classRaster)
-
-
+  
   classRasterList <- list(
     "classRaster" = raster::flip(classRaster))
-
   landscapeLayersList$classRaster <- classRasterList$classRaster
-
+  
+  classRasterScram <- raster::raster(nrows = nrow(landscapeLayersList$classifiedScram),
+                                     ncols = ncol(landscapeLayersList$classifiedScram),
+                                     xmn = 0, xmx = nrow(landscapeLayersList$classifiedScram),
+                                     ymn = 0, ymx = ncol(landscapeLayersList$classifiedScram),
+                                     crs = CRS(SRS_string = "EPSG:32601"),
+                                     # need to transpose cos matrix and raster deal with rows and col differently
+                                     vals = t(landscapeLayersList$classifiedScram))
+  # and flip to full match the raster with the matrix used in the sims
+  classRasterScram <- raster::flip(classRasterScram)
+  
+  classRasterScramList <- list(
+    "classRasterScram" = raster::flip(classRasterScram))
+  landscapeLayersList$classRasterScram <- classRasterScramList$classRasterScram
+  
+  # lat lon alternatives
+  
   rBase <- landscapeLayersList$classRaster
   rAll <- raster::projectRaster(from = rBase,
                                 to = projectExtent(rBase, crs = sp::CRS(SRS_string = "EPSG:4326")))
   rAll[] <- as.factor(paste0("c", round(rAll[], digits = 0)))
-
+  
   classRasterLatLonList <- list(
     "classRasterLatLon" = rAll)
-
+  
   landscapeLayersList$classRasterLatLon <- classRasterLatLonList$classRasterLatLon
-
+  
+  rBaseScram <- landscapeLayersList$classRasterScram
+  rAllScram <- raster::projectRaster(from = rBaseScram,
+                                     to = projectExtent(rBaseScram, crs = sp::CRS(SRS_string = "EPSG:4326")))
+  rAllScram[] <- as.factor(paste0("c", round(rAllScram[], digits = 0)))
+  
+  classRasterScramLatLonList <- list(
+    "classRasterScramLatLon" = rAllScram)
+  
+  landscapeLayersList$classRasterScramLatLon <- classRasterScramLatLonList$classRasterScramLatLon
+  
+  print("Landscape generated")
+  
   return(landscapeLayersList)
 
 }

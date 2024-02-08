@@ -19,12 +19,11 @@ wrapper_indi_ssf <- function(
   # allIndividualData <- sampledIndividualData
   
   Method_method <- optionsList$Method_method
+  MethodSSF_land <- optionsList$Method_land
   MethodSSF_mf <- optionsList$MethodSSF_mf
   MethodSSF_sd <- optionsList$MethodSSF_sd
   MethodSSF_td <- optionsList$MethodSSF_td
   MethodSSF_as <- optionsList$MethodSSF_as
-  
-  landscape <- allIndividualData$landscape
   
   indiSSFResults <- vector("list", length = length(names(allIndividualData))-1)
   names(indiSSFResults) <- names(allIndividualData)[!names(allIndividualData) == "landscape"]
@@ -39,6 +38,7 @@ wrapper_indi_ssf <- function(
     
     # ssf places
     listSize <- length(MethodSSF_mf) *
+      length(MethodSSF_land) *
       length(MethodSSF_sd) *
       length(MethodSSF_td) *
       length(MethodSSF_as)
@@ -54,40 +54,44 @@ wrapper_indi_ssf <- function(
           # turnD <- MethodSSF_td[1]
           for(as in MethodSSF_as){
             # as <- MethodSSF_as[1]
-            
-            ssfOUT <- method_indi_ssf(
-              movementData = movementData,
-              landscape = landscape,
-              methodForm = mf,
-              stepDist = stepD,
-              turnDist = turnD,
-              availableSteps = as
-            )
-            
-            ssfDF <- as.data.frame(summary(ssfOUT)$coef)
-            method <- rep("ssf", nrow(ssfDF))
-            ssfDF <- cbind(ssfDF, method)
-            ssfEst <- multiverseHabitat::extract_estimate(ssfDF)
-            
-            optionsData <- data.frame(
-              id = movementData$id[1],
-              Estimate = ssfEst$Estimate,
-              Lower = ssfEst$Estimate - ssfEst$SE,
-              Upper = ssfEst$Estimate + ssfEst$SE,
-              analysis = "ssf",
-              modelFormula = mf,
-              stepDist = stepD,
-              turnDist = turnD,
-              availablePerStep = as,
-              trackFreq = allIndividualData[[indiID]]$trackFreq,
-              trackDura = allIndividualData[[indiID]]$trackDura
-            )
-            
-            ssfOUT$options <- optionsData
-            
-            i <- i+1
-            listOUT[[i]] <- ssfOUT
-            # print(i)
+            for(land in MethodSSF_land){
+              
+              ssfOUT <- method_indi_ssf(
+                movementData = movementData,
+                landscape = allIndividualData$landscape[[land]],
+                methodForm = mf,
+                stepDist = stepD,
+                turnDist = turnD,
+                availableSteps = as
+              )
+              
+              ssfDF <- as.data.frame(summary(ssfOUT)$coef)
+              method <- rep("ssf", nrow(ssfDF))
+              ssfDF <- cbind(ssfDF, method)
+              ssfEst <- multiverseHabitat::extract_estimate(ssfDF)
+              
+              optionsData <- data.frame(
+                id = movementData$id[1],
+                Estimate = ssfEst$Estimate,
+                Lower = ssfEst$Estimate - ssfEst$SE,
+                Upper = ssfEst$Estimate + ssfEst$SE,
+                analysis = "ssf",
+                classLandscape = land,
+                modelFormula = mf,
+                stepDist = stepD,
+                turnDist = turnD,
+                availablePerStep = as,
+                trackFreq = allIndividualData[[indiID]]$trackFreq,
+                trackDura = allIndividualData[[indiID]]$trackDura
+              )
+              
+              ssfOUT$options <- optionsData
+              
+              i <- i+1
+              listOUT[[i]] <- ssfOUT
+              # print(i)
+              
+            } #landscape
           } # as
         } # stepD
       } # turnD

@@ -21,10 +21,11 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
   
   listLength <- length(optionsType)*
     length(optionsMethod)*
+    length(unique(availUseData$classLandscape))*
     length(optionsContour)*
     length(optionsAPoints)*
     length(optionsSPSamp)*
-    length(optionsTest) *
+    length(optionsTest)*
     length(names(sampleGroups))
   
   companaResultsList <- vector("list", length = listLength)
@@ -35,62 +36,67 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
         for(aPo in optionsAPoints){
           for(spS in optionsSPSamp){
             
-            for(sampID in names(sampleGroups)){
+            for(land in unique(availUseData$classLandscape)){
               
-              IDs <- optionsList_samples[[sampID]]
-
-              IDs <- paste0(stringr::str_extract(availUseData$id[1], "^.*_i"),
-                            sprintf("%03d", IDs))
-              
-              use <- availUseData %>% 
-                dplyr::filter(type == typ,
-                       method == met,
-                       contour == con,
-                       availablePoints == aPo,
-                       samplingPattern == spS) %>% 
-                dplyr::filter(id %in% IDs) %>% 
-                dplyr::select(used_c0, used_c2)
-              
-              avail <- availUseData %>% 
-                dplyr::filter(type == typ,
-                       method == met,
-                       contour == con,
-                       availablePoints == aPo,
-                       samplingPattern == spS) %>% 
-                dplyr::filter(id %in% IDs) %>% 
-                dplyr::select(avail_c0, avail_c2)
-              
-              names(use) <- c("c0", "c2")
-              names(avail) <- c("c0", "c2")
-              
-              for(tes in optionsTest){
+              for(sampID in names(sampleGroups)){
                 
-                companaOUT <- compana(used = use, avail = avail,
-                                      test = tes)
+                IDs <- optionsList_samples[[sampID]]
                 
-                companaResultsDF <- data.frame(
-                  sampleID = sampID,
-                  sampleSize = length(IDs),
-                  trackFreq = availUseData$trackFreq[1],
-                  trackDura = availUseData$trackDura[1],
-                  type = typ,
-                  areaMethod = met,
-                  contour = con,
-                  availablePoints = aPo,
-                  samplingPattern = spS,
-                  test = tes,
-                  companaLambda = companaOUT$test["Lambda"],
-                  companaP = companaOUT$test["P"]
-                )
+                IDs <- paste0(stringr::str_extract(availUseData$id[1], "^.*_i"),
+                              sprintf("%03d", IDs))
                 
-                i <- i+1
+                use <- availUseData %>% 
+                  dplyr::filter(type == typ,
+                                classLandscape == land,
+                                method == met,
+                                contour == con,
+                                availablePoints == aPo,
+                                samplingPattern == spS) %>% 
+                  dplyr::filter(id %in% IDs) %>% 
+                  dplyr::select(used_c0, used_c2)
                 
-                companaResultsList[[i]] <- companaResultsDF
+                avail <- availUseData %>% 
+                  dplyr::filter(type == typ,
+                                classLandscape == land,
+                                method == met,
+                                contour == con,
+                                availablePoints == aPo,
+                                samplingPattern == spS) %>% 
+                  dplyr::filter(id %in% IDs) %>% 
+                  dplyr::select(avail_c0, avail_c2)
                 
-              } # tes
-              
-            } # samp
-            
+                names(use) <- c("c0", "c2")
+                names(avail) <- c("c0", "c2")
+                
+                for(tes in optionsTest){
+                  
+                  companaOUT <- compana(used = use, avail = avail,
+                                        test = tes)
+                  
+                  companaResultsDF <- data.frame(
+                    sampleID = sampID,
+                    sampleSize = length(IDs),
+                    trackFreq = availUseData$trackFreq[1],
+                    trackDura = availUseData$trackDura[1],
+                    classLandscape == land,
+                    type = typ,
+                    areaMethod = met,
+                    contour = con,
+                    availablePoints = aPo,
+                    samplingPattern = spS,
+                    test = tes,
+                    companaLambda = companaOUT$test["Lambda"],
+                    companaP = companaOUT$test["P"]
+                  )
+                  
+                  i <- i+1
+                  
+                  companaResultsList[[i]] <- companaResultsDF
+                  
+                } # tes
+                
+              } # samp
+            } #classLandscape
           }
         }
       }
