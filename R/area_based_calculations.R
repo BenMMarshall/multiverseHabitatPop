@@ -9,19 +9,20 @@
 #'
 #' @export
 area_based_calculations <- function(availUseData, sampleGroups, optionsList){
-  
+  # availUseData <- areaBasedAvailUse_60_12
   optionsType <- unique(availUseData$type)
   optionsMethod <- unique(availUseData$method)
   optionsContour <- unique(availUseData$contour)
   optionsAPoints <- unique(availUseData$availablePoints)
   optionsSPSamp <- unique(availUseData$samplingPattern)
+  optionsLand <- unique(availUseData$classLandscape)
   
   # optionsList$areaBasedMethod
   optionsTest <- optionsList$areaBasedTest
   
   listLength <- length(optionsType)*
     length(optionsMethod)*
-    length(unique(availUseData$classLandscape))*
+    length(optionsLand)*
     length(optionsContour)*
     length(optionsAPoints)*
     length(optionsSPSamp)*
@@ -31,15 +32,19 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
   companaResultsList <- vector("list", length = listLength)
   i <- 0
   for(typ in optionsType){
+    # typ <- optionsType[1]
     for(met in optionsMethod){
+      # met <- optionsMethod[1]
       for(con in optionsContour){
+        # con <- optionsContour[1]
         for(aPo in optionsAPoints){
+          # aPo <- optionsAPoints[1]
           for(spS in optionsSPSamp){
-            
-            for(land in unique(availUseData$classLandscape)){
-              
+            # spS <- optionsSPSamp[1]
+            for(land in optionsLand){
+              # land <- optionsLand[1]
               for(sampID in names(sampleGroups)){
-                
+                # sampID <- names(sampleGroups)[1]
                 IDs <- optionsList_samples[[sampID]]
                 
                 IDs <- paste0(stringr::str_extract(availUseData$id[1], "^.*_i"),
@@ -78,7 +83,7 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                     sampleSize = length(IDs),
                     trackFreq = availUseData$trackFreq[1],
                     trackDura = availUseData$trackDura[1],
-                    classLandscape == land,
+                    classLandscape = land,
                     type = typ,
                     areaMethod = met,
                     contour = con,

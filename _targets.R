@@ -51,7 +51,8 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:20))
+  individual = paste0("i", sprintf("%03d", 1:5))
+  # individual = paste0("i", sprintf("%03d", 1:20))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -68,12 +69,13 @@ values_Regime <- values_Regime %>%
   dplyr::filter(datapoints > 30) %>%
   dplyr::select(td, tf)
 
-
 optionsList_area <- list(
   areaMethod = c("MCP", "AKDE"),
   areaContour = c(95, 99),
-  Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 4)), digits = 1)),
-  Method_sp = c("rd", "st")
+  Method_ap = c(1,4),
+  # Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 4)), digits = 1)),
+  Method_sp = c("rd", "st"),
+  Method_land = c("classRaster", "classRasterScram")
 )
 
 optionsList_areaMethods <- list(
@@ -83,36 +85,39 @@ optionsList_areaMethods <- list(
 
 optionsList_sff <- list(
   Method_method = c("ssf"),
-  # MethodSSF_mf = c("mf.is"),
-  # MethodSSF_sd = c("gamma"),
-  # MethodSSF_td = c("vonmises"),
-  # MethodSSF_as = c(2, 10),
   MethodSSF_land = c("classRaster", "classRasterScram"),
-  MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
-  MethodSSF_mf = c("mf.is", "mf.ss"),
-  MethodSSF_sd = c("gamma", "exp"),
-  MethodSSF_td = c("vonmises", "unif")
+  MethodSSF_as = c(2, 10),
+  # MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
+  MethodSSF_mf = c("mf.is"),
+  # MethodSSF_mf = c("mf.is", "mf.ss"),
+  MethodSSF_sd = c("gamma"),
+  MethodSSF_td = c("vonmises")
+  # MethodSSF_td = c("vonmises", "unif")
+  # MethodSSF_sd = c("gamma", "exp"),
 )
 
 optionsList_pois <- list(
-  # MethodPois_mf = c("mf.is"),
-  # MethodPois_sd = c("gamma"),
-  # MethodPois_td = c("vonmises"),
-  # MethodPois_as = c(2, 10),
   MethodPois_land = c("classRaster", "classRasterScram"),
-  MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
-  MethodPois_mf = c("mf.is", "mf.ss"),
-  MethodPois_sd = c("gamma", "exp"),
-  MethodPois_td = c("vonmises", "unif")
+  MethodPois_as = c(2, 10),
+  # MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
+  MethodPois_mf = c("mf.is"),
+  # MethodPois_mf = c("mf.is", "mf.ss"),
+  MethodPois_sd = c("gamma"),
+  # MethodPois_sd = c("gamma", "exp"),
+  MethodPois_td = c("vonmises")
+  # MethodPois_td = c("vonmises", "unif")
 )
 
 
 # Sampling set-up ---------------------------------------------------------
 
-repeats <- 2
+repeats <- 1
+# repeats <- 2
 
 values_Sample <-
-  list(sampleSize = rep(c(3,5,10,20), each = repeats))
+  list(sampleSize = rep(c(3,5), each = repeats))
+# values_Sample <-
+#   list(sampleSize = rep(c(3,5,10,20), each = repeats))
 
 set.seed(2023)
 

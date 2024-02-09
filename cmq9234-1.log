@@ -1,2 +1,1503 @@
-  |                                                         |                                                 |   0%  |                                                         |..                                               |   4%                       |                                                         |....                                             |   8% (openOptions)  Quitting from lines 328-348 (multiverseHabitatPopulationManuscript.Rmd) 
-.                                           |  12%                       |                                                         |........                                         |  16% (specCurveArea)       |                                                         |..........                                       |  20%                       |                                                         |............                                     |  24% (specCurveSSF)        |                                                         |..............                                   |  28%                       |                                                         |................                                 |  32% (specCurveTwoStep)    |                                                         |..................                               |  36%                       |                                                         |....................                             |  40% (specCurvePois)       |                                                         |......................                           |  44%                       |                                                         |........................                         |  48% (loadModelExtracts)   |                                                         |.........................                        |  52%                       |                                                         |...........................                      |  56% (prepareInTextBetas)  |                                                         |.............................                    |  60%                                                                                                                                    
+[1] "samp1"
+[1] TRUE
+[1] "1 - 30 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 30 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 30 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 30 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 30 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 30 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 30 - claError in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+2024-02-09 13:38:11.872239 | > call 2 (0.012s wait)
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+f - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp4"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp6"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "1 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "1 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"

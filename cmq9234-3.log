@@ -1,8 +1,2035 @@
-2024-02-08 10:54:53.431766 | Master: tcp://nd85ed30123f4:9234
-2024-02-08 10:54:53.434695 | connecting to: tcp://nd85ed30123f4:9234
-2024-02-08 10:54:53.504691 | > call 1 (0.018s wait)
-Joining with `by = join_by(key)`
-`summarise()` has grouped output by 'variable'. You can override using the
-`.groups` argument.
-2024-02-08 10:54:59.046596 | > call 2 (1.082s wait)
-Error in w$poll() : Unexpected peer disconnect
+[1] "samp1"
+[1] "--- movementData subsampled"
+[1] "--- popModelData generated"
+[1] "samp1 5 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp1 5 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp1 5 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp1 5 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp1 5 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp1 5 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp1 5 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp1 5 exp un2024-02-09 13:30:50.334308 | > call 5 (0.011s wait)
+2024-02-09 13:39:32.976334 | > call 6 (0.006s wait)
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+Error in t(sapply(parm, function(i) par.avg(cf[, i], se[, i], wts, dfs[,  : 
+  subscript out of bounds
+"samp3 15 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 15 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 15 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 15 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 15 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 15 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 15 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 28 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 28 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 28 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 28 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 28 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 28 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 28 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 28 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 50 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 50 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 50 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 50 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 50 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 50 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp3 50 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp3 50 exp unif classRasterScram"
+[1] "samp4"
+[1] "--- movementData subsampled"
+[1] "--- popModelData generated"
+[1] "samp4 5 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 5 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 5 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 5 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 5 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 5 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 5 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 5 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 8 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 8 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 8 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 8 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 8 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 8 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 8 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 8 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 15 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 15 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 15 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 15 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 15 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 15 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 15 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 15 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 28 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 28 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 28 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 28 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 28 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 28 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 28 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 28 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 50 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 50 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 50 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 50 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 50 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 50 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp4 50 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp4 50 exp unif classRasterScram"
+[1] "samp5"
+[1] "--- movementData subsampled"
+[1] "--- popModelData generated"
+[1] "samp5 5 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 5 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 5 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 5 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 5 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 5 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 5 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 5 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 8 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 8 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 8 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 8 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 8 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 8 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 8 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 8 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 15 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 15 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 15 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 15 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 15 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 15 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 15 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 15 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 28 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 28 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 28 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 28 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 28 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 28 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 28 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 28 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 50 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 50 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 50 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 50 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 50 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 50 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp5 50 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp5 50 exp unif classRasterScram"
+[1] "samp6"
+[1] "--- movementData subsampled"
+[1] "--- popModelData generated"
+[1] "samp6 5 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 5 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 5 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 5 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 5 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 5 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 5 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 5 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 8 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 8 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 8 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 8 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 8 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 8 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 8 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 8 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 15 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 15 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 15 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 15 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 15 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 15 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 15 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 15 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 28 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 28 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 28 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 28 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 28 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 28 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 28 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 28 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 50 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 50 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 50 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 50 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 50 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 50 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp6 50 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp6 50 exp unif classRasterScram"
+[1] "samp7"
+[1] "--- movementData subsampled"
+[1] "--- popModelData generated"
+[1] "samp7 5 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 5 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 5 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 5 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 5 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 5 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 5 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 5 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 8 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 8 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 8 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 8 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 8 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 8 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 8 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 8 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 15 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 15 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 15 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 15 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 15 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 15 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 15 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 15 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 28 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 28 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 28 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 28 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 28 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 28 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 28 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 28 exp unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 50 gamma vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 50 gamma vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 50 gamma unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 50 gamma unif classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 50 exp vonmises classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 50 exp vonmises classRasterScram"
+[1] "--- popModelData generated"
+[1] "samp7 50 exp unif classRaster"
+[1] "--- popModelData generated"
+[1] "samp7 50 exp unif classRasterScram"
+[1] "samp1"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp2"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp3"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp4"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp6"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - unif - 50"
+[1] "samp7"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.is - exp - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - vonmises - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - gamma - unif - 50"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 5"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 8"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 15"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRasterScram - mf.ss - exp - vonmises - 28"
+[1] TRUE
+[1] "2 - 60 - classRaster - mf.ss - exp - vonmises - 50"

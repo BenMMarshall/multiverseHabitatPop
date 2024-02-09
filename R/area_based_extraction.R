@@ -13,11 +13,12 @@ area_based_extraction <- function(allIndividualData, optionsList){
   areaContour <- optionsList$areaContour
   Method_ap <- optionsList$Method_ap
   Method_sp <- optionsList$Method_sp
+  Method_land <- optionsList$Method_land
   
   landscape <- list()
-  landscape[[1]] <- allIndividualData$landscape$classRaster
-  landscape[[2]] <- allIndividualData$landscape$classRasterScram
-  names(landscape) <- c("classRaster", "classRasterScram")
+  landscape[[1]] <- allIndividualData$landscape[[Method_land[1]]]
+  landscape[[2]] <- allIndividualData$landscape[[Method_land[2]]]
+  names(landscape) <- Method_land
   
   # Loop to create individual polygons --------------------------------------
   
@@ -25,13 +26,13 @@ area_based_extraction <- function(allIndividualData, optionsList){
   usedAvailList <- vector("list",
                           length = 
                             length(areaMethod) *
-                            length(landscape) *
+                            length(Method_land) *
                             length(areaContour) *
                             length(Method_sp) *
                             length(Method_ap))
   
   for(method in areaMethod){
-    
+    # method <- areaMethod[1]
     resourceList <- vector("list", length = length(names(allIndividualData)[-1]))
     names(resourceList) <- names(allIndividualData)[-1]
     for(indiID in names(allIndividualData)){

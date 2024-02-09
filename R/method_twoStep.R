@@ -13,11 +13,13 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
   landscape <- allIndividualData$landscape
   
   optionsForm <- optionsList$MethodPois_mf
+  optionsLand <- optionsList$MethodPois_land
   optionsASteps <- optionsList$MethodPois_as
   optionsStepD <- optionsList$MethodPois_sd
   optionsTurnD <- optionsList$MethodPois_td
   
   listLength <- length(optionsForm) *
+    length(optionsLand) *
     length(optionsASteps) *
     length(optionsStepD) *
     length(optionsTurnD) *
@@ -76,33 +78,22 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
         # sd <- "exp"
         for(td in optionsTurnD){
           # td <- "unif"
-          # had to modify the code and avoid map to make sure the distributions are
-          # based on a single individual, issues with the sl_ and ta_ being passed to
-          # the fit_distr functions inside map
-          allTracksList <- vector("list", length = length(movementDataNest$id))
-          names(allTracksList) <- movementDataNest$id
-          for(indiID in movementDataNest$id){
-            # indiID <- "BADGER_i005"
-            # which(movementDataNest$id == indiID)
+          for(land in optionsLand){
             
-            # print(indiID)
-            
-            indiTrack <- movementDataNest$trk[[which(movementDataNest$id == indiID)]] %>% 
-              steps() %>% 
-              filter(sl_>0)
-            
-            indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
-              random_steps(
-                n_control = as,
-                sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
-                ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
-              ) %>% 
-              extract_covariates(landscape$classRaster) %>% 
-              mutate(id = indiID)
-            
-            # print(unique(indiTrackCov$layer))
-            # need a while loop to dodge the very very rare instances of NA from generated steps
-            while(any(is.na(unique(indiTrackCov$layer)))){
+            # had to modify the code and avoid map to make sure the distributions are
+            # based on a single individual, issues with the sl_ and ta_ being passed to
+            # the fit_distr functions inside map
+            allTracksList <- vector("list", length = length(movementDataNest$id))
+            names(allTracksList) <- movementDataNest$id
+            for(indiID in movementDataNest$id){
+              # indiID <- "BADGER_i005"
+              # which(movementDataNest$id == indiID)
+              
+              # print(indiID)
+              
+              indiTrack <- movementDataNest$trk[[which(movementDataNest$id == indiID)]] %>% 
+                steps() %>% 
+                filter(sl_>0)
               
               indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
                 random_steps(
@@ -110,79 +101,94 @@ method_twoStep <- function(allIndividualData, sampleGroups, optionsList){
                   sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
                   ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
                 ) %>% 
-                extract_covariates(landscape$classRaster) %>% 
+                extract_covariates(landscape[[land]]) %>% 
                 mutate(id = indiID)
               
               # print(unique(indiTrackCov$layer))
+              # need a while loop to dodge the very very rare instances of NA from generated steps
+              while(any(is.na(unique(indiTrackCov$layer)))){
+                
+                indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
+                  random_steps(
+                    n_control = as,
+                    sl_distr = amt::fit_distr(x = indiTrack$sl_, dist_name = sd),
+                    ta_distr = amt::fit_distr(x = indiTrack$ta_, dist_name = td)
+                  ) %>% 
+                  extract_covariates(landscape[[land]]) %>% 
+                  mutate(id = indiID)
+                
+                # print(unique(indiTrackCov$layer))
+              }
+              
+              allTracksList[[indiID]] <- indiTrackCov
             }
+            popModelData <- do.call(rbind, allTracksList)
             
-            allTracksList[[indiID]] <- indiTrackCov
-          }
-          popModelData <- do.call(rbind, allTracksList)
-          
-          print("--- popModelData generated")
-          
-          popModelData <- popModelData %>% 
-            mutate(
-              y = as.numeric(case_),
-              id = as.numeric(factor(id)), 
-              step_id = paste0(id, step_id_, sep = "-"),
-              cos_ta = cos(ta_), 
-              log_sl = log(sl_),
-              layer = factor(paste0("c", layer),
-                             levels = c("c0", "c2")))
-          
-          print(paste(sampID, as, sd, td))
-          # print(unique(popModelData$layer))
-          
-          for(form in optionsForm){
-            if(form == "mf.is"){
+            print("--- popModelData generated")
+            
+            popModelData <- popModelData %>% 
+              mutate(
+                y = as.numeric(case_),
+                id = as.numeric(factor(id)), 
+                step_id = paste0(id, step_id_, sep = "-"),
+                cos_ta = cos(ta_), 
+                log_sl = log(sl_),
+                layer = factor(paste0("c", layer),
+                               levels = c("c0", "c2")))
+            
+            print(paste(sampID, as, sd, td, land))
+            # print(unique(popModelData$layer))
+            
+            for(form in optionsForm){
+              if(form == "mf.is"){
+                
+                twoStepOUT <- Ts.estim(formula = y ~ 
+                                         layer + 
+                                         layer:log_sl + # covar iteractions
+                                         layer:cos_ta +
+                                         strata(step_id) +
+                                         cluster(id),
+                                       data = popModelData,
+                                       random = ~ layer,
+                                       all.m.1 = TRUE,
+                                       D = "UN(1)")
+                
+              } else if(form == "mf.ss"){
+                
+                twoStepOUT <- Ts.estim(formula = y ~ 
+                                         layer + 
+                                         strata(step_id) +
+                                         cluster(id),
+                                       data = popModelData,
+                                       random = ~ layer,
+                                       all.m.1 = TRUE,
+                                       D = "UN(1)")
+                
+              } # if else end
               
-              twoStepOUT <- Ts.estim(formula = y ~ 
-                                       layer + 
-                                       layer:log_sl + # covar iteractions
-                                       layer:cos_ta +
-                                       strata(step_id) +
-                                       cluster(id),
-                                     data = popModelData,
-                                     random = ~ layer,
-                                     all.m.1 = TRUE,
-                                     D = "UN(1)")
+              optionsInfo <-
+                data.frame(
+                  sampleID = sampID,
+                  sampleSize = length(IDs),
+                  trackFreq = allIndividualData[[2]]$trackFreq,
+                  trackDura = allIndividualData[[2]]$trackDura,
+                  analysis = "TwoStep",
+                  classLandscape = land,
+                  modelFormula = form,
+                  availablePerStep = as,
+                  stepDist = sd,
+                  turnDist = td,
+                  twoStepBeta = twoStepOUT$beta,
+                  twoStepSE = twoStepOUT$se
+                )
               
-            } else if(form == "mf.ss"){
+              i <- i + 1
+              twoStepOUTList[[i]] <- optionsInfo
               
-              twoStepOUT <- Ts.estim(formula = y ~ 
-                                       layer + 
-                                       strata(step_id) +
-                                       cluster(id),
-                                     data = popModelData,
-                                     random = ~ layer,
-                                     all.m.1 = TRUE,
-                                     D = "UN(1)")
+              rm(twoStepOUT)
               
-            } # if else end
-            
-            optionsInfo <-
-              data.frame(
-                sampleID = sampID,
-                sampleSize = length(IDs),
-                trackFreq = allIndividualData[[2]]$trackFreq,
-                trackDura = allIndividualData[[2]]$trackDura,
-                analysis = "TwoStep",
-                modelFormula = form,
-                availablePerStep = as,
-                stepDist = sd,
-                turnDist = td,
-                twoStepBeta = twoStepOUT$beta,
-                twoStepSE = twoStepOUT$se
-              )
-            
-            i <- i + 1
-            twoStepOUTList[[i]] <- optionsInfo
-            
-            rm(twoStepOUT)
-            
-          }
+            }
+          }# land
         }
       }
     }
