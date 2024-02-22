@@ -8,7 +8,7 @@
 #' @return Population estimates for area based methods.
 #'
 #' @export
-area_based_calculations <- function(availUseData, sampleGroups, optionsList){
+area_based_calculations <- function(availUseData, sampleGroups, optionsList, optionsListArea){
   # availUseData <- areaBasedAvailUse_60_12
   optionsType <- unique(availUseData$type)
   optionsMethod <- unique(availUseData$method)
@@ -18,7 +18,7 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
   optionsLand <- unique(availUseData$classLandscape)
   
   # optionsList$areaBasedMethod
-  optionsTest <- optionsList$areaBasedTest
+  optionsTest <- optionsListArea$areaBasedTest
   
   listLength <- length(optionsType)*
     length(optionsMethod)*
@@ -74,9 +74,14 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                 names(avail) <- c("c0", "c2")
                 
                 for(tes in optionsTest){
-                  
+                  # tes <- optionsTest[1]
                   companaOUT <- compana(used = use, avail = avail,
                                         test = tes)
+                  
+                  # names(companaOUT$rank[1])
+                  # companaOUT$rm
+                  # companaOUT$rm
+                  # companaOUT$rmv
                   
                   companaResultsDF <- data.frame(
                     sampleID = sampID,
@@ -90,6 +95,7 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList){
                     availablePoints = aPo,
                     samplingPattern = spS,
                     test = tes,
+                    companaHabDiff = companaOUT$rmv[2,1],
                     companaLambda = companaOUT$test["Lambda"],
                     companaP = companaOUT$test["P"]
                   )

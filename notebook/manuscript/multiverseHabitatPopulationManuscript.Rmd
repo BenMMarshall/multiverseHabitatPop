@@ -42,13 +42,11 @@ Despite best efforts we can never create a fully generalisable study.
 The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations of further studies.
 However, the re-examination of foundational work reveals the need to repeatedly question and retest the assumptions subsequent work relies upon.
 
-
 <!-- or whether the model used to study said system was correct - Devezer et al2021 -->
 
 While other disciplines' replication rates have been more closely examined [@open_science_collaboration_estimating_2015; @freedman_economics_2015; see @kelly_rate_2019 for ecological replication rates], there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliable as many of the same incentive structures seen as responsible exist [@Brembs2018; @fanelli_pressures_2010; @smaldino_natural_2016; @ware_significance_2015].
 Replication studies and meta-analyses have shown that previously results in ecology and evolution may need further study [@parker_what_2013; @seguin_no_2012; @sanchez-tojar_meta-analysis_2018].
 In general, it appears that initial findings are more extreme than those subsequently, and that their initial momentum in regards to research direction is slow to reorient [@jennions_relationships_2002; @barto_dissemination_2012].
-
 
 * for some disciplines testing repeatability practically is tricky, therefore we must be sure to maximise the utility of existing data and know it's limitations
 
@@ -56,7 +54,6 @@ For disciplines where direct replications are more common and feasible, replicat
 Ecological systems, particularly wild, are complex and impossible to fully control leading to ecologists' frequent reliance on "natural experiments".
 
 <!-- peterson pano 2021 has a bit about "task uncertainty" where high perfectly describes ecology and the hard to control system -->
-
 
 Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on conceptual or quasi replications [@fraser_role_2020; @palmer_quasi-replication_2000].
 In broader terms, undertaking studies that subject and method differ from the original study, the where the research questions are conceptually similar [@kelly_rate_2019; @nakagawa_replicating_2015].
@@ -110,8 +107,8 @@ optionsCompleteList <- readRDS(here::here("data", "optionsCompleteList.rds"))
 
 * abmAnimalMovement settings
 
-We used the animal movement using abmAnimalMovement `r paste0("v.", packageVersion("abmAnimalMovement"))` [@abmAnimalMovement] to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
-The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guie the animals decisions.
+We used the abmAnimalMovement `r paste0("v.", packageVersion("abmAnimalMovement"))` [@abmAnimalMovement] package to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
+The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guide the animals decisions.
 We used the NLMR `r paste0("v.", packageVersion("NLMR"))` package [@NLMR] to generate the three required resource/environmental rasters: movement resistance, foraging quality, and shelter site quality.
 The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (differing in movement characteristics and resource prioritisation), and site fidelity.
 For the purposes of this study we used one of the pre-created example pseudo-species: Badger, described in the package manuscript.
@@ -119,10 +116,9 @@ In brief, the badger is a terrestrial species occupying several shelter sites, w
 
 For the purposes of the analysis we simplified the landscape information into categories –akin to the sort of land-use information more frequently available to researchers of animal movement.
 We focused on foraging quality because it influences the greatest amounts of movement compared to sheltering or exploratory movements.
-<!-- SHOULD WE CHANGE THE FACTOR 1 becuase it is easier to remember? -->
 We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
 
-We used that simulated landscape and abmAnimalMovement to simulate a population of  `r length(optionsCompleteList$individuals$individual)`, that later can be sampled from.
+We used that simulated landscape and abmAnimalMovement to simulate a population of  `r length(optionsCompleteList$individuals$individual)`, that was later sampled from.
 All individuals of this population had the same simulation settings apart from starting location.
 Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
 
@@ -148,8 +144,6 @@ An important component of assessing population level habitat selection is the nu
 Therefore, we randomly generated a number of samples from our population of `r length(optionsCompleteList$individuals$individual)` simulated individuals.
 We varied these samples sizes from `r paste0(min(sapply(optionsCompleteList$samples, length)), " to ", max(sapply(optionsCompleteList$samples, length)))` individuals, and ran `r optionsCompleteList$repeats` repeats for each size.
 A sample never mixed tracking regimes.
-
-<!-- POSSIBLE EXPANSION - The current multiverse(s) are examining movement data with a known positive preference, but it would be very easy to re-run the whole thing with no preference. I think this could be done by just scrambling the classified raster used in the habitat preference analyses –breaking any connection between the movement (and the underlying foraging, resting, movement layers) and the simplified layers used for the analyses. I am going to focus on getting what I have tidied up and the preprint better before exploring this, but it does strike me as an interesting and simple angle to explore: what does the variation look like when there is no preference? Adding this to the paper I think would give more of an insight into whether the variation can cause false positives; as it stands now, the papers are more about spotting the variation causing false negatives (given a certain hard to define level of habitat preference). So in lieu of being able to run a suite of scenarios with different habitat preference strengths, a comparison of zero preference to some-positive preference might be the next best thing. -->
 
 ### Analysis
 
@@ -339,7 +333,7 @@ This clear effect highlights the limitations of relying solely on the specificat
 Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate ($beta$ `r beta_ssfBrms_b_averagingMethodNaiveaverage`).
 
 The most mixed decision is the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
-Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach ($beta$ `r beta_ssfBrms_b_averagingMethodNaiveaverage`), but a contrasting effect for both the Two-step ($beta$ `r beta_twoStepBrms_b_modelFormulamf.ss`) and Poisson approaches ($beta$ `r beta_poisBrms_b_averagingMethodNaiveaverage`) where the not integrated formula tends to reduce the spread of estimates (Fig. \@ref(fig:effectPlotSSF).
+Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach ($beta$ `r beta_ssfBrms_b_modelFormulamf.ss`), but a contrasting effect for both the Two-step ($beta$ `r beta_twoStepBrms_b_modelFormulamf.ss`) and Poisson approaches ($beta$ `r beta_poisBrms_b_modelFormulamf.ss`) where the not integrated formula tends to reduce the spread of estimates (Fig. \@ref(fig:effectPlotSSF).
 
 The area based approach had a number of unique decisions.
 Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. \@ref(fig:effectPlotArea)).
@@ -411,7 +405,7 @@ We would the following questions be asked concerning the outputs of a multiverse
 
 # Acknowledgements
 
-BMM was funded by the Natural Environment Research Council (NERC) via the IAPETUS2 Doctoral Training Partnership.
+This work was supported by the Natural Environment Research Council (NERC) via the IAPETUS2 Doctoral Training Partnership held by Benjamin Michael Marshall (grant reference NE/S007431/1).
 
 # Software availablity
 

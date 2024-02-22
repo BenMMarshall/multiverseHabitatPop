@@ -20,6 +20,16 @@ generate_spec_curves <- function(outputResults, method){
     outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
     outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
     
+    outputResults$stepDist <- ifelse(outputResults$stepDist == "gamma",
+                                     "Gamma",
+                                     "Exponential")
+    outputResults$turnDist <- ifelse(outputResults$turnDist == "unif",
+                                     "Uniform",
+                                     "Von Mises")
+    outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
+                                         "Integrated",
+                                         "Standard")
+    
     levelOrdering <- unique(c(
       unique(outputResults$averagingMethod),
       unique(outputResults$sampleID),
@@ -33,8 +43,8 @@ generate_spec_curves <- function(outputResults, method){
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-analysis, -sampleID) %>% 
-      dplyr::mutate(across(1:8, as.character)) %>% 
-      tidyr::pivot_longer(cols = 1:8, names_to = "variable") %>% 
+      dplyr::mutate(across(c(1:3, 5:9), as.character)) %>% 
+      tidyr::pivot_longer(cols = c(1:3, 5:9), names_to = "variable") %>% 
       dplyr::mutate(
         variable = case_when(
           variable == "trackDura" ~ "Tracking Duration (days)",
@@ -58,10 +68,17 @@ generate_spec_curves <- function(outputResults, method){
     # Area based --------------------------------------------------------------
 
     outputResults <- outputResults %>% 
-      mutate("estimate" = companaLambda)
+      mutate("estimate" = companaHabDiff)
     
     outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
     outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
+    
+    outputResults$samplingPattern <- ifelse(outputResults$samplingPattern == "rd",
+                                            "Random",
+                                            "Stratified")
+    outputResults$test <- ifelse(outputResults$test == "randomisation",
+                                            "Randomisation",
+                                            "Parametric")
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
@@ -77,8 +94,8 @@ generate_spec_curves <- function(outputResults, method){
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-sampleID) %>% 
-      dplyr::mutate(across(1:9, as.character)) %>% 
-      tidyr::pivot_longer(cols = 1:9, names_to = "variable") %>% 
+      dplyr::mutate(across(c(1:3, 5:10), as.character)) %>% 
+      tidyr::pivot_longer(cols = c(1:3, 5:10), names_to = "variable") %>% 
       dplyr::mutate(
         variable = case_when(
           variable == "trackDura" ~ "Tracking Duration (days)",
@@ -94,9 +111,9 @@ generate_spec_curves <- function(outputResults, method){
         # sampleID = as.factor(sampleID),
         value = factor(value, levels = levelOrdering)) %>%
       dplyr::group_by(variable, value) %>%
-      dplyr::mutate(d_medEst = companaLambda - median(outputResults$companaLambda, na.rm = TRUE)) %>%
+      dplyr::mutate(d_medEst = companaHabDiff - median(outputResults$companaHabDiff, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = companaLambda)
+      mutate("estimate" = companaHabDiff)
     
   } else if(method == "pois"){
     
@@ -106,14 +123,14 @@ generate_spec_curves <- function(outputResults, method){
     
     prefDiffDF <- outputResults %>% 
       mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist)) %>% 
+                          turnDist, classLandscape)) %>% 
       group_by(key) %>% 
       summarise(prefDiff = diff(mean))
     
     outputResults <- outputResults %>% 
       filter(term == "layerc2") %>% 
       mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist)) %>% 
+                          turnDist, classLandscape)) %>% 
       left_join(prefDiffDF) %>% 
       dplyr::mutate(medEst = median(mean),
                     absDeltaEst = mean - medEst) %>% 
@@ -130,6 +147,16 @@ generate_spec_curves <- function(outputResults, method){
     outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
     outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
     
+    outputResults$stepDist <- ifelse(outputResults$stepDist == "gamma",
+                                     "Gamma",
+                                     "Exponential")
+    outputResults$turnDist <- ifelse(outputResults$turnDist == "unif",
+                                     "Uniform",
+                                     "Von Mises")
+    outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
+                                         "Integrated",
+                                         "Standard")
+    
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
       sort(unique(outputResults$sampleSize)),
@@ -142,8 +169,8 @@ generate_spec_curves <- function(outputResults, method){
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-analysis, -sampleID) %>% 
-      dplyr::mutate(across(1:7, as.character)) %>% 
-      tidyr::pivot_longer(cols = 1:7, names_to = "variable") %>% 
+      dplyr::mutate(across(c(1:3, 5:8), as.character)) %>% 
+      tidyr::pivot_longer(cols = c(1:3, 5:8), names_to = "variable") %>% 
       dplyr::mutate(
         variable = case_when(
           variable == "trackDura" ~ "Tracking Duration (days)",
@@ -171,6 +198,16 @@ generate_spec_curves <- function(outputResults, method){
     outputResults$trackFreq <- 1/as.numeric(outputResults$trackFreq)
     outputResults$trackFreq <- round(outputResults$trackFreq, digits = 2)
     
+    outputResults$stepDist <- ifelse(outputResults$stepDist == "gamma",
+                                     "Gamma",
+                                     "Exponential")
+    outputResults$turnDist <- ifelse(outputResults$turnDist == "unif",
+                                     "Uniform",
+                                     "Von Mises")
+    outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
+                                         "Integrated",
+                                         "Standard")
+    
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
       sort(unique(outputResults$sampleSize)),
@@ -183,8 +220,8 @@ generate_spec_curves <- function(outputResults, method){
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-analysis, -sampleID) %>% 
-      dplyr::mutate(across(1:7, as.character)) %>% 
-      tidyr::pivot_longer(cols = 1:7, names_to = "variable") %>% 
+      dplyr::mutate(across(c(1:3, 5:8), as.character)) %>% 
+      tidyr::pivot_longer(cols = c(1:3, 5:8), names_to = "variable") %>% 
       dplyr::mutate(
         variable = case_when(
           variable == "trackDura" ~ "Tracking Duration (days)",
@@ -206,8 +243,15 @@ generate_spec_curves <- function(outputResults, method){
   
   # PLOTS -------------------------------------------------------------------
   
+  outputPlotData$classLandscape <- ifelse(str_detect(outputPlotData$classLandscape, "Scram"),
+                                          "Scrambled Habitat Layer (i.e., No selection)",
+                                          "Correct Habitat Layer (i.e., Positive selection)")
+  outputResults$classLandscape <- ifelse(str_detect(outputResults$classLandscape, "Scram"),
+                                          "Scrambled Habitat Layer (i.e., No selection)",
+                                          "Correct Habitat Layer (i.e., Positive selection)")
+  
   medData <- outputPlotData %>%
-    dplyr::group_by(variable, value) %>%
+    dplyr::group_by(variable, value, classLandscape) %>%
     dplyr::summarise(modelMedEst = median(estimate, na.rm = TRUE))
   
   (splitSpecCurve <- outputPlotData %>%
@@ -223,7 +267,7 @@ generate_spec_curves <- function(outputResults, method){
                  alpha = 1, size = 1, colour = "#403F41") +
       geom_hline(yintercept = seq(0.5,10.5,1), linewidth = 0.5, alpha = 0.25, colour = "#403F41",
                  linetype = 2) +
-      facet_grid(variable~., scales = "free_y", space = "free", switch = "y") +
+      facet_grid(variable~classLandscape, scales = "free_y", space = "free", switch = "y") +
       labs(y = "", x = "Estimate") +
       # scale_colour_gradient2(low = palette["BADGER"],
       #                        mid = palette["coreGrey"],
@@ -245,8 +289,11 @@ generate_spec_curves <- function(outputResults, method){
         panel.grid = element_blank())
   )
   
-  overallMed <- data.frame("medEst" = median(outputResults$estimate, na.rm = TRUE),
-                           "indexLoc" = round(nrow(outputResults)/2, digits = 0))
+  overallMed <- outputResults %>%
+    mutate(n = n()) %>%
+    group_by(classLandscape) %>%
+    summarise(medEst = median(estimate, na.rm = TRUE),
+              n = n[1])
   
   (overallSpecCurve <- outputResults %>%
       dplyr::arrange(estimate) %>%
@@ -258,23 +305,25 @@ generate_spec_curves <- function(outputResults, method){
       # coord_cartesian(xlim = c(-35, 20)) +
       geom_point(aes(x = estimate, y = index), alpha = 0.25,
                  pch = 3, size = 0.75)+
-      geom_point(data = data.frame("medEst" = median(outputResults$estimate, na.rm = TRUE),
-                                   "indexLoc" = round(nrow(outputResults)/2, digits = 0)),
-                 aes(x = medEst, y = indexLoc),
-                 alpha = 1, size = 2.5, colour = "#FFFFFF") +
-      geom_point(data = data.frame("medEst" = median(outputResults$estimate, na.rm = TRUE),
-                                   "indexLoc" = round(nrow(outputResults)/2, digits = 0)),
-                 aes(x = medEst, y = indexLoc),
-                 alpha = 1, size = 2, colour = "#403F41") +
-      annotate("text", x = overallMed$medEst + (overallMed$medEst + max(outputResults$estimate))/2,
-               y = overallMed$indexLoc, label = "Median",
-               fontface = 4, size = 5, colour = palette["coreGrey"],
-               hjust = 1, vjust = -0.2) +
-      annotate("segment", x = overallMed$medEst + (overallMed$medEst + max(outputResults$estimate))/2,
-               xend = overallMed$medEst,
-               y = overallMed$indexLoc, yend = overallMed$indexLoc,
-               linewidth = 0.75, colour = palette["coreGrey"]) +
+      geom_segment(data = overallMed,
+                   aes(x = medEst, xend = medEst, y = Inf,
+                       yend = -Inf),
+                   alpha = 1, linewidth = 0.45, linetype = 1,
+                   colour = palette["BADGER"]) +
+      geom_text(data = overallMed, aes(x = medEst, y = 0,
+                                       label = paste0(" Median = ",
+                                                      round(medEst, digits = 2))),
+                hjust = 0, vjust = 0, fontface = 4, colour = palette["BADGER"]) +
+      # annotate("text", x = overallMed$medEst + (overallMed$medEst + max(outputResults$estimate))/2,
+      #          y = overallMed$indexLoc, label = "Median",
+      #          fontface = 4, size = 5, colour = palette["coreGrey"],
+      #          hjust = 1, vjust = -0.2) +
+      # annotate("segment", x = overallMed$medEst + (overallMed$medEst + max(outputResults$estimate))/2,
+      #          xend = overallMed$medEst,
+      #          y = overallMed$indexLoc, yend = overallMed$indexLoc,
+      #          linewidth = 0.75, colour = palette["coreGrey"]) +
       # scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
+      facet_grid(.~classLandscape, space = "free", switch = "y") +
       labs(y = "", x = "Estimate") +
       theme_bw() +
       theme(

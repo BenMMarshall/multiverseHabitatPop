@@ -51,8 +51,8 @@ values_SimSpecies <- tibble(
   species = c("BADGER")
 )
 values_SimIndi <- tibble(
-  individual = paste0("i", sprintf("%03d", 1:5))
-  # individual = paste0("i", sprintf("%03d", 1:20))
+  # individual = paste0("i", sprintf("%03d", 1:5))
+  individual = paste0("i", sprintf("%03d", 1:20))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -88,24 +88,24 @@ optionsList_sff <- list(
   MethodSSF_land = c("classRaster", "classRasterScram"),
   MethodSSF_as = c(2, 10),
   # MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
-  MethodSSF_mf = c("mf.is"),
-  # MethodSSF_mf = c("mf.is", "mf.ss"),
-  MethodSSF_sd = c("gamma"),
-  MethodSSF_td = c("vonmises")
-  # MethodSSF_td = c("vonmises", "unif")
-  # MethodSSF_sd = c("gamma", "exp"),
+  # MethodSSF_mf = c("mf.is"),
+  MethodSSF_mf = c("mf.is", "mf.ss"),
+  # MethodSSF_sd = c("gamma"),
+  # MethodSSF_td = c("vonmises")
+  MethodSSF_td = c("vonmises", "unif"),
+  MethodSSF_sd = c("gamma", "exp")
 )
 
 optionsList_pois <- list(
   MethodPois_land = c("classRaster", "classRasterScram"),
   MethodPois_as = c(2, 10),
   # MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
-  MethodPois_mf = c("mf.is"),
-  # MethodPois_mf = c("mf.is", "mf.ss"),
-  MethodPois_sd = c("gamma"),
-  # MethodPois_sd = c("gamma", "exp"),
-  MethodPois_td = c("vonmises")
-  # MethodPois_td = c("vonmises", "unif")
+  # MethodPois_mf = c("mf.is"),
+  MethodPois_mf = c("mf.is", "mf.ss"),
+  # MethodPois_sd = c("gamma"),
+  MethodPois_sd = c("gamma", "exp"),
+  # MethodPois_td = c("vonmises")
+  MethodPois_td = c("vonmises", "unif")
 )
 
 
@@ -114,10 +114,10 @@ optionsList_pois <- list(
 repeats <- 1
 # repeats <- 2
 
-values_Sample <-
-  list(sampleSize = rep(c(3,5), each = repeats))
 # values_Sample <-
-#   list(sampleSize = rep(c(3,5,10,20), each = repeats))
+#   list(sampleSize = rep(c(3,5), each = repeats))
+values_Sample <-
+  list(sampleSize = rep(c(3,5,10,20), each = repeats))
 
 set.seed(2023)
 
@@ -204,7 +204,8 @@ coreMultiverse <- list(
                area_based_calculations(
                  availUseData = areaBasedAvailUse,
                  sampleGroups = optionsList_samples,
-                 optionsList = optionsList_areaMethods
+                 optionsList = optionsList_area,
+                 optionsListArea = optionsList_areaMethods
                ),
                priority = 0.9),
     # tar_target(ssfOUT,

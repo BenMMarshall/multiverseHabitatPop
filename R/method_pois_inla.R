@@ -9,7 +9,9 @@
 #'
 #' @export
 method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
-  
+  # allIndividualData <- sampDuraFreqData_15_1
+  # optionsList <- optionsList_pois
+  # sampleGroups <- optionsList_samples
   landscape <- allIndividualData$landscape
   
   optionsForm <- optionsList$MethodPois_mf
@@ -134,8 +136,6 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
                 log_sl = log(sl_),
                 layer = factor(paste0("c", layer),
                                levels = c("c0", "c2")))
-            
-            as.numeric(poisModelData$layer)
             
             # We can run the INLA model using the priors and set-up from Muff et al.
             # Precision for the priors of slope coefficients
