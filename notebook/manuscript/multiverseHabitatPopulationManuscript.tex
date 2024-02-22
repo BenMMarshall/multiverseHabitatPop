@@ -38,44 +38,6 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %% lines to get the code chunks working
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textbf{#1}}
-\newcommand{\AnnotationTok}[1]{\textit{#1}}
-\newcommand{\AttributeTok}[1]{#1}
-\newcommand{\BaseNTok}[1]{#1}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textit{#1}}
-\newcommand{\CommentVarTok}[1]{\textit{#1}}
-\newcommand{\ConstantTok}[1]{#1}
-\newcommand{\ControlFlowTok}[1]{\textbf{#1}}
-\newcommand{\DataTypeTok}[1]{\underline{#1}}
-\newcommand{\DecValTok}[1]{#1}
-\newcommand{\DocumentationTok}[1]{\textit{#1}}
-\newcommand{\ErrorTok}[1]{\textbf{#1}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{#1}
-\newcommand{\FunctionTok}[1]{#1}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textit{#1}}
-\newcommand{\KeywordTok}[1]{\textbf{#1}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{#1}
-\newcommand{\OtherTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textbf{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{#1}
-\newcommand{\SpecialStringTok}[1]{#1}
-\newcommand{\StringTok}[1]{#1}
-\newcommand{\VariableTok}[1]{#1}
-\newcommand{\VerbatimStringTok}[1]{#1}
-\newcommand{\WarningTok}[1]{\textit{#1}}
 
 %% lines to enable bulletpoints in a new notation style
 \providecommand{\tightlist}{%
@@ -97,13 +59,13 @@
 
 \begin{abstract}
 
-abc
+Science needs to be repeatable --- but we know different researchers get different answers --- animal movement vulnerable because of high task uncertainty --- need consistent answers for hab pref for conservation/application --- how much variation can come from habitat preference --- we ran a multiverse --- different methods differently sensitive to different decisions - sampling and model formula e.g.~--- but all did well picking up positive selection --- general guide suggesting caution, but no reason to panic(?)
 
 \end{abstract}
 
 \section*{Keywords}
 
-Movement ecology, simulation, compana, resource selection functions, step selection function, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
+Movement ecology, simulation, compana, step selection function, two-step, poisson, habitat preference, habitat selection, animal movement, multiverse, research choice, researcher degrees for freedom,
 
 \clearpage
 \pagestyle{fancy}
@@ -201,12 +163,6 @@ Here we build upon those findings to target population level habitat selection a
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{optionsCompleteList }\OtherTok{\textless{}{-}} \FunctionTok{readRDS}\NormalTok{(here}\SpecialCharTok{::}\FunctionTok{here}\NormalTok{(}\StringTok{"data"}\NormalTok{, }\StringTok{"optionsCompleteList.rds"}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
 \hypertarget{simulating-the-scenarios}{%
 \subsection{Simulating the Scenarios}\label{simulating-the-scenarios}}
 
@@ -261,7 +217,7 @@ We created sub-sampled datasets based on every combination of tracking frequenci
 
 An important component of assessing population level habitat selection is the number of individuals included in analysis.
 Therefore, we randomly generated a number of samples from our population of 20 simulated individuals.
-We varied these samples sizes from 3 to 20 individuals, and ran 2 repeats for each size.
+We varied these samples sizes from 3 to 20 individuals, and ran 1 repeats for each size.
 A sample never mixed tracking regimes.
 
 \hypertarget{analysis}{%
@@ -286,20 +242,20 @@ The home range (aka availability) polygons can be generated via many different p
 We selected to explore MCP and AKDE (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
 We used the \emph{ctmm} v.1.1.1 (\protect\hyperlink{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.21 (\protect\hyperlink{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
 The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
-For the best model we followed recommendations of , opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
+For the best model we followed recommendations of Silva et al. (\protect\hyperlink{ref-silva_autocorrelationinformed_2022}{2022}), opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
 There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
 We avoided a deeper exploration as the impact of the internal AKDE choices are likely smaller than those between area methods (e.g., compared to MCPs), and the AKDE creation can more guided by the underlying data.
 By comparison the MCPs have very few options inpacting their creation.
 Mainly MCP size varies based on the percentage of outliers excluded from the polygon area.
 For all area methods we vary this percentage: 95\%, 99\%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
-We selected these contour values as they are the most frequently used in spatial studies
+We selected these contour values as they are the most frequently used in spatial studies (\protect\hyperlink{ref-crane_lots_2021}{Crane et al., 2021}).
 
 Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: 13), we created the sample/population available areas by combining all polygons.
 We used this combined polygon for the type II design, where all individuals have the same availability.
 
 We used the availability polygons to define the extent within which we sampled habitat characteristics.
 The habitat characteristics were extracted from the classified landscape raster at various points.
-We varied both the number of points generated (1 to 10), as well as the pattern of how they were distributed within the polygon (random or stratified).
+We varied both the number of points generated (1 to 4), as well as the pattern of how they were distributed within the polygon (random or stratified).
 
 The final decision in the area based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
 The former uses randomisation tests to estimate the habitat selection, while the latter uses chi-squared.
@@ -317,7 +273,7 @@ The former uses randomisation tests to estimate the habitat selection, while the
 The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
 As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
-The first decision is the number of random steps generated per observed step; we ranged this from 5 to 50.
+The first decision is the number of random steps generated per observed step; we ranged this from 2 to 10.
 The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
 We chose to explore the impacts of different distributions.
 For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
@@ -382,13 +338,24 @@ After assessment of the model convergence measures, we modified the running para
 \hypertarget{specification-curves}{%
 \subsection{Specification Curves}\label{specification-curves}}
 
-(Fig. \ref{fig:specCurveArea}).
+The specification curves provide an overview of all the analysis end points.
+The area based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \ref{fig:specCurveArea}).
+Despite this overall agreement, the final estimates ranged all the way down to minimal preference that are failing to detect the simulated preference.
+When broken down by decision, all decisions bar higher sample sizes, appear to have a large range in final estimates.
+The sample size decisions has a clear reduction in possible answers when the sample is 10 or 20 individuals.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/area_specCurve} \caption{Spec curve}\label{fig:specCurveArea}
 \end{figure}
 
-(Fig. \ref{fig:specCurveSSF}).
+The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees with the simulated parametrisation (Fig. \ref{fig:specCurveSSF}).
+Unlike the Compana curve, the SSF curve has far fewer results that indicate very low habitat preference.
+However, the SSF method did results in estimates indicating avoidance of habitat 2 that contradicts the underlying simulated process; these negative preference results are in a small minority.
+The clearest structure in the estimates resulting from different decisions belong to changes in sample size and tracking regime.
+The tracking regime decisions, frequency and duration, appear to shift the overall range of estimates but with limited impact on the variation.
+Sample size increases, by comparison, appear to reduce the spread of estimates produced.
+Outside of the sampling decisions, the choice to naively average or to average using AIC weights leads to differing spreads of estimates.
+The naively estimated summaries are much more tightly grouped with no estimates failing to correctly detect positive preference.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{Spec curve}\label{fig:specCurveSSF}
@@ -400,7 +367,12 @@ After assessment of the model convergence measures, we modified the running para
 \includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{Spec curve}\label{fig:specCurveTwoStep}
 \end{figure}
 
-(Fig. \ref{fig:specCurvePois}).
+The Poisson based approach, like those before, shows that the vast majority of analysis pathways will result in the correct identification of positive preference for habitat 2 (Fig. \ref{fig:specCurvePois}).
+Unlike the previous analyses the tracking duration did not have as clear an impact on the spread of estimates.
+Sample size and tracking frequency did, with larger sample sizes and higher frequency leading to overall decreases in estimate spread.
+Of particular note is that all the failures to detect positive preference occur when the sample size is three.
+The analysis decisions appear largely un-impactful, particularly the number of points per step.
+Model formulation did have an impact, with the integrated formulation was more consistent at retrieving positive preference, but the spread was much larger.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/pois_specCurve} \caption{Spec curve}\label{fig:specCurvePois}
@@ -409,24 +381,25 @@ After assessment of the model convergence measures, we modified the running para
 \hypertarget{model-results}{%
 \subsection{Model Results}\label{model-results}}
 
-\begin{verbatim}
-## <environment: 0x56189e75eff0>
-\end{verbatim}
+We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. \ref{fig:allEffectsPlot}, and whether those decisions can predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
+The models provide a means to account for the variation that originates from stochasticity in the simulation and sampling; the shear number of final estimates can obscure patterns in specification curves.
 
-The conditional \emph{R\textsuperscript{2}} values differed for the three models.
-The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.72; whereas the SSF model returned 0.51; the Two-Step model returned 0; and the Poisson model returned 0.84.
+The area-based Compana approach seemed more insensitive to sample size than the other methods (\(\beta\) 0.23; 95\% HDCI -0.81 - 1.39), instead benefiting from increases in tracking duration (\(\beta\) -0.08; 95\% HDCI -0.12 - -0.05) and frequency (\(\beta\) -0.09; 95\% HDCI -0.12 - -0.05; Fig. \ref{fig:effectPlotArea}).
+This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to a reduction in deviation from the median estimate: sample size (\(\beta\) -0.21; 95\% HDCI -0.59 - 0.06), tracking duration (\(\beta\) -0.30; 95\% HDCI -0.31 - -0.29), and tracking frequency (\(\beta\) -0.35; 95\% HDCI -0.36 - -0.34; Fig. \ref{fig:effectPlotPois}).
+The other two methods fall in-between with the sampling having a smaller impact.
+The Step Selection model approach still benefited from increasing sampling duration (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.08) and frequency, but the impact on increasing sample size was not apparent (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.08; Fig. \ref{fig:effectPlotSSF}).
 
-The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} suggesting an important role for the fixed/population effects.
-The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.17; whereas the SSF model returned 0.47; the Two-Step model returned 0; and the Poisson model returned 0.81
+The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step (\(beta\) -0.53; 95\% HDCI -0.54 - -0.52).
+This clear effect highlights the limitations of relying solely on the specification curves, where this pattern was not clearly visible.
+Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate (\(beta\) -0.12; 95\% HDCI -0.14 - -0.10).
 
-The sample size was negatively correlated with deviation from the median estimate (\(\beta\) 0.03; 95\% HDCI -0.04 - 0.12).
+The most mixed decision is the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
+Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach (\(beta\) 0.02; 95\% HDCI 0.00 - 0.04), but a contrasting effect for both the Two-step (\(beta\) 0.23; 95\% HDCI 0.19 - 0.27) and Poisson approaches (\(beta\) 0.00; 95\% HDCI -0.01 - 0.02) where the not integrated formula tends to reduce the spread of estimates (Fig. \ref{fig:effectPlotSSF}.
 
-(Fig. \ref{fig:allEffectsPlot}).
-
-(Fig. \ref{fig:effectPlotArea}).
-(Fig. \ref{fig:effectPlotSSF}).
-(Fig. \ref{fig:effectPlotTwoStep}).
-(Fig. \ref{fig:effectPlotPois}).
+The area based approach had a number of unique decisions.
+Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. \ref{fig:effectPlotArea}).
+In brief, the use of MCPs (\(beta\) -0.18; 95\% HDCI -0.24 - -0.12), larger contours (areas) (\(beta\) 0.00; 95\% HDCI -0.03 - 0.03), and type III designs (\(beta\) -0.36; 95\% HDCI -0.43 - -0.30) tended to lead to more variable results.
+The use of larger contours and type III designs appear to contradict each other, as one would tend towards a larger area, whereas the latter would be a more limited area based.
 
 \begin{figure}
 \includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Beta coefs}\label{fig:allEffectsPlot}
@@ -435,11 +408,50 @@ The sample size was negatively correlated with deviation from the median estimat
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-\hypertarget{limitations}{%
-\subsection{Limitations}\label{limitations}}
+The multiverse approach highlights the diverse array of answers one can obtain even when analysing the same data, simulated using the same parameters.
+Fortunately the vast majority of the answers from the analysis end points agree, and correctly recover the positive habitat selection programmed into the simulated animals.
+This broad agreement is cause of optimism, suggesting that the potentially deviating analysis choices made my researchers largely converge to an agreement --albeit within this given simulated scenario and given habitat preference strength.
+
+Very much mirroring previous multiverse efforts, the largest effect on whether an estimate was close to the median estimate came from decisions concerning sampling.
+The summarised Step Selection (SSF) approach as well as the Poisson model benefited the most from increasing the data quantity.
+
+\hypertarget{multiverse-in-context}{%
+\subsection{Multiverse in context}\label{multiverse-in-context}}
+
+While the multiverse can help us explore the possible answers that can come from a given dataset, they cannot provide guidance on which of those answers is correct.
+The creation of the multiverse is subject to the same decision making procedure that any single given pathway is: what decisions to include, how to vary the choices.
+Therefore, the overall median or mean answer is heavily dependent on the construction of the multiverse.
+Additionally, the choices and resulting analysis pathways are not equally as valid, nor equally likely to be undertaken by a researcher.
+This means the multiverse of answers may provide some insight on spread of estimates, but should not be directly interpreted as providing more or less support for a given estimate based on the distribution of estimates.
+We can take this issue further, reminding ourselves that agreement is not necessarily a reliable proxy for accuracy (\protect\hyperlink{ref-devezer_case_2021}{Devezer et al., 2021}).
+A better model reflecting the mechanistic reality of the study system is preferable to a suite of models that agree but converge on a less accurate answer.
+An example in the conducted multiverse: we used AKDEs and MCPs as two alternative definitions of availability for the area based method.
+Arguably we should have excluded the MCP choice in favour of the AKDE choice, as the latter does a better job at capturing the movement processes/patterns underlying animal space-use.
+Despite this the frequency of MCP use in spatial ecology (\protect\hyperlink{ref-crane_lots_2021}{Crane et al., 2021}), we felt, warranted its inclusion as a conceivable choice.
+Judgement calls such as this are unavoidable, and determining whether a model better reflects the underlying system is exceptionally difficult outside of simulated ``known-truth'' scenarios.
+
+When we are uncertain of the mechanism, or unable to truly model the vast complexity of the system (very frequent in ecology), then informed agreement may be our best option.
+Recent efforts looking at how many researchers answer the same question from the same dataset reveals that these judgement calls result in different answers (\protect\hyperlink{ref-gould_same_2023}{Gould et al., 2023}).
+In many ways the more organic real-world results from Gould et al. (\protect\hyperlink{ref-gould_same_2023}{2023}) reflect the multiverse results presented here --a general agreement on direction, but variation in uncertainty and magnitude.
+What differs, is that here we know the simulated correct answer is a positive effect, in Gould et al. (\protect\hyperlink{ref-gould_same_2023}{2023}) the truth is unknown and so we rely on the good agreement of many independent informed analyses.
+The logistics of organising researchers to assess uncertainty in analyses is infeasible on a broader scale.
+The multiverse approach presents a complementary method for assessing the scope of research choice on final results --albeit more vulnerable to the individual researcher's biases and potentially limited to analyses with lower computational costs.
+
+We have avoided suggesting rules or guides based on these results, instead suggesting broad trends.
+The diverse array of species tracked and the habitat's which they reside makes specific guidance nigh impossible without informed assumptions tailored to a given study system.
+We simulated a nocturnal badger-like animal for this exploration.
+This simualted badger occupied a number of shelter sites and routinely returned to them.
+A routine use of shelter site in a the preferred habitat would mean that missing those sites/locations is unlikely with a reasonably frequent tracking regime.
+Alternatively, one can imagine an animal with more limited site fidelity, where the use of preferred habitat is more fleeting or temporally inconsistent.
+In this instance one may find a reduction in tracking frequency to dramatically alter the estimates retrieved.
+Previous work with SSF has already highlighted the importance of more random locations per step for identifying use of smaller/rarer habitat types (\protect\hyperlink{ref-thurfjell_applications_2014}{Thurfjell, Ciuti \& Boyce, 2014}).
+Some methods, such as Resource Selection Functions, have the means of estimating the required data quantity to detect a given strength of selection in a given landscape, and provide a guide to how consistent results would be from that dataset (\protect\hyperlink{ref-street_solving_2021}{Street et al., 2021}).
+These methods still require informed decisions to be made concerning the strength of selection that is of interest as well as how to define the landscape, but complement the goal of the multiverse assessment with a more rigorously mathematical approach.
 
 \hypertarget{conclusions}{%
 \subsection{Conclusions}\label{conclusions}}
+
+We would the following questions be asked concerning the outputs of a multiverse: how much variation in estimates is cause for concern? Are there estimates that would alter the final conclusions?
 
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
@@ -451,12 +463,12 @@ BMM was funded by the Natural Environment Research Council (NERC) via the IAPETU
 
 In addition to packages already mentioned in the methods we also used the following.
 
-We used \emph{R} v.4.3.1 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.6.2.561 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
+We used \emph{R} v.4.3.2 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.09.1 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
 We used \emph{here} v.1.0.1 (\protect\hyperlink{ref-here}{Müller, 2020}) and \emph{qs} v.0.25.5 (\protect\hyperlink{ref-qs}{Ching, 2023}) to manage directory addresses and saved objects.
 
 We used \emph{raster} v.3.6.20 (\protect\hyperlink{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\protect\hyperlink{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}).
 
-We used \emph{ggplot2} v.3.4.2 for creating figures (\protect\hyperlink{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\protect\hyperlink{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\protect\hyperlink{ref-ggridges}{Wilke, 2022}), and \emph{ggdist} v.3.3.0 (\protect\hyperlink{ref-ggdist}{Kay, 2023a}).
+We used \emph{ggplot2} v.3.4.2 for creating figures (\protect\hyperlink{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\protect\hyperlink{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\protect\hyperlink{ref-ggridges}{Wilke, 2022}), \emph{ggdist} v.3.3.0 (\protect\hyperlink{ref-ggdist}{Kay, 2023a}), and \emph{ggtext} v.0.1.2 (\protect\hyperlink{ref-ggtext}{Wilke \& Wiernik, 2022}).
 
 We used \emph{brms} v.2.19.0 (\protect\hyperlink{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.10.0 (\protect\hyperlink{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.4 (\protect\hyperlink{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.3 (\protect\hyperlink{ref-performance}{Lüdecke et al., 2021}).
 
@@ -537,8 +549,14 @@ Ching T. 2023. \emph{\href{https://CRAN.R-project.org/package=qs}{{qs}: Quick se
 \leavevmode\vadjust pre{\hypertarget{ref-TwoStepCLogit}{}}%
 Craiu RV, Duchesne T, Fortin D, Baillargeon S. 2016. \emph{\href{https://CRAN.R-project.org/package=TwoStepCLogit}{TwoStepCLogit: Conditional logistic regression: A two-step estimation method}}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-crane_lots_2021}{}}%
+Crane M, Silva I, Marshall BM, Strine CT. 2021. Lots of movement, little progress: A review of reptile home range literature. \emph{PeerJ} 9:e11742. DOI: \href{https://doi.org/10.7717/peerj.11742}{10.7717/peerj.11742}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-desbureaux_subjective_2021}{}}%
 Desbureaux S. 2021. Subjective modeling choices and the robustness of impact evaluations in conservation science. \emph{Conservation Biology} 35:1615--1626. DOI: \href{https://doi.org/10.1111/cobi.13728}{10.1111/cobi.13728}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-devezer_case_2021}{}}%
+Devezer B, Navarro DJ, Vandekerckhove J, Ozge Buzbas E. 2021. The case for formal methodology in scientific reform. \emph{Royal Society Open Science} 8:rsos.200805, 200805. DOI: \href{https://doi.org/10.1098/rsos.200805}{10.1098/rsos.200805}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-doherty_coupling_2018}{}}%
 Doherty TS, Driscoll DA. 2018. Coupling movement and landscape ecology for animal conservation in production landscapes. \emph{Proceedings of the Royal Society B: Biological Sciences} 285:20172272. DOI: \href{https://doi.org/10.1098/rspb.2017.2272}{10.1098/rspb.2017.2272}.
@@ -572,6 +590,9 @@ Gabry J, Simpson D, Vehtari A, Betancourt M, Gelman A. 2019. Visualization in ba
 
 \leavevmode\vadjust pre{\hypertarget{ref-gelman_garden_2013}{}}%
 Gelman A, Loken E. 2013. \href{http://www.stat.columbia.edu/~gelman/research/unpublished/p_hacking.pdf}{The garden of forking paths: {Why} multiple comparisons can be a problem, even when there is no "fishing expedition" or "p-hacking" and the research hypothesis was posited ahead of time}. :17.
+
+\leavevmode\vadjust pre{\hypertarget{ref-gould_same_2023}{}}%
+Gould E, Fraser H, Parker T, Nakagawa S, Griffith S, Vesk P, Fidler F, Abbey-Lee R, Abbott J, Aguirre L, Alcaraz C, Altschul D, Arekar K, Atkins J, Atkinson J, Barrett M, Bell K, Bello S, Berauer B, Bertram M, Billman P, Blake C, Blake S, Bliard L, Bonisoli-Alquati A, Bonnet T, Bordes C, Bose A, Botterill-James T, Boyd M, Boyle S, Bradfer-Lawrence T, Brand J, Brengdahl M, Bulla M, Bussière L, Camerlenghi E, Campbell S, Campos L, Caravaggi A, Cardoso P, Carroll C, Catanach T, Chen X, Chik HYJ, Choy E, Christie A, Chuang A, Chunco A, Clark B, Cox M, Cressman K, Crouch C, D'Amelio P, De Sousa A, Döbert T, Dobler R, Dobson A, Doherty T, Drobniak S, Duffy A, Dunn R, Dunning J, Eberhart-Hertel L, Elmore J, Elsherif M, English H, Ensminger D, Ernst U, Ferguson S, Ferreira-Arruda T, Fieberg J, Finch E, Fiorenza E, Fisher D, Forstmeier W, Fourcade Y, Francesca Santostefano F, Frank G, Freund C, Gandy S, Gannon D, García-Cervigón A, Géron C, Gilles M, Girndt A, Gliksman D, Goldspiel H, Gomes D, Goslee S, Gosnell J, Gratton P, Grebe N, Greenler S, Griffith D, Griffith F, Grossman J, Güncan A, Haesen S, Hagan J, Harrison N, Hasnain S, Havird J, Heaton A, Hsu B-Y, Iranzo E, Iverson E, Jimoh S, Johnson D, Johnsson M, Jorna J, Jucker T, Jung M, Kačergytė I, Ke A, Kelly C, Keogan K, Keppeler F, Killion A, Kim D, Kochan D, Korsten P, Kothari S, Kuppler J, Kusch J, Lagisz M, Larkin D, Larson C, Lauck K, Lauterbur M, Law A, Léandri-Breton D-J, Lievens E, Lima D, Lindsay S, Macphie K, Mair M, Malm L, Mammola S, Manhart M, Mäntylä E, Marchand P, Marshall B, Martin D, Martin J, Martin C, Martinig A, McCallum E, McNew S, Meiners S, Michelangeli M, Moiron M, Moreira B, Mortensen J, Mos B, Muraina T, Nelli L, Nilsonne G, Nolazco S, Nooten S, Novotny J, Olin A, Organ C, Ostevik K, Palacio F, Paquet M, Pascall D, Pasquarella V, Payo-Payo A, Pedersen K, Perez G, Perry K, Pottier P, Proulx M, Proulx R, Pruett J, Ramananjato V, Randimbiarison F, Razafindratsima O, Rennison D, Riva F, Riyahi S, Roast M, Rocha F, Roche D, Román-Palacios C, Rosenberg M, Ross J, Rowland F, Rugemalila D, Russell A, Ruuskanen S, Saccone P, Sadeh A, Salazar S, Sales K, Salmón P, Sanchez-Tojar A, Santos L, Schilling H, Schmidt M, Schmoll T, Schneider A, Schrock A, Schroeder J, Schtickzelle N, Schultz N, Scott D, Shapiro J, Sharma N, Shearer C, Sitvarin M, Skupien F, Slinn H, Smith J, Smith G, Sollmann R, Stack Whitney K, Still S, Stuber E, Sutton G, Swallow B, Taff C, Takola E, Tanentzap A, Thawley C, Tortorelli C, Trlica A, Turnell B, Urban L, Van De Vondel S, Van Oordt F, Vanderwel M, Vanderwel K, Vanderwolf K, Verrelli B, Vieira M, Vollering J, Walker X, Walter J, Waryszak P, Weaver R, Weller D, Whelan S, White R, Wolfson D, Wood A, Yanco S, Yen J, Youngflesh C, Zilio G, Zimmer C, Zitomer R, Villamil N, Tompkins E. 2023. Same data, different analysts: Variation in effect sizes due to analytical decisions in ecology and evolutionary biology. \emph{EcoEvoRxiv}. DOI: \href{https://doi.org/10.32942/X2GG62}{10.32942/X2GG62}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-raster}{}}%
 Hijmans RJ. 2023. \emph{\href{https://CRAN.R-project.org/package=raster}{{raster}: Geographic data analysis and modeling}}.
@@ -684,6 +705,9 @@ Signer J, Fieberg J, Avgar T. 2019. Animal movement tools (amt): R package for m
 \leavevmode\vadjust pre{\hypertarget{ref-silberzahn_many_2018}{}}%
 Silberzahn R, Uhlmann EL, Martin DP, Anselmi P, Aust F, Awtrey E, Bahník Š, Bai F, Bannard C, Bonnier E, Carlsson R, Cheung F, Christensen G, Clay R, Craig MA, Dalla Rosa A, Dam L, Evans MH, Flores Cervantes I, Fong N, Gamez-Djokic M, Glenz A, Gordon-McKeon S, Heaton TJ, Hederos K, Heene M, Hofelich Mohr AJ, Högden F, Hui K, Johannesson M, Kalodimos J, Kaszubowski E, Kennedy DM, Lei R, Lindsay TA, Liverani S, Madan CR, Molden D, Molleman E, Morey RD, Mulder LB, Nijstad BR, Pope NG, Pope B, Prenoveau JM, Rink F, Robusto E, Roderique H, Sandberg A, Schlüter E, Schönbrodt FD, Sherman MF, Sommer SA, Sotak K, Spain S, Spörlein C, Stafford T, Stefanutti L, Tauber S, Ullrich J, Vianello M, Wagenmakers E-J, Witkowiak M, Yoon S, Nosek BA. 2018. Many {Analysts}, {One} {Data} {Set}: {Making} {Transparent} {How} {Variations} in {Analytic} {Choices} {Affect} {Results}. \emph{Advances in Methods and Practices in Psychological Science} 1:337--356. DOI: \href{https://doi.org/10.1177/2515245917747646}{10.1177/2515245917747646}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-silva_autocorrelationinformed_2022}{}}%
+Silva I, Fleming CH, Noonan MJ, Alston J, Folta C, Fagan WF, Calabrese JM. 2022. Autocorrelation‐informed home range estimation: {A} review and practical guide. \emph{Methods in Ecology and Evolution} 13:534--544. DOI: \href{https://doi.org/10.1111/2041-210X.13786}{10.1111/2041-210X.13786}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-simonsohn_small_2015}{}}%
 Simonsohn U. 2015. Small {Telescopes}: {Detectability} and the {Evaluation} of {Replication} {Results}. \emph{Psychological Science} 26:559--569. DOI: \href{https://doi.org/10.1177/0956797614567341}{10.1177/0956797614567341}.
 
@@ -695,6 +719,12 @@ Sperry JH, Butler LK, Romero LM, Weatherhead PJ. 2009. Effects of parasitic infe
 
 \leavevmode\vadjust pre{\hypertarget{ref-steegen_increasing_2016}{}}%
 Steegen S, Tuerlinckx F, Gelman A, Vanpaemel W. 2016. Increasing {Transparency} {Through} a {Multiverse} {Analysis}. \emph{Perspectives on Psychological Science} 11:702--712. DOI: \href{https://doi.org/10.1177/1745691616658637}{10.1177/1745691616658637}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-street_solving_2021}{}}%
+Street GM, Potts JR, Börger L, Beasley JC, Demarais S, Fryxell JM, McLoughlin PD, Monteith KL, Prokopenko CM, Ribeiro MC, Rodgers AR, Strickland BK, Beest FM, Bernasconi DA, Beumer LT, Dharmarajan G, Dwinnell SP, Keiter DA, Keuroghlian A, Newediuk LJ, Oshima JEF, Rhodes O, Schlichting PE, Schmidt NM, Vander Wal E. 2021. Solving the sample size problem for resource selection functions. \emph{Methods in Ecology and Evolution} 12:2421--2431. DOI: \href{https://doi.org/10.1111/2041-210X.13701}{10.1111/2041-210X.13701}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-thurfjell_applications_2014}{}}%
+Thurfjell H, Ciuti S, Boyce MS. 2014. Applications of step-selection functions in ecology and conservation. \emph{Movement Ecology} 2. DOI: \href{https://doi.org/10.1186/2051-3933-2-4}{10.1186/2051-3933-2-4}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ware_significance_2015}{}}%
 Ware JJ, Munafò MR. 2015. Significance chasing in research practice: Causes, consequences and possible solutions: {Significance} chasing. \emph{Addiction} 110:4--8. DOI: \href{https://doi.org/10.1111/add.12673}{10.1111/add.12673}.
@@ -710,6 +740,9 @@ Wickham H, François R, Henry L, Müller K, Vaughan D. 2023. \emph{\href{https:/
 
 \leavevmode\vadjust pre{\hypertarget{ref-ggridges}{}}%
 Wilke CO. 2022. \emph{\href{https://CRAN.R-project.org/package=ggridges}{Ggridges: Ridgeline plots in 'ggplot2'}}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ggtext}{}}%
+Wilke CO, Wiernik BM. 2022. \emph{\href{https://CRAN.R-project.org/package=ggtext}{Ggtext: Improved text rendering support for 'ggplot2'}}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-knitr2014}{}}%
 Xie Y. 2014. {knitr}: A comprehensive tool for reproducible research in {R}. In: Stodden V, Leisch F, Peng RD eds. \emph{Implementing reproducible computational research}. Chapman; Hall/CRC,.

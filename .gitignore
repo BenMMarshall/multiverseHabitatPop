@@ -1,3 +1,6 @@
+data/
+notebook/modelOutput/*.rds
+
 # History files
 .Rhistory
 .Rapp.history
