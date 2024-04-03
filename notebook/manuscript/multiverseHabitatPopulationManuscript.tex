@@ -173,8 +173,8 @@ Here we build upon those findings to target population level habitat selection a
   abmAnimalMovement settings
 \end{itemize}
 
-We used the animal movement using abmAnimalMovement v.0.1.3.0 (\protect\hyperlink{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}) to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
-The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guie the animals decisions.
+We used the abmAnimalMovement v.0.1.3.0 (\protect\hyperlink{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}) package to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
+The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guide the animals decisions.
 We used the NLMR v.1.1.1 package (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}) to generate the three required resource/environmental rasters: movement resistance, foraging quality, and shelter site quality.
 The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (differing in movement characteristics and resource prioritisation), and site fidelity.
 For the purposes of this study we used one of the pre-created example pseudo-species: Badger, described in the package manuscript.
@@ -184,7 +184,7 @@ For the purposes of the analysis we simplified the landscape information into ca
 We focused on foraging quality because it influences the greatest amounts of movement compared to sheltering or exploratory movements.
 We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
 
-We used that simulated landscape and abmAnimalMovement to simulate a population of 20, that later can be sampled from.
+We used that simulated landscape and abmAnimalMovement to simulate a population of 20, that was later sampled from.
 All individuals of this population had the same simulation settings apart from starting location.
 Therefore, the variation between individuals is due to stochasticity rather than variation in the predefined habitat preference.
 
@@ -217,7 +217,7 @@ We created sub-sampled datasets based on every combination of tracking frequenci
 
 An important component of assessing population level habitat selection is the number of individuals included in analysis.
 Therefore, we randomly generated a number of samples from our population of 20 simulated individuals.
-We varied these samples sizes from 3 to 20 individuals, and ran 1 repeats for each size.
+We varied these samples sizes from 3 to 20 individuals, and ran 2 repeats for each size.
 A sample never mixed tracking regimes.
 
 \hypertarget{analysis}{%
@@ -255,7 +255,7 @@ We used this combined polygon for the type II design, where all individuals have
 
 We used the availability polygons to define the extent within which we sampled habitat characteristics.
 The habitat characteristics were extracted from the classified landscape raster at various points.
-We varied both the number of points generated (1 to 4), as well as the pattern of how they were distributed within the polygon (random or stratified).
+We varied both the number of points generated (1 to 10), as well as the pattern of how they were distributed within the polygon (random or stratified).
 
 The final decision in the area based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
 The former uses randomisation tests to estimate the habitat selection, while the latter uses chi-squared.
@@ -273,7 +273,7 @@ The former uses randomisation tests to estimate the habitat selection, while the
 The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
 As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
-The first decision is the number of random steps generated per observed step; we ranged this from 2 to 10.
+The first decision is the number of random steps generated per observed step; we ranged this from 5 to 50.
 The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
 We chose to explore the impacts of different distributions.
 For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
@@ -384,21 +384,21 @@ Model formulation did have an impact, with the integrated formulation was more c
 We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. \ref{fig:allEffectsPlot}, and whether those decisions can predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
 The models provide a means to account for the variation that originates from stochasticity in the simulation and sampling; the shear number of final estimates can obscure patterns in specification curves.
 
-The area-based Compana approach seemed more insensitive to sample size than the other methods (\(\beta\) 0.23; 95\% HDCI -0.81 - 1.39), instead benefiting from increases in tracking duration (\(\beta\) -0.08; 95\% HDCI -0.12 - -0.05) and frequency (\(\beta\) -0.09; 95\% HDCI -0.12 - -0.05; Fig. \ref{fig:effectPlotArea}).
-This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to a reduction in deviation from the median estimate: sample size (\(\beta\) -0.21; 95\% HDCI -0.59 - 0.06), tracking duration (\(\beta\) -0.30; 95\% HDCI -0.31 - -0.29), and tracking frequency (\(\beta\) -0.35; 95\% HDCI -0.36 - -0.34; Fig. \ref{fig:effectPlotPois}).
+The area-based Compana approach seemed more insensitive to sample size than the other methods (\(\beta\) 0.07; 95\% HDCI -0.51 - 0.65), instead benefiting from increases in tracking duration (\(\beta\) -0.11; 95\% HDCI -0.14 - -0.07) and frequency (\(\beta\) -0.12; 95\% HDCI -0.16 - -0.09; Fig. \ref{fig:effectPlotArea}).
+This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to a reduction in deviation from the median estimate: sample size (\(\beta\) -0.29; 95\% HDCI -0.46 - -0.13), tracking duration (\(\beta\) -0.39; 95\% HDCI -0.39 - -0.38), and tracking frequency (\(\beta\) -0.47; 95\% HDCI -0.47 - -0.46; Fig. \ref{fig:effectPlotPois}).
 The other two methods fall in-between with the sampling having a smaller impact.
-The Step Selection model approach still benefited from increasing sampling duration (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.08) and frequency, but the impact on increasing sample size was not apparent (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.08; Fig. \ref{fig:effectPlotSSF}).
+The Step Selection model approach still benefited from increasing sampling duration (\(\beta\) -0.08; 95\% HDCI -0.08 - -0.07) and frequency, but the impact on increasing sample size was not apparent (\(\beta\) -0.08; 95\% HDCI -0.08 - -0.07; Fig. \ref{fig:effectPlotSSF}).
 
-The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step (\(beta\) -0.53; 95\% HDCI -0.54 - -0.52).
+The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step (\(beta\) -0.60; 95\% HDCI -0.60 - -0.59).
 This clear effect highlights the limitations of relying solely on the specification curves, where this pattern was not clearly visible.
-Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate (\(beta\) -0.12; 95\% HDCI -0.14 - -0.10).
+Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate (\(beta\) -0.14; 95\% HDCI -0.14 - -0.13).
 
 The most mixed decision is the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
-Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach (\(beta\) 0.02; 95\% HDCI 0.00 - 0.04), but a contrasting effect for both the Two-step (\(beta\) 0.23; 95\% HDCI 0.19 - 0.27) and Poisson approaches (\(beta\) 0.00; 95\% HDCI -0.01 - 0.02) where the not integrated formula tends to reduce the spread of estimates (Fig. \ref{fig:effectPlotSSF}.
+Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach (\(beta\) 0.04; 95\% HDCI 0.03 - 0.05), but a contrasting effect for both the Two-step (\(beta\) 0.23; 95\% HDCI 0.21 - 0.26) and Poisson approaches (\(beta\) -0.02; 95\% HDCI -0.03 - -0.01) where the not integrated formula tends to reduce the spread of estimates (Fig. \ref{fig:effectPlotSSF}.
 
 The area based approach had a number of unique decisions.
 Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. \ref{fig:effectPlotArea}).
-In brief, the use of MCPs (\(beta\) -0.18; 95\% HDCI -0.24 - -0.12), larger contours (areas) (\(beta\) 0.00; 95\% HDCI -0.03 - 0.03), and type III designs (\(beta\) -0.36; 95\% HDCI -0.43 - -0.30) tended to lead to more variable results.
+In brief, the use of MCPs (\(beta\) -0.23; 95\% HDCI -0.30 - -0.16), larger contours (areas) (\(beta\) -0.05; 95\% HDCI -0.09 - -0.01), and type III designs (\(beta\) -0.18; 95\% HDCI -0.25 - -0.11) tended to lead to more variable results.
 The use of larger contours and type III designs appear to contradict each other, as one would tend towards a larger area, whereas the latter would be a more limited area based.
 
 \begin{figure}
@@ -456,14 +456,14 @@ We would the following questions be asked concerning the outputs of a multiverse
 \hypertarget{acknowledgements}{%
 \section{Acknowledgements}\label{acknowledgements}}
 
-BMM was funded by the Natural Environment Research Council (NERC) via the IAPETUS2 Doctoral Training Partnership.
+This work was supported by the Natural Environment Research Council (NERC) via the IAPETUS2 Doctoral Training Partnership held by Benjamin Michael Marshall (grant reference NE/S007431/1).
 
 \hypertarget{software-availablity}{%
 \section{Software availablity}\label{software-availablity}}
 
 In addition to packages already mentioned in the methods we also used the following.
 
-We used \emph{R} v.4.3.2 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.09.1 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
+We used \emph{R} v.4.3.3 (\protect\hyperlink{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.09.1 (\protect\hyperlink{ref-rstudio}{RStudio Team, 2022}).
 We used \emph{here} v.1.0.1 (\protect\hyperlink{ref-here}{Müller, 2020}) and \emph{qs} v.0.25.5 (\protect\hyperlink{ref-qs}{Ching, 2023}) to manage directory addresses and saved objects.
 
 We used \emph{raster} v.3.6.20 (\protect\hyperlink{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\protect\hyperlink{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\protect\hyperlink{ref-NLMR}{Sciaini et al., 2018}).

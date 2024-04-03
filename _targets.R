@@ -72,8 +72,8 @@ values_Regime <- values_Regime %>%
 optionsList_area <- list(
   areaMethod = c("MCP", "AKDE"),
   areaContour = c(95, 99),
-  Method_ap = c(1,4),
-  # Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 4)), digits = 1)),
+  # Method_ap = c(1,4),
+  Method_ap = as.integer(round(exp(seq(log(1), log(10), length.out = 4)), digits = 1)),
   Method_sp = c("rd", "st"),
   Method_land = c("classRaster", "classRasterScram")
 )
@@ -86,8 +86,8 @@ optionsList_areaMethods <- list(
 optionsList_sff <- list(
   Method_method = c("ssf"),
   MethodSSF_land = c("classRaster", "classRasterScram"),
-  MethodSSF_as = c(2, 10),
-  # MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
+  # MethodSSF_as = c(2, 10),
+  MethodSSF_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
   # MethodSSF_mf = c("mf.is"),
   MethodSSF_mf = c("mf.is", "mf.ss"),
   # MethodSSF_sd = c("gamma"),
@@ -98,8 +98,8 @@ optionsList_sff <- list(
 
 optionsList_pois <- list(
   MethodPois_land = c("classRaster", "classRasterScram"),
-  MethodPois_as = c(2, 10),
-  # MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
+  # MethodPois_as = c(2, 10),
+  MethodPois_as = as.integer(round(exp(seq(log(5), log(50), length.out = 5)), digits = 1)),
   # MethodPois_mf = c("mf.is"),
   MethodPois_mf = c("mf.is", "mf.ss"),
   # MethodPois_sd = c("gamma"),
@@ -111,8 +111,8 @@ optionsList_pois <- list(
 
 # Sampling set-up ---------------------------------------------------------
 
-repeats <- 1
-# repeats <- 2
+# repeats <- 1
+repeats <- 2
 
 # values_Sample <-
 #   list(sampleSize = rep(c(3,5), each = repeats))

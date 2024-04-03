@@ -1,5 +1,6 @@
 data/
 notebook/modelOutput/*.rds
+*.log
 
 # History files
 .Rhistory

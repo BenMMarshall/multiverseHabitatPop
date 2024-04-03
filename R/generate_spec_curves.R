@@ -3,13 +3,15 @@
 #' @name generate_spec_curves
 #' @description A
 #' @param outputResults 
-#' @param method c("ssf", "area", "pois")
+#' @param method c("ssf", "area", "pois", "twoStep")
 #' @return a
 #'
 #' @export
 generate_spec_curves <- function(outputResults, method){
   
   palette <- multiverseHabitat::get_palette()
+  # targets::tar_load("ssfResults")
+  # outputResults <- ssfResults
   
   if(method == "ssf"){
     
@@ -31,15 +33,16 @@ generate_spec_curves <- function(outputResults, method){
                                          "Standard")
     
     levelOrdering <- unique(c(
-      unique(outputResults$averagingMethod),
       unique(outputResults$sampleID),
-      sort(unique(outputResults$sampleSize)),
-      sort(unique(outputResults$trackFreq)),
-      sort(unique(outputResults$trackDura)),
+      sort(c(unique(outputResults$sampleSize),
+             unique(outputResults$trackFreq),
+             unique(outputResults$trackDura),
+             unique(outputResults$availablePerStep))),
       sort(unique(outputResults$modelFormula)),
-      sort(unique(outputResults$availablePerStep)),
       sort(unique(outputResults$stepDist)),
-      sort(unique(outputResults$turnDist))))
+      sort(unique(outputResults$turnDist)),
+      sort(unique(outputResults$averagingMethod))
+      ))
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-analysis, -sampleID) %>% 
@@ -61,12 +64,23 @@ generate_spec_curves <- function(outputResults, method){
       dplyr::group_by(variable, value) %>%
       dplyr::mutate(d_medEst = modelAvg - median(outputResults$modelAvg, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = modelAvg)
+      mutate("estimate" = modelAvg) %>% 
+      dplyr::ungroup() %>%
+      dplyr::mutate(variable = factor(variable, levels = c(
+        "Tracking Duration (days)",
+        "Tracking Frequency (points/hour)",
+        "Sample Size (n)",
+        "Model Formula (SSF or iSSF)",
+        "Available Points per Step",
+        "Distribution of Step Lengths",
+        "Distribution of Turn Angles",
+        "Model Averaging Method")
+      ))
     
   } else if(method == "area"){
     
     # Area based --------------------------------------------------------------
-
+    
     outputResults <- outputResults %>% 
       mutate("estimate" = companaHabDiff)
     
@@ -77,18 +91,18 @@ generate_spec_curves <- function(outputResults, method){
                                             "Random",
                                             "Stratified")
     outputResults$test <- ifelse(outputResults$test == "randomisation",
-                                            "Randomisation",
-                                            "Parametric")
+                                 "Randomisation",
+                                 "Parametric")
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
-      sort(unique(outputResults$sampleSize)),
-      sort(unique(outputResults$trackFreq)),
-      sort(unique(outputResults$trackDura)),
+      sort(c(unique(outputResults$sampleSize),
+             unique(outputResults$trackFreq),
+             unique(outputResults$trackDura),
+             unique(outputResults$availablePoints))),
       unique(outputResults$type),
       unique(outputResults$areaMethod),
       sort(unique(outputResults$contour)),
-      sort(unique(outputResults$availablePoints)),
       sort(unique(outputResults$samplingPattern)),
       sort(unique(outputResults$test))))
     
@@ -113,7 +127,19 @@ generate_spec_curves <- function(outputResults, method){
       dplyr::group_by(variable, value) %>%
       dplyr::mutate(d_medEst = companaHabDiff - median(outputResults$companaHabDiff, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = companaHabDiff)
+      mutate("estimate" = companaHabDiff) %>% 
+      dplyr::ungroup() %>%
+      dplyr::mutate(variable = factor(variable, levels = c(
+        "Tracking Duration (days)",
+        "Tracking Frequency (points/hour)",
+        "Sample Size (n)",
+        "Type II or Type III Habitat Selection",
+        "Available Points Multiplier",
+        "Sampling Pattern",
+        "Compana Test Method",
+        "Available Area Method",
+        "Available Area Contour (%)")
+      ))
     
   } else if(method == "pois"){
     
@@ -159,11 +185,11 @@ generate_spec_curves <- function(outputResults, method){
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
-      sort(unique(outputResults$sampleSize)),
-      sort(unique(outputResults$trackFreq)),
-      sort(unique(outputResults$trackDura)),
+      sort(c(unique(outputResults$sampleSize),
+             unique(outputResults$trackFreq),
+             unique(outputResults$trackDura),
+             unique(outputResults$availablePerStep))),
       sort(unique(outputResults$modelFormula)),
-      sort(unique(outputResults$availablePerStep)),
       sort(unique(outputResults$stepDist)),
       sort(unique(outputResults$turnDist))))
     
@@ -186,7 +212,17 @@ generate_spec_curves <- function(outputResults, method){
       dplyr::group_by(variable, value) %>%
       dplyr::mutate(d_medEst = prefDiff - median(outputResults$prefDiff, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = prefDiff)
+      mutate("estimate" = prefDiff) %>% 
+      dplyr::ungroup() %>%
+      dplyr::mutate(variable = factor(variable, levels = c(
+        "Tracking Duration (days)",
+        "Tracking Frequency (points/hour)",
+        "Sample Size (n)",
+        "Model Formula (SSF or iSSF)",
+        "Available Points per Step",
+        "Distribution of Step Lengths",
+        "Distribution of Turn Angles")
+      ))
     
   } else if(method == "twoStep"){
     
@@ -210,11 +246,11 @@ generate_spec_curves <- function(outputResults, method){
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
-      sort(unique(outputResults$sampleSize)),
-      sort(unique(outputResults$trackFreq)),
-      sort(unique(outputResults$trackDura)),
+      sort(c(unique(outputResults$sampleSize),
+             unique(outputResults$trackFreq),
+             unique(outputResults$trackDura),
+             unique(outputResults$availablePerStep))),
       sort(unique(outputResults$modelFormula)),
-      sort(unique(outputResults$availablePerStep)),
       sort(unique(outputResults$stepDist)),
       sort(unique(outputResults$turnDist))))
     
@@ -237,7 +273,17 @@ generate_spec_curves <- function(outputResults, method){
       dplyr::group_by(variable, value) %>%
       dplyr::mutate(d_medEst = twoStepBeta - median(outputResults$twoStepBeta, na.rm = TRUE)) %>%
       dplyr::ungroup() %>% 
-      mutate("estimate" = twoStepBeta)
+      mutate("estimate" = twoStepBeta) %>% 
+      dplyr::ungroup() %>%
+      dplyr::mutate(variable = factor(variable, levels = c(
+        "Tracking Duration (days)",
+        "Tracking Frequency (points/hour)",
+        "Sample Size (n)",
+        "Model Formula (SSF or iSSF)",
+        "Available Points per Step",
+        "Distribution of Step Lengths",
+        "Distribution of Turn Angles")
+      ))
     
   }
   
@@ -247,12 +293,27 @@ generate_spec_curves <- function(outputResults, method){
                                           "Scrambled Habitat Layer (i.e., No selection)",
                                           "Correct Habitat Layer (i.e., Positive selection)")
   outputResults$classLandscape <- ifelse(str_detect(outputResults$classLandscape, "Scram"),
-                                          "Scrambled Habitat Layer (i.e., No selection)",
-                                          "Correct Habitat Layer (i.e., Positive selection)")
+                                         "Scrambled Habitat Layer (i.e., No selection)",
+                                         "Correct Habitat Layer (i.e., Positive selection)")
   
   medData <- outputPlotData %>%
     dplyr::group_by(variable, value, classLandscape) %>%
     dplyr::summarise(modelMedEst = median(estimate, na.rm = TRUE))
+  
+  
+  if(method %in% c("twoStep", "area")){
+    xlimits <- as.vector(quantile(outputPlotData$estimate, probs = c(.001, .999)))
+    upperOutliers <- outputResults %>% 
+      group_by(classLandscape) %>% 
+      filter(estimate < xlimits[1]) %>% 
+      count()
+    lowerOutliers <- outputResults %>% 
+      group_by(classLandscape) %>% 
+      filter(estimate > xlimits[2]) %>% 
+      count()
+  } else {
+    xlimits <- c(NA, NA)
+  }
   
   (splitSpecCurve <- outputPlotData %>%
       ggplot() +
@@ -269,9 +330,8 @@ generate_spec_curves <- function(outputResults, method){
                  linetype = 2) +
       facet_grid(variable~classLandscape, scales = "free_y", space = "free", switch = "y") +
       labs(y = "", x = "Estimate") +
-      # scale_colour_gradient2(low = palette["BADGER"],
-      #                        mid = palette["coreGrey"],
-      #                        high = palette["2"]) +
+      scale_x_continuous(limits = xlimits) +
+      scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
       theme_bw() +
       theme(
         line = element_line(colour = palette["coreGrey"]),
@@ -303,7 +363,7 @@ generate_spec_curves <- function(outputResults, method){
       geom_vline(xintercept = 0, linewidth = 0.25, alpha = 0.9, colour = "#403F41",
                  linetype = 1) +
       # coord_cartesian(xlim = c(-35, 20)) +
-      geom_point(aes(x = estimate, y = index), alpha = 0.25,
+      geom_point(aes(x = estimate, y = index, colour = d_medEst), alpha = 0.25,
                  pch = 3, size = 0.75)+
       geom_segment(data = overallMed,
                    aes(x = medEst, xend = medEst, y = Inf,
@@ -322,9 +382,18 @@ generate_spec_curves <- function(outputResults, method){
       #          xend = overallMed$medEst,
       #          y = overallMed$indexLoc, yend = overallMed$indexLoc,
       #          linewidth = 0.75, colour = palette["coreGrey"]) +
-      # scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
+      scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
+      {if(method %in% c("twoStep", "area"))geom_text(data = lowerOutliers,
+                                                     aes(x = xlimits[1], y = 500, label = paste0(n, " outliers\n\u2B9C not shown")),
+                                                     vjust = 0, hjust = 0, lineheight = 0.95, fontface = 3,
+                                                     size = 3)} +
+      {if(method %in% c("twoStep", "area"))geom_text(data = upperOutliers,
+                                                     aes(x = xlimits[2], y = nrow(outputResults)-800, label = paste0(n, " outliers\nnot shown \u2B9E")),
+                                                     vjust = 1, hjust = 1, lineheight = 0.95, fontface = 3,
+                                                     size = 3)}+
       facet_grid(.~classLandscape, space = "free", switch = "y") +
       labs(y = "", x = "Estimate") +
+      scale_x_continuous(limits = xlimits) +
       theme_bw() +
       theme(
         line = element_line(colour = palette["coreGrey"]),
