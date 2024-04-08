@@ -7,7 +7,7 @@
 #'
 #' @export
 generate_effect_plots <- function(modelsList){
-  
+  # modelsList <- modelsBrms
   palette <- multiverseHabitat::get_palette()
   
   effectsPlotList <- lapply(names(modelsList), function(x){

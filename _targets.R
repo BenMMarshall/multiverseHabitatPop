@@ -251,6 +251,13 @@ ssfCompiled <- list(
     )
   ),
   tar_target(
+    ssfPresentCurve,
+    generate_presentation_curves(
+      outputResults = ssfResults,
+      method = "ssf"
+    )
+  ),
+  tar_target(
     ssfBrms,
     run_brms(
       resultsData = ssfResults
@@ -268,6 +275,13 @@ poisCompiled <- list(
   tar_target(
     poisSpecCurve,
     generate_spec_curves(
+      outputResults = poisResults,
+      method = "pois"
+    )
+  ),
+  tar_target(
+    poisPresentCurve,
+    generate_presentation_curves(
       outputResults = poisResults,
       method = "pois"
     )
@@ -329,9 +343,9 @@ brmModelOutputs <- list(
     modelsBrms,
     # manually pull out the brms model outputs
     list(
-      ssfCompiled[[3]],
+      ssfCompiled[[4]],
       areaBasedCompiled[[3]],
-      poisCompiled[[3]],
+      poisCompiled[[4]],
       twoStepCompiled[[3]]),
     command = list(!!!.x),
     priority = 0.5
