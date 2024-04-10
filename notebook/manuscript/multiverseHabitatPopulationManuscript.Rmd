@@ -248,30 +248,34 @@ After assessment of the model convergence measures, we modified the running para
 ## Specification Curves
 
 The specification curves provide an overview of all the analysis end points.
-The area based method – Compositional Analysis (Compana) – returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \@ref(fig:specCurveArea)).
-Despite this overall agreement, the final estimates ranged all the way down to minimal preference that are failing to detect the simulated preference.
-When broken down by decision, all decisions bar higher sample sizes, appear to have a large range in final estimates.
-The sample size decisions has a clear reduction in possible answers when the sample is 10 or 20 individuals.
+The area based method – Compositional Analysis (Compana) – returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \@ref(fig:specCurveArea)), and a near zero effect for the scrambled selection scenario.
+In the positive selection scenario very few esetimates suggested negative selection and those that did appear extreme outliers.
+When broken down by decision, all decisions bar higher sample sizes and the test method, appear to have a large range in final estimates.
+The sample size decisions has a clear reduction in possible answers when the sample is 10 or 20 individuals, but also a potential interaction with the test method when including 20 individuals.
+The test method presents two different outcomes, with the randomisation method presenting a far tighter grouping of estimates in both selection scenarios.
 
 ```{r specCurveArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "area_specCurve.png"))
 ```
 
-The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees with the simulated parametrisation (Fig. \@ref(fig:specCurveSSF)).
-Unlike the Compana curve, the SSF curve has far fewer results that indicate very low habitat preference.
-However, the SSF method did results in estimates indicating avoidance of habitat 2 that contradicts the underlying simulated process; these negative preference results are in a small minority.
-The clearest structure in the estimates resulting from different decisions belong to changes in sample size and tracking regime.
+The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees well with the simulated parametrisation for both selection and scrambled scenarioes (Fig. \@ref(fig:specCurveSSF)).
+Also like the Compana curve, the SSF curve has far fewer results that indicate very low habitat preference in the positive selection scenario.
+The majority of these lower estimates of habitat selection appear connected to the decision to use an integrated model formula.
+
+Outside the lower estimates, the clearest structure in the estimates results from different decisions in sample size and tracking regime.
 The tracking regime decisions, frequency and duration, appear to shift the overall range of estimates but with limited impact on the variation.
 Sample size increases, by comparison, appear to reduce the spread of estimates produced.
 Outside of the sampling decisions, the choice to naively average or to average using AIC weights leads to differing spreads of estimates.
 The naively estimated summaries are much more tightly grouped with no estimates failing to correctly detect positive preference.
-
+The tighter grouping is also reflected in the scrambled selection scenario.
 
 ```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
 ```
 
-(Fig. \@ref(fig:specCurveTwoStep)).
+The two-step model approach appears to have had the greatest difficultly consistently detecting the positive selection, but the median selection in the positive selection scenario is still greater than the median from the scrambled scenario (Fig. \@ref(fig:specCurveTwoStep)).
+Tracking frequency appears a critical decision in the two-step model with the 1 point per hour choice resulting in more detections of positive selection, and a tighter grouping of estimates.
+The decision to integrate step and turn angle into the model formula appears similarly critical, with the choice not to include the step and turn angle results in in estimates more consistently positive in the positive selection scenario, and close to zero in the scrambled selection scenario. 
 
 ```{r specCurveTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "twoStep_specCurve.png"))
@@ -282,7 +286,8 @@ Unlike the previous analyses the tracking duration did not have as clear an impa
 Sample size and tracking frequency did, with larger sample sizes and higher frequency leading to overall decreases in estimate spread.
 Of particular note is that all the failures to detect positive preference occur when the sample size is three.
 The analysis decisions appear largely un-impactful, particularly the number of points per step.
-Model formulation did have an impact, with the integrated formulation was more consistent at retrieving positive preference, but the spread was much larger.
+Model formulation did have an impact, with the integrated formulation being more consistent at retrieving positive preference in the positive selection scenario, but the spread of estimates was much larger.
+This spread increased associated with the integrated model formulation was similarly seen in the scrambled selection scenario.
 
 ```{r specCurvePois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Spec curve"}
 knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
@@ -320,7 +325,7 @@ list2env(betaList, envir = environment())
 ```
 
 The area-based Compana approach seemed more insensitive to sample size than the other methods ($\beta$ `r beta_areaBrms_b_sampleSizeScaled`), instead benefiting from increases in tracking duration ($\beta$ `r beta_areaBrms_b_trackDuraScaled`) and frequency ($\beta$ `r beta_areaBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotArea)).
-This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to a reduction in deviation from the median estimate: sample size ($\beta$ `r beta_poisBrms_b_sampleSizeScaled`), tracking duration ($\beta$ `r beta_poisBrms_b_trackDuraScaled`), and tracking frequency ($\beta$ `r beta_poisBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotPois)). 
+This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to marked reductions in deviation from the median estimate: sample size ($\beta$ `r beta_poisBrms_b_sampleSizeScaled`), tracking duration ($\beta$ `r beta_poisBrms_b_trackDuraScaled`), and tracking frequency ($\beta$ `r beta_poisBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotPois)). 
 The other two methods fall in-between with the sampling having a smaller impact.
 The Step Selection model approach still benefited from increasing sampling duration ($\beta$ `r beta_ssfBrms_b_trackFreqScaled`) and frequency, but the impact on increasing sample size was not apparent ($\beta$ `r beta_ssfBrms_b_trackFreqScaled`; Fig. \@ref(fig:effectPlotSSF)).
 
