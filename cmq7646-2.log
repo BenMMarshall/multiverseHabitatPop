@@ -1,4 +1,0 @@
-2023-10-18 12:10:18.251924 | Master: tcp://nd85ed30123f4:7646
-2023-10-18 12:10:18.253053 | connecting to: tcp://nd85ed30123f4:7646
-2023-10-18 12:10:18.292866 | > call 1 (0.006s wait)
-Error in w$poll() : Unexpected peer disconnect

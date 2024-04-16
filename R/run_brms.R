@@ -6,7 +6,10 @@
 #' @return a
 #'
 #' @export
-run_brms <- function(resultsData){
+run_brms <- function(resultsData,
+                     iter = 4000,
+                     warmup = 750,
+                     thin = 4){
   # resultsData <- poisResults
   if("companaHabDiff" %in% names(resultsData)){
     
@@ -15,7 +18,7 @@ run_brms <- function(resultsData){
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
       dplyr::mutate(medEst = median(companaHabDiff),
-                    absDeltaEst = companaHabDiff - medEst) %>% 
+                    absDeltaEst = abs(companaHabDiff - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
@@ -58,7 +61,7 @@ run_brms <- function(resultsData){
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
       dplyr::mutate(medEst = median(modelAvg),
-                    absDeltaEst = modelAvg - medEst) %>% 
+                    absDeltaEst = abs(modelAvg - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
@@ -114,7 +117,7 @@ run_brms <- function(resultsData){
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
       dplyr::mutate(medEst = median(mean),
-                    absDeltaEst = mean - medEst) %>% 
+                    absDeltaEst = abs(mean - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
@@ -153,7 +156,7 @@ run_brms <- function(resultsData){
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
       dplyr::mutate(medEst = median(twoStepBeta),
-                    absDeltaEst = twoStepBeta - medEst) %>% 
+                    absDeltaEst = abs(twoStepBeta - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
@@ -190,9 +193,9 @@ run_brms <- function(resultsData){
                                data = modelData,
                                family = gaussian,
                                prior = brmpriors,
-                               warmup = 100, iter = 500, chains = 4,
+                               warmup = warmup, iter = iter, chains = 4,
                                cores = 4,
-                               thin = 2,
+                               thin = thin,
                                # control = list(adapt_delta = 0.90,
                                #                max_treedepth = 15),
                                seed = 1,

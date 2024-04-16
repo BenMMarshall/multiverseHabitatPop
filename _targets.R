@@ -52,7 +52,7 @@ values_SimSpecies <- tibble(
 )
 values_SimIndi <- tibble(
   # individual = paste0("i", sprintf("%03d", 1:5))
-  individual = paste0("i", sprintf("%03d", 1:20))
+  individual = paste0("i", sprintf("%03d", 1:25))
   # individual = paste0("i", 1:50)
   # individual = seq_len(30)
 )
@@ -117,7 +117,7 @@ repeats <- 2
 # values_Sample <-
 #   list(sampleSize = rep(c(3,5), each = repeats))
 values_Sample <-
-  list(sampleSize = rep(c(3,5,10,20), each = repeats))
+  list(sampleSize = rep(c(3,5,10,15,20), each = repeats))
 
 set.seed(2023)
 
@@ -131,7 +131,7 @@ optionsList_samples <- lapply(values_Sample$sampleSize, function(x){
 names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 
 # remove the repeats of the full sample as they are all the same
-optionsList_samples <- optionsList_samples[1:(length(optionsList_samples)-(repeats-1))]
+# optionsList_samples <- optionsList_samples[1:(length(optionsList_samples)-(repeats-1))]
 
 optionsCompleteList <- list(
   "species" = values_SimSpecies,
@@ -260,7 +260,10 @@ ssfCompiled <- list(
   tar_target(
     ssfBrms,
     run_brms(
-      resultsData = ssfResults
+      resultsData = ssfResults,
+      iter = 4000,
+      warmup = 750,
+      thin = 4
     )
   )
 )
@@ -289,7 +292,10 @@ poisCompiled <- list(
   tar_target(
     poisBrms,
     run_brms(
-      resultsData = poisResults
+      resultsData = poisResults,
+      iter = 20000,
+      warmup = 8000,
+      thin = 20
     )
   )
 )
@@ -311,7 +317,10 @@ twoStepCompiled <- list(
   tar_target(
     twoStepBrms,
     run_brms(
-      resultsData = twoStepResults
+      resultsData = twoStepResults,
+      iter = 4000,
+      warmup = 750,
+      thin = 4
     )
   )
 )
@@ -333,7 +342,10 @@ areaBasedCompiled <- list(
   tar_target(
     areaBrms,
     run_brms(
-      resultsData = areaBasedResults
+      resultsData = areaBasedResults,
+      iter = 4000,
+      warmup = 750,
+      thin = 4
     )
   )
 )
@@ -352,19 +364,23 @@ brmModelOutputs <- list(
   ),
   tar_target(
     diagnosticPlots,
-    diagnostics_brms(modelsList = modelsBrms)
+    diagnostics_brms(modelsList = modelsBrms),
+    priority = 0.4
   ),
   tar_target(
     modelExtracts,
-    extract_model_values(modelsList = modelsBrms)
+    extract_model_values(modelsList = modelsBrms),
+    priority = 0.4
   ),
   tar_target(
     effectPlots,
-    generate_effect_plots(modelsList = modelsBrms)
+    generate_effect_plots(modelsList = modelsBrms),
+    priority = 0.4
   ),
   tar_target(
     allEffectPlots,
-    generate_allEffect_plots(modelExtracts = modelExtracts)
+    generate_allEffect_plots(modelExtracts = modelExtracts),
+    priority = 0.4
   ),
   tar_target(
     rmdRender,
@@ -374,7 +390,7 @@ brmModelOutputs <- list(
                poisSpecCurve,
                ssfSpecCurve),
     cue = tar_cue(mode = "always"),
-    priority = 0.1
+    priority = 0.01
   )
 )
 
