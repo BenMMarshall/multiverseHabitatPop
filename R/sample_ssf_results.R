@@ -30,15 +30,18 @@ sample_ssf_results <- function(allIndividualData, sampleGroups, optionsList){
   #   ssfRegimeResults <- ssfResults[[regime]]
   # ssfRegimeResults <- ssfResults
   
+  # sampleGroups <- optionsList_samples
   for(sampID in names(sampleGroups)){
     # sampID <- names(optionsList_samples)[1]
-    
     print(sampID)
     IDs <- sampleGroups[[sampID]]
-    IDs <- paste0("simData_i", sprintf("%03d", IDs))
+    speciesCodeLetter <- stringr::str_extract(names(allIndividualData)[1], ".$")
+    IDs <- paste0("simData_",
+                  speciesCodeLetter, # add in species code letter
+                  "_i", sprintf("%03d", IDs))
     
     # bit convoluted but this can get the ID (ie species)
-    # IDs <- paste0(stringr::str_extract(ssfRegimeResults$simData_i001[[1]]$options$id[1],
+    # IDs <- paste0(stringr::str_extract(allIndividualData$simData_i001[[1]]$options$id[1],
     #                                    "^.*_i"),
     #               sprintf("%03d", IDs))
     
@@ -128,6 +131,7 @@ sample_ssf_results <- function(allIndividualData, sampleGroups, optionsList){
                   
                   modelAvgData <- data.frame(
                     sampleID = sampID,
+                    species = speciesCodeLetter,
                     sampleSize = length(IDs),
                     trackFreq = sampleEst_sample$trackFreq[1],
                     trackDura = sampleEst_sample$trackDura[1],
@@ -146,6 +150,7 @@ sample_ssf_results <- function(allIndividualData, sampleGroups, optionsList){
                   
                   naiveAvgData <- data.frame(
                     sampleID = sampID,
+                    species = speciesCodeLetter,
                     sampleSize = length(IDs),
                     trackFreq = sampleEst_sample$trackFreq[1],
                     trackDura = sampleEst_sample$trackDura[1],

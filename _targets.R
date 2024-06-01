@@ -46,10 +46,19 @@ tar_source()
 # Tibbles of splits -------------------------------------------------------
 
 ## every split requires it's own tibble, otherwise it's applied to all of them
-values_SimSpecies <- tibble(
+values_SimSpecies_B <- tibble(
   # species = c("BADGER", "VULTURE", "KINGCOBRA")
   species = c("BADGER")
 )
+values_SimSpecies_V <- tibble(
+  # species = c("BADGER", "VULTURE", "KINGCOBRA")
+  species = c("VULTURE")
+)
+values_SimSpecies_K <- tibble(
+  # species = c("BADGER", "VULTURE", "KINGCOBRA")
+  species = c("KINGCOBRA")
+)
+
 values_SimIndi <- tibble(
   # individual = paste0("i", sprintf("%03d", 1:5))
   individual = paste0("i", sprintf("%03d", 1:25))
@@ -134,7 +143,7 @@ names(optionsList_samples) <- paste0("samp", 1:length(optionsList_samples))
 # optionsList_samples <- optionsList_samples[1:(length(optionsList_samples)-(repeats-1))]
 
 optionsCompleteList <- list(
-  "species" = values_SimSpecies,
+  # "species" = values_SimSpecies,
   "individuals" = values_SimIndi,
   "regime" = values_Regime,
   "samples" = optionsList_samples,
@@ -149,24 +158,26 @@ saveRDS(optionsCompleteList, file = here::here("data", "optionsCompleteList.rds"
 
 # Targets workflow lists --------------------------------------------------
 
-individualSimulationsList <- list(
+# BADGER SUB TREE ---------------------------------------------------------
+
+individualSimulationsList_B <- list(
   ## LANDSCAPE SIMULATION
-  individualSimulations <- tar_map(
+  individualSimulations_B <- tar_map(
     unlist = FALSE,
-    values = values_SimSpecies,
-    tar_target(landscape, simulate_landscape(species, 2023)), # FUNCTION simulate_landscape
+    values = values_SimSpecies_B,
+    tar_target(landscape_B, simulate_landscape(species, 2023)), # FUNCTION simulate_landscape
     
     ## INDIDIVUAL SIMULATION
     tar_map(
       unlist = FALSE,
       values = values_SimIndi,
-      tar_target(simData, simulate_individual(
+      tar_target(simData_B, simulate_individual(
         individualNum = individual,
         species = species,
         simSteps = 24*60 *365,
         desOptions = 12,
         options = 15,
-        landscapeList = landscape,
+        landscapeList = landscape_B,
         seed = 2023),
         priority = 0.93)#, # FUNCTION simulate_individual
     ) # INDI SIM
@@ -174,35 +185,128 @@ individualSimulationsList <- list(
   
 )
 
-allIndividualsList <- list(
+allIndividualsList_B <- list(
   tar_combine(
-    allIndividuals,
+    allIndividuals_B,
     use_names = FALSE,
-    individualSimulations,
+    individualSimulations_B,
     # command = dplyr::bind_rows(!!!.x))
     command = list(!!!.x))
 )
+
+# coreMultiverse_B <- list(
+#   tar_map(
+#     unlist = TRUE,
+#     values = values_Regime,
+#     tar_target(sampDuraFreqData_B,
+#                subset_duration(
+#                  allIndividualData = subset_frequency(
+#                    allIndividualData = allIndividuals_B,
+#                    freqPreset = tf),
+#                  daysDuration = td),
+#                priority = 0.92),
+#     tar_target(areaBasedAvailUse_B,
+#                area_based_extraction(
+#                  allIndividualData = sampDuraFreqData_B,
+#                  optionsList = optionsList_area
+#                ),
+#                priority = 0.9),
+#     tar_target(areaBasedOUT_B,
+#                area_based_calculations(
+#                  availUseData = areaBasedAvailUse_B,
+#                  sampleGroups = optionsList_samples,
+#                  optionsList = optionsList_area,
+#                  optionsListArea = optionsList_areaMethods
+#                ),
+#                priority = 0.9),
+#     # tar_target(ssfOUT,
+#     #            wrapper_indi_ssf(
+#     #              allIndividualData = sampDuraFreqData,
+#     #              optionsList = optionsList_sff
+#     #            ),
+#     #            priority = 0.9),
+#     tar_target(ssfSampled_B,
+#                sample_ssf_results(
+#                  sampDuraFreqData_B,
+#                  sampleGroups = optionsList_samples,
+#                  optionsList = optionsList_sff
+#                ),
+#                priority = 0.9),
+#     tar_target(poisOUT_B,
+#                method_pois_inla(
+#                  allIndividualData = sampDuraFreqData_B,
+#                  sampleGroups = optionsList_samples,
+#                  optionsList = optionsList_pois),
+#                priority = 0.9),
+#     tar_target(twoStepOUT_B,
+#                method_twoStep(
+#                  allIndividualData = sampDuraFreqData_B,
+#                  sampleGroups = optionsList_samples,
+#                  optionsList = optionsList_pois),
+#                priority = 0.9)
+#   )
+# )
+
+# VULTURE SUB TREE --------------------------------------------------------
+
+individualSimulationsList_V <- list(
+  ## LANDSCAPE SIMULATION
+  individualSimulations_V <- tar_map(
+    unlist = FALSE,
+    values = values_SimSpecies_V,
+    tar_target(landscape_V, simulate_landscape(species, 2023)), # FUNCTION simulate_landscape
+    
+    ## INDIDIVUAL SIMULATION
+    tar_map(
+      unlist = FALSE,
+      values = values_SimIndi,
+      tar_target(simData_V, simulate_individual(
+        individualNum = individual,
+        species = species,
+        simSteps = 24*60 *365,
+        desOptions = 12,
+        options = 15,
+        landscapeList = landscape_V,
+        seed = 2023),
+        priority = 0.93)#, # FUNCTION simulate_individual
+    ) # INDI SIM
+  ) # LANDSCAPE SIM
+  
+)
+
+allIndividualsList_V <- list(
+  tar_combine(
+    allIndividuals_V,
+    use_names = FALSE,
+    individualSimulations_V,
+    # command = dplyr::bind_rows(!!!.x))
+    command = list(!!!.x))
+)
+
+
+# CORE MULTIVERSE ANALYSIS ------------------------------------------------
 
 coreMultiverse <- list(
   tar_map(
     unlist = TRUE,
     values = values_Regime,
-    tar_target(sampDuraFreqData,
+    ## BADGER
+    tar_target(sampDuraFreqData_B,
                subset_duration(
                  allIndividualData = subset_frequency(
-                   allIndividualData = allIndividuals,
+                   allIndividualData = allIndividuals_B,
                    freqPreset = tf),
                  daysDuration = td),
                priority = 0.92),
-    tar_target(areaBasedAvailUse,
+    tar_target(areaBasedAvailUse_B,
                area_based_extraction(
-                 allIndividualData = sampDuraFreqData,
+                 allIndividualData = sampDuraFreqData_B,
                  optionsList = optionsList_area
                ),
                priority = 0.9),
-    tar_target(areaBasedOUT,
+    tar_target(areaBasedOUT_B,
                area_based_calculations(
-                 availUseData = areaBasedAvailUse,
+                 availUseData = areaBasedAvailUse_B,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_area,
                  optionsListArea = optionsList_areaMethods
@@ -214,27 +318,76 @@ coreMultiverse <- list(
     #              optionsList = optionsList_sff
     #            ),
     #            priority = 0.9),
-    tar_target(ssfSampled,
+    tar_target(ssfSampled_B,
                sample_ssf_results(
-                 sampDuraFreqData,
+                 sampDuraFreqData_B,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_sff
                ),
                priority = 0.9),
-    tar_target(poisOUT,
+    tar_target(poisOUT_B,
                method_pois_inla(
-                 allIndividualData = sampDuraFreqData,
+                 allIndividualData = sampDuraFreqData_B,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
                priority = 0.9),
-    tar_target(twoStepOUT,
+    tar_target(twoStepOUT_B,
                method_twoStep(
-                 allIndividualData = sampDuraFreqData,
+                 allIndividualData = sampDuraFreqData_B,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9),
+    ## VULTURE
+    tar_target(sampDuraFreqData_V,
+               subset_duration(
+                 allIndividualData = subset_frequency(
+                   allIndividualData = allIndividuals_V,
+                   freqPreset = tf),
+                 daysDuration = td),
+               priority = 0.92),
+    tar_target(areaBasedAvailUse_V,
+               area_Vased_extraction(
+                 allIndividualData = sampDuraFreqData_V,
+                 optionsList = optionsList_area
+               ),
+               priority = 0.9),
+    tar_target(areaBasedOUT_V,
+               area_Vased_calculations(
+                 availUseData = areaBasedAvailUse_V,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_area,
+                 optionsListArea = optionsList_areaMethods
+               ),
+               priority = 0.9),
+    # tar_target(ssfOUT,
+    #            wrapper_indi_ssf(
+    #              allIndividualData = sampDuraFreqData,
+    #              optionsList = optionsList_sff
+    #            ),
+    #            priority = 0.9),
+    tar_target(ssfSampled_V,
+               sample_ssf_results(
+                 sampDuraFreqData_V,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_sff
+               ),
+               priority = 0.9),
+    tar_target(poisOUT_V,
+               method_pois_inla(
+                 allIndividualData = sampDuraFreqData_V,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9),
+    tar_target(twoStepOUT_V,
+               method_twoStep(
+                 allIndividualData = sampDuraFreqData_V,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
                priority = 0.9)
   )
 )
+
+# Combining all results ---------------------------------------------------
 
 ssfCompiled <- list(
   tar_combine(
@@ -397,8 +550,10 @@ brmModelOutputs <- list(
 
 # All targets lists -------------------------------------------------------
 
-list(individualSimulationsList,
-     allIndividualsList,
+list(individualSimulationsList_B,
+     individualSimulationsList_V,
+     allIndividualsList_B,
+     allIndividualsList_V,
      coreMultiverse,
      ssfCompiled,
      poisCompiled,

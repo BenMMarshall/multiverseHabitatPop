@@ -16,7 +16,8 @@ subset_frequency <- function(allIndividualData, freqPreset){
   allIndividualDataOUT <- allIndividualData
   
   for(indiID in names(allIndividualData)){
-    if(indiID == "landscape"){
+    # if(indiID == "landscape"){
+    if(stringr::str_detect(indiID, "landscape")){
       {next}
     }
     
@@ -86,7 +87,8 @@ subset_duration <- function(allIndividualData, daysDuration){
   allIndividualDataOUT <- allIndividualData
   
   for(indiID in names(allIndividualData)){
-    if(indiID == "landscape"){
+    # if(indiID == "landscape"){
+    if(stringr::str_detect(indiID, "landscape")){
       {next}
     }
     

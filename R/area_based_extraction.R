@@ -16,8 +16,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
   Method_land <- optionsList$Method_land
   
   landscape <- list()
-  landscape[[1]] <- allIndividualData$landscape[[Method_land[1]]]
-  landscape[[2]] <- allIndividualData$landscape[[Method_land[2]]]
+  landscape[[1]] <- allIndividualData[stringr::str_detect(names(allIndividualData), "landscape")][[1]][[Method_land[1]]]
+  landscape[[2]] <- allIndividualData[stringr::str_detect(names(allIndividualData), "landscape")][[1]][[Method_land[2]]]
   names(landscape) <- Method_land
   
   # Loop to create individual polygons --------------------------------------
@@ -36,7 +36,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
     resourceList <- vector("list", length = length(names(allIndividualData)[-1]))
     names(resourceList) <- names(allIndividualData)[-1]
     for(indiID in names(allIndividualData)){
-      if(indiID == "landscape"){
+      # if(indiID == "landscape"){
+      if(stringr::str_detect(indiID, "landscape")){
         {next}
       }
       
@@ -58,7 +59,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
       polygonList <- vector("list", length = length(names(allIndividualData)[-1]))
       names(polygonList) <- names(allIndividualData)[-1]
       for(indiID in names(allIndividualData)){
-        if(indiID == "landscape"){
+        # if(indiID == "landscape"){
+        if(stringr::str_detect(indiID, "landscape")){
           {next}
         }
         
@@ -95,7 +97,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
           # names(usedAvailList) <- names(allIndividualData)[-1]
           for(indiID in names(allIndividualData)){
             
-            if(indiID == "landscape"){
+            # if(indiID == "landscape"){
+            if(stringr::str_detect(indiID, "landscape")){
               {next}
             }
             

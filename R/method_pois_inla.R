@@ -33,7 +33,10 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
     print(sampID)
     # sampID <- "samp1"
     IDs <- optionsList_samples[[sampID]]
-    IDs <- paste0("simData_i", sprintf("%03d", IDs))
+    speciesCodeLetter <- stringr::str_extract(names(allIndividualData)[1], ".$")
+    IDs <- paste0("simData_",
+                  speciesCodeLetter, # add in species code letter
+                  "_i", sprintf("%03d", IDs))
     
     sampledIndividualData <- allIndividualData[names(allIndividualData) %in% IDs]
     
@@ -207,6 +210,7 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
               optionsInfo <-
                 data.frame(
                   sampleID = sampID,
+                  species = speciesCodeLetter,
                   sampleSize = length(IDs),
                   trackFreq = allIndividualData[[2]]$trackFreq,
                   trackDura = allIndividualData[[2]]$trackDura,
