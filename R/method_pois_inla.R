@@ -110,8 +110,9 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
               
               # print(unique(indiTrackCov$layer))
               # need a while loop to dodge the very very rare instances of NA from generated steps
+              j <- 0
               while(any(is.na(unique(indiTrackCov$layer)))){
-                
+                j <- j+1
                 indiTrackCov <- indiTrack %>% # removing the non-moves, or under GPS error
                   random_steps(
                     n_control = as,
@@ -121,7 +122,17 @@ method_pois_inla <- function(allIndividualData, sampleGroups, optionsList){
                   extract_covariates(landscape[[land]]) %>% 
                   mutate(id = indiID)
                 
-                # print(unique(indiTrackCov$layer))
+                print(unique(indiTrackCov$layer))
+                print(sum(is.na(indiTrackCov$layer)))
+                if(j > 50){
+                  print("Over 50 attempts for non NAs in extracted values, dropping NA instead when fewer than 10 instances")
+                  
+                  if(sum(is.na(indiTrackCov$layer)) < 10){
+                    indiTrackCov <- indiTrackCov %>% 
+                      filter(!is.na(layer))
+                    {break}
+                  }
+                }
               }
               
               allTracksList[[indiID]] <- indiTrackCov

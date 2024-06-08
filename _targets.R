@@ -283,6 +283,42 @@ allIndividualsList_V <- list(
     command = list(!!!.x))
 )
 
+# KING COBRA SUB TREE -----------------------------------------------------
+
+individualSimulationsList_K <- list(
+  ## LANDSCAPE SIMULATION
+  individualSimulations_K <- tar_map(
+    unlist = FALSE,
+    values = values_SimSpecies_K,
+    tar_target(landscape_K, simulate_landscape(species, 2023)), # FUNCTION simulate_landscape
+    
+    ## INDIDIVUAL SIMULATION
+    tar_map(
+      unlist = FALSE,
+      values = values_SimIndi,
+      tar_target(simData_K, simulate_individual(
+        individualNum = individual,
+        species = species,
+        simSteps = 24*60 *365,
+        desOptions = 12,
+        options = 15,
+        landscapeList = landscape_K,
+        seed = 2023),
+        priority = 0.93)#, # FUNCTION simulate_individual
+    ) # INDI SIM
+  ) # LANDSCAPE SIM
+  
+)
+
+allIndividualsList_K <- list(
+  tar_combine(
+    allIndividuals_K,
+    use_names = FALSE,
+    individualSimulations_K,
+    # command = dplyr::bind_rows(!!!.x))
+    command = list(!!!.x))
+)
+
 
 # CORE MULTIVERSE ANALYSIS ------------------------------------------------
 
@@ -346,25 +382,19 @@ coreMultiverse <- list(
                  daysDuration = td),
                priority = 0.92),
     tar_target(areaBasedAvailUse_V,
-               area_Vased_extraction(
+               area_based_extraction(
                  allIndividualData = sampDuraFreqData_V,
                  optionsList = optionsList_area
                ),
                priority = 0.9),
     tar_target(areaBasedOUT_V,
-               area_Vased_calculations(
+               area_based_calculations(
                  availUseData = areaBasedAvailUse_V,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_area,
                  optionsListArea = optionsList_areaMethods
                ),
                priority = 0.9),
-    # tar_target(ssfOUT,
-    #            wrapper_indi_ssf(
-    #              allIndividualData = sampDuraFreqData,
-    #              optionsList = optionsList_sff
-    #            ),
-    #            priority = 0.9),
     tar_target(ssfSampled_V,
                sample_ssf_results(
                  sampDuraFreqData_V,
@@ -381,6 +411,47 @@ coreMultiverse <- list(
     tar_target(twoStepOUT_V,
                method_twoStep(
                  allIndividualData = sampDuraFreqData_V,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9),
+    ## KING COBRA
+    tar_target(sampDuraFreqData_K,
+               subset_duration(
+                 allIndividualData = subset_frequency(
+                   allIndividualData = allIndividuals_K,
+                   freqPreset = tf),
+                 daysDuration = td),
+               priority = 0.92),
+    tar_target(areaBasedAvailUse_K,
+               area_based_extraction(
+                 allIndividualData = sampDuraFreqData_K,
+                 optionsList = optionsList_area
+               ),
+               priority = 0.9),
+    tar_target(areaBasedOUT_K,
+               area_based_calculations(
+                 availUseData = areaBasedAvailUse_K,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_area,
+                 optionsListArea = optionsList_areaMethods
+               ),
+               priority = 0.9),
+    tar_target(ssfSampled_K,
+               sample_ssf_results(
+                 sampDuraFreqData_K,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_sff
+               ),
+               priority = 0.9),
+    tar_target(poisOUT_K,
+               method_pois_inla(
+                 allIndividualData = sampDuraFreqData_K,
+                 sampleGroups = optionsList_samples,
+                 optionsList = optionsList_pois),
+               priority = 0.9),
+    tar_target(twoStepOUT_K,
+               method_twoStep(
+                 allIndividualData = sampDuraFreqData_K,
                  sampleGroups = optionsList_samples,
                  optionsList = optionsList_pois),
                priority = 0.9)
@@ -552,8 +623,10 @@ brmModelOutputs <- list(
 
 list(individualSimulationsList_B,
      individualSimulationsList_V,
+     individualSimulationsList_K,
      allIndividualsList_B,
      allIndividualsList_V,
+     allIndividualsList_K,
      coreMultiverse,
      ssfCompiled,
      poisCompiled,

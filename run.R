@@ -6,7 +6,8 @@
 # to learn about your options.
 
 # targets::tar_make()
-targets::tar_make_clustermq(workers = 2) # nolint
+# targets::tar_make_clustermq(workers = 2) # nolint
+targets::tar_make_clustermq(names = contains("OUT"), workers = 2) # nolint
 # targets::tar_make_future(workers = 2) # nolint
 
 # Examine -----------------------------------------------------------------
@@ -22,3 +23,6 @@ targets::tar_make_clustermq(workers = 2) # nolint
 #                   ")_BADGER")
 # mani$name[grep("ssfOUT.*4_BADGER", mani$name)]
 # mani$name[grep(pattern, mani$name)]
+
+# "poisOUT_K_30_12"
+# "twoStepOUT_K_30_12"
