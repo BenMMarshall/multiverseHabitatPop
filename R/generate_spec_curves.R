@@ -45,7 +45,7 @@ generate_spec_curves <- function(outputResults, method){
       ))
     
     outputPlotData <- outputResults %>% 
-      dplyr::select(-analysis, -sampleID) %>% 
+      dplyr::select(-analysis, -sampleID, -species) %>% 
       dplyr::mutate(across(c(1:3, 5:9), as.character)) %>% 
       tidyr::pivot_longer(cols = c(1:3, 5:9), names_to = "variable") %>% 
       dplyr::mutate(
@@ -107,7 +107,7 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$test))))
     
     outputPlotData <- outputResults %>% 
-      dplyr::select(-sampleID) %>% 
+      dplyr::select(-sampleID, -species) %>% 
       dplyr::mutate(across(c(1:3, 5:10), as.character)) %>% 
       tidyr::pivot_longer(cols = c(1:3, 5:10), names_to = "variable") %>% 
       dplyr::mutate(
@@ -148,22 +148,23 @@ generate_spec_curves <- function(outputResults, method){
     # outputResults <- poisResults
     
     prefDiffDF <- outputResults %>% 
-      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist, classLandscape)) %>% 
+      mutate(key = paste(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist, turnDist, classLandscape,
+                          species, sep = "_")) %>% 
       group_by(key) %>% 
       summarise(prefDiff = diff(mean))
     
     outputResults <- outputResults %>% 
       filter(term == "layerc2") %>% 
-      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist, classLandscape)) %>% 
+      mutate(key = paste(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist, turnDist, classLandscape,
+                         species, sep = "_")) %>% 
       left_join(prefDiffDF) %>% 
-      dplyr::mutate(medEst = median(mean),
-                    absDeltaEst = mean - medEst) %>% 
+      dplyr::mutate(medEst = median(prefDiff, na.rm = TRUE),
+                    absDeltaEst = abs(prefDiff - medEst)) %>% 
+      dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
-        trackFreqScaled = (trackFreq - mean(trackFreq))/sd(trackFreq),
-        trackDuraScaled = (trackDura - mean(trackDura))/sd(trackDura),
+        trackFreqScaled = (trackFreq-mean(trackFreq))/sd(trackFreq),
+        trackDuraScaled = (trackDura-mean(trackDura))/sd(trackDura),
         availablePerStepScaled  = (availablePerStep - mean(availablePerStep))/sd(availablePerStep)
       )
     
@@ -194,7 +195,7 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$turnDist))))
     
     outputPlotData <- outputResults %>% 
-      dplyr::select(-analysis, -sampleID) %>% 
+      dplyr::select(-analysis, -sampleID, -species) %>% 
       dplyr::mutate(across(c(1:3, 5:8), as.character)) %>% 
       tidyr::pivot_longer(cols = c(1:3, 5:8), names_to = "variable") %>% 
       dplyr::mutate(
@@ -255,7 +256,7 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$turnDist))))
     
     outputPlotData <- outputResults %>% 
-      dplyr::select(-analysis, -sampleID) %>% 
+      dplyr::select(-analysis, -sampleID, -species) %>% 
       dplyr::mutate(across(c(1:3, 5:8), as.character)) %>% 
       tidyr::pivot_longer(cols = c(1:3, 5:8), names_to = "variable") %>% 
       dplyr::mutate(

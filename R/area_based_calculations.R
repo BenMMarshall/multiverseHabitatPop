@@ -85,6 +85,7 @@ area_based_calculations <- function(availUseData, sampleGroups, optionsList, opt
                   
                   companaResultsDF <- data.frame(
                     sampleID = sampID,
+                    species = availUseData$species[1],
                     sampleSize = length(IDs),
                     trackFreq = availUseData$trackFreq[1],
                     trackDura = availUseData$trackDura[1],

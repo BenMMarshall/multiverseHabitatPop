@@ -8,7 +8,7 @@
 #'
 #' @export
 area_based_extraction <- function(allIndividualData, optionsList){
-  # allIndividualData <- sampDuraFreqData_60_1
+  # allIndividualData <- sampDuraFreqData_B_60_1
   areaMethod <- optionsList$areaMethod
   areaContour <- optionsList$areaContour
   Method_ap <- optionsList$Method_ap
@@ -30,6 +30,8 @@ area_based_extraction <- function(allIndividualData, optionsList){
                             length(areaContour) *
                             length(Method_sp) *
                             length(Method_ap))
+  
+  speciesCodeLetter <- stringr::str_extract(names(allIndividualData)[1], ".$")
   
   for(method in areaMethod){
     # method <- areaMethod[1]
@@ -184,6 +186,7 @@ area_based_extraction <- function(allIndividualData, optionsList){
               
               usedAvailable <- cbind(usedValues_DF, availValues_DF)
               usedAvailable$id <- movementData$id[1]
+              usedAvailable$species <- speciesCodeLetter
               usedAvailable$classLandscape <- land
               usedAvailable$type <- "III"
               usedAvailable$method <- method
@@ -197,6 +200,7 @@ area_based_extraction <- function(allIndividualData, optionsList){
               
               usedAvailablePop <- cbind(usedValues_DF, availPopValues_DF)
               usedAvailablePop$id <- movementData$id[1]
+              usedAvailablePop$species <- speciesCodeLetter
               usedAvailablePop$classLandscape <- land
               usedAvailablePop$type <- "II"
               usedAvailablePop$method <- method

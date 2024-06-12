@@ -12,12 +12,12 @@ run_brms <- function(resultsData,
                      thin = 4){
   # resultsData <- poisResults
   if("companaHabDiff" %in% names(resultsData)){
-    
+    # resultsData <- areaBasedResults
     modelData <- resultsData %>% 
       # track freq translated into the more intuitive track per hour
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
-      dplyr::mutate(medEst = median(companaHabDiff),
+      dplyr::mutate(medEst = median(companaHabDiff, na.rm = TRUE),
                     absDeltaEst = abs(companaHabDiff - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
@@ -32,7 +32,7 @@ run_brms <- function(resultsData,
       absDeltaEst ~ 1 + sampleSizeScaled + trackFreqScaled + trackDuraScaled +
         type + areaMethod + contourScaled +
         availablePointsScaled + samplingPattern + test +
-        (1|sampleID) + (1|classLandscape)
+        (1|sampleID) + (classLandscape|classLandscape) + (species|species)
     )
     
     brmpriors <- c(
@@ -60,7 +60,7 @@ run_brms <- function(resultsData,
       # track freq translated into the more intuitive track per hour
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
-      dplyr::mutate(medEst = median(modelAvg),
+      dplyr::mutate(medEst = median(modelAvg, na.rm = TRUE),
                     absDeltaEst = abs(modelAvg - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
@@ -73,7 +73,7 @@ run_brms <- function(resultsData,
     formAbsDelta <- brms::bf(
       absDeltaEst ~ 1 + sampleSizeScaled + trackFreqScaled + trackDuraScaled +
         modelFormula + stepDist + turnDist + availablePerStepScaled + averagingMethod +
-        (1|sampleID) + (1|classLandscape)
+        (1|sampleID) + (classLandscape|classLandscape) + (species|species)
     )
     
     
@@ -99,25 +99,26 @@ run_brms <- function(resultsData,
                             "absDelta_ssf")
     
   } else if(resultsData$analysis[1] == "Poisson"){
-    
+    # resultsData <- poisResults
     prefDiffDF <- resultsData %>% 
-      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist)) %>% 
+      # filter(term == "layerc2") %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist, classLandscape,
+                          turnDist, species)) %>% 
       group_by(key) %>% 
       summarise(prefDiff = diff(mean))
     
     resultsData <- resultsData %>% 
       filter(term == "layerc2") %>% 
-      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist,
-                          turnDist)) %>% 
+      mutate(key = paste0(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist, classLandscape,
+                          turnDist, species)) %>% 
       left_join(prefDiffDF)
     
     modelData <- resultsData %>% 
       # track freq translated into the more intuitive track per hour
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
-      dplyr::mutate(medEst = median(mean),
-                    absDeltaEst = abs(mean - medEst)) %>% 
+      dplyr::mutate(medEst = median(prefDiff, na.rm = TRUE),
+                    absDeltaEst = abs(prefDiff - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
         sampleSizeScaled = (sampleSize - mean(sampleSize))/sd(sampleSize),
@@ -129,7 +130,7 @@ run_brms <- function(resultsData,
     formAbsDelta <- brms::bf(
       absDeltaEst ~ 1 + sampleSizeScaled + trackFreqScaled + trackDuraScaled +
         modelFormula + stepDist + turnDist + availablePerStepScaled +
-        (1|sampleID) + (1|classLandscape)
+        (1|sampleID) + (classLandscape|classLandscape) + (species|species)
     )
     
     brmpriors <- c(
@@ -155,7 +156,7 @@ run_brms <- function(resultsData,
       # track freq translated into the more intuitive track per hour
       dplyr::mutate(trackFreq = round(1/as.numeric(trackFreq), digits = 2)) %>% 
       dplyr::group_by(classLandscape) %>% 
-      dplyr::mutate(medEst = median(twoStepBeta),
+      dplyr::mutate(medEst = median(twoStepBeta, na.rm = TRUE),
                     absDeltaEst = abs(twoStepBeta - medEst)) %>% 
       dplyr::ungroup() %>% 
       dplyr::mutate(
@@ -168,7 +169,7 @@ run_brms <- function(resultsData,
     formAbsDelta <- brms::bf(
       absDeltaEst ~ 1 + sampleSizeScaled + trackFreqScaled + trackDuraScaled +
         modelFormula + stepDist + turnDist + availablePerStepScaled +
-        (1|sampleID) + (1|classLandscape)
+        (1|sampleID) + (classLandscape|classLandscape) + (species|species)
     )
     
     brmpriors <- c(

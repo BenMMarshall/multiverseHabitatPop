@@ -7,7 +7,8 @@
 
 # targets::tar_make()
 # targets::tar_make_clustermq(workers = 2) # nolint
-targets::tar_make_clustermq(names = contains("OUT"), workers = 2) # nolint
+# targets::tar_make_clustermq(names = contains("OUT"), workers = 2) # nolint
+targets::tar_make_clustermq(names = contains("Brms"), workers = 2) # nolint
 # targets::tar_make_future(workers = 2) # nolint
 
 # Examine -----------------------------------------------------------------
