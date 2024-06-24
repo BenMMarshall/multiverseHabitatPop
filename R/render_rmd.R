@@ -11,7 +11,7 @@ render_rmd <- function(modelExtracts, effectPlots, allEffectPlots,
                        areaSpecCurve,
                        twoStepSpecCurve,
                        poisSpecCurve,
-                       ssfSpecCurve){
+                       ssfSpecCurve, ...){
   
   rmarkdown::render(input = here::here("notebook", "manuscript",
                                        "multiverseHabitatPopulationManuscript.Rmd"),

@@ -245,6 +245,13 @@ After assessment of the model convergence measures, we modified the running para
 
 # Results
 
+``` {r allEstimates, include=FALSE}
+areaBasedEstimateOutputs <- read_csv(here::here("data", "areaBasedEstimateOutputs.csv.gz"))
+twoStepEstimateOutputs <- read_csv(here::here("data", "twoStepEstimateOutputs.csv.gz"))
+poisEstimateOutputs <- read_csv(here::here("data", "poisEstimateOutputs.csv.gz"))
+ssfEstimateOutputs <- read_csv(here::here("data", "ssfEstimateOutputs.csv.gz"))
+```
+
 ## Specification Curves
 
 The specification curves provide an overview of all the analysis end points.
@@ -296,7 +303,11 @@ knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
 ## Model Results
 
 ```{r loadModelExtracts, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-list2env(modelExtracts, envir = environment())
+# list2env(modelExtracts, envir = environment())
+
+betasOutputs <- read.csv(here::here("data", "brmsEstResults.csv"))
+r2Outputs <- read.csv(here::here("data", "brmsR2Results.csv"))
+
 ```
 
 <!-- The conditional *R^2^* values differed for the three models.  -->

@@ -8,7 +8,7 @@
 #' @export
 generate_allEffect_plots <- function(modelExtracts){
   
-  palette <- multiverseHabitat::get_palette()
+  palette <- get_palette()
   modelPalette <- unname(palette[1:4])
   names(modelPalette) <- c(
     "<b style='color:#AD6DED'>Two-step</b>",
@@ -92,8 +92,10 @@ generate_allEffect_plots <- function(modelExtracts){
     ) %>% 
     filter(!.variable == "b_Intercept")
   
+  xlimits <- c(-0.5, NA)
   
   gradLimits <- range(c(betasOutputsPlotData$.lower, betasOutputsPlotData$.upper))
+  gradLimits[1] <- xlimits[1]
   labelLocation <- data.frame(gradLimits)
   labelLocationText <- data.frame(gradIndent = gradLimits + c(0.15, -0.15))
   labelText <- c("Closer to median\npreference estimate",
@@ -111,14 +113,12 @@ generate_allEffect_plots <- function(modelExtracts){
                         facetSplit, hjust)
   
   
-  print("\u25B2")
-  
   modelLabels <- tribble(
     ~x, ~y, ~text, ~hjust, ~vjust, ~facetSplit, ~labCol,
-    3.05,   0.2, "<b style='color:#AD6DED'>\u25CF = Two-step</b>", 0.5, 0, "Step Generation Choices", "#AD6DED",
-    2.45, -0.42, "<b style='color:#7D26D4'>\u25B2 = Poisson</b>", 0.5, 1, "Step Generation Choices", "#7D26D4",
-    1,   -0.5, "<b style='color:#4F0E99'>\u25C6 = Step Selection</b>", 0.5, 0, "<b style='color:#4F0E99'>SSF Only</b>", "#4F0E99",
-    4,   0.25, "<b style='color:#E87D13'>\u25BC = Area Based</b>", 0.5, 1, "<b style='color:#E87D13'>Area Based Only</b>", "#E87D13"
+    3.55,   0.15, "<b style='color:#AD6DED'>\u25CF = Two-step</b>", 0, 0.5, "Step Generation Choices", "#AD6DED",
+    2.75, -0.252, "<b style='color:#7D26D4'>\u25B2 = Poisson</b>", 0, 0.5, "Step Generation Choices", "#7D26D4",
+    0.95,   -0.29, "<b style='color:#4F0E99'>\u25C6 = Step Selection</b>", 1, 0, "<b style='color:#4F0E99'>SSF Only</b>", "#4F0E99",
+    3.55,   0.2, "<b style='color:#E87D13'>\u25BC = Area Based</b>", 0.5, 1, "<b style='color:#E87D13'>Area Based Only</b>", "#E87D13"
   )
   modelLabels <- modelLabels %>% 
     mutate(facetSplit = factor(facetSplit, levels = c(
@@ -129,10 +129,10 @@ generate_allEffect_plots <- function(modelExtracts){
   
   arrowsDF <- tribble(
     ~x, ~y, ~xend, ~yend, ~facetSplit, ~labCol,
-    3.05,   0.2, 1.4, 0.24, "Step Generation Choices", "#AD6DED",
-    2.45,   -0.42, 4, -0.58, "Step Generation Choices", "#7D26D4",
-    1,   -0.5, 1, -0.32, "<b style='color:#4F0E99'>SSF Only</b>", "#4F0E99",
-    4,   0.25, 5, 0.02, "<b style='color:#E87D13'>Area Based Only</b>", "#E87D13"
+    3.55,   0.15, 2.4, 0.09, "Step Generation Choices", "#AD6DED",
+    2.75,   -0.252, 1.15, -0.37, "Step Generation Choices", "#7D26D4",
+    0.95,   -0.29, 1, -0.185, "<b style='color:#4F0E99'>SSF Only</b>", "#4F0E99",
+    3.55,   0.2, 5, 0.064, "<b style='color:#E87D13'>Area Based Only</b>", "#E87D13"
   )
   arrowsDF <- arrowsDF %>% 
     mutate(facetSplit = factor(facetSplit, levels = c(
@@ -141,14 +141,15 @@ generate_allEffect_plots <- function(modelExtracts){
       "<b style='color:#4F0E99'>SSF Only</b>",
       "<b style='color:#E87D13'>Area Based Only</b>")))
   
+  
   allEffectsPlot <- betasOutputsPlotData %>% 
     ggplot() +
-    geom_hline(yintercept = 0, linewidth = 0.5, alpha = 0.9, colour = "#403F41",
+    geom_hline(yintercept = 0, linewidth = 0.5, alpha = 0.9, colour = palette["coreGrey"],
                linetype = 1) +
     geom_errorbar(aes(x = .variable, ymin = .lower, ymax = .upper, 
                       colour = model),
                   position = position_dodge(0.75), width = 0) +
-    geom_vline(xintercept = seq(0.5,20.5,1), linewidth = 0.25, alpha = 0.5, colour = "#403F41",
+    geom_vline(xintercept = seq(0.5,20.5,1), linewidth = 0.25, alpha = 0.5, colour = palette["coreGrey"],
                linetype = 2) +
     geom_richtext(data = modelLabels,
                   aes(x = x, y = y, label = text,
@@ -176,7 +177,19 @@ generate_allEffect_plots <- function(modelExtracts){
                    colour = model, shape = model, fill = model),
                position = position_dodge(0.75)) +
     geom_point(data = annotationDF,
-               aes(x = -0.75, y = 0)) +
+               aes(x = -0.75, y = 0),
+               colour = palette["coreGrey"], size = 0.01) +
+    geom_richtext(data = betasOutputsPlotData %>% 
+                filter(.value < -0.5),
+              aes(y = xlimits[1], x = .variable,
+                  label = paste0("\u03B2: ", signif(.value, digits = 3),
+                                 "<br><span style='color:#E87D13'>\u2B9C</span> 95% CrI: ",
+                                 signif(.lower, digits = 3), " - ",
+                                 signif(.upper, digits = 3),
+                                 "<br>not shown")),
+              vjust = 0.5, hjust = 0, lineheight = 0.9, fontface = 3,
+              size = 3, label.colour = NA, fill = NA, colour = palette["coreGrey"]) +
+    scale_y_continuous(limits = xlimits) +
     scale_fill_manual(values = modelPalette,
                       breaks = c(
                         "<b style='color:#AD6DED'>Two-step</b>",
@@ -222,6 +235,8 @@ generate_allEffect_plots <- function(modelExtracts){
       panel.grid.major.x = element_blank(),
       panel.grid.minor.x = element_blank()
     )
+  
+  allEffectsPlot
   
   ggsave(allEffectsPlot,
          filename = here("notebook", "figures", "_allEffectsPlot.png"),

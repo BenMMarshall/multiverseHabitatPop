@@ -8,6 +8,7 @@ library(targets)
 library(tarchetypes) # Load other packages as needed. # nolint
 library(tibble)
 library(tidyselect)
+library(readr)
 
 # Set target options:
 tar_option_set(
@@ -468,19 +469,25 @@ ssfCompiled <- list(
     priority = 0.8
   ),
   tar_target(
+    ssfEstimateOutputs,
+    write.csv(ssfResults,
+              here::here("data", "ssfEstimateOutputs_uncom.csv"), row.names = FALSE),
+    format = "file"
+  ),
+  tar_target(
     ssfSpecCurve,
     generate_spec_curves(
       outputResults = ssfResults,
       method = "ssf"
     )
   ),
-  tar_target(
-    ssfPresentCurve,
-    generate_presentation_curves(
-      outputResults = ssfResults,
-      method = "ssf"
-    )
-  ),
+  # tar_target(
+  #   ssfPresentCurve,
+  #   generate_presentation_curves(
+  #     outputResults = ssfResults,
+  #     method = "ssf"
+  #   )
+  # ),
   tar_target(
     ssfBrms,
     run_brms(
@@ -500,19 +507,25 @@ poisCompiled <- list(
     priority = 0.8
   ),
   tar_target(
+    poisEstimateOutputs,
+    write.csv(poisResults,
+              here::here("data", "poisEstimateOutputs_uncom.csv"), row.names = FALSE),
+    format = "file"
+  ),
+  tar_target(
     poisSpecCurve,
     generate_spec_curves(
       outputResults = poisResults,
       method = "pois"
     )
   ),
-  tar_target(
-    poisPresentCurve,
-    generate_presentation_curves(
-      outputResults = poisResults,
-      method = "pois"
-    )
-  ),
+  # tar_target(
+  #   poisPresentCurve,
+  #   generate_presentation_curves(
+  #     outputResults = poisResults,
+  #     method = "pois"
+  #   )
+  # ),
   tar_target(
     poisBrms,
     run_brms(
@@ -530,6 +543,12 @@ twoStepCompiled <- list(
     coreMultiverse[[1]][grep("twoStep", names(coreMultiverse[[1]]))],
     command = rbind(!!!.x),
     priority = 0.8
+  ),
+  tar_target(
+    twoStepEstimateOutputs,
+    write.csv(twoStepResults,
+              here::here("data", "twoStepEstimateOutputs_uncom.csv"), row.names = FALSE),
+    format = "file"
   ),
   tar_target(
     twoStepSpecCurve,
@@ -557,6 +576,12 @@ areaBasedCompiled <- list(
     priority = 0.8
   ),
   tar_target(
+    areaBasedEstimateOutputs,
+    write.csv(areaBasedResults,
+              here::here("data", "areaBasedEstimateOutputs_uncom.csv"), row.names = FALSE),
+    format = "file"
+  ),
+  tar_target(
     areaSpecCurve,
     generate_spec_curves(
       outputResults = areaBasedResults,
@@ -580,9 +605,9 @@ brmModelOutputs <- list(
     # manually pull out the brms model outputs
     list(
       ssfCompiled[[4]],
-      areaBasedCompiled[[3]],
+      areaBasedCompiled[[4]],
       poisCompiled[[4]],
-      twoStepCompiled[[3]]),
+      twoStepCompiled[[4]]),
     command = list(!!!.x),
     priority = 0.5
   ),
@@ -608,7 +633,10 @@ brmModelOutputs <- list(
   ),
   tar_target(
     rmdRender,
-    render_rmd(modelExtracts, effectPlots, allEffectPlots,
+    render_rmd(modelExtracts,
+               effectPlots,
+               allEffectPlots,
+               areaBasedEstimateOutputs,
                areaSpecCurve,
                twoStepSpecCurve,
                poisSpecCurve,
@@ -618,6 +646,24 @@ brmModelOutputs <- list(
   )
 )
 
+# odd issue, that targets have problem with writing to .gz compression during
+# tar_targets, figures sidestepping this with a post compression is ok. Added
+# uncompressed files to .gitignore
+if(all(list.files(here::here("data"), pattern = "EstimateOutputs_uncom.csv") %in% 
+       c("areaBasedEstimateOutputs_uncom.csv",
+         "poisEstimateOutputs_uncom.csv", 
+         "ssfEstimateOutputs_uncom.csv",
+         "twoStepEstimateOutputs_uncom.csv"))){
+  # zip(zipfile = here::here("data", "EstimateOutputs"),
+  #     files = list.files(here::here("data"), pattern = "EstimateOutputs_uncom.csv",
+  #                        full.names = TRUE))
+  for(file in list.files(here::here("data"), pattern = "EstimateOutputs_uncom.csv")){
+    # file <- "areaBasedEstimateOutputs_uncom.csv"
+    fileCom <- sub("_uncom.csv$", ".csv.gz", file)
+    write_csv(read_csv(here::here("data", file)),
+              here::here("data", fileCom))
+  }
+}
 
 # All targets lists -------------------------------------------------------
 
@@ -634,4 +680,3 @@ list(individualSimulationsList_B,
      areaBasedCompiled,
      brmModelOutputs
 )
-

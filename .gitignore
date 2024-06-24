@@ -1,6 +1,6 @@
-data/
 notebook/modelOutput/*.rds
 *.log
+*_uncom.csv
 
 # History files
 .Rhistory
