@@ -9,7 +9,7 @@
 #' @export
 generate_spec_curves <- function(outputResults, method){
   
-  palette <- multiverseHabitat::get_palette()
+  palette <- get_palette()
   # targets::tar_load("ssfResults")
   # outputResults <- ssfResults
   
@@ -30,7 +30,17 @@ generate_spec_curves <- function(outputResults, method){
                                      "Von Mises")
     outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
                                          "Integrated",
-                                         "Standard")
+                                         "Not Integrated")
+    
+    outputResults <- outputResults %>%
+      mutate(signifEst = 
+               case_when(
+                 modelAvgLower < 0 & modelAvgUpper < 0 ~ "Significantly Negative",
+                 modelAvgLower > 0 & modelAvgUpper > 0 ~ "Significantly Positive",
+                 is.na(modelAvgLower) | is.na(modelAvgUpper) ~ "Significance Uncalculated",
+                 TRUE ~ "Not Significant"
+               )
+      )
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
@@ -42,7 +52,7 @@ generate_spec_curves <- function(outputResults, method){
       sort(unique(outputResults$stepDist)),
       sort(unique(outputResults$turnDist)),
       sort(unique(outputResults$averagingMethod))
-      ))
+    ))
     
     outputPlotData <- outputResults %>% 
       dplyr::select(-analysis, -sampleID, -species) %>% 
@@ -75,7 +85,15 @@ generate_spec_curves <- function(outputResults, method){
         "Distribution of Step Lengths",
         "Distribution of Turn Angles",
         "Model Averaging Method")
-      ))
+      ),
+      signifEst = 
+        case_when(
+          modelAvgLower < 0 & modelAvgUpper < 0 ~ "Significantly Negative",
+          modelAvgLower > 0 & modelAvgUpper > 0 ~ "Significantly Positive",
+          is.na(modelAvgLower) | is.na(modelAvgUpper) ~ "Significance Uncalculated",
+          TRUE ~ "Not Significant"
+        )
+      )
     
   } else if(method == "area"){
     
@@ -93,6 +111,16 @@ generate_spec_curves <- function(outputResults, method){
     outputResults$test <- ifelse(outputResults$test == "randomisation",
                                  "Randomisation",
                                  "Parametric")
+    
+    outputResults <- outputResults %>%
+      mutate(signifEst = 
+               case_when(
+                 companaP < 0.05 & estimate < 0 ~ "Significantly Negative",
+                 companaP > 0.05 & estimate > 0 ~ "Significantly Positive",
+                 is.na(companaP) | is.na(estimate) ~ "Significance Uncalculated",
+                 TRUE ~ "Not Significant"
+               )
+      )
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
@@ -139,7 +167,14 @@ generate_spec_curves <- function(outputResults, method){
         "Compana Test Method",
         "Available Area Method",
         "Available Area Contour (%)")
-      ))
+      ),
+      signifEst = 
+        case_when(
+          companaP < 0.05 & estimate < 0 ~ "Significantly Negative",
+          companaP > 0.05 & estimate > 0 ~ "Significantly Positive",
+          is.na(companaP) | is.na(estimate) ~ "Significance Uncalculated",
+          TRUE ~ "Not Significant"
+        ))
     
   } else if(method == "pois"){
     
@@ -149,7 +184,7 @@ generate_spec_curves <- function(outputResults, method){
     
     prefDiffDF <- outputResults %>% 
       mutate(key = paste(sampleID, trackFreq, trackDura, modelFormula, availablePerStep, stepDist, turnDist, classLandscape,
-                          species, sep = "_")) %>% 
+                         species, sep = "_")) %>% 
       group_by(key) %>% 
       summarise(prefDiff = diff(mean))
     
@@ -182,7 +217,17 @@ generate_spec_curves <- function(outputResults, method){
                                      "Von Mises")
     outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
                                          "Integrated",
-                                         "Standard")
+                                         "Not Integrated")
+    
+    outputResults <- outputResults %>%
+      mutate(signifEst = 
+               case_when(
+                 q025 < 0 & q975 < 0 ~ "Significantly Negative",
+                 q025 > 0 & q975 > 0 ~ "Significantly Positive",
+                 is.na(q025) | is.na(q975) ~ "Significance Uncalculated",
+                 TRUE ~ "Not Significant"
+               )
+      )
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
@@ -223,7 +268,15 @@ generate_spec_curves <- function(outputResults, method){
         "Available Points per Step",
         "Distribution of Step Lengths",
         "Distribution of Turn Angles")
-      ))
+      ),
+      signifEst = 
+        case_when(
+          q025 < 0 & q975 < 0 ~ "Significantly Negative",
+          q025 > 0 & q975 > 0 ~ "Significantly Positive",
+          is.na(q025) | is.na(q975) ~ "Significance Uncalculated",
+          TRUE ~ "Not Significant"
+        )
+      )
     
   } else if(method == "twoStep"){
     
@@ -243,7 +296,17 @@ generate_spec_curves <- function(outputResults, method){
                                      "Von Mises")
     outputResults$modelFormula <- ifelse(outputResults$modelForm == "mf.is",
                                          "Integrated",
-                                         "Standard")
+                                         "Not Integrated")
+    
+    outputResults <- outputResults %>%
+      mutate(signifEst = 
+               case_when(
+                 (twoStepBeta - 1.96*twoStepSE) < 0 & (twoStepBeta + 1.96*twoStepSE) < 0 ~ "Significantly Negative",
+                 (twoStepBeta - 1.96*twoStepSE) > 0 & (twoStepBeta + 1.96*twoStepSE) > 0 ~ "Significantly Positive",
+                 is.na((twoStepBeta - 1.96*twoStepSE)) | is.na((twoStepBeta + 1.96*twoStepSE)) ~ "Significance Uncalculated",
+                 TRUE ~ "Not Significant"
+               )
+      )
     
     levelOrdering <- unique(c(
       unique(outputResults$sampleID),
@@ -284,11 +347,23 @@ generate_spec_curves <- function(outputResults, method){
         "Available Points per Step",
         "Distribution of Step Lengths",
         "Distribution of Turn Angles")
-      ))
+      ),
+      signifEst = 
+        case_when(
+          (twoStepBeta - 1.96*twoStepSE) < 0 & (twoStepBeta + 1.96*twoStepSE) < 0 ~ "Significantly Negative",
+          (twoStepBeta - 1.96*twoStepSE) > 0 & (twoStepBeta + 1.96*twoStepSE) > 0 ~ "Significantly Positive",
+          is.na((twoStepBeta - 1.96*twoStepSE)) | is.na((twoStepBeta + 1.96*twoStepSE)) ~ "Significance Uncalculated",
+          TRUE ~ "Not Significant"
+        )
+      )
     
   }
   
   # PLOTS -------------------------------------------------------------------
+  
+  sigPalette <- c(palette[c("VULTURE", "2", "coreGrey")], "Significance Uncalculated" = "#999999")
+  names(sigPalette) <- c("Significantly Negative", "Significantly Positive",
+                         "Not Significant", "Significance Uncalculated")
   
   outputPlotData$classLandscape <- ifelse(str_detect(outputPlotData$classLandscape, "Scram"),
                                           "Scrambled Habitat Layer (i.e., No selection)",
@@ -320,8 +395,8 @@ generate_spec_curves <- function(outputResults, method){
       ggplot() +
       geom_vline(xintercept = 0, linewidth = 0.5, alpha = 0.9, colour = "#403F41",
                  linetype = 1) +
-      geom_point(aes(x = estimate, y = value, colour = d_medEst),
-                 position = position_jitter(width = 0, height = 0.2), alpha = 0.25,
+      geom_point(aes(x = estimate, y = value, colour = signifEst),
+                 position = position_jitter(width = 0, height = 0.2), alpha = 0.15,
                  pch = 3, size = 0.75) +
       geom_point(data = medData, aes(x = modelMedEst, y = value),
                  alpha = 1, size = 1.5, colour = "#FFFFFF") +
@@ -330,9 +405,10 @@ generate_spec_curves <- function(outputResults, method){
       geom_hline(yintercept = seq(0.5,10.5,1), linewidth = 0.5, alpha = 0.25, colour = "#403F41",
                  linetype = 2) +
       facet_grid(variable~classLandscape, scales = "free_y", space = "free", switch = "y") +
-      labs(y = "", x = "Estimate") +
+      labs(y = "", x = "Estimate", colour = "Estimate Significance") +
       scale_x_continuous(limits = xlimits) +
-      scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
+      scale_colour_manual(values = sigPalette) +
+      # scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
       theme_bw() +
       theme(
         line = element_line(colour = palette["coreGrey"]),
@@ -340,11 +416,15 @@ generate_spec_curves <- function(outputResults, method){
         strip.background = element_blank(),
         strip.text = element_text(face = 4, hjust = 1, vjust = 1),
         strip.text.y.left = element_text(angle = 0, margin = margin(-8.5,12,0,0)),
+        # strip.text = element_blank(),
+        # strip.text.y.left = element_blank(),
+        strip.text.x.top = element_blank(),
         axis.text.y.left = element_text(margin = margin(0,-165,0,80)), # 2nd value needed to alligns with facet, 4th gives space left
         axis.ticks.y.left = element_blank(),
         axis.line.x = element_line(),
         strip.clip = "off",
-        legend.position = "none",
+        # legend.position = "none",
+        legend.title = element_text(face = 2, hjust = 0.5),
         panel.border = element_blank(),
         panel.spacing = unit(18, "pt"),
         panel.grid = element_blank())
@@ -364,7 +444,7 @@ generate_spec_curves <- function(outputResults, method){
       geom_vline(xintercept = 0, linewidth = 0.25, alpha = 0.9, colour = "#403F41",
                  linetype = 1) +
       # coord_cartesian(xlim = c(-35, 20)) +
-      geom_point(aes(x = estimate, y = index, colour = d_medEst), alpha = 0.25,
+      geom_point(aes(x = estimate, y = index, colour = signifEst), alpha = 0.25,
                  pch = 3, size = 0.75)+
       geom_segment(data = overallMed,
                    aes(x = medEst, xend = medEst, y = Inf,
@@ -383,7 +463,8 @@ generate_spec_curves <- function(outputResults, method){
       #          xend = overallMed$medEst,
       #          y = overallMed$indexLoc, yend = overallMed$indexLoc,
       #          linewidth = 0.75, colour = palette["coreGrey"]) +
-      scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
+      scale_colour_manual(values = sigPalette) +
+      # scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
       {if(method %in% c("twoStep", "area"))geom_text(data = lowerOutliers,
                                                      aes(x = xlimits[1], y = 500, label = paste0(n, " outliers\n\u2B9C not shown")),
                                                      vjust = 0, hjust = 0, lineheight = 0.95, fontface = 3,
@@ -393,7 +474,7 @@ generate_spec_curves <- function(outputResults, method){
                                                      vjust = 1, hjust = 1, lineheight = 0.95, fontface = 3,
                                                      size = 3)}+
       facet_grid(.~classLandscape, space = "free", switch = "y") +
-      labs(y = "", x = "Estimate") +
+      labs(y = "", x = "Estimate", colour = "Estimate Significance") +
       scale_x_continuous(limits = xlimits) +
       theme_bw() +
       theme(
@@ -408,13 +489,23 @@ generate_spec_curves <- function(outputResults, method){
         axis.line.x = element_line(),
         strip.clip = "off",
         legend.position = "none",
+        # legend.title = element_text(face = 2, hjust = 0.5),
         panel.border = element_blank(),
         panel.spacing = unit(18, "pt"),
         panel.grid = element_blank())
   )
   
   (specComplete <- wrap_plots(overallSpecCurve, splitSpecCurve) +
-      plot_layout(heights = c(1, 3), guides = "collect"))
+      plot_layout(heights = c(1, 3)) &
+      guides(colour = guide_legend(position = "bottom",
+                                   title.position = "top",
+                                   label.position = "bottom",
+                                   direction = "horizontal",
+                                   keywidth = 40,
+                                   keyheight = 0,
+                                   default.unit = "mm",
+                                   override.aes = list(alpha = 1, size = 3,
+                                                       stroke = 2))))
   
   # (specComplete <- overallSpecCurve / splitSpecCurve +
   #     plot_layout(heights = c(1, 3), guides = "collect"))
