@@ -13,28 +13,38 @@
 % \let\cite\citep
 
 %% lines required to use a CSL style for references
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 %% lines to get the code chunks working
@@ -193,7 +203,7 @@ Therefore, the variation between individuals is due to stochasticity rather than
   targets construction
 \end{itemize}
 
-To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.1.6.0 and tarchetypes v.0.8.0 R packages (\citeproc{ref-targets}{Landau, 2021a},\citeproc{ref-tarchetypes}{b}).
+To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.1.6.0 and tarchetypes v.0.9.0 R packages (\citeproc{ref-targets}{Landau, 2021a},\citeproc{ref-tarchetypes}{b}).
 These packages allowed branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice.
 
 \subsubsection{Sampling}\label{sampling}
@@ -234,7 +244,7 @@ The former design (Type III) requires availability habitats to be defined on an 
 To define availability, we created home range polygons then sampled points within, recovering the corresponding habitat at those points.
 The home range (aka availability) polygons can be generated via many different processes.
 We selected to explore MCP and AKDE (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
-We used the \emph{ctmm} v.1.1.1 (\citeproc{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.21 (\citeproc{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
+We used the \emph{ctmm} v.1.2.0 (\citeproc{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.21 (\citeproc{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
 The AKDEs required the fitting of a movement model, we fit multiple models and selected the top scoring model by AIC.
 For the best model we followed recommendations of Silva et al. (\citeproc{ref-silva_autocorrelationinformed_2022}{2022}), opting to run AKDEs as weighted and using (PREML???) as both these options tend to be the most robust in scenarios of lower tracking frequencies.
 There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
@@ -278,7 +288,7 @@ We ran two versions of all models, one with no interactions and one where both s
 Previous work has suggested that the integrated (i.e., model with interactions) performs better
 
 A key component of all the population approaches is how they translate a highly structured dataset into a overall summary.
-We ran individual step selection models using the amt v.0.2.1.0 (\citeproc{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore rudimentary summary methods.
+We ran individual step selection models using the amt v.0.2.2.0 (\citeproc{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore rudimentary summary methods.
 The individual step selection models need to be averaged in some manner to extract a population mean selection.
 We explore two simple options for achieving this: a naive mean of the final estimates (i.e., a mean of the estimated betas), and a model average using the \emph{MuMIn} v.1.47.5 package (\citeproc{ref-MuMIn}{Bartoń, 2023}).
 The \emph{MuMIn} model average approach is weighted based on AICc.
@@ -293,7 +303,7 @@ We implemented these models using the \emph{TwoStepCLogit} v.1.2.5 (\citeproc{re
 More recently Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) have suggested a reformulation of the step selection models to provide faster reliable estimations of population habitat selection.
 The suggestion is to reformulate the model as a Poisson model, but critically with fixed .
 To avoid the slow convergence of MCMC estimation, Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) make use of integrated nested Laplace approximation (INLA) to approximate Bayesian inference.
-We followed the code provided by Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.9.9 (\citeproc{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \citeproc{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \citeproc{ref-martins_bayesian_2013}{Martins et al., 2013}; \citeproc{ref-rue_bayesian_2017}{Rue et al., 2017}; \citeproc{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
+We followed the code provided by Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.4.24 (\citeproc{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \citeproc{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \citeproc{ref-martins_bayesian_2013}{Martins et al., 2013}; \citeproc{ref-rue_bayesian_2017}{Rue et al., 2017}; \citeproc{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
 
 \subsection{Assessing the multiverse}\label{assessing-the-multiverse}
 
@@ -321,7 +331,7 @@ For the area based Compana approach the population effects included: the continu
 For the step-based approaches they all included: model formula (integrated, non-integrated), step distribution (gamma, exponential), turn distribution (Von Mises, uniform).
 The step-selection model approach also included: averaging method (naive, MuMIn average).
 
-We ran the Bayesian Regression Models using the \emph{brms} v.2.19.0 (\citeproc{ref-brms}{Bürkner, 2021}) package.
+We ran the Bayesian Regression Models using the \emph{brms} v.2.21.0 (\citeproc{ref-brms}{Bürkner, 2021}) package.
 Once complete, we checked model convergence using rhat values, acf, and trace plots.
 After assessment of the model convergence measures, we modified the running parameters .
 
@@ -330,75 +340,81 @@ After assessment of the model convergence measures, we modified the running para
 \subsection{Specification Curves}\label{specification-curves}
 
 The specification curves provide an overview of all the analysis end points.
-The area based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. @ref(fig:specCurveArea)), and a near zero effect for the scrambled selection scenario.
-In the positive selection scenario very few esetimates suggested negative selection and those that did appear extreme outliers.
+The area based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \ref{fig:specCurveArea}), and a near zero effect for the scrambled selection scenario.
+In the positive selection scenario very few estimates suggested negative selection and those that did appear extreme outliers.
 When broken down by decision, all decisions bar higher sample sizes and the test method, appear to have a large range in final estimates.
-The sample size decisions has a clear reduction in possible answers when the sample is 10 or 20 individuals, but also a potential interaction with the test method when including 20 individuals.
+The sample size decisions has a clear reduction in possible answers when the sample is 15 or 20 individuals, but also a potential interaction with the test method when including 20 individuals.
+Unexpectedly, the lowest sample size of 3 also lead to visibly reduced estimate variation.
 The test method presents two different outcomes, with the randomisation method presenting a far tighter grouping of estimates in both selection scenarios.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/area_specCurve} \caption{Spec curve}(\#fig:specCurveArea)
+\includegraphics[width=1\linewidth]{../figures/area_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Compana (area-based) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveArea}
 \end{figure}
 
-The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees well with the simulated parametrisation for both selection and scrambled scenarioes (Fig. @ref(fig:specCurveSSF)).
+The specification curve generated from summarised Step Selection Functions (SSFs), similarly reveals a median estimate has agrees well with the simulated parametrisation for both selection and scrambled scenarios (Fig. \ref{fig:specCurveSSF}).
 Also like the Compana curve, the SSF curve has far fewer results that indicate very low habitat preference in the positive selection scenario.
-The majority of these lower estimates of habitat selection appear connected to the decision to use an integrated model formula.
+The majority of these lower estimates of habitat selection appear connected to the decision to use an non-integrated (standard) model formulation, and a decision to model averaging weighted by AIC.
+The naively model averaged estimates are also much more tightly grouped with fewer estimates failing to correctly detect positive preference; the tighter grouping is also reflected in the scrambled selection scenario.
 
 Outside the lower estimates, the clearest structure in the estimates results from different decisions in sample size and tracking regime.
 The tracking regime decisions, frequency and duration, appear to shift the overall range of estimates but with limited impact on the variation.
-Sample size increases, by comparison, appear to reduce the spread of estimates produced.
-Outside of the sampling decisions, the choice to naively average or to average using AIC weights leads to differing spreads of estimates.
-The naively estimated summaries are much more tightly grouped with no estimates failing to correctly detect positive preference.
-The tighter grouping is also reflected in the scrambled selection scenario.
+By comparison, sample size increases appear to reduce the spread of estimates produced.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{Spec curve}(\#fig:specCurveSSF)
+\includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Step-selection Function (SSF) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveSSF}
 \end{figure}
 
-The two-step model approach appears to have had the greatest difficultly consistently detecting the positive selection, but the median selection in the positive selection scenario is still greater than the median from the scrambled scenario (Fig. @ref(fig:specCurveTwoStep)).
+The two-step model approach appears to have had the greatest difficultly consistently detecting the positive selection, but the median selection in the positive selection scenario is still greater than the median from the scrambled scenario (Fig. \ref{fig:specCurveTwoStep}).
 Tracking frequency appears a critical decision in the two-step model with the 1 point per hour choice resulting in more detections of positive selection, and a tighter grouping of estimates.
 The decision to integrate step and turn angle into the model formula appears similarly critical, with the choice not to include the step and turn angle results in in estimates more consistently positive in the positive selection scenario, and close to zero in the scrambled selection scenario.
+The integrated model formulation appears to be largely responsible for the majrity of the variation in estimates.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{Spec curve}(\#fig:specCurveTwoStep)
+\includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Two-step analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveTwoStep}
 \end{figure}
 
-The Poisson based approach, like those before, shows that the vast majority of analysis pathways will result in the correct identification of positive preference for habitat 2 (Fig. @ref(fig:specCurvePois)).
+The Poisson based approach, like those before, shows that the vast majority of analysis pathways will result in the correct identification of positive preference for habitat 2 (Fig. \ref{fig:specCurvePois}), and centre on zero for the scrambled scenario.
 Unlike the previous analyses the tracking duration did not have as clear an impact on the spread of estimates.
 Sample size and tracking frequency did, with larger sample sizes and higher frequency leading to overall decreases in estimate spread.
-Of particular note is that all the failures to detect positive preference occur when the sample size is three.
+Of particular note is that the majority of failures to detect positive preference occur when the sample size is three and at lower tracking frequencies.
 The analysis decisions appear largely un-impactful, particularly the number of points per step.
 Model formulation did have an impact, with the integrated formulation being more consistent at retrieving positive preference in the positive selection scenario, but the spread of estimates was much larger.
-This spread increased associated with the integrated model formulation was similarly seen in the scrambled selection scenario.
+This spread increased associated with the integrated model formulation was similarly seen in the scrambled selection scenario, but resulted in near identical median estimates.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/pois_specCurve} \caption{Spec curve}(\#fig:specCurvePois)
+\includegraphics[width=1\linewidth]{../figures/pois_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Poisson analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurvePois}
 \end{figure}
 
 \subsection{Model Results}\label{model-results}
 
-We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. @ref(fig:allEffectsPlot), and whether those decisions can predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
+We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. \ref{fig:allEffectsPlot}), and whether those decisions can predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
 The models provide a means to account for the variation that originates from stochasticity in the simulation and sampling; the shear number of final estimates can obscure patterns in specification curves.
 
-The area-based Compana approach seemed more insensitive to sample size than the other methods (\(\beta\) 0.28; 95\% HDCI 0.10 - 0.47), instead benefiting from increases in tracking duration (\(\beta\) 0.06; 95\% HDCI 0.04 - 0.07) and frequency (\(\beta\) 0.12; 95\% HDCI 0.10 - 0.13; Fig. @ref(fig:effectPlotArea)).
-This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to marked reductions in deviation from the median estimate: sample size (\(\beta\) -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\) -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\) -0.02; 95\% HDCI -0.03 - -0.02; Fig. @ref(fig:effectPlotPois)).
-The other two methods fall in-between with the sampling having a smaller impact.
-The Step Selection model approach still benefited from increasing sampling duration (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not apparent (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04; Fig. @ref(fig:effectPlotSSF)).
+The conditional \emph{R\textsuperscript{2}} values differed for the four models.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.32; whereas the SSF model returned 0.29; the Two-Step model returned 0.14; and the Poisson model returned 0.3.
 
-The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step (\(beta\) 0.00; 95\% HDCI 0.00 - 0.01).
+The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} suggesting an important role for the fixed/population effects.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.18; whereas the SSF model returned 0.18; the Two-Step model returned 0.05; and the Poisson model returned 0.11
+
+The area-based Compana approach seemed more insensitive to sample size than the other methods (\(\beta\) 0.28; 95\% HDCI 0.10 - 0.47), instead benefiting from increases in tracking duration (\(\beta\) 0.06; 95\% HDCI 0.04 - 0.07) and frequency (\(\beta\) 0.12; 95\% HDCI 0.10 - 0.13; Fig. \ref{fig:effectPlotArea}).
+This contrasts strongly with the Poisson model approach, where all increases in sampling intensity lead to marked reductions in deviation from the median estimate: sample size (\(\beta\) -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\) -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\) -0.02; 95\% HDCI -0.03 - -0.02; Fig. \ref{fig:effectPlotPois}).
+The other two methods fall in-between with the sampling having a smaller impact.
+The Step Selection model approach still benefited from increasing sampling duration (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not apparent (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04; Fig. \ref{fig:effectPlotSSF}).
+
+The points per step decision holds the largest improvement in terms of deviation from the median; the Poisson model approach was aided greatly by increases to the number of random points per step (\(\beta\) 0.00; 95\% HDCI 0.00 - 0.01).
 This clear effect highlights the limitations of relying solely on the specification curves, where this pattern was not clearly visible.
-Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate (\(beta\) -0.18; 95\% HDCI -0.18 - -0.17).
+Unlike the points per step decision the naive averaging of the step selection models leading to a smaller spread of estimates is visible in the specification curve and confirmed by model beta estimate (\(\beta\) -0.18; 95\% HDCI -0.18 - -0.17).
 
 The most mixed decision is the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
-Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach (\(beta\) 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(beta\) -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(beta\) -0.37; 95\% HDCI -0.38 - -0.36) where the not integrated formula tends to reduce the spread of estimates (Fig. @ref(fig:effectPlotSSF).
+Here we see the benefits of including the step and turn angles in the model formula for the summarised SSF approach (\(\beta\) 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(\beta\) -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(\beta\) -0.37; 95\% HDCI -0.38 - -0.36) where the not integrated formula tends to reduce the spread of estimates (Fig. \ref{fig:effectPlotSSF}.
 
 The area based approach had a number of unique decisions.
-Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. @ref(fig:effectPlotArea)).
-In brief, the use of MCPs (\(beta\) -0.16; 95\% HDCI -0.19 - -0.13), larger contours (areas) (\(beta\) 0.05; 95\% HDCI 0.03 - 0.06), and type III designs (\(beta\) -0.29; 95\% HDCI -0.32 - -0.26) tended to lead to more variable results.
+Largely the decisions associated with defining the available area had a large impact that those linked to generating the random points (Fig. \ref{fig:effectPlotArea}).
+In brief, the use of MCPs (\(\beta\) -0.16; 95\% HDCI -0.19 - -0.13), larger contours (areas) (\(\beta\) 0.05; 95\% HDCI 0.03 - 0.06), and type III designs (\(\beta\) -0.29; 95\% HDCI -0.32 - -0.26) tended to lead to more variable results.
 The use of larger contours and type III designs appear to contradict each other, as one would tend towards a larger area, whereas the latter would be a more limited area based.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Beta coefs}(\#fig:allEffectsPlot)
+\includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Beta coefs}\label{fig:allEffectsPlot}
 \end{figure}
 
 \section{Discussion}\label{discussion}
@@ -422,7 +438,7 @@ A better model reflecting the mechanistic reality of the study system is prefera
 An example in the conducted multiverse: we used AKDEs and MCPs as two alternative definitions of availability for the area based method.
 Arguably we should have excluded the MCP choice in favour of the AKDE choice, as the latter does a better job at capturing the movement processes/patterns underlying animal space-use.
 Despite this the frequency of MCP use in spatial ecology (\citeproc{ref-crane_lots_2021}{Crane et al., 2021}), we felt, warranted its inclusion as a conceivable choice.
-Judgement calls such as this are unavoidable, and determining whether a model better reflects the underlying system is exceptionally difficult outside of simulated ``known-truth'' scenarios.
+Judgement calls such as this are unavoidable, and determining whether a model better reflects the underlying system can be exceptionally difficult outside of simulated ``known-truth'' scenarios.
 
 When we are uncertain of the mechanism, or unable to truly model the vast complexity of the system (very frequent in ecology), then informed agreement may be our best option.
 Recent efforts looking at how many researchers answer the same question from the same dataset reveals that these judgement calls result in different answers (\citeproc{ref-gould_same_2023}{Gould et al., 2023}).
@@ -454,23 +470,23 @@ This work was supported by the Natural Environment Research Council (NERC) via t
 
 In addition to packages already mentioned in the methods we also used the following.
 
-We used \emph{R} v.4.3.3 (\citeproc{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.09.1 (\citeproc{ref-rstudio}{RStudio Team, 2022}).
-We used \emph{here} v.1.0.1 (\citeproc{ref-here}{Müller, 2020}) and \emph{qs} v.0.25.5 (\citeproc{ref-qs}{Ching, 2023}) to manage directory addresses and saved objects.
+We used \emph{R} v.4.2.2 (\citeproc{ref-base}{R Core Team, 2023}) via \emph{RStudio} v.2023.09.1 (\citeproc{ref-rstudio}{RStudio Team, 2022}).
+We used \emph{here} v.1.0.1 (\citeproc{ref-here}{Müller, 2020}) and \emph{qs} v.0.26.3 (\citeproc{ref-qs}{Ching, 2023}) to manage directory addresses and saved objects.
 
-We used \emph{raster} v.3.6.20 (\citeproc{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\citeproc{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\citeproc{ref-NLMR}{Sciaini et al., 2018}).
+We used \emph{raster} v.3.6.26 (\citeproc{ref-raster}{Hijmans, 2023}) and \emph{RandomFields} v.3.3.14 (\citeproc{ref-RandomFields}{Schlather et al., 2015}) to aid landscape raster creation alongside NLMR v.1.1.1 (\citeproc{ref-NLMR}{Sciaini et al., 2018}).
 
-We used \emph{ggplot2} v.3.4.2 for creating figures (\citeproc{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.1.2 (\citeproc{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.4 (\citeproc{ref-ggridges}{Wilke, 2022}), \emph{ggdist} v.3.3.0 (\citeproc{ref-ggdist}{Kay, 2023a}), and \emph{ggtext} v.0.1.2 (\citeproc{ref-ggtext}{Wilke \& Wiernik, 2022}).
+We used \emph{ggplot2} v.3.5.1 for creating figures (\citeproc{ref-ggplot2}{Wickham, 2016}), with the expansions: \emph{patchwork} v.1.2.0 (\citeproc{ref-patchwork}{Pedersen, 2022}), \emph{ggridges} v.0.5.6 (\citeproc{ref-ggridges}{Wilke, 2022}), \emph{ggdist} v.3.3.2 (\citeproc{ref-ggdist}{Kay, 2023a}), and \emph{ggtext} v.0.1.2 (\citeproc{ref-ggtext}{Wilke \& Wiernik, 2022}).
 
-We used \emph{brms} v.2.19.0 (\citeproc{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.10.0 (\citeproc{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.4 (\citeproc{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.10.3 (\citeproc{ref-performance}{Lüdecke et al., 2021}).
+We used \emph{brms} v.2.21.0 (\citeproc{ref-brms}{Bürkner, 2021}) to run Bayesian models, with diagnostics generated used \emph{bayesplot} v.1.11.1 (\citeproc{ref-bayesplot}{Gabry et al., 2019}), \emph{tidybayes} v.3.0.6 (\citeproc{ref-tidybayes}{Kay, 2023b}), and \emph{performance} v.0.11.0 (\citeproc{ref-performance}{Lüdecke et al., 2021}).
 
-We used the \emph{dplyr} v.1.1.2 (\citeproc{ref-dplyr}{Wickham et al., 2023}), \emph{tibble} v.3.2.1 (\citeproc{ref-tibble}{Müller \& Wickham, 2023}),
-and \emph{stringr} v.1.5.0 (\citeproc{ref-stringr}{Wickham, 2022}) packages for data manipulation.
+We used the \emph{dplyr} v.1.1.4 (\citeproc{ref-dplyr}{Wickham et al., 2023}), \emph{tibble} v.3.2.1 (\citeproc{ref-tibble}{Müller \& Wickham, 2023}),
+and \emph{stringr} v.1.5.1 (\citeproc{ref-stringr}{Wickham, 2022}) packages for data manipulation.
 
-We used \emph{sp} v.1.6.0 (\citeproc{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{move} v.4.1.12 (\citeproc{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
+We used \emph{sp} v.2.1.4 (\citeproc{ref-sp}{Bivand, Pebesma \& Gomez-Rubio, 2013}), \emph{move} v.4.2.4 (\citeproc{ref-move}{Kranstauber, Smolla \& Scharf, 2023}) for manipulation of spatial data and estimation of space use not otherwise mentioned in the methods.
 
-We used rmarkdown v.2.27 (\citeproc{ref-rmarkdown2018}{Xie, Allaire \& Grolemund, 2018}; \citeproc{ref-rmarkdown2020}{Xie, Dervieux \& Riederer, 2020}; \citeproc{ref-rmarkdown2023}{Allaire et al., 2023}), bookdown v.0.34 (\citeproc{ref-bookdown2016}{Xie, 2016}, \citeproc{ref-R-bookdown}{2022}), tinytex v.0.45 (\citeproc{ref-tinytex2019}{Xie, 2019}, \citeproc{ref-tinytex2023}{2023a}), and knitr v.1.47 (\citeproc{ref-knitr2014}{Xie, 2014}, \citeproc{ref-knitr2015}{2015}, \citeproc{ref-knitr2023}{2023b}) packages to generate type-set outputs.
+We used rmarkdown v.2.27 (\citeproc{ref-rmarkdown2018}{Xie, Allaire \& Grolemund, 2018}; \citeproc{ref-rmarkdown2020}{Xie, Dervieux \& Riederer, 2020}; \citeproc{ref-rmarkdown2023}{Allaire et al., 2023}), bookdown v.0.39 (\citeproc{ref-bookdown2016}{Xie, 2016}, \citeproc{ref-R-bookdown}{2022}), tinytex v.0.51 (\citeproc{ref-tinytex2019}{Xie, 2019}, \citeproc{ref-tinytex2023}{2023a}), and knitr v.1.47 (\citeproc{ref-knitr2014}{Xie, 2014}, \citeproc{ref-knitr2015}{2015}, \citeproc{ref-knitr2023}{2023b}) packages to generate type-set outputs.
 
-We generated R package citations with the aid of \emph{grateful} v.0.2.0 (\citeproc{ref-grateful}{Francisco Rodríguez-Sánchez, Connor P. Jackson \& Shaurita D. Hutchins, 2023}).
+We generated R package citations with the aid of \emph{grateful} v.0.2.4 (\citeproc{ref-grateful}{Francisco Rodríguez-Sánchez, Connor P. Jackson \& Shaurita D. Hutchins, 2023}).
 
 \section{Data availabilty}\label{data-availabilty}
 
@@ -479,19 +495,19 @@ We generated R package citations with the aid of \emph{grateful} v.0.2.0 (\citep
 \section{Supplementary Material}\label{supplementary-material}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/areaBrms_effectsPlot} \caption{Beta coefs}(\#fig:effectPlotArea)
+\includegraphics[width=1\linewidth]{../figures/areaBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotArea}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ssfBrms_effectsPlot} \caption{Beta coefs}(\#fig:effectPlotSSF)
+\includegraphics[width=1\linewidth]{../figures/ssfBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotSSF}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/twoStepBrms_effectsPlot} \caption{Beta coefs}(\#fig:effectPlotTwoStep)
+\includegraphics[width=1\linewidth]{../figures/twoStepBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotTwoStep}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/poisBrms_effectsPlot} \caption{Beta coefs}(\#fig:effectPlotPois)
+\includegraphics[width=1\linewidth]{../figures/poisBrms_effectsPlot} \caption{Beta coefs}\label{fig:effectPlotPois}
 \end{figure}
 
 \clearpage
