@@ -1,0 +1,55 @@
+"Selection Scenario","Decision","Value","Not Significant","Significantly Positive","Significantly Negative","Total Estimates"
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Duration (days)","7",4852,2828,0,7680
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Duration (days)","15",7654,3866,0,11520
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Duration (days)","30",10090,5270,0,15360
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Duration (days)","60",10229,5131,0,15360
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Frequency (points/hour)","0.08",4871,2809,0,7680
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Frequency (points/hour)","0.17",7198,4322,0,11520
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Frequency (points/hour)","0.5",10288,5072,0,15360
+"Correct Habitat Layer (i.e., Positive selection)","Tracking Frequency (points/hour)","1",10468,4892,0,15360
+"Correct Habitat Layer (i.e., Positive selection)","Sample Size (n)","3",3082,6902,0,9984
+"Correct Habitat Layer (i.e., Positive selection)","Sample Size (n)","5",3716,6268,0,9984
+"Correct Habitat Layer (i.e., Positive selection)","Sample Size (n)","10",7039,2945,0,9984
+"Correct Habitat Layer (i.e., Positive selection)","Sample Size (n)","15",9258,726,0,9984
+"Correct Habitat Layer (i.e., Positive selection)","Sample Size (n)","20",9730,254,0,9984
+"Correct Habitat Layer (i.e., Positive selection)","Type II or Type III Habitat Selection","III",15353,9607,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Type II or Type III Habitat Selection","II",17472,7488,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Available Points Multiplier","1",8093,4387,0,12480
+"Correct Habitat Layer (i.e., Positive selection)","Available Points Multiplier","2",8231,4249,0,12480
+"Correct Habitat Layer (i.e., Positive selection)","Available Points Multiplier","4",8213,4267,0,12480
+"Correct Habitat Layer (i.e., Positive selection)","Available Points Multiplier","10",8288,4192,0,12480
+"Correct Habitat Layer (i.e., Positive selection)","Sampling Pattern","Random",16376,8584,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Sampling Pattern","Stratified",16449,8511,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Compana Test Method","Parametric",19528,5432,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Compana Test Method","Randomisation",13297,11663,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Available Area Method","MCP",15950,9010,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Available Area Method","AKDE",16875,8085,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Available Area Contour (%)","95",16144,8816,0,24960
+"Correct Habitat Layer (i.e., Positive selection)","Available Area Contour (%)","99",16681,8279,0,24960
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Duration (days)","7",2868,4665,147,7680
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Duration (days)","15",4885,6429,206,11520
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Duration (days)","30",7020,7934,406,15360
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Duration (days)","60",6890,8132,338,15360
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Frequency (points/hour)","0.08",4394,3003,283,7680
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Frequency (points/hour)","0.17",6353,4917,250,11520
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Frequency (points/hour)","0.5",5730,9336,294,15360
+"Scrambled Habitat Layer (i.e., No selection)","Tracking Frequency (points/hour)","1",5186,9904,270,15360
+"Scrambled Habitat Layer (i.e., No selection)","Sample Size (n)","3",3978,5696,310,9984
+"Scrambled Habitat Layer (i.e., No selection)","Sample Size (n)","5",4359,4948,677,9984
+"Scrambled Habitat Layer (i.e., No selection)","Sample Size (n)","10",4036,5902,46,9984
+"Scrambled Habitat Layer (i.e., No selection)","Sample Size (n)","15",4589,5331,64,9984
+"Scrambled Habitat Layer (i.e., No selection)","Sample Size (n)","20",4701,5283,0,9984
+"Scrambled Habitat Layer (i.e., No selection)","Type II or Type III Habitat Selection","III",10757,13675,528,24960
+"Scrambled Habitat Layer (i.e., No selection)","Type II or Type III Habitat Selection","II",10906,13485,569,24960
+"Scrambled Habitat Layer (i.e., No selection)","Available Points Multiplier","1",5383,6838,259,12480
+"Scrambled Habitat Layer (i.e., No selection)","Available Points Multiplier","2",5388,6823,269,12480
+"Scrambled Habitat Layer (i.e., No selection)","Available Points Multiplier","4",5435,6750,295,12480
+"Scrambled Habitat Layer (i.e., No selection)","Available Points Multiplier","10",5457,6749,274,12480
+"Scrambled Habitat Layer (i.e., No selection)","Sampling Pattern","Random",10791,13612,557,24960
+"Scrambled Habitat Layer (i.e., No selection)","Sampling Pattern","Stratified",10872,13548,540,24960
+"Scrambled Habitat Layer (i.e., No selection)","Compana Test Method","Parametric",10758,13175,1027,24960
+"Scrambled Habitat Layer (i.e., No selection)","Compana Test Method","Randomisation",10905,13985,70,24960
+"Scrambled Habitat Layer (i.e., No selection)","Available Area Method","MCP",10859,13558,543,24960
+"Scrambled Habitat Layer (i.e., No selection)","Available Area Method","AKDE",10804,13602,554,24960
+"Scrambled Habitat Layer (i.e., No selection)","Available Area Contour (%)","95",10704,13685,571,24960
+"Scrambled Habitat Layer (i.e., No selection)","Available Area Contour (%)","99",10959,13475,526,24960
