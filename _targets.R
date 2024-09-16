@@ -27,6 +27,7 @@ tar_option_set(
                "ggtext",
                "patchwork",
                "bayesplot",
+               "tidyr",
                "tidybayes"
   ), # packages that your targets need to run
   garbage_collection = TRUE,

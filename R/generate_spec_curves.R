@@ -391,6 +391,19 @@ generate_spec_curves <- function(outputResults, method){
     xlimits <- c(NA, NA)
   }
   
+  # Output counts for supp tables -------------------------------------------
+
+  significantCounts <- outputPlotData %>%
+    group_by(classLandscape, variable, value, signifEst) %>% 
+    count() %>% 
+    pivot_wider(names_from = signifEst, values_from = n) %>% 
+    replace(is.na(.), 0) %>% 
+    mutate(`Total Estimates` = rowSums(across(where(is.numeric)), na.rm = TRUE)) %>% 
+    rename("Selection Scenario" = classLandscape, "Decision" = variable, "Value" = value)
+  
+  write.csv(significantCounts, here::here("data", paste0("significanceCounts_", method, ".csv")),
+            row.names = FALSE)
+  
   (splitSpecCurve <- outputPlotData %>%
       ggplot() +
       geom_vline(xintercept = 0, linewidth = 0.5, alpha = 0.9, colour = "#403F41",
@@ -466,11 +479,11 @@ generate_spec_curves <- function(outputResults, method){
       scale_colour_manual(values = sigPalette) +
       # scale_colour_gradient2(low = palette["BADGER"], mid = palette["coreGrey"], high = palette["2"]) +
       {if(method %in% c("twoStep", "area"))geom_text(data = lowerOutliers,
-                                                     aes(x = xlimits[1], y = 500, label = paste0(n, " outliers\n\u2B9C not shown")),
+                                                     aes(x = xlimits[1], y = 2000, label = paste0(n, " outliers\n\u2B9C not shown")),
                                                      vjust = 0, hjust = 0, lineheight = 0.95, fontface = 3,
                                                      size = 3)} +
       {if(method %in% c("twoStep", "area"))geom_text(data = upperOutliers,
-                                                     aes(x = xlimits[2], y = nrow(outputResults)-800, label = paste0(n, " outliers\nnot shown \u2B9E")),
+                                                     aes(x = xlimits[2], y = nrow(outputResults)-2000, label = paste0(n, " outliers\nnot shown \u2B9E")),
                                                      vjust = 1, hjust = 1, lineheight = 0.95, fontface = 3,
                                                      size = 3)}+
       facet_grid(.~classLandscape, space = "free", switch = "y") +

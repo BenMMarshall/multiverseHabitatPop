@@ -1,16 +1,10 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-.Random.seed|object|f2842a2c11618fae|||||||||||||||
 allEffectPlots|stem|a26595d0468a42dd|f6c86dd98bf187ef|7a60d8eceaaf7805|92959035||t19898.52751046s|9e969777ae4bd3c2|474453|qs|local|vector|||0.723|Removed 1 rows containing missing values geom_point.|
 allIndividuals|stem|b2ece8bc5f134ad5|28868d5938093a6c|f61547114315460f|1907392347||t19825.5457148002s|e79a14e37a62e401|5656946905|qs|local|vector|||0||
 allIndividuals_B|stem|040f8a95e75df509|5b6cc7fc46bba1ae|3127fa5444b583c7|-2016210224||t19874.4319560521s|658aa2f9af59e56c|5658854732|qs|local|vector|||0||
 allIndividuals_K|stem|8389022b3f57d8cf|44ecdcb019d2cbfe|999532953abc04b3|695330021||t19875.3489965253s|75c0ca0b3969fa32|5592253039|qs|local|vector|||0.001||
 allIndividuals_V|stem|672c73a80f46019f|0fa41fb6567493af|48d9598b2abe9476|535230404||t19875.3539508292s|cd28c3286abb5449|4876409426|qs|local|vector|||0||
 allIndividualsList|object|25b174415284d412|||||||||||||||
-allIndividualsList_B|object|7b359685cafcb967|||||||||||||||
-allIndividualsList_K|object|ca36842ebb44e270|||||||||||||||
-allIndividualsList_V|object|effac6744ee7e065|||||||||||||||
-area_based_calculations|function|c58a1b08b2658bbd|||||||||||||||
-area_based_extraction|function|12b38c0fddf3852f|||||||||||||||
 areaBasedAvailUse_15_1|stem|6673b30f3a31786a|3f7f0529f50966c6|40e8bd1f9e87d5cd|1532139377||t19825.7888821507s|e3472a49c072c417|8184|qs|local|vector|||602.14|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
 areaBasedAvailUse_15_2|stem|6ede323bdb71cfcb|83170f377273a471|840240a582dc8fdd|-240509540||t19825.7862426253s|7ea5c73c39ba6ecf|7710|qs|local|vector|||332.891|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
 areaBasedAvailUse_15_6|stem|ae3c2db68591322a|2ec31aafca03fce7|12be61c2cd3225cb|1930015856||t19825.7890814562s|e6de1ee06c72857e|7067|qs|local|vector|||205.381|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
@@ -63,7 +57,6 @@ areaBasedAvailUse_V_60_2|stem|3a9f785e9f915c18|00d90166c0cb5f31|043febaa16b41c69
 areaBasedAvailUse_V_60_6|stem|c097436f13f83c8b|a692cf5228c71e85|d61d8c027821a7f9|154614170||t19883.0827719966s|dd171f9150d9254e|7656|qs|local|vector|||482.035|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
 areaBasedAvailUse_V_7_1|stem|0be17cb1724828bf|d264be8d2fe16e61|d55c49bb9411483f|1465300109||t19883.0443099426s|449b786766e1c8b1|7401|qs|local|vector|||295.173|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
 areaBasedAvailUse_V_7_2|stem|8940b0e5e86b6959|f0ae0eb112cd0a60|cc6446dad9c9a58f|-765942663||t19883.0448456525s|7b89c5e94106a23c|6769|qs|local|vector|||189.345|GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS support is provided by the sf and terra packages among others. GEOS sup|
-areaBasedCompiled|object|66fbd9090d31d496|||||||||||||||
 areaBasedEstimateOutputs|stem|da7e5646cbdfced7|d78776bf6cf505ac|e0c5d6b9624151d0|-1461440406||t0s|f4066a65ff755f48|0|file|local|vector|||0.787||
 areaBasedOUT_15_1|stem|da2da6b6040f3327|61428e7ca690463c|140b3590b30e7567|-360381539||t19825.7891952989s|a92dfd9522db4487|56161|qs|local|vector|||26.138||
 areaBasedOUT_15_2|stem|b6ab610d17cf6a35|389764f8fdf3c5b3|f269c021a38dcd89|1970714517||t19825.7865540578s|ec8675d4d30183a1|56562|qs|local|vector|||26.101||
@@ -120,50 +113,18 @@ areaBasedOUT_V_7_2|stem|b55f34c7e82d1608|1a9fbfa7567b8a39|c0354c2439ffbc6b|-1150
 areaBasedResults|stem|ea9dea60a0aeb0ed|e7cd53d934e87b2f|6f67fe5e4f76e764|-1149095490||t19883.083103117s|7e42be8411a8e033|2068443|qs|local|vector|||0.105||
 areaBeasedCompiled|object|c98819b68117a077|||||||0||||||||
 areaBrms|stem|c5f7c691e552e93d|1065b3d8f50b7541|c693c5e141781c75|-1459742176||t19884.4689260097s|8409c64e3ad3a6cf|43752673|qs|local|vector|||119732.292|There were 261 divergent transitions after warmup. Seehttpsmcstan.orgmiscwarnings.htmldivergenttransitionsafterwarmupto find out why this is a problem and how to eliminate them.. There were 2980 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. Seehttpsmcstan.orgmiscwarnings.htmlmaximumtreedepthexceeded. Examine the pairs plot to diagnose sampling problems|
-areaSpecCurve|stem|85df77ee5e8f9f3d|28b703ae536b9545|a8452eb111d8ca8b|1400064581||t19970.671570389s|2da295753ae88448|71421212|qs|local|vector|||9.458|Removed 198 rows containing missing values or values outside the scale rangegeom_point.. Removed 1782 rows containing missing values or values outside the scale rangegeom_point.|
-brmModelOutputs|object|526486a3d6be52e1|||||||||||||||
-build_available_area|function|7762b2ec3d2e7353|||||||||||||||
-build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
-coreMultiverse|object|138fbd7ef1476254|||||||||||||||
 diagnosticPlots|stem|6dd71d12008128c1|12ddb21af32ba783|511a682328ec0bc2|1735401021||t19898.5274700882s|de1c6d017cb4e8a8|38|qs|local|vector|||8.254|The facets argument of facet_grid is deprecated as of ggplot2 2.2.0.ℹ Please use the rows argument instead.ℹ The deprecated feature was likely used in the bayesplot package.  Please report the issue at httpsgithub.comstandevbayesplotissues.|
-diagnostics_brms|function|349105e424f63fd9|||||||||||||||
 effectPlots|stem|354276b272a1f6e3|73c6e943f8748169|75de2876ef9348aa|770322098||t19886.3444324068s|19b66876cf01b4d6|169070350|qs|local|vector|||5.174|no nonmissing arguments to max returning Inf. Removed 8 rows containing missing values geom_segment.. no nonmissing arguments to max returning Inf. Removed 9 rows containing missing values geom_segment.. no nonmissing arguments to max returning Inf. Removed 7 rows containing missing values geom_segment.. no nonmissing arguments to max returning Inf. Removed 7 rows containing missing values geom_segment.|
-extract_model_values|function|d3b36c71c01b5a1d|||||||||||||||
-file|object|d5ae581e92318398|||||||||||||||
-fileCom|object|d22d1386b37502a9|||||||||||||||
-generate_allEffect_plots|function|4767a4c766efcb4e|||||||||||||||
-generate_effect_plots|function|0929b4f5673b671c|||||||||||||||
-generate_presentation_curves|function|45fbb407d3937557|||||||||||||||
-generate_spec_curves|function|0b385084947b7e84|||||||||||||||
-get_palette|function|bb7836c7efd341bc|||||||||||||||
 individualSimulations|object|37724e5722d6062f|||||||||||||||
-individualSimulations_B|object|8f8016a401fc6df9|||||||||||||||
-individualSimulations_K|object|85ff19c9854b340e|||||||||||||||
-individualSimulations_V|object|79ddc314c584d913|||||||||||||||
 individualSimulationsList|object|48b0cee45c147494|||||||||||||||
-individualSimulationsList_B|object|d8a142a9c9a25632|||||||||||||||
-individualSimulationsList_K|object|d9308fd1d3dc363e|||||||||||||||
-individualSimulationsList_V|object|d30ea6e13693b7a6|||||||||||||||
-inla_emarginal|function|ff247354aa4b7ddc|||||||||||||||
-inla_mmarginal|function|e30098e3156a8f15|||||||||||||||
 landscape_B_BADGER|stem|3802442303058710|812745949c3cd6fe|6f0b1c7e8b86d869|1236216821||t19874.4286948646s|9fa052e3330cb0dc|65352393|qs|local|vector|||34.376||
 landscape_BADGER|stem|3802442303058710|812745949c3cd6fe|6f0b1c7e8b86d869|-473969066||t19825.5422307159s|9fa052e3330cb0dc|65352393|qs|local|vector|||34.426||
 landscape_K_KINGCOBRA|stem|135dcde53e55ed64|c4ac904c3bd6abd6|6f0b1c7e8b86d869|343943571||t19875.3456288392s|26005f8a90f03895|65126905|qs|local|vector|||34.92||
 landscape_V_VULTURE|stem|fc22dd1101c3dc15|dbe8b26aca0efe44|6f0b1c7e8b86d869|-1786547183||t19875.3506753219s|09977e2347b394fc|32012722|qs|local|vector|||34.562||
-method_indi_ssf|function|bc9449af801fd8d1|||||||||||||||
-method_pois_inla|function|ad5b2a22ac2f7945|||||||||||||||
-method_twoStep|function|c2acb4fbb89b7532|||||||||||||||
 modelExtracts|stem|3bb8529043d3b431|aa212279840b8982|dbe9cf10dda7c1ab|1570558221||t19886.3468971509s|b53cb918c7273aa5|1697|qs|local|vector|||197.955||
 modelsBrms|stem|3b35b1a17f55b38b|1d929aace2aaf38a|ff0fda6f85375d51|-557764263||t19898.5272639238s|83456a3c962be7fe|154713421|qs|local|vector|||0||
-optionsCompleteList|object|8c5a46ab7ee5e2df|||||||||||||||
-optionsList_area|object|58d2716c592b510a|||||||||||||||
-optionsList_areaMethods|object|4ce5d305f253f23b|||||||||||||||
-optionsList_pois|object|4a10e9fc3336d5b8|||||||||||||||
-optionsList_samples|object|ca58f24b28d2da97|||||||||||||||
-optionsList_sff|object|181c484623674061|||||||||||||||
 optionsList_ssfCombine|object|19fb603771e759e1|||||||0||||||||
 poisBrms|stem|d037eca90d39241a|cc4519bfc7a60356|4ebe82830cd1df3f|1296938990||t19884.9904900857s|5a85d8d2f75f51a0|42400128|qs|local|vector|||165016.427|Rows containing NAs were excluded from the model.. There were 487 divergent transitions after warmup. Seehttpsmcstan.orgmiscwarnings.htmldivergenttransitionsafterwarmupto find out why this is a problem and how to eliminate them.. There were 1903 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. Seehttpsmcstan.orgmiscwarnings.htmlmaximumtreedepthexceeded. Examine the pairs plot to diagnose sampling problems|
-poisCompiled|object|fbf1c0ed32946b92|||||||||||||||
 poisEstimateOutputs|stem|da7e5646cbdfced7|4bf76c65ef714987|45dbb62ab7eb0c16|-923871505||t0s|f4066a65ff755f48|0|file|local|vector|||0.815||
 poisOUT_15_1|stem|6d31d48bddf469e5|70605fe592ba61e4|ae8e383e734df420|-300931481||t19826.0231101204s|ab92f317ba164844|85956|qs|local|vector|||5185.525|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. invalid factor level, NA generated. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. invalid factor level, NA generated. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. invalid factor level, NA generated. NaNs produced. NaNs produced|
 poisOUT_15_2|stem|676d9d5f4bfddb02|f435710f9047e710|3bf1c6d4fb08b040|2042519484||t19826.0078087149s|5fc6a2eb1c8f934f|86784|qs|local|vector|||3412.591|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. invalid factor level, NA generated. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. invalid factor level, NA generated. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. invalid factor level, NA generated. NaNs produced|
@@ -219,11 +180,7 @@ poisOUT_V_7_1|stem|9b310dd65107490d|b3bc7678ff8497c0|593988deb823a9ac|1144159830
 poisOUT_V_7_2|stem|73f1e19d315f3819|515d9e36e8702a6d|53d8e8bea68dd885|1412674206||t19880.0514747092s|bb264ac0ca72f7e8|86562|qs|local|vector|||2159.679|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. NAInf replaced by maximum positive value. invalid factor level, NA generated. NAInf replaced by maximum positive value. NAInf replaced by maximum positive value. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. invalid factor level, NA generated. NAInf replaced by maximum positive value. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. invalid factor level, NA generated. NAInf replaced by maximum positive value. NAInf replaced by maximum positive value. invalid factor level, NA generated. NAInf replaced by maximum positive value. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 poisPresentCurve|stem|11696b6374d6f27b|1dbd1c6e65c0341b|1acc535c131a6fc3|-1805910002||t19827.0630682166s||7317568|qs|local|vector|||3.052|Returning more or less than 1 row per summarise group was deprecated indplyr 1.1.0.ℹ Please use reframe instead.ℹ When switching from summarise to reframe, remember that reframe  always returns an ungrouped data frame and adjust accordingly.. Detected an unexpected manytomany relationship between x and y.ℹ Row 1 of x matches multiple rows in y.ℹ Row 7351 of y matches multiple rows in x.ℹ If a manytomany relationship is expected, set relationship   manytomany to silence this warning.. Unknown or uninitialised column classLandscape.|Assigned data ifelse... must be compatible with existing data. Existing data has 1092000 rows. Assigned data has 0 rows.ℹ Only vectors of size 1 are recycled.Caused by error in vectbl_recycle_rhs_rows Cant recycle input of size 0 to size 1092000.
 poisResults|stem|1659f3022dfcd3f8|8e1551c0d3a8c56a|1f2d9d2150bc6fa3|-354638027||t19882.3648358213s|29b8687630729e06|3507042|qs|local|vector|||0.381||
-poisSpecCurve|stem|1d05cfbfe656f73d|d87bc14f3f2ef8b6|329f8a62f59207d1|-905756638||t19970.6717116898s|ffee4730acdd1e64|57582092|qs|local|vector|||3.418|Removed 1 row containing missing values or values outside the scale rangegeom_point.. Removed 7 rows containing missing values or values outside the scale rangegeom_point.|
-render_rmd|function|e0b503faf6c4b3d5|||||||||||||||
-repeats|object|a26c7eb00fbd604a|||||||||||||||
 rmdRender|stem|1a85c807c3e0a68a|e61969c0b6477f49|5a284e7e88f7d16e|-697627373||t19829.7246786627s||131|qs|local|vector|||1.757||LaTeX failed to compile homebmm5DocumentsGit RepositoriesmultiverseHabitatPopnotebookmanuscriptmultiverseHabitatPopulationManuscript.tex. See httpsyihui.orgtinytexrdebugging for debugging tips. See multiverseHabitatPopulationManuscript.log for more info.
-run_brms|function|abdbb4e4ac61f892|||||||||||||||
 sampDuraFreqData_120_0.5|stem|2b3ce7ea028fdfd3|bbc4e271138cf441|103f42ccd593028a|1160669561||t19824.3333966706s|ced4251109278fdd|5305474371|qs|local|vector|||58.836||
 sampDuraFreqData_120_1|stem|d4e09b8630d39f4a|94478f2521c729b2|103f42ccd593028a|98180902||t19824.3357577412s|bf5c9e22aa7c77fd|5303331135|qs|local|vector|||59.228||
 sampDuraFreqData_120_12|stem|a7a6b48d0edb3ab6|d8bd3e74084dbe8f|103f42ccd593028a|21479434||t19824.3322479432s|0e74a5e4eccd3a7f|5300807932|qs|local|vector|||59.825||
@@ -285,7 +242,6 @@ sampDuraFreqData_V_60_2|stem|fa9167fed8acbabc|d634d3a2b17a47c6|5284c121d86002c2|
 sampDuraFreqData_V_60_6|stem|f8edffa27df00fd6|f0c921b46b8688a5|5284c121d86002c2|1300085884||t19879.1634979794s|25fab52b652338f3|4514627715|qs|local|vector|||60.097||
 sampDuraFreqData_V_7_1|stem|9b003cd98e920748|8b5ec993794c48b2|5284c121d86002c2|1393438085||t19879.1582133024s|a6d843a4e06d6272|4514912666|qs|local|vector|||59.32||
 sampDuraFreqData_V_7_2|stem|3ff1ef12a497e04f|ecdd65283f5aafcb|5284c121d86002c2|-1784843512||t19879.1592658295s|2a3dd87478994c20|4514728218|qs|local|vector|||59.358||
-sample_ssf_results|function|2f13a412f6f18dda|||||||||||||||
 simData_B_i001_BADGER|stem|82650047fdd32e94|dbe768f3e77cd410|1e89a17e5a156701|2119477670||t19874.4290155667s|7b97cbf16e842e26|223070796|qs|local|vector|||7.72||
 simData_B_i002_BADGER|stem|b7fdaebd3014bb49|88e2551be0f87f56|1e89a17e5a156701|146381251||t19874.4292340904s|ef28f021267f0fbb|223061950|qs|local|vector|||7.841||
 simData_B_i003_BADGER|stem|7e65e051a77dd030|857d195fcb960272|1e89a17e5a156701|1823678348||t19874.4304738882s|093c7e8689f23f82|223307481|qs|local|vector|||8.159||
@@ -386,10 +342,7 @@ simData_V_i022_VULTURE|stem|a8ea43bb5fee678e|c5d6297fd1a9037b|94039c619d45e70c|1
 simData_V_i023_VULTURE|stem|a3416f55734e9660|94830dcfd9e99c9c|94039c619d45e70c|-957575631||t19875.3518071588s|77e7c449013d48b6|193857968|qs|local|vector|||8.375||
 simData_V_i024_VULTURE|stem|29f50a2a9544bd5f|45ae044d8db76d1b|94039c619d45e70c|-657411152||t19875.3521583722s|edb26bb3a3d5d6a3|193319691|qs|local|vector|||8.278||
 simData_V_i025_VULTURE|stem|23a1af9658859abf|157b885d7521bfea|94039c619d45e70c|-1156795791||t19875.3513551092s|99793ccf2df860b5|193946885|qs|local|vector|||8.795||
-simulate_individual|function|21e0b6b951f30103|||||||||||||||
-simulate_landscape|function|5c094461e7acacb9|||||||||||||||
 ssfBrms|stem|40b2dd6b53fec5d6|15fea0d39545d801|0f6ca52bd057727c|-1762110042||t19885.3156456129s|5057b38eaa39dd82|42026300|qs|local|vector|||73153.128|There were 806 divergent transitions after warmup. Seehttpsmcstan.orgmiscwarnings.htmldivergenttransitionsafterwarmupto find out why this is a problem and how to eliminate them.. There were 2444 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. Seehttpsmcstan.orgmiscwarnings.htmlmaximumtreedepthexceeded. Examine the pairs plot to diagnose sampling problems. The largest Rhat is NA, indicating chains have not mixed.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmlrhat. Bulk Effective Samples Size ESS is too low, indicating posterior means and medians may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmlbulkess. Tail Effective Samples Size ESS is too low, indicating posterior variances and tail quantiles may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmltailess|
-ssfCompiled|object|d42a41a5f43fa7cc|||||||||||||||
 ssfEstimateOutputs|stem|da7e5646cbdfced7|54e9c450bdf918ff|cea5c9535093af88|1372923985||t0s|f4066a65ff755f48|0|file|local|vector|||0.497||
 ssfOUT_15_1|stem|4682a783cbf6fb55|7cc402571a7ab61c|17bbfe28db008548|-441416508||t19648.693745078s|1b6af285f72766df|20254509409|qs|local|vector|||61.985|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfOUT_15_6|stem|a08f477a6b7ed441|9f377c4df605224d|8ccfbc4a076a5575|1204898056||t19648.7012554507s|2c42629783a488b2|20199878561|qs|local|vector|||42.14|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
@@ -452,11 +405,7 @@ ssfSampled_V_60_2|stem|621f4e92f542fc94|a15325d0ec8e3efb|b88c621d4a546685|245756
 ssfSampled_V_60_6|stem|1e8673256fbac73d|334b0e9ad0d4d3fc|78f496f25f4622f1|77379354||t19882.7821625935s|1663370541957f7a|46418|qs|local|vector|||1365.921|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfSampled_V_7_1|stem|5621fe1825f99413|0e5b0a6244117a9c|b2b480696c661ee0|-1579748830||t19882.6420409467s|30a0488291f2b6d6|44696|qs|local|vector|||1330.294|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 ssfSampled_V_7_2|stem|760e923a49599772|07779b66e5087009|0173fe2127fccb9c|670369690||t19882.6510866168s|8e7bf096ff8fe9cb|44701|qs|local|vector|||1133.963|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
-ssfSpecCurve|stem|21bec18e93b22bb3|b85cfcf13242a7bd|5d426bdf95bbe6ba|2058052420||t19970.6716531231s|1a34109d4f4e99e8|51993253|qs|local|vector|||5.355||
-subset_duration|function|02b4076f97a018b7|||||||||||||||
-subset_frequency|function|88b90031aa556afd|||||||||||||||
 twoStepBrms|stem|bb8c0692ecad4514|58e652aa96a51c08|d1a01804be5247ad|1824647210||t19886.2483976857s|a56a4041987ab2f0|26527986|qs|local|vector|||108679.864|There were 328 divergent transitions after warmup. Seehttpsmcstan.orgmiscwarnings.htmldivergenttransitionsafterwarmupto find out why this is a problem and how to eliminate them.. There were 2920 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. Seehttpsmcstan.orgmiscwarnings.htmlmaximumtreedepthexceeded. Examine the pairs plot to diagnose sampling problems. The largest Rhat is NA, indicating chains have not mixed.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmlrhat. Bulk Effective Samples Size ESS is too low, indicating posterior means and medians may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmlbulkess. Tail Effective Samples Size ESS is too low, indicating posterior variances and tail quantiles may be unreliable.Running the chains for more iterations may help. Seehttpsmcstan.orgmiscwarnings.htmltailess|
-twoStepCompiled|object|06beb2f7e3f143ad|||||||||||||||
 twoStepEstimateOutputs|stem|da7e5646cbdfced7|d32e5217d05211ce|88796fe46c0ef871|1187378032||t0s|f4066a65ff755f48|0|file|local|vector|||0.581||
 twoStepOUT_15_1|stem|8b0aa360cb487b2b|4591f5f9a5a5ced4|3144b0e70873edb6|664960581||t19825.8068475684s|2727c73194d2aad3|39706|qs|local|vector|||1274.281|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 twoStepOUT_15_2|stem|635c3c69db2f3ecb|872bd85572acb380|b6ba358313fff4ed|-2021856185||t19825.8015500403s|5badd6df5c53eeb0|39788|qs|local|vector|||788.274|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
@@ -511,12 +460,118 @@ twoStepOUT_V_60_6|stem|44c0b3c81506d45d|e0f953d19c217c43|2ec2ed84f2c9660e|-68767
 twoStepOUT_V_7_1|stem|35ce524119b343ef|6742cc157e23427b|949d8c48c919881d|1009411763||t19880.0857911814s|6c05f935338322c4|39504|qs|local|vector|||812.942|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 twoStepOUT_V_7_2|stem|7f9b9f22e4fa0e71|734d20cc851281b4|f0059de7f6fde1b4|-1189082261||t19880.0931557466s|1b457d5cd7508cae|39977|qs|local|vector|||626.26|NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced. NaNs produced|
 twoStepResults|stem|ada8af5fb8de7c0a|3100aaab57dfa1b7|2529c975ad96fef2|306865412||t19882.7689290146s|9ebfd9c60965d16c|1410932|qs|local|vector|||0.101||
-twoStepSpecCurve|stem|f53594650e420245|18e740b88e9e5ca7|15ba2b59d4c4b0f1|493601022||t19970.671432468s|2f054ac34eb680b4|57383354|qs|local|vector|||9.085|Removed 186 rows containing missing values or values outside the scale rangegeom_point.. Removed 1302 rows containing missing values or values outside the scale rangegeom_point.|
-values_Regime|object|641a9259d698272b|||||||||||||||
-values_Sample|object|69621622560f1360|||||||||||||||
-values_SimIndi|object|f50174a3f81b36a7|||||||||||||||
 values_SimSpecies|object|90da690c81663e8f|||||||||||||||
+areaBasedCompiled|object|2d72698f4434ed8e|||||||||||||||
+twoStepCompiled|object|afbd854c9dcf9c51|||||||||||||||
+subset_frequency|function|88b90031aa556afd|||||||||||||||
+values_Regime|object|641a9259d698272b|||||||||||||||
+optionsList_sff|object|181c484623674061|||||||||||||||
+optionsList_samples|object|ca58f24b28d2da97|||||||||||||||
+generate_presentation_curves|function|45fbb407d3937557|||||||||||||||
+get_palette|function|bb7836c7efd341bc|||||||||||||||
+individualSimulationsList_K|object|9b72d1c42f3db0e0|||||||||||||||
+build_available_polygon|function|c4b0a854a5948c49|||||||||||||||
+diagnostics_brms|function|349105e424f63fd9|||||||||||||||
+optionsList_areaMethods|object|4ce5d305f253f23b|||||||||||||||
+method_indi_ssf|function|bc9449af801fd8d1|||||||||||||||
+run_brms|function|abdbb4e4ac61f892|||||||||||||||
+ssfCompiled|object|f0f0414ccc6fe146|||||||||||||||
+optionsCompleteList|object|8c5a46ab7ee5e2df|||||||||||||||
+optionsList_area|object|58d2716c592b510a|||||||||||||||
+build_available_area|function|7762b2ec3d2e7353|||||||||||||||
+individualSimulationsList_V|object|c3f26527bb2c728c|||||||||||||||
+.Random.seed|object|f2842a2c11618fae|||||||||||||||
+simulate_landscape|function|5c094461e7acacb9|||||||||||||||
+inla_mmarginal|function|e30098e3156a8f15|||||||||||||||
+poisCompiled|object|f91dc709f2d05972|||||||||||||||
+allIndividualsList_B|object|34369899082d36e4|||||||||||||||
+brmModelOutputs|object|d92df00c9df35caa|||||||||||||||
 values_SimSpecies_B|object|90da690c81663e8f|||||||||||||||
-values_SimSpecies_K|object|dfcb4ba3145ad281|||||||||||||||
+inla_emarginal|function|ff247354aa4b7ddc|||||||||||||||
+file|object|d5ae581e92318398|||||||||||||||
+subset_duration|function|02b4076f97a018b7|||||||||||||||
+allIndividualsList_K|object|37f0d16bf998e2ab|||||||||||||||
+values_SimIndi|object|f50174a3f81b36a7|||||||||||||||
 values_SimSpecies_V|object|f296fd543c05244a|||||||||||||||
+allIndividualsList_V|object|5f666d16d83c7ae2|||||||||||||||
+repeats|object|a26c7eb00fbd604a|||||||||||||||
+optionsList_pois|object|4a10e9fc3336d5b8|||||||||||||||
+values_SimSpecies_K|object|dfcb4ba3145ad281|||||||||||||||
+generate_effect_plots|function|0929b4f5673b671c|||||||||||||||
+render_rmd|function|e0b503faf6c4b3d5|||||||||||||||
+individualSimulations_V|object|4edd40b4bfee1493|||||||||||||||
+individualSimulations_B|object|e88bd789cf14188c|||||||||||||||
+extract_model_values|function|d3b36c71c01b5a1d|||||||||||||||
+simulate_individual|function|21e0b6b951f30103|||||||||||||||
+individualSimulationsList_B|object|31e1b63360e9cd57|||||||||||||||
+values_Sample|object|69621622560f1360|||||||||||||||
+coreMultiverse|object|2a2e3342efbc4d0e|||||||||||||||
+fileCom|object|d22d1386b37502a9|||||||||||||||
+individualSimulations_K|object|a2aa0ac8f7046c8d|||||||||||||||
+method_twoStep|function|c2acb4fbb89b7532|||||||||||||||
+area_based_calculations|function|c58a1b08b2658bbd|||||||||||||||
+generate_allEffect_plots|function|4767a4c766efcb4e|||||||||||||||
+generate_spec_curves|function|e3daafd76d7e4041|||||||||||||||
 wrapper_indi_ssf|function|081040af11f44a96|||||||||||||||
+area_based_extraction|function|12b38c0fddf3852f|||||||||||||||
+method_pois_inla|function|ad5b2a22ac2f7945|||||||||||||||
+sample_ssf_results|function|2f13a412f6f18dda|||||||||||||||
+twoStepSpecCurve|stem|56b6dea96ce4a9b5|18e740b88e9e5ca7|040620a191a9291e|493601022||t19982.3690915775s|0d07fb7f9e2dc4b9|57279080|qs|local|vector|||9.104|Removed 186 rows containing missing values or values outside the scale rangegeom_point.. Removed 1302 rows containing missing values or values outside the scale rangegeom_point.|
+areaSpecCurve|stem|5ee2a0315ac7143f|28b703ae536b9545|f0395075e10a427a|1400064581||t19982.3692297758s|6cdbd3aa45b7a6cd|70624873|qs|local|vector|||9.504|Removed 198 rows containing missing values or values outside the scale rangegeom_point.. Removed 1782 rows containing missing values or values outside the scale rangegeom_point.|
+ssfSpecCurve|stem|d7c2e3f3b080e83e|b85cfcf13242a7bd|94be7a51b92767e3|2058052420||t19982.3693130188s|fa281fa4f84a7851|51519391|qs|local|vector|||5.393||
+poisSpecCurve|stem|1d2b6df8527a9e64|d87bc14f3f2ef8b6|568f0cc7f033e871|-905756638||t19982.3693708908s|8bd377c9cfc34814|57233351|qs|local|vector|||3.38|Removed 1 row containing missing values or values outside the scale rangegeom_point.. Removed 7 rows containing missing values or values outside the scale rangegeom_point.|
+areaBasedCompiled|object|2d72698f4434ed8e
+twoStepCompiled|object|afbd854c9dcf9c51
+subset_frequency|function|88b90031aa556afd
+values_Regime|object|641a9259d698272b
+optionsList_sff|object|181c484623674061
+optionsList_samples|object|ca58f24b28d2da97
+generate_presentation_curves|function|45fbb407d3937557
+get_palette|function|bb7836c7efd341bc
+individualSimulationsList_K|object|9b72d1c42f3db0e0
+build_available_polygon|function|c4b0a854a5948c49
+diagnostics_brms|function|349105e424f63fd9
+optionsList_areaMethods|object|4ce5d305f253f23b
+method_indi_ssf|function|bc9449af801fd8d1
+run_brms|function|abdbb4e4ac61f892
+ssfCompiled|object|f0f0414ccc6fe146
+optionsCompleteList|object|8c5a46ab7ee5e2df
+optionsList_area|object|58d2716c592b510a
+build_available_area|function|7762b2ec3d2e7353
+individualSimulationsList_V|object|c3f26527bb2c728c
+.Random.seed|object|f2842a2c11618fae
+simulate_landscape|function|5c094461e7acacb9
+inla_mmarginal|function|e30098e3156a8f15
+poisCompiled|object|f91dc709f2d05972
+allIndividualsList_B|object|34369899082d36e4
+brmModelOutputs|object|d92df00c9df35caa
+values_SimSpecies_B|object|90da690c81663e8f
+inla_emarginal|function|ff247354aa4b7ddc
+file|object|d5ae581e92318398
+subset_duration|function|02b4076f97a018b7
+allIndividualsList_K|object|37f0d16bf998e2ab
+values_SimIndi|object|f50174a3f81b36a7
+values_SimSpecies_V|object|f296fd543c05244a
+allIndividualsList_V|object|5f666d16d83c7ae2
+repeats|object|a26c7eb00fbd604a
+optionsList_pois|object|4a10e9fc3336d5b8
+values_SimSpecies_K|object|dfcb4ba3145ad281
+generate_effect_plots|function|0929b4f5673b671c
+render_rmd|function|e0b503faf6c4b3d5
+individualSimulations_V|object|4edd40b4bfee1493
+individualSimulations_B|object|e88bd789cf14188c
+extract_model_values|function|d3b36c71c01b5a1d
+simulate_individual|function|21e0b6b951f30103
+individualSimulationsList_B|object|31e1b63360e9cd57
+values_Sample|object|69621622560f1360
+coreMultiverse|object|2a2e3342efbc4d0e
+fileCom|object|d22d1386b37502a9
+individualSimulations_K|object|a2aa0ac8f7046c8d
+method_twoStep|function|c2acb4fbb89b7532
+area_based_calculations|function|c58a1b08b2658bbd
+generate_allEffect_plots|function|4767a4c766efcb4e
+generate_spec_curves|function|e3daafd76d7e4041
+wrapper_indi_ssf|function|081040af11f44a96
+area_based_extraction|function|12b38c0fddf3852f
+method_pois_inla|function|ad5b2a22ac2f7945
+sample_ssf_results|function|2f13a412f6f18dda
