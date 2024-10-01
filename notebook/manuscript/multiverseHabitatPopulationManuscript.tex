@@ -56,7 +56,7 @@
 \begin{document}
 \pagestyle{fancy}
 
-\title{Applying a Multiverse to Population Habitat Analyses}
+\title{Population-level Habitat Selection Agree in Effect Direction, but Strength is Sensitive to Researcher Choice}
 \author[1]{Benjamin Michael Marshall*}
 \author[1]{Alexander Bradley Duthie**}
 \affil[1]{Biological and Environmental Sciences, Faculty of Natural Sciences, University of Stirling, Stirling, FK9 4LA, Scotland, UK}
@@ -149,7 +149,11 @@ Therefore, the variation between individuals was due to stochasticity rather tha
 \subsection{Sampling and Analysis Options}\label{sampling-and-analysis-options}
 
 To manage the sampling of the population and the compounding growth of subsequent analysis decisions, we used the targets v.1.6.0 and tarchetypes v.0.9.0 R packages (\citeproc{ref-targets}{Landau, 2021a},\citeproc{ref-tarchetypes}{b}).
-These packages allowed a branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice.
+These packages allowed a branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice (Fig. \ref{fig:decisionTrees}).
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{../ext_images/Decision Visualisation Population} \caption{An illustration of the different decisions creating a multiverse examining animal movement. Species: the three different movement archetypes the simulations were loosely based upon. Sample Size: the number of simulated individuals per each species, with each random sample being repeated twice. Tracking duration: the length in days of the tracking data sampled from the overall simulated year. Tracking frequency: the frequency of the sampling of data points from the 1-per-minute simulated data. Selection scenarios: the two classified habitat landscapes used during analysis. Purple choices concerned with analysis pathways using area-based estimations of availability (Compana: Compositional Analysis). Area method: the method used to generate the available area polygon for the individual (MCP: Minimum Convex Polygon, and AKDE: Autocorrelated Kernel Density Estimator). Contour: the threshold used to convert the utilisation/occurrence distribution into a polygon. Available points: the number of generated points per data point to extract available habitat within the polygon. Points pattern: whether the random points were generated in a stratified or random pattern. Light orange choices pertain to the Two-Step analysis pathways. Medium orange-brown choices pertain to the SSF (Step Selection Function) analysis pathways. Dark brown choices pertain to the Poisson analysis pathways. Model formula: whether the step and turn angles were added as interactions to the habitat variable (integrated if added). Available points: the number of randomly generated available points per step/used point. Turn angle: the distribution used to generate the turn angles of the available points. Step distribution: the distribution used to generate the step distances of the available points. Dark orange is the WRSF (Weighted Resource Selection Function) analysis. Averaging: the method of model averaging used for the SSF models to gain an overall estimate. Decisions that required discrete choices are illustrated with circles, whereas those that continuous are depicted as triangles.}\label{fig:decisionTrees}
+\end{figure}
 
 \subsubsection{Sampling}\label{sampling}
 
@@ -254,7 +258,7 @@ After assessment of the model convergence measures, we modified the running para
 
 \subsection{Specification Curves}\label{specification-curves}
 
-The specification curves provide an overview of all the analysis end points (n = 287,040).
+The specification curves provide an overview of all the analysis end points (n = 287,040; Fig. \ref{fig:decisionTrees}).
 The area based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \ref{fig:specCurveArea}), and a near zero effect for the scrambled selection scenario.
 In the positive selection scenario very few estimates suggested negative selection, and those that did appeared to be extreme outliers.
 When broken down by decision, all decisions except higher sample sizes and the test method, appear to have a large range in final estimates.
@@ -322,26 +326,35 @@ The Two-Step model returned marginal \emph{R\textsuperscript{2}} of 0.05; and th
 The low marginal \emph{R\textsuperscript{2}} in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
 The same is true for the Poisson model, but to a lesser degree.
 
-The Poisson model approach showed the most consistent benefits from more data, where all increases in sampling intensity led to marked reductions in deviation from the median estimate: sample size (\(\beta\) -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\) -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\) -0.02; 95\% HDCI -0.03 - -0.02; Fig. \ref{fig:effectPlotPois}).
-Similarly SSF methods benefited from increasing sampling duration (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not as apparent (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04; Fig. \ref{fig:effectPlotSSF}).
+The conditional \emph{R\textsuperscript{2}} values differed for the four models, ranging from 0.14 to 0.32, indicating a sizeable amount of variation in estimates being uncounted for by either the analysis discrions of random/group effects of sample ID, selection scenario, and species.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.32; whereas the SSF model returned 0.29; the Two-Step model returned 0.14; and the Poisson model returned 0.3.
+
+The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} for Compana and SSF models, suggesting an important role for the fixed/population effects.
+The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.18; whereas the SSF model returned 0.18.
+The Two-Step model returned marginal \emph{R\textsuperscript{2}} of 0.05; and the Poisson model returned 0.11.
+The low marginal \emph{R\textsuperscript{2}} in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
+The same is true for the Poisson model, but to a lesser degree.
+
+The Poisson model approach showed the most consistent benefits from more data (Fig. \ref{fig:allEffectsPlot}), where all increases in sampling intensity led to marked reductions in deviation from the median estimate: sample size (\(\beta\) -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\) -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\) -0.02; 95\% HDCI -0.03 - -0.02).
+Similarly SSF methods benefited from increasing sampling duration (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not as apparent (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04).
 Two-Step methods appeared to benefit from increases in tracking frequency (\(\beta\) -0.08; 95\% HDCI -0.09 - -0.08), but not duration (\(\beta\) 0.00; 95\% HDCI 0.00 - 0.01) or sample size (\(\beta\) 0.00; 95\% HDCI -0.02 - 0.01).
 Potentially the benefits from some of these decisions are masked by the extreme variation in the integrated model formulation decision.
 The area-based Compana approach appeared to vary more in its estimates when provided more data.
-Sample size (\(\beta\) 0.28; 95\% HDCI 0.10 - 0.47), tracking duration (\(\beta\) 0.06; 95\% HDCI 0.04 - 0.07) and tracking frequency (\(\beta\) 0.12; 95\% HDCI 0.10 - 0.13; Fig. \ref{fig:effectPlotArea}) all led to increased variation from the median estimate.
+Sample size (\(\beta\) 0.28; 95\% HDCI 0.10 - 0.47), tracking duration (\(\beta\) 0.06; 95\% HDCI 0.04 - 0.07) and tracking frequency (\(\beta\) 0.12; 95\% HDCI 0.10 - 0.13) all led to increased variation from the median estimate.
 
-The points per step decision made little impact on the variation of estimates in any of the step-based approaches, potentially due to the simplified nature of the landscape used (i.e., no rare habitat that would require high numbers of random points to detect).
+The points per step decision made little impact on the variation of estimates in any of the step-based approaches (Fig. \ref{fig:allEffectsPlot}), potentially due to the simplified nature of the landscape used (i.e., no rare habitat that would require high numbers of random points to detect).
 Use of the gamma distribution, in contrast to the exponential distribution, in all the step-based approaches led to reduced deviation from the median (Poisson: (\(\beta\) -0.07; 95\% HDCI -0.08 - -0.06); SSF: (\(\beta\) -0.01; 95\% HDCI -0.01 - -0.01); Two-Step: (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.09)).
 Whereas the use of Von Mises, in contrast to a uniform distribution, failed to have a sizeable impact in Poisson (\(\beta\) 0.00; 95\% HDCI -0.01 - 0.01) and SSF (\(\beta\) 0.00; 95\% HDCI 0.00 - 0.00) methods and led to greater variation in Two-Step estimates (\(\beta\) 0.09; 95\% HDCI 0.08 - 0.10).
 The underlying simulation used a gamma distribution to generate step lengths and Von Mises for turn angles, that may partially explain this result.
 
-The most mixed decision was the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated).
-Here we saw including the step and turn angles in the model formula for the summarised SSF approach led to greater variation from the median estimate (\(\beta\) 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(\beta\) -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(\beta\) -0.37; 95\% HDCI -0.38 - -0.36) where the non-integrated formula tended to reduce the spread of estimates (Fig. \ref{fig:effectPlotSSF}.
+The most mixed decision was the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated; Fig. \ref{fig:allEffectsPlot}).
+Here we saw including the step and turn angles in the model formula for the summarised SSF approach led to greater variation from the median estimate (\(\beta\) 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(\beta\) -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(\beta\) -0.37; 95\% HDCI -0.38 - -0.36) where the non-integrated formula tended to reduce the spread of estimates.
 
 The greater deviation in averaged SSFs when using the integrated formulation may be a result of its interaction with the model averaging approach.
 The naive model averaging approach led to a dramatically lower spread of estimates (\(\beta\) -0.18; 95\% HDCI -0.18 - -0.17), and avoided underestimating selection in the positive selection scenario (unlike the AIC model average approach; (Fig. \ref{fig:specCurveSSF}).
 
 Finally, the area based approach had a number of unique decisions.
-Largely the decisions associated with defining the available area had a larger impact than those linked to generating the random points (Fig. \ref{fig:effectPlotArea}).
+Largely the decisions associated with defining the available area had a larger impact than those linked to generating the random points (Fig. \ref{fig:allEffectsPlot}).
 In brief, the use of MCPs (\(\beta\) -0.16; 95\% HDCI -0.19 - -0.13) and type III designs (\(\beta\) -0.29; 95\% HDCI -0.32 - -0.26) tended to lead to less variable results.
 Larger contours (areas) (\(\beta\) 0.05; 95\% HDCI 0.03 - 0.06) and more points (\(\beta\) 0.02; 95\% HDCI 0.01 - 0.04) unexpectedly increased variation of estimates from the median.
 The effect of larger contours and type III designs appeared to contradict each other, as both would tend towards a larger area that would presumably result in similar results.
@@ -461,20 +474,6 @@ We have included further model diagnostic plots not included here in the reposit
 \clearpage
 
 \section{Supplementary Material}\label{supplementary-material}
-
-\section{\texorpdfstring{\texttt{\{r\ effectPlotArea,\ echo=FALSE,\ out.width=\textquotesingle{}100\%\textquotesingle{},\ fig.height=5,\ fig.width=3,\ fig.align="centre",\ fig.cap="Point\ estimates\ and\ 95\%\ credible\ intervals\ associated\ \ with\ all\ population\ effects\ from\ the\ Bayesian\ Regression\ models\ aiming\ to\ predict\ deviation\ from\ the\ median\ estimate."\}\ \#\ knitr::include\_graphics(here::here("notebook",\ "figures",\ "areaBrms\_effectsPlot.png"))\ \#}}{\{r effectPlotArea, echo=FALSE, out.width=\textquotesingle100\%\textquotesingle, fig.height=5, fig.width=3, fig.align="centre", fig.cap="Point estimates and 95\% credible intervals associated  with all population effects from the Bayesian Regression models aiming to predict deviation from the median estimate."\} \# knitr::include\_graphics(here::here("notebook", "figures", "areaBrms\_effectsPlot.png")) \#}}\label{r-effectplotarea-echofalse-out.width100-fig.height5-fig.width3-fig.aligncentre-fig.cappoint-estimates-and-95-credible-intervals-associated-with-all-population-effects-from-the-bayesian-regression-models-aiming-to-predict-deviation-from-the-median-estimate.-knitrinclude_graphicshereherenotebook-figures-areabrms_effectsplot.png}
-
-\section{}\label{section}
-
-\section{\texorpdfstring{\texttt{\{r\ effectPlotSSF,\ echo=FALSE,\ out.width=\textquotesingle{}100\%\textquotesingle{},\ fig.height=5,\ fig.width=3,\ fig.align="centre",\ fig.cap="Beta\ coefs"\}\ \#\ knitr::include\_graphics(here::here("notebook",\ "figures",\ "ssfBrms\_effectsPlot.png"))\ \#}}{\{r effectPlotSSF, echo=FALSE, out.width=\textquotesingle100\%\textquotesingle, fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"\} \# knitr::include\_graphics(here::here("notebook", "figures", "ssfBrms\_effectsPlot.png")) \#}}\label{r-effectplotssf-echofalse-out.width100-fig.height5-fig.width3-fig.aligncentre-fig.capbeta-coefs-knitrinclude_graphicshereherenotebook-figures-ssfbrms_effectsplot.png}
-
-\section{}\label{section-1}
-
-\section{\texorpdfstring{\texttt{\{r\ effectPlotTwoStep,\ echo=FALSE,\ out.width=\textquotesingle{}100\%\textquotesingle{},\ fig.height=5,\ fig.width=3,\ fig.align="centre",\ fig.cap="Beta\ coefs"\}\ \#\ knitr::include\_graphics(here::here("notebook",\ "figures",\ "twoStepBrms\_effectsPlot.png"))\ \#}}{\{r effectPlotTwoStep, echo=FALSE, out.width=\textquotesingle100\%\textquotesingle, fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"\} \# knitr::include\_graphics(here::here("notebook", "figures", "twoStepBrms\_effectsPlot.png")) \#}}\label{r-effectplottwostep-echofalse-out.width100-fig.height5-fig.width3-fig.aligncentre-fig.capbeta-coefs-knitrinclude_graphicshereherenotebook-figures-twostepbrms_effectsplot.png}
-
-\section{}\label{section-2}
-
-\section{\texorpdfstring{\texttt{\{r\ effectPlotPois,\ echo=FALSE,\ out.width=\textquotesingle{}100\%\textquotesingle{},\ fig.height=5,\ fig.width=3,\ fig.align="centre",\ fig.cap="Beta\ coefs"\}\ \#\ knitr::include\_graphics(here::here("notebook",\ "figures",\ "poisBrms\_effectsPlot.png"))\ \#}}{\{r effectPlotPois, echo=FALSE, out.width=\textquotesingle100\%\textquotesingle, fig.height=5, fig.width=3, fig.align="centre", fig.cap="Beta coefs"\} \# knitr::include\_graphics(here::here("notebook", "figures", "poisBrms\_effectsPlot.png")) \#}}\label{r-effectplotpois-echofalse-out.width100-fig.height5-fig.width3-fig.aligncentre-fig.capbeta-coefs-knitrinclude_graphicshereherenotebook-figures-poisbrms_effectsplot.png}
 
 \clearpage
 
