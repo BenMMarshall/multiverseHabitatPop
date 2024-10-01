@@ -419,6 +419,15 @@ The Two-Step model returned marginal *R^2^* of `r round(r2Outputs$R2[r2Outputs$m
 The low marginal *R^2^* in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
 The same is true for the Poisson model, but to a lesser degree.
 
+The conditional *R^2^* values differed for the four models, ranging from `r paste(round(range(r2Outputs$R2[r2Outputs$Component == "conditional"]), digits = 2), collapse = " to ")`, indicating a sizeable amount of variation in estimates being uncounted for by either the analysis discrions of random/group effects of sample ID, selection scenario, and species.
+The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "conditional"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "conditional"], digits = 2)`; the Two-Step model returned `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "conditional"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "conditional"], digits = 2)`.
+
+The marginal *R^2^* represents the bulk of the conditional *R^2^* for Compana and SSF models, suggesting an important role for the fixed/population effects.
+The Compana results model had a conditional *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "areaBrms" & r2Outputs$Component == "marginal"], digits = 2)`; whereas the SSF model returned `r round(r2Outputs$R2[r2Outputs$model == "ssfBrms" & r2Outputs$Component == "marginal"], digits = 2)`.
+The Two-Step model returned marginal *R^2^* of `r round(r2Outputs$R2[r2Outputs$model == "twoStepBrms" & r2Outputs$Component == "marginal"], digits = 2)`; and the Poisson model returned `r round(r2Outputs$R2[r2Outputs$model == "poisBrms" & r2Outputs$Component == "marginal"], digits = 2)`.
+The low marginal *R^2^* in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
+The same is true for the Poisson model, but to a lesser degree.
+
 ``` {r prepareInTextBetas, echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
 betasOutputs <- betasOutputs %>% 
