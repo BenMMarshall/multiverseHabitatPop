@@ -1,4 +1,5 @@
 notebook/modelOutput/*.rds
+/notebook/manuscript/feedback/
 *.log
 *_uncom.csv
 
