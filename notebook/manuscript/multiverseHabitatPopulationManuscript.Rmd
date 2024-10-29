@@ -41,6 +41,8 @@ Despite our best efforts, we can never create a fully generalisable study.
 
 The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations for further studies.
 However, the re-examination of foundational work reveals the need to repeatedly question and retest the assumptions subsequent work relies upon.
+For example, this need for reassessment can be seen in studies of bird plumage and its role in mate selection, where false positives rates in published studies may have elevated the importance of plumage colour and pattern size in mate selection [@parker_what_2013; @seguin_no_2012; @sanchez-tojar_meta-analysis_2018].
+Subsequent meta-analyses have highlighted the need to be more cautious with interpreting initial findings, and that future hypotheses require refinement.
 
 <!-- or whether the model used to study said system was correct - Devezer et al2021 -->
 
@@ -359,6 +361,14 @@ ssf_ss20Scramsig <- fileList$ssf %>%
   mutate(inText = paste0(Significantly.Positive, "/", Total.Estimates)) %>% 
   pull(inText)
 
+twoStepSigs <- read.csv(here("data", "significanceCounts_twoStep.csv"))
+
+twoStepSigsInText <- twoStepSigs %>% 
+  group_by(Selection.Scenario) %>% 
+  summarise(Significantly.Positive = sum(Significantly.Positive),
+            Total.Estimates = sum(Total.Estimates)) %>% 
+  mutate(inText = paste0(Significantly.Positive, "/", Total.Estimates, ": ", round(Significantly.Positive/Total.Estimates*100, digits = 0), "%"))
+
 ```
 
 ## Specification Curves
@@ -370,9 +380,9 @@ When broken down by decision, all decisions except higher sample sizes and the t
 The sample size decisions had a clear reduction in possible answers when the sample is 15 or 20 individuals, but also a potential interaction with the test method when including 20 individuals.
 Unexpectedly, the lowest sample size of 3 also led to visibly reduced estimate variation, and the higher sample sizes had a lower rate of significant positive estimates (e.g., `r area_ss3sig` significant results with 3 individuals, compared to only `r area_ss20sig` with 20 individuals).
 The test method presented two different outcomes, with the randomisation method presenting a far tighter grouping of estimates in both selection scenarios, and with higher rates of significance in the positive selection scenario (`r area_tesRansig` compared to `r area_tesParasig`).
-In the scrambled scenario, the grouping was reduced, but rates of significance were very similar (`r area_tesRanScramsig` compared to `r area_tesParaScramsig`).
+In the scrambled scenario, the grouping was reduced, but rates of significance were very similar (`r area_tesRanScramsig` compared to `r area_tesParaScramsig`; Table. \@ref(tab:directTableCompana)).
 
-```{r specCurveArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Compana (area-based) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
+```{r specCurveArea, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Compana (area-based) analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
 knitr::include_graphics(here::here("notebook", "figures", "area_specCurve.png"))
 ```
 
@@ -385,10 +395,10 @@ Outside the lower estimates, the clearest structure in the estimates results fro
 The tracking regime decisions, frequency and duration, appeared to shift the overall range of estimates but with limited impact on the variation.
 By comparison, sample size increases appeared to reduce the spread of estimates produced.
 
-Compared to the Compana analysis there was a cleaner pattern of significance, with the selection scenario having much higher rates of significant selection compared to the scrambled scenario.
+Compared to the Compana analysis there was a cleaner pattern of significance, with the selection scenario having much higher rates of significant selection compared to the scrambled scenario (Table. \@ref(tab:directTableSSF)).
 We also saw a clear increase in significant answers when we increased the sample size in the selection scenario (e.g., sample size of 3 `r ssf_ss3sig` compared to 20 `r ssf_ss20sig`).
 
-```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Step-selection Function (SSF) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
+```{r specCurveSSF, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Step-selection Function (SSF) analysis pathwayswhen applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
 knitr::include_graphics(here::here("notebook", "figures", "ssf_specCurve.png"))
 ```
 
@@ -397,10 +407,10 @@ Tracking frequency appeared to be a critical decision in the two-step model, wit
 The decision to integrate step and turn angle into the model formula appeared similarly critical.
 The choice not to include the step and turn angle resulted in estimates more consistently positive in the positive selection scenario, and close to zero in the scrambled selection scenario. 
 The integrated model formulation appeared to be largely responsible for the majority of the variation in estimates.
-Unlike the SSF results, the Two-Step approach appeared to provide significant answers (both positively and negatively) very readily.
-The balance of positively significant did appear more positive skewed in the selection scenario compared to the scrambled scenario, but all choices resulted in numbers of false positives and negatives bar the non-integrated model formulation choice.
+Unlike the SSF results, the Two-Step approach appeared to provide significant answers (both positively and negatively) very readily (Table. \@ref(tab:directTableTwoStep)).
+The balance of positively significant did appear more positive skewed in the selection scenario (`r twoStepSigsInText[1,4]`) compared to the scrambled scenario (`r twoStepSigsInText[2,4]`), but all choices resulted in numbers of false positives and negatives bar the non-integrated model formulation choice.
 
-```{r specCurveTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Two-step analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
+```{r specCurveTwoStep, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Two-step analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
 knitr::include_graphics(here::here("notebook", "figures", "twoStep_specCurve.png"))
 ```
 
@@ -411,9 +421,9 @@ Of particular note is that the majority of failures to detect positive preferenc
 The analysis decisions appeared largely inconsequential, particularly the number of points per step.
 Model formulation did have an impact, with the integrated formulation being more consistent at retrieving positive preference in the positive selection scenario, but the spread of estimates was much larger.
 This spread increase associated with the integrated model formulation was similarly seen in the scrambled selection scenario, but resulted in near identical median estimates across model formulations.
-Unexpectedly, despite quite clear positive selection in many estimates in the selection scenario, all estimates (regardless of scenario) were deemed not to be significant, with 95% confidence intervals overlapping zero.
+Unexpectedly, despite quite clear positive selection in many estimates in the selection scenario, all estimates (regardless of scenario) were deemed not to be significant, with 95% confidence intervals overlapping zero (Table. \@ref(tab:directTablePois)).
 
-```{r specCurvePois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Poisson analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
+```{r specCurvePois, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="A specification curve showing habitat selection estimates resulting from the Poisson analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice."}
 knitr::include_graphics(here::here("notebook", "figures", "pois_specCurve.png"))
 ```
 
@@ -485,7 +495,7 @@ Larger contours (areas) ($\beta$= `r beta_areaBrms_b_contourScaled`) and more po
 The effect of larger contours and type III designs appeared to contradict each other, as both would tend towards a larger area that would presumably result in similar results.
 By far, the clearest result in the area-based approach was the Compana test method, where randomisation dramatically reduced the spread of estimates ($\beta$= `r beta_areaBrms_b_testrandomisation`).
 
-```{r allEffectsPlot, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Point estimates and 95% credible intervals associated  with all population effects from the Bayesian Regression models aiming to predict deviation from the median estimate."}
+```{r allEffectsPlot, echo=FALSE, out.width='100%', fig.height=5, fig.width=3, fig.align="centre", fig.cap="Point estimates and 95% credible intervals associated  with all population effects from the Bayesian Regression models aiming to predict deviation from the median estimate using the information on analysis chocies. Negative effects indicate that the decisions tends to decrease the deviation from the median estimate, whereas positive effects suggest those decisions are increasingly connected to estimates far from the median estimate. The effects are grouped into those pertaining to sampling choices and tracking, those associated with the step-based analysis approaches (Two-Step, SSF, and Poisson), those connected just to the SSF approach, and those connected to the area-based Compana approach."}
 knitr::include_graphics(here::here("notebook", "figures", "_allEffectsPlot.png"))
 ```
 
@@ -626,9 +636,7 @@ We have included further model diagnostic plots not included here in the reposit
 <!-- # knitr::include_graphics(here::here("notebook", "figures", "poisBrms_effectsPlot.png")) -->
 <!-- # ``` -->
 
-\clearpage
-
-```{r directTable, echo=FALSE, message=FALSE, warning=FALSE}
+```{r directReadTable, echo=FALSE, message=FALSE, warning=FALSE}
 allSigSummary <- do.call(bind_rows, fileList) %>% 
   mutate(Analysis = case_when(
     Analysis == "area" ~ "Compana",
@@ -646,10 +654,14 @@ allSigSummary <- do.call(bind_rows, fileList) %>%
 allSigSummary[is.na(allSigSummary)] <- 0
 
 write.csv(allSigSummary, here::here("data", "Table S1 - Significance Summary.csv"), row.names = FALSE)
+```
+
+```{r directTableCompana, echo=FALSE, message=FALSE, warning=FALSE}
 
 knitr::kable(
-  allSigSummary,
-  caption = "An overall summary of all analyses and associated decisions in relation to the frequency of significant results.",
+  allSigSummary %>% 
+    filter(Analysis == "Compana"),
+  caption = "An overall summary of all Compana analyses and associated decisions in relation to the frequency of significant results.",
   format = "latex",
   align = "lcc",
   vline = "",
@@ -672,6 +684,90 @@ knitr::kable(
 ) %>%
   kableExtra::kable_styling(font_size = 6, latex_options = c("scale_down"))
 
+```
+
+```{r directTableSSF, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(
+  allSigSummary %>% 
+    filter(Analysis == "SSF"),
+  caption = "An overall summary of all SSF analyses and associated decisions in relation to the frequency of significant results.",
+  format = "latex",
+  align = "lcc",
+  vline = "",
+  toprule = "",
+  midrule = "",
+  linesep = "",
+  bottomrule = "",
+  col.names = c(
+    "Analysis",
+    "Selection Scenario",
+    "Decision",
+    "Value",
+    "Significantly Negative",
+    "Not Significant",
+    "Significantly Positive",
+    "Total Estimates",
+    "Significance Uncalculated"
+  )
+  # escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 6, latex_options = c("scale_down"))
+```
+
+```{r directTablePois, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(
+  allSigSummary %>% 
+    filter(Analysis == "Poisson"),
+  caption = "An overall summary of all Poisson analyses and associated decisions in relation to the frequency of significant results.",
+  format = "latex",
+  align = "lcc",
+  vline = "",
+  toprule = "",
+  midrule = "",
+  linesep = "",
+  bottomrule = "",
+  col.names = c(
+    "Analysis",
+    "Selection Scenario",
+    "Decision",
+    "Value",
+    "Significantly Negative",
+    "Not Significant",
+    "Significantly Positive",
+    "Total Estimates",
+    "Significance Uncalculated"
+  )
+  # escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 6, latex_options = c("scale_down"))
+```
+
+```{r directTableTwoStep, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::kable(
+  allSigSummary %>% 
+    filter(Analysis == "TwoStep"),
+  caption = "An overall summary of all Two-Step analyses and associated decisions in relation to the frequency of significant results.",
+  format = "latex",
+  align = "lcc",
+  vline = "",
+  toprule = "",
+  midrule = "",
+  linesep = "",
+  bottomrule = "",
+  col.names = c(
+    "Analysis",
+    "Selection Scenario",
+    "Decision",
+    "Value",
+    "Significantly Negative",
+    "Not Significant",
+    "Significantly Positive",
+    "Total Estimates",
+    "Significance Uncalculated"
+  )
+  # escape = FALSE
+) %>%
+  kableExtra::kable_styling(font_size = 6, latex_options = c("scale_down"))
 ```
 
 \clearpage

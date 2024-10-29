@@ -56,7 +56,7 @@
 \begin{document}
 \pagestyle{fancy}
 
-\title{Population-level Habitat Selection Agree in Effect Direction, but Strength is Sensitive to Researcher Choice}
+\title{Population-level Habitat Selection Analyses Produce Consistent Effect Direction, but Strength is Sensitive to Researcher Choice}
 \author[1]{Benjamin Michael Marshall*}
 \author[1]{Alexander Bradley Duthie**}
 \affil[1]{Biological and Environmental Sciences, Faculty of Natural Sciences, University of Stirling, Stirling, FK9 4LA, Scotland, UK}
@@ -69,7 +69,7 @@
 
 \begin{abstract}
 
-Science strives to be repeatable and reproducible, but we know that different researchers will reach different conclusions even when presented with the same data and questions. This variation due to different choices researchers make during study and analysis may play a role in increasing the variation in results. Variation in results may be particularly pronounced in disciplines with high task uncertainty and difficult-to-control experiment environments, such as ecology. Much of ecological research is concerned with conservation, and a key component of animal conservation is determining animals' habitat requirements that can steer effective habitat protection. Insights into habitat requirements can be gained via the examination of animal movement, but the translation of movement data to usable estimates of habitat selection can be approached in many ways. We use a multiverse approach to explore a suite of possible habitat selection approaches, and determine the chances of incorrectly identifying habitat selection in two simulated scenarios. We find that the majority of different analysis pathways correctly identify selection, but the strength of that selection is susceptible to analysis choice. We identify several choices that have disproportionate impacts on selection estimates, with some choices having contrasting impacts depending on the analysis approach. Overall our results suggest that while we can be broadly confident in the conclusions drawn from habitat selection studies, we cannot ignore analysis choices, especially when the strength of selection is of particular concern.
+Science strives to be repeatable and reproducible, but we know that different researchers will reach different conclusions even when presented with the same data and questions. This variation due to different choices researchers make during study and analysis may play a role in increasing variation in results. Variation in results may be particularly pronounced in disciplines with high task uncertainty and difficult-to-control experimental environments, such as ecology. Ecological research is often concerned with conservation, and a key component of animal conservation is determining animals' habitat requirements that can steer effective habitat protection. Insights into habitat requirements can be gained via the examination of animal movement, but the translation of movement data to usable estimates of habitat selection can be approached in many ways. We use a multiverse approach to explore a suite of possible habitat selection approaches and determine the chances of incorrectly identifying habitat selection in two simulated scenarios. We find that the majority of different analysis pathways correctly identify selection, but the strength of that selection is susceptible to analysis choice. We identify several choices that have disproportionate impacts on selection estimates, with some choices having contrasting impacts depending on the analysis approach. Overall our results suggest that while we can be broadly confident in the conclusions drawn from habitat selection studies, we cannot ignore analysis choices, especially when the strength of selection is of particular concern.
 
 \end{abstract}
 
@@ -82,41 +82,43 @@ Movement ecology, simulation, compositional, step selection function, two-step, 
 
 \section{Introduction}\label{introduction}
 
-The application of science to policy is reliant on results being repeatable, reliable, and generalisable.
-Efforts to achieve this often consistent of removing idiosyncrasies of studies; we remove confounding variables, control for non-target variables; and conduct replicants.
-Despite our best efforts we can never create a fully generalisable study.
+The successful application of science to policy relies on results being repeatable, reliable, and generalisable.
+Efforts to achieve this often consist of removing idiosyncrasies of studies; we remove confounding variables, control for non-target variables; and conduct replicants.
+Despite our best efforts, we can never create a fully generalisable study.
 
-The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations of further studies.
+The vast majority of the time our efforts to account for study-specific variation appear adequate, resulting in answers that can form the foundations for further studies.
 However, the re-examination of foundational work reveals the need to repeatedly question and retest the assumptions subsequent work relies upon.
+For example, this need for reassessment can be seen in studies of bird plumage and its role in mate selection, where false positives rates in published studies may have elevated the importance of plumage colour and pattern size in mate selection (\citeproc{ref-seguin_no_2012}{Seguin \& Forstmeier, 2012}; \citeproc{ref-parker_what_2013}{Parker, 2013}; \citeproc{ref-sanchez-tojar_meta-analysis_2018}{Sánchez-Tójar et al., 2018}).
+Subsequent meta-analyses have highlighted the need to be more cautious with interpreting initial findings, and that future hypotheses require refinement.
 
-While other disciplines' replication rates have been more closely examined (\citeproc{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \citeproc{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}; see \citeproc{ref-kelly_rate_2019}{Kelly, 2019} for ecological replication rates), there is evidence that biology, ecology and evolution studies require similar scrutiny with regards to reliability as many of the same incentive structures seen as responsible exist (\citeproc{ref-fanelli_pressures_2010}{Fanelli, 2010}; \citeproc{ref-ware_significance_2015}{Ware \& Munafò, 2015}; \citeproc{ref-smaldino_natural_2016}{Smaldino \& McElreath, 2016}; \citeproc{ref-Brembs2018}{Brembs, 2018}).
-Replication studies and meta-analyses have shown previously that results in ecology and evolution may need further study (\citeproc{ref-seguin_no_2012}{Seguin \& Forstmeier, 2012}; \citeproc{ref-parker_what_2013}{Parker, 2013}; \citeproc{ref-sanchez-tojar_meta-analysis_2018}{Sánchez-Tójar et al., 2018}).
+While other disciplines' replication rates have been more closely examined (\citeproc{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \citeproc{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}; see \citeproc{ref-kelly_rate_2019}{Kelly, 2019} for ecological replication rates), there is evidence that ecology and evolution studies require similar scrutiny with regards to reliability as many of the same incentive structures seen as responsible exist, such as a prioritisation of novel findings and clear significant research narratives (\citeproc{ref-fanelli_pressures_2010}{Fanelli, 2010}; \citeproc{ref-ware_significance_2015}{Ware \& Munafò, 2015}; \citeproc{ref-smaldino_natural_2016}{Smaldino \& McElreath, 2016}; \citeproc{ref-Brembs2018}{Brembs, 2018}).
+Replication studies and meta-analyses have shown that results in ecology and evolution may need further scrutiny (\citeproc{ref-seguin_no_2012}{Seguin \& Forstmeier, 2012}; \citeproc{ref-parker_what_2013}{Parker, 2013}; \citeproc{ref-sanchez-tojar_meta-analysis_2018}{Sánchez-Tójar et al., 2018}).
 In general, it appears that initial findings are more extreme than subsequently findings, and that their initial momentum in regards to research direction is slow to reorient (\citeproc{ref-jennions_relationships_2002}{Jennions \& Møller, 2002}; \citeproc{ref-barto_dissemination_2012}{Barto \& Rillig, 2012}).
 
-For disciplines where direct replications are more common and feasible, replication efforts can play a feedback role in science (\citeproc{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \citeproc{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}; \citeproc{ref-peterson_self-correction_2021}{Peterson \& Panofsky, 2021}).
+For disciplines where direct replications are more common and feasible, replication can play a larger feedback role (\citeproc{ref-freedman_economics_2015}{Freedman, Cockburn \& Simcoe, 2015}; \citeproc{ref-open_science_collaboration_estimating_2015}{Open Science Collaboration, 2015}; \citeproc{ref-peterson_self-correction_2021}{Peterson \& Panofsky, 2021}).
 Ecological systems are complex and impossible to fully control leading to ecologists' frequent reliance on ``natural experiments''.
 
 Natural experiments by their nature are impossible to replicate perfectly, forcing ecology to rely on conceptual or quasi replications (\citeproc{ref-palmer_quasi-replication_2000}{Palmer, 2000}; \citeproc{ref-fraser_role_2020}{Fraser et al., 2020}).
-In broader terms, undertaking studies in which subject and method differ from the original study, where the research questions are conceptually similar (\citeproc{ref-nakagawa_replicating_2015}{Nakagawa \& Parker, 2015}; \citeproc{ref-kelly_rate_2019}{Kelly, 2019}).
-These replication efforts are still valuable, and valued by the scientific community (\citeproc{ref-fraser_role_2020}{Fraser et al., 2020}), while also aiding to gauge the reliably of proposed patterns, theories, or laws.
+These replications may have subjects and methods that differ from the original study, or where the research questions are conceptually similar (\citeproc{ref-nakagawa_replicating_2015}{Nakagawa \& Parker, 2015}; \citeproc{ref-kelly_rate_2019}{Kelly, 2019}).
+These replication efforts are still valuable, and valued by the scientific community (\citeproc{ref-fraser_role_2020}{Fraser et al., 2020}), as they aid gauging the reliably of proposed patterns, theories, or laws.
 
-Ecology and evolution, due to the high task uncertainty, tends towards a system of organic self-correction, where the complexity of study systems can explain away the differences between studies (i.e., inconsistencies replication), leaving the integration of past and subsequent findings more open to interpretation (\citeproc{ref-peterson_self-correction_2021}{Peterson \& Panofsky, 2021}). .
+Ecology and evolution, due to the high task uncertainty and limited options of direct replication in the wild, tends towards a system of organic self-correction, where the complexity of study systems can explain away the differences between studies (i.e., inconsistencies replication), leaving the integration of past and subsequent findings more open to interpretation (\citeproc{ref-peterson_self-correction_2021}{Peterson \& Panofsky, 2021}). .
 
 Animal movement, like many aspects of ecology, is a field of study in which replications are difficult to conduct.
-Tracking animals is costly and come with serious ethical considerations, especially for animals where the tracking equipment can impact their health, mobility, and behaviour (\citeproc{ref-Sperry2009}{Sperry et al., 2009}; \citeproc{ref-homberger_strong_2021}{Homberger et al., 2021}; \citeproc{ref-portugal_externally_2022}{Portugal \& White, 2022}).
-Therefore, there comes a strong incentive to extract the maximum value for every tracked animal, and to ensure that all results are as reliable as possible.
+Tracking animals is costly and comes with serious ethical considerations, especially for animals where the tracking equipment can impact their health, mobility, and behaviour (\citeproc{ref-Sperry2009}{Sperry et al., 2009}; \citeproc{ref-homberger_strong_2021}{Homberger et al., 2021}; \citeproc{ref-portugal_externally_2022}{Portugal \& White, 2022}).
+Therefore, there is a strong incentive to extract the maximum value for every tracked animal and to ensure that all results are as reliable as possible.
 
 The findings from animal movement studies can be linked with landscape management and integrated into conservation plans (\citeproc{ref-Fraser2018}{Fraser et al., 2018}; \citeproc{ref-doherty_coupling_2018}{Doherty \& Driscoll, 2018}).
-For the correct conservation decisions to be made they must be based on reliable information.
 A key component for protecting species is identifying that species' requirements; the examination of movement can reveal those requirements (\citeproc{ref-mueller_how_2011}{Mueller et al., 2011}; \citeproc{ref-doherty_animal_2019}{Doherty, Fist \& Driscoll, 2019}).
 Suitable habitat (as defined in various ways) is a fundamental requirement, and the protection/restoration of suitable habitat is an actionable conservation response.
+Reliable determinations of suitable habitat are therefore required the correct conservation decisions.
 
 As demonstrated by many analyst projects, different answers can originate from the same dataset, and even the same question (e.g., \citeproc{ref-silberzahn_many_2018}{Silberzahn et al., 2018}; \citeproc{ref-huntingtonklein_influence_2021}{Huntington‐Klein et al., 2021}).
-Such ``researcher degrees of freedom'' {[}or flexibility in analysis; Forstmeier, Wagenmakers \& Parker (\citeproc{ref-forstmeier_detecting_2017}{2017}){]} can be the result of differences in question interpretation (\citeproc{ref-auspurg_has_2021}{Auspurg \& Brüderl, 2021}), as well as the analysis approach taken (\citeproc{ref-gelman_garden_2013}{Gelman \& Loken, 2013}; \citeproc{ref-bastiaansen_time_2020}{Bastiaansen et al., 2020}).
+Such ``researcher degrees of freedom'' {[}or flexibility in analysis; Forstmeier, Wagenmakers \& Parker (\citeproc{ref-forstmeier_detecting_2017}{2017}){]} can be the result of differences in question interpretation (\citeproc{ref-auspurg_has_2021}{Auspurg \& Brüderl, 2021}) and the analysis approach taken (\citeproc{ref-gelman_garden_2013}{Gelman \& Loken, 2013}; \citeproc{ref-bastiaansen_time_2020}{Bastiaansen et al., 2020}).
 When drawing information to be used in a conservation plan, it would be advisable to know whether decisions would be different had the data been examined in a different way.
-Previous explorations have shown that research degrees of freedom are sufficiently large to alter effect strength and the final conclusions (\citeproc{ref-salis_how_2021}{Salis, Lena \& Lengagne, 2021}; \citeproc{ref-desbureaux_subjective_2021}{Desbureaux, 2021}).
+Previous explorations have shown that researcher degrees of freedom are sufficiently large to alter effect strength and the final conclusions (\citeproc{ref-salis_how_2021}{Salis, Lena \& Lengagne, 2021}; \citeproc{ref-desbureaux_subjective_2021}{Desbureaux, 2021}).
 
-While many analyst type projects represent an ideal, actually capable of capturing the variation in results stemming from the researchers themselves, the logistics of conducting one make them less feasible on broader scales.
+While many analysts projects represent an ideal, actually capable of capturing the variation in results stemming from the researchers themselves, the logistics of conducting one make them less feasible on broader scales.
 An alternative, albeit with its own set of limitations, would be to conduct a multiverse analysis (\citeproc{ref-steegen_increasing_2016}{Steegen et al., 2016}).
 Multiverse analyses consist of a suite of analysis pathways, where diverging analysis decisions create a compounding set of possible answers to a given question.
 Multiverses cannot provide evidence for the correct answer, but can allow researchers to explore the sensitivity of their conclusions to any number of analytical variables (\citeproc{ref-rijnhart_assessing_2021}{Rijnhart et al., 2021}).
@@ -125,26 +127,33 @@ This can be particularly true when we use the multiverse in a synthetic or simul
 
 Previously we explored how individual habitat selection estimates were impacted by decisions regarding sampling and analysis (\citeproc{ref-marshall_habitat_2024}{Marshall \& Duthie, 2024}).
 Broadly we found that sampling (data quantity) was more important than analysis decisions when estimating habitat selection, and that more modern analysis methods tend to produce less variable results.
-Here we build upon those findings to target population level habitat selection analyses. We use simulated animal data with a known habitat preference to explore the impacts of sampling and analysis choice in recovering the direction of that predefined preference.
+Here we build upon those findings to target population level habitat selection analyses.
+We use simulated animal data with a known habitat preference to explore the impacts of sampling and analysis choice in recovering the direction of that predefined preference.
 
 \section{Methods}\label{methods}
 
 \subsection{Simulating the Scenarios}\label{simulating-the-scenarios}
 
-We used the abmAnimalMovement v.0.1.3.0 (\citeproc{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}) package to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
-The abmAnimalMovement package provides an agent-based approach to simulating terrestrial animal movement using raster environmental data to guide the animals decisions.
+We used the abmAnimalMovement v.0.1.3.0 (\citeproc{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}) R package to simulate the movement data of an animal with a predefined (i.e., known) habitat preference.
+The abmAnimalMovement package uses an agent-based approach to simulate terrestrial animal movement using raster environmental data to guide the animals decisions.
 We used the NLMR v.1.1.1 package (\citeproc{ref-NLMR}{Sciaini et al., 2018}) to generate the three required resource/environmental rasters: movement resistance, foraging quality, and shelter site quality.
-The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (differing in movement characteristics and resource prioritisation), and site fidelity.
-For the purposes of this study we used one of the pre-created example pseudo-species: Badger, described in the package manuscript.
-In brief, the badger is a terrestrial species occupying several shelter sites, with a 8-12 hour activity cycle with minor seasonal variation, and is subject to differing movement resistance across the landscape.
+The abmAnimalMovement package has systems for simulating activity cycles, three separate behavioural states (resting, foraging, exploring; differing in movement characteristics and resource prioritisation), and site fidelity.
+For the purposes of this study, we used the pre-created pseudo-species presented in Marshall \& Duthie (\citeproc{ref-abmAnimalMovement}{2022}).
+1. Badger. The badger is a terrestrial species subject to differing movement resistance across the landscape occupying several shelter sites, with an 8-12 hour activity cycle and minor seasonal variation.
+2. Vulture. The vulture is treated as a terrestrial species but does not experience any movement resistance across the landscape. It uses three shelter sites, with an 12 hour activity cycle and minor seasonal variation. Unlike the randomly uniform resource landscape of the badger, the vulture's landscape is divided into two distinct areas of higher and lower foraging quality.
+3. King Cobra. The king cobra is a terrestrial species subject to differing movement resistance across the landscape similar to the badger. It uses 12 shelter sites, and has a more complex activity cycle with an 8-12 hour diel cycle, a approximately weekly cycle of resting to mimic long digestion periods, and a weak seasonal cycle all working additively to define resting behaviour. The landscape is universally random similar to the badger, but contains two lines of heightened movement resistance serving as movement barriers.
 
 For the purposes of the analysis we simplified the landscape information into categories --akin to the sort of land-use information more frequently available to researchers of animal movement.
 We focused on foraging quality because it influences the greatest amounts of movement (in terms of time) compared to sheltering or exploratory movements.
 We converted the continuous foraging quality raster into a binary, where higher quality areas (greater than 0.5) are classed as 2, and lower quality areas as 0.
+This classified landscape raster served as the basis for assessing habitat selection, in a scenario with a known preference for habitat 2.
+We also ran all described multiverse analyses (see below) with a second landscape classification.
+In this second scenario we scrambled the values of the cells, thereby breaking the connection between the underlying raster layers used to simulated the movement and the classification used in the analysis.
+This scrambled habitat classification allowed us to examining the variation in estimates in a zero-selection scenario, while serving as a direct comparison for the selection scenario.
 
-We used that simulated landscape and abmAnimalMovement to simulate a population of 25, that was later sampled from.
-All individuals of this population had the same simulation settings apart from starting location.
-Therefore, the variation between individuals was due to stochasticity rather than variation in the predefined habitat preference.
+We used that simulated landscape and abmAnimalMovement to simulate a population of 25, which was later sampled from for collecting movement data.
+All individuals in this population had the same simulation settings apart from starting location.
+Therefore, any variation between individuals was due to stochasticity rather than variation in the predefined habitat preference.
 
 \subsection{Sampling and Analysis Options}\label{sampling-and-analysis-options}
 
@@ -152,12 +161,12 @@ To manage the sampling of the population and the compounding growth of subsequen
 These packages allowed a branching workflow pipeline, while keeping track of object creation thereby optimising the compute time required to explore the multiverse of analysis choice (Fig. \ref{fig:decisionTrees}).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../ext_images/Decision Visualisation Population} \caption{An illustration of the different decisions creating a multiverse examining animal movement. Species: the three different movement archetypes the simulations were loosely based upon. Sample Size: the number of simulated individuals per each species, with each random sample being repeated twice. Tracking duration: the length in days of the tracking data sampled from the overall simulated year. Tracking frequency: the frequency of the sampling of data points from the 1-per-minute simulated data. Selection scenarios: the two classified habitat landscapes used during analysis. Purple choices concerned with analysis pathways using area-based estimations of availability (Compana: Compositional Analysis). Area method: the method used to generate the available area polygon for the individual (MCP: Minimum Convex Polygon, and AKDE: Autocorrelated Kernel Density Estimator). Contour: the threshold used to convert the utilisation/occurrence distribution into a polygon. Available points: the number of generated points per data point to extract available habitat within the polygon. Points pattern: whether the random points were generated in a stratified or random pattern. Light orange choices pertain to the Two-Step analysis pathways. Medium orange-brown choices pertain to the SSF (Step Selection Function) analysis pathways. Dark brown choices pertain to the Poisson analysis pathways. Model formula: whether the step and turn angles were added as interactions to the habitat variable (integrated if added). Available points: the number of randomly generated available points per step/used point. Turn angle: the distribution used to generate the turn angles of the available points. Step distribution: the distribution used to generate the step distances of the available points. Dark orange is the WRSF (Weighted Resource Selection Function) analysis. Averaging: the method of model averaging used for the SSF models to gain an overall estimate. Decisions that required discrete choices are illustrated with circles, whereas those that continuous are depicted as triangles.}\label{fig:decisionTrees}
+\includegraphics[width=1\linewidth]{../ext_images/Decision Visualisation Population} \caption{An illustration of the different decisions creating a multiverse examining animal movement. Species: three different movement archetypes simulations were loosely based upon. Sample Size: the number of simulated individuals per each species, with each random sample being repeated twice. Tracking duration: the length in days of the tracking data sampled from the overall simulated year. Tracking frequency: the frequency of the sampling of data points from the 1-per-minute simulated data. Selection scenarios: the two classified habitat landscapes used during analysis. Purple choices concerned with analysis pathways using area-based estimations of availability (Compana: Compositional Analysis). Area method: the method used to generate the available area polygon for the individual (MCP: Minimum Convex Polygon, and AKDE: Autocorrelated Kernel Density Estimator). Contour: the threshold used to convert the utilisation/occurrence distribution into a polygon. Available points: the number of generated points per data point to extract available habitat within the polygon. Points pattern: whether the random points were generated in a stratified or random pattern. Light orange choices pertain to the Two-Step analysis pathways. Medium orange-brown choices pertain to the SSF (Step Selection Function) analysis pathways. Dark brown choices pertain to the Poisson analysis pathways. Model formula: whether the step and turn angles were added as interactions to the habitat variable (integrated if added). Available points: the number of randomly generated available points per step/used point. Turn angle: the distribution used to generate the turn angles of the available points. Step distribution: the distribution used to generate the step distances of the available points. Dark orange is the WRSF (Weighted Resource Selection Function) analysis. Averaging: the method of model averaging used for the SSF models to gain an overall estimate. Decisions that required discrete choices are illustrated with circles, whereas those that continuous are depicted as triangles.}\label{fig:decisionTrees}
 \end{figure}
 
 \subsubsection{Sampling}\label{sampling}
 
-The first decision in most animal movement studies will concern tracking regime.
+The first decision in most animal movement studies will concern tracking regime, consisting of decisions regarding tracking duration (the overall time the animal's movements are tracked) and tracking frequency (how frequently the animal is relocated).
 This decision is frequently dictated by more practical considerations such as anatomy and behaviour of the animal, cost of the tracking devices, and environmental factors.
 Here we covered a range of tracking regimes that vary in the frequency of location fixes (1 to 0.08 points per hour), and the total duration of tracking (7 to 60 days).
 We created sub-sampled datasets based on every combination of tracking frequencies and durations, provided they would result in greater than 30 data points per individual.
@@ -170,108 +179,111 @@ A sample never mixed tracking regimes.
 \subsubsection{Analysis}\label{analysis}
 
 Building on the decisions concerning tracking regime and population sampling, our multiverse expanded dramatically by exploring four primary analysis routes.
-These routes included an area based approach using Compana analysis (Compositional Analysis of Habitat Use), and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
+These routes included an area-based approach, using Compana analysis (Compositional Analysis of Habitat Use), and three step-based approaches including averaged individual step-selection models, two-step conditional regression models, and a Poisson model.
 
-We ran the Compana analysis using the \emph{adehabitatHS} v.0.3.17 (\citeproc{ref-johnson_comparison_1980}{Johnson, 1980}; \citeproc{ref-aebischer_compositional_1993}{Aebischer, Robertson \& Kenward, 1993}; \citeproc{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}).
+We ran the Compana analysis using the \emph{adehabitatHS} v.0.3.17 (\citeproc{ref-johnson_comparison_1980}{Johnson, 1980}; \citeproc{ref-aebischer_compositional_1993}{Aebischer, Robertson \& Kenward, 1993}; \citeproc{ref-adehabitatHS}{Calenge \& Mathieu Basille, 2023}) R package.
 Compana allows for the assessment of habitat selection of multiple animals in defined habitat types; it also allows habitat selection to be estimated at different scales.
 We explored two scales in the multiverse: selection within the home range (Type III), and selection within an overall population available area (Type II).
-The former design (Type III) requires availability habitats to be defined on an individual-by-individual basis, while the latter (Type II) design uses a summarised population level availability.
+The former design (Type III) requires availability habitats to be defined on an individual-by-individual basis; therefore, we are compared individual use to individual's defined availability.
+While the latter (Type II) design uses a summarised population level availability; therefore, we are comparing individual use to the population defined availability.
 
-To define availability, we created home range polygons then sampled points within, recovering the corresponding habitat at those points.
+To define availability, we created home range polygons, then sampled points within, recovering the corresponding habitat at those points.
 The home range (AKA availability) polygons can be generated via many different processes.
 We explored MCP and AKDE (Minimum Convex Polygons, Autocorrelated Kernel Density Estimators).
 We used the \emph{ctmm} v.1.2.0 (\citeproc{ref-ctmm}{Fleming \& Calabrese, 2023}) package for the creation of AKDEs, and the \emph{adehabitatHR} v.0.4.21 (\citeproc{ref-adehabitatHR}{Calenge \& Scott Fortmann-Roe, 2023}) package for the MCPs.
 The AKDEs required the fitting of a movement model; we fitted multiple models and selected the top scoring model by AIC.
-For the best model we followed recommendations of Silva et al. (\citeproc{ref-silva_autocorrelationinformed_2022}{2022}), opting to run AKDEs as weighted and using perturbative hybrid residual maximum likelihood method (pHREML), as both these options tend to be the most robust in scenarios of lower tracking frequencies.
+For the best model, we followed recommendations of Silva et al. (\citeproc{ref-silva_autocorrelationinformed_2022}{2022}), opting to run AKDEs as weighted and using perturbative hybrid residual maximum likelihood method (pHREML), as both these options tend to be the most robust in scenarios of lower tracking frequencies.
 There are many options involved in the creation of AKDEs that could shape habitat availability and therefore estimations of selection.
-We avoided a deeper exploration as the impact of the internal AKDE choices are likely smaller than those between area methods (e.g., compared to MCPs), and the relatively greater computational cost to generate AKDEs.
+We avoided a deeper exploration of the impact of the internal AKDE choices, as they are likely smaller than those between area methods (e.g., compared to MCPs), and the relatively greater computational cost to generate many AKDEs.
 By comparison the MCPs have very few options impacting their creation.
 Mainly MCP size varies based on the percentage of outliers excluded from the polygon area.
-For all area methods we vary this percentage: 95\%, 99\%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
+For all area methods, we vary this percentage: 95\%, 99\%, that correspond to increasingly large areas included in the availability polygon (i.e., covering areas that are less used by the individual).
 We selected these contour values as they are the most frequently used in spatial studies (\citeproc{ref-crane_lots_2021}{Crane et al., 2021}).
 
-Once we had created all areas for each individual, for every combination of tracking regime (duration x frequency, total regimes: 13), we created the sample/population available areas by combining all polygons.
+Once we had created all area polygons for each individual, for every combination of tracking regime (duration x frequency, total regimes: 13), we created the population available areas for the type II design analysis by combining all polygons into a single polygon.
 We used this combined polygon for the type II design, where all individuals have the same availability.
 
-We used the availability polygons to define the extent within which we sampled habitat characteristics.
-The habitat characteristics were extracted from the classified landscape raster at various points.
-We varied both the number of points generated (1 to 10), as well as the pattern of how they were distributed within the polygon (random or stratified).
+We used each availability polygon to define the extent within which we sampled habitat characteristics.
+Within those defined polygons we generated a number of random points per animal location to determine the available habitats.
+We varied both the number of points generated relative to the number of animal locations (1 to 10 times the number of known animal locations), as well as the pattern of how they were distributed within the polygon (random or stratified).
+Once the points were generated, we used them to extract the underlying habitat from classified landscape raster.
 
-The final decision in the area based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
-The former uses randomisation tests to estimate the habitat selection, while the latter uses chi-squared.
+The final decision in the area-based method approach was whether the Compana analysis was tested using randomisation or in a parametric fashion.
+The former uses randomisation tests to estimate the habitat selection, while the latter uses a chi-squared distribution.
 
-The other analysis pathways do not rely on an available area, instead they focus on randomly generated steps that mirror the observed movement of the animal.
-As such the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
+The other analysis pathways do not rely on an available area; instead they focus on randomly generated steps that mirror the observed movement of the animal.
+As such, the decisions involved in running the step-selection, two-step conditional regression, and Poisson models are largely the same.
 
 The first decision is the number of random steps generated per observed step; we ranged this from 5 to 50.
 The generation of random steps is guided by two distributions, one describing the step lengths from the last observed location, and another describing the turn angle from the last observed direction of travel.
 We chose to explore the impacts of different distributions.
-For the step length we explored gamma and exponential distributions; for the turn angle we explored Von Mises and uniform.
+For the step length, we used Gamma and exponential distributions; for the turn angle we used Von Mises and uniform distributions.
 
 All the step-based methods require the definition of a formula, where use/availablity is predicted by the habitat characteristics at those locations.
 Model formulation opens up many possible alternative routes of analysis, but for this exploration we focused on the impacts of integrating step and turn angle interactions with habitat characteristics.
-We ran two versions of all models, one with no interactions and one where both step lengths and turn angles interacting with the habitat classification.
-Previous work has suggested that the integrated formulation (i.e., model with interactions) performs better, producing less biased estimates (\citeproc{ref-forester_accounting_2009}{Forester, Im \& Rathouz, 2009}).
+We ran two versions of all models, one with no interactions and one where both step lengths and turn angles interact with the habitat classification.
+Previous work has suggested that the integrated formulation (i.e., model with interactions) performs better, producing less biased estimates of habitat selection (\citeproc{ref-forester_accounting_2009}{Forester, Im \& Rathouz, 2009}).
 
-A key component of all the population approaches is how they translate a highly structured dataset into an overall summary.
-We ran individual step selection models using the amt v.0.2.2.0 (\citeproc{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore summary methods (i.e., averaging regression coefficients Thurfjell, Ciuti \& Boyce (\citeproc{ref-thurfjell_applications_2014}{2014})).
+A key component of all the population approaches is how they translate a highly structured dataset into an overall summary of habitat selecion.
+We ran individual step selection models using the \emph{amt} v.0.2.2.0 (\citeproc{ref-amt}{Signer, Fieberg \& Avgar, 2019}) package, to explore summary methods (i.e., averaging regression coefficients Thurfjell, Ciuti \& Boyce (\citeproc{ref-thurfjell_applications_2014}{2014})).
 The individual step selection models need to be averaged in some manner to extract a population mean selection.
 We explored two simple options for achieving this: a naive mean of the final estimates (i.e., a mean of the estimated betas), and a model average using the \emph{MuMIn} v.1.47.5 package (\citeproc{ref-MuMIn}{Bartoń, 2023}).
 The \emph{MuMIn} model average approach is weighted based on AICc.
-However, AICc is not directly comparable between models fitted with different datasets so this does not necessarily present a solution for real datasets.
-As the model formulas are identically complex and the datasets equal in data quantity, the differences in AIC are purely describing the goodness of fit to the different individuals.
-Therefore, the model average provided is weighted by model fit.
+However, AICc is not directly comparable between models fitted with different datasets so this does not necessarily present a solution for real-world scenarios as it is unlikely multiple animals would have identical amounts of locations recorded.
+In the simulated scenario here, as the model formulas are identically complex and the datasets equal in data quantity, the differences in AIC are purely describing the goodness of fit to the different individuals.
+Therefore, the model average produced by \emph{MuMIn} is weighted by model goodness of fit.
 
-The difficulties in model averaging based on different data has led to the creation of models that account for the individual variably in the model formula.
+The difficulties in model averaging based on different data have led to the creation of models that account for individual variably in the model formula.
 A Two-Step Conditional Regression is one such solution, where strata (time steps) and clusters (individual animals) are accounted for (\citeproc{ref-craiu_conditional_2011}{Craiu et al., 2011}).
 We implemented these models using the \emph{TwoStepCLogit} v.1.2.5 (\citeproc{ref-TwoStepCLogit}{Craiu et al., 2016}) package, again using the same decisions as applied in the SSF approach (except model averaging).
-The Two-Step implementation in \emph{TwoStepCLogit} required no NAs in landscape covariates.
-In the rare instances where a simulated animal reached the edge of the landscape and available points were generated beyond the boundary, we repeated the random generation of points until fewer than 10 NAs existed in the data.
+The Two-Step implementation in \emph{TwoStepCLogit} required no NAs in landscape covariates (i.e., all locations had associated classified habitat information).
+In the rare instances where a simulated animal reached the edge of the landscape and available points were generated beyond the boundary (i.e., return a habitat class of NA), we repeated the random generation of points until fewer than 10 NAs existed in the data that were then excluded.
 
-More recently Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) have suggested a reformulation of the step selection models to provide faster reliable estimations of population habitat selection.
+More recently Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) have suggested a reformulation of the step selection models to provide faster, reliable estimations of population habitat selection.
 The suggestion is to reformulate the model as a Poisson model, but critically with stratum-specific fixed effects.
-As this would result in a large number of fixed effects, the computational cost would be large; so instead they are treated as a random effect, but to avoid excessive shrinkage to the mean a large variance prevents this.
+As this would result in a large number of fixed effects, the computational cost would be large; so instead they are treated as a random effect, but to avoid excessive shrinkage to the mean, a large variance prevents this.
 To avoid the slow convergence of MCMC estimation, Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) made use of integrated nested Laplace approximation (INLA) to approximate the Bayesian inference required for such a reformulation.
 We followed the code provided by Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) and made use of \emph{INLA} v.23.4.24 (\citeproc{ref-rue_approximate_2009}{Rue, Martino \& Chopin, 2009}; \citeproc{ref-lindgren_explicit_2011}{Lindgren, Rue \& Lindström, 2011}; \citeproc{ref-martins_bayesian_2013}{Martins et al., 2013}; \citeproc{ref-rue_bayesian_2017}{Rue et al., 2017}; \citeproc{ref-kourounis_towards_2018}{Kourounis, Fuchs \& Schenk, 2018}) to run Poisson models to estimate habitat selection.
-We applied the same suite of choices as the applied to the SSF and Two-Step approaches.
+We applied the same suite of choices as applied to the SSF and Two-Step approaches.
 
 \subsection{Assessing the multiverse}\label{assessing-the-multiverse}
 
 Specification curves provide an overview of the estimates of a given range of analyses.
 Tighter more steep curves suggest greater agreement between all the analysis end points.
-Here we also plotted the estimates against the different decisions that results in the estimates, allowing direct comparison on how the decision impacts the variation in the estimates.
+Here we use specification curves and plotted the estimates against the different decisions that results in those estimates, allowing direct comparison on how the sampling and analysis decision impacts the variation in the estimates.
 
 To better detect the impact of decisions, while accounting for the random variation stemming from the differences in individuals/samples, we ran a number of Bayesian Regression Models.
 The Bayesian Regression Models aimed to describe how much of the deviation from a median answer could be explained by the various sampling and analysis decisions.
-For each analysis route we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
-All continuous variables were scaled to help determine their relative importance to each other: (x - mean(x))/sd(x).
+For each analysis route, we ran a model that included tracking frequency, tracking duration, sample size, and all the corresponding analysis choices.
+All continuous variables (x) were scaled to help determine their relative importance to each other: (x - mean(x))/sd(x).
 
-For the area based Compana approach the population effects included: the continuous variable contour (continuous); and the categoric predictors sampling pattern (random, stratified), test (randomisation, parametric), area method (AKDE, MCP), and design type (II, III).
+For the area-based Compana approach, population effects included: the continuous variable contour (continuous); and the categoric predictors sampling pattern (random, stratified), test (randomisation, parametric), area method (AKDE, MCP), and design type (II, III).
 For the step-based approaches they all included: model formula (integrated, non-integrated), step distribution (gamma, exponential), turn distribution (Von Mises, uniform).
 The step-selection model approach also included: averaging method (naive, MuMIn average).
 
 We ran the Bayesian Regression Models using the \emph{brms} v.2.21.0 (\citeproc{ref-brms}{Bürkner, 2021}) package.
 Once complete, we checked model convergence using R-hat values, ACF, and trace plots.
 After assessment of the model convergence measures, we modified the running parameters to 4000 iterations, a warmup of 750, and a thinning rate of 4 for all models bar the Poisson models that instead used 20000 iterations, a warmup of 8000, and a thinning rate of 20.
+We also examined the \emph{R\textsuperscript{2}} values, to determine how much of the variation in the results could be explained by the decisions.
 
 \section{Results}\label{results}
 
 \subsection{Specification Curves}\label{specification-curves}
 
 The specification curves provide an overview of all the analysis end points (n = 287,040; Fig. \ref{fig:decisionTrees}).
-The area based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \ref{fig:specCurveArea}), and a near zero effect for the scrambled selection scenario.
+The area-based method -- Compositional Analysis (Compana) -- returned a median estimate that agreed with the underlying known simulation preference (i.e., preference for habitat 2; Fig. \ref{fig:specCurveArea}), and a near zero effect for the scrambled selection scenario.
 In the positive selection scenario very few estimates suggested negative selection, and those that did appeared to be extreme outliers.
 When broken down by decision, all decisions except higher sample sizes and the test method, appear to have a large range in final estimates.
 The sample size decisions had a clear reduction in possible answers when the sample is 15 or 20 individuals, but also a potential interaction with the test method when including 20 individuals.
-Unexpectedly, the lowest sample size of 3 also led to visibly reduced estimate variation and the higher sample sizes had a lower rate of significant positive estimates (e.g., 6902/9984 significant results with 3 individuals, compared to only 254/9984 with 20 individuals).
-The test method presents two different outcomes, with the randomisation method presented a far tighter grouping of estimates in both selection scenarios, and with higher rates of significance in the positive selection scenario (11663/24960 compared to 5432/24960).
-In the scrambled scenario, the grouping was reduced, but rates of significance were very similar (13985/24960 compared to 13175/24960).
+Unexpectedly, the lowest sample size of 3 also led to visibly reduced estimate variation, and the higher sample sizes had a lower rate of significant positive estimates (e.g., 6902/9984 significant results with 3 individuals, compared to only 254/9984 with 20 individuals).
+The test method presented two different outcomes, with the randomisation method presenting a far tighter grouping of estimates in both selection scenarios, and with higher rates of significance in the positive selection scenario (11663/24960 compared to 5432/24960).
+In the scrambled scenario, the grouping was reduced, but rates of significance were very similar (13985/24960 compared to 13175/24960; Table. \ref{tab:directTableCompana}).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/area_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Compana (area-based) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveArea}
+\includegraphics[width=1\linewidth]{../figures/area_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Compana (area-based) analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveArea}
 \end{figure}
 
-The specification curve generated from summarised Step Selection Functions (SSFs), similarly revealed a median estimate that agrees well with the simulated parametrisation for both selection and scrambled scenarios (Fig. \ref{fig:specCurveSSF}).
+The specification curve generated from summarised Step Selection Functions (SSFs) similarly revealed a median estimate that agrees well with the simulated parametrisation for both selection and scrambled scenarios (Fig. \ref{fig:specCurveSSF}).
 Also like the Compana curve, the SSF curve had far fewer results that indicated very low habitat preference in the positive selection scenario.
 The majority of these lower estimates of habitat selection appeared connected to the decision to use an non-integrated (standard) model formulation, and the decision to model average weighted by AIC.
 The naively model averaged estimates were also much more tightly grouped with fewer estimates failing to correctly detect positive preference; the tighter grouping was also reflected in the scrambled selection scenario.
@@ -280,11 +292,11 @@ Outside the lower estimates, the clearest structure in the estimates results fro
 The tracking regime decisions, frequency and duration, appeared to shift the overall range of estimates but with limited impact on the variation.
 By comparison, sample size increases appeared to reduce the spread of estimates produced.
 
-Compared to the Compana analysis there was a cleaner pattern of significance, with the selection scenario having much higher rates of significant selection compared to the scrambled scenario.
+Compared to the Compana analysis there was a cleaner pattern of significance, with the selection scenario having much higher rates of significant selection compared to the scrambled scenario (Table. \ref{tab:directTableSSF}).
 We also saw a clear increase in significant answers when we increased the sample size in the selection scenario (e.g., sample size of 3 1687/6240 compared to 20 4322/6240).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Step-selection Function (SSF) analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveSSF}
+\includegraphics[width=1\linewidth]{../figures/ssf_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Step-selection Function (SSF) analysis pathwayswhen applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveSSF}
 \end{figure}
 
 The two-step model approach appeared to have had the greatest difficultly consistently detecting the positive selection, but the median selection in the positive selection scenario was still greater than the median from the scrambled scenario (Fig. \ref{fig:specCurveTwoStep}).
@@ -292,11 +304,11 @@ Tracking frequency appeared to be a critical decision in the two-step model, wit
 The decision to integrate step and turn angle into the model formula appeared similarly critical.
 The choice not to include the step and turn angle resulted in estimates more consistently positive in the positive selection scenario, and close to zero in the scrambled selection scenario.
 The integrated model formulation appeared to be largely responsible for the majority of the variation in estimates.
-Unlike the SSF results, the Two-Step approach appeared to provide significant answers (both positively and negatively) very readily.
-The balance of positively significant did appear more positive skewed in the selection scenario compared to the scrambled scenario, but all choices resulted in numbers of false positives and negatives bar the non-integrated model formulation choice.
+Unlike the SSF results, the Two-Step approach appeared to provide significant answers (both positively and negatively) very readily (Table. \ref{tab:directTableTwoStep}).
+The balance of positively significant did appear more positive skewed in the selection scenario (128429/327600: 39\%) compared to the scrambled scenario (41069/327600: 13\%), but all choices resulted in numbers of false positives and negatives bar the non-integrated model formulation choice.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Two-step analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveTwoStep}
+\includegraphics[width=1\linewidth]{../figures/twoStep_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Two-step analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurveTwoStep}
 \end{figure}
 
 The Poisson based approach, like those before, showed that the vast majority of analysis pathways will result in the correct identification of positive preference for habitat 2 (Fig. \ref{fig:specCurvePois}), and centre on zero for the scrambled scenario.
@@ -305,17 +317,18 @@ Sample size and tracking frequency did; larger sample sizes and higher frequency
 Of particular note is that the majority of failures to detect positive preference occured when the sample size is three and at lower tracking frequencies.
 The analysis decisions appeared largely inconsequential, particularly the number of points per step.
 Model formulation did have an impact, with the integrated formulation being more consistent at retrieving positive preference in the positive selection scenario, but the spread of estimates was much larger.
-This spread increased associated with the integrated model formulation was similarly seen in the scrambled selection scenario, but resulted in near identical median estimates.
-Unexpectedly, despite quite clear positive selection in many estimates, all estimates (regardless of scenario) were deemed not to be significant, with 95\% confidence intervals overlapping zero.
+This spread increase associated with the integrated model formulation was similarly seen in the scrambled selection scenario, but resulted in near identical median estimates across model formulations.
+Unexpectedly, despite quite clear positive selection in many estimates in the selection scenario, all estimates (regardless of scenario) were deemed not to be significant, with 95\% confidence intervals overlapping zero (Table. \ref{tab:directTablePois}).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/pois_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Poisson analysis pathways. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurvePois}
+\includegraphics[width=1\linewidth]{../figures/pois_specCurve} \caption{A specification curve showing habitat selection estimates resulting from the Poisson analysis pathways when applied to all simulated animal movement datasets. Every point represents a separate estimate of habitat selection. The top plot shows all estimates organised by estimate strength, with purple vertical line depicting the median estimate. Instances of outlying high or low estimates are labelled instead of plotted. The lower plot shows the same estimates, but split by the analysis or sampling decisions. Solid circles are the medians for each choice.}\label{fig:specCurvePois}
 \end{figure}
 
 \subsection{Model Results}\label{model-results}
 
 We also used four Bayesian Regression Models to explore the impact of different decisions (Fig. \ref{fig:allEffectsPlot}), and whether those decisions could predict deviation from the median estimate (i.e., as a proxy for seeing which decisions lead to outlying extreme results).
-The models provided a means to account for the variation that originates from stochasticity in the simulation and sampling; the sheer number of final estimates can obscure patterns in specification curves.
+Greater variation would indicate greater scope for researcher choice to have a significant impact on the final results.
+The models provided a means to account for the variation that originates from stochasticity in the simulation and sampling captured by the group effects and reflected in the difference between marginal and conditional \emph{R\textsuperscript{2}} values, as the sheer number of final estimates can obscure patterns in specification curves.
 
 The conditional \emph{R\textsuperscript{2}} values differed for the four models, ranging from 0.14 to 0.32, indicating a sizeable amount of variation in estimates being uncounted for by either the analysis discretions of random/group effects of sample ID, selection scenario, and species.
 The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.32; whereas the SSF model returned 0.29; the Two-Step model returned 0.14; and the Poisson model returned 0.3.
@@ -326,52 +339,43 @@ The Two-Step model returned marginal \emph{R\textsuperscript{2}} of 0.05; and th
 The low marginal \emph{R\textsuperscript{2}} in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
 The same is true for the Poisson model, but to a lesser degree.
 
-The conditional \emph{R\textsuperscript{2}} values differed for the four models, ranging from 0.14 to 0.32, indicating a sizeable amount of variation in estimates being uncounted for by either the analysis discrions of random/group effects of sample ID, selection scenario, and species.
-The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.32; whereas the SSF model returned 0.29; the Two-Step model returned 0.14; and the Poisson model returned 0.3.
-
-The marginal \emph{R\textsuperscript{2}} represents the bulk of the conditional \emph{R\textsuperscript{2}} for Compana and SSF models, suggesting an important role for the fixed/population effects.
-The Compana results model had a conditional \emph{R\textsuperscript{2}} of 0.18; whereas the SSF model returned 0.18.
-The Two-Step model returned marginal \emph{R\textsuperscript{2}} of 0.05; and the Poisson model returned 0.11.
-The low marginal \emph{R\textsuperscript{2}} in the Two-Step model highlights the greater sensitivity to variation between species, individuals and samples, compared to the variation resulting from analysis decisions.
-The same is true for the Poisson model, but to a lesser degree.
-
-The Poisson model approach showed the most consistent benefits from more data (Fig. \ref{fig:allEffectsPlot}), where all increases in sampling intensity led to marked reductions in deviation from the median estimate: sample size (\(\beta\) -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\) -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\) -0.02; 95\% HDCI -0.03 - -0.02).
-Similarly SSF methods benefited from increasing sampling duration (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not as apparent (\(\beta\) -0.04; 95\% HDCI -0.04 - -0.04).
-Two-Step methods appeared to benefit from increases in tracking frequency (\(\beta\) -0.08; 95\% HDCI -0.09 - -0.08), but not duration (\(\beta\) 0.00; 95\% HDCI 0.00 - 0.01) or sample size (\(\beta\) 0.00; 95\% HDCI -0.02 - 0.01).
+The Poisson model approach showed the most consistent benefits from more data (Fig. \ref{fig:allEffectsPlot}), where all increases in sampling intensity led to marked reductions in deviation from the median estimate: sample size (\(\beta\)= -0.02; 95\% HDCI -0.06 - 0.02), tracking duration (\(\beta\)= -0.02; 95\% HDCI -0.02 - -0.01), and tracking frequency (\(\beta\)= -0.02; 95\% HDCI -0.03 - -0.02).
+Similarly SSF methods benefited from increasing sampling duration (\(\beta\)= -0.04; 95\% HDCI -0.04 - -0.04) and frequency, but the impact on increasing sample size was not as apparent (\(\beta\)= -0.04; 95\% HDCI -0.04 - -0.04).
+Two-Step methods appeared to benefit from increases in tracking frequency (\(\beta\)= -0.08; 95\% HDCI -0.09 - -0.08), but not duration (\(\beta\)= 0.00; 95\% HDCI 0.00 - 0.01) or sample size (\(\beta\)= 0.00; 95\% HDCI -0.02 - 0.01).
 Potentially the benefits from some of these decisions are masked by the extreme variation in the integrated model formulation decision.
 The area-based Compana approach appeared to vary more in its estimates when provided more data.
-Sample size (\(\beta\) 0.28; 95\% HDCI 0.10 - 0.47), tracking duration (\(\beta\) 0.06; 95\% HDCI 0.04 - 0.07) and tracking frequency (\(\beta\) 0.12; 95\% HDCI 0.10 - 0.13) all led to increased variation from the median estimate.
+Sample size (\(\beta\)= 0.28; 95\% HDCI 0.10 - 0.47), tracking duration (\(\beta\)= 0.06; 95\% HDCI 0.04 - 0.07) and tracking frequency (\(\beta\)= 0.12; 95\% HDCI 0.10 - 0.13) all led to increased variation from the median estimate.
 
 The points per step decision made little impact on the variation of estimates in any of the step-based approaches (Fig. \ref{fig:allEffectsPlot}), potentially due to the simplified nature of the landscape used (i.e., no rare habitat that would require high numbers of random points to detect).
-Use of the gamma distribution, in contrast to the exponential distribution, in all the step-based approaches led to reduced deviation from the median (Poisson: (\(\beta\) -0.07; 95\% HDCI -0.08 - -0.06); SSF: (\(\beta\) -0.01; 95\% HDCI -0.01 - -0.01); Two-Step: (\(\beta\) -0.09; 95\% HDCI -0.10 - -0.09)).
-Whereas the use of Von Mises, in contrast to a uniform distribution, failed to have a sizeable impact in Poisson (\(\beta\) 0.00; 95\% HDCI -0.01 - 0.01) and SSF (\(\beta\) 0.00; 95\% HDCI 0.00 - 0.00) methods and led to greater variation in Two-Step estimates (\(\beta\) 0.09; 95\% HDCI 0.08 - 0.10).
-The underlying simulation used a gamma distribution to generate step lengths and Von Mises for turn angles, that may partially explain this result.
+Use of the gamma distribution, in contrast to the exponential distribution, in all the step-based approaches led to reduced deviation from the median (Poisson: (\(\beta\)= -0.07; 95\% HDCI -0.08 - -0.06); SSF: (\(\beta\)= -0.01; 95\% HDCI -0.01 - -0.01); Two-Step: (\(\beta\)= -0.09; 95\% HDCI -0.10 - -0.09)).
+Whereas the use of Von Mises, in contrast to a uniform distribution, failed to have a sizeable impact in Poisson (\(\beta\)= 0.00; 95\% HDCI -0.01 - 0.01) and SSF (\(\beta\)= 0.00; 95\% HDCI 0.00 - 0.00) methods and led to greater variation in Two-Step estimates (\(\beta\)= 0.09; 95\% HDCI 0.08 - 0.10).
+The underlying simulation used a gamma distribution to generate step lengths and Von Mises for turn angles, which may partially explain this result.
 
-The most mixed decision was the use of model formulation that includes the step and turn angles (i.e., integrated versus not integrated; Fig. \ref{fig:allEffectsPlot}).
-Here we saw including the step and turn angles in the model formula for the summarised SSF approach led to greater variation from the median estimate (\(\beta\) 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(\beta\) -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(\beta\) -0.37; 95\% HDCI -0.38 - -0.36) where the non-integrated formula tended to reduce the spread of estimates.
+The most mixed decision was the use of a model formulation that includes the step and turn angles (i.e., integrated versus not integrated; Fig. \ref{fig:allEffectsPlot}).
+Here we saw including the step and turn angles in the model formula for the summarised SSF approach led to greater variation from the median estimate (\(\beta\)= 0.04; 95\% HDCI 0.04 - 0.05), but a contrasting effect for both the Two-step (\(\beta\)= -0.17; 95\% HDCI -0.17 - -0.16) and Poisson approaches (\(\beta\)= -0.37; 95\% HDCI -0.38 - -0.36) where the non-integrated formula tended to reduce the spread of estimates.
 
 The greater deviation in averaged SSFs when using the integrated formulation may be a result of its interaction with the model averaging approach.
-The naive model averaging approach led to a dramatically lower spread of estimates (\(\beta\) -0.18; 95\% HDCI -0.18 - -0.17), and avoided underestimating selection in the positive selection scenario (unlike the AIC model average approach; (Fig. \ref{fig:specCurveSSF}).
+The naive model averaging approach led to a dramatically lower spread of estimates (\(\beta\)= -0.18; 95\% HDCI -0.18 - -0.17), and avoided underestimating selection in the positive selection scenario (unlike the AIC model average approach; (Fig. \ref{fig:specCurveSSF}).
 
-Finally, the area based approach had a number of unique decisions.
+Finally, the area-based approach had a number of unique decisions.
 Largely the decisions associated with defining the available area had a larger impact than those linked to generating the random points (Fig. \ref{fig:allEffectsPlot}).
-In brief, the use of MCPs (\(\beta\) -0.16; 95\% HDCI -0.19 - -0.13) and type III designs (\(\beta\) -0.29; 95\% HDCI -0.32 - -0.26) tended to lead to less variable results.
-Larger contours (areas) (\(\beta\) 0.05; 95\% HDCI 0.03 - 0.06) and more points (\(\beta\) 0.02; 95\% HDCI 0.01 - 0.04) unexpectedly increased variation of estimates from the median.
+In brief, the use of MCPs (\(\beta\)= -0.16; 95\% HDCI -0.19 - -0.13) and type III designs (\(\beta\)= -0.29; 95\% HDCI -0.32 - -0.26) tended to lead to less variable results.
+Larger contours (areas) (\(\beta\)= 0.05; 95\% HDCI 0.03 - 0.06) and more points (\(\beta\)= 0.02; 95\% HDCI 0.01 - 0.04) unexpectedly increased variation of estimates from the median.
 The effect of larger contours and type III designs appeared to contradict each other, as both would tend towards a larger area that would presumably result in similar results.
-By far the clearest result in the area-based approach was the Compana test method, where randomisation dramatically reduced the spread of estimates (\(\beta\) -2.32; 95\% HDCI -2.35 - -2.29).
+By far, the clearest result in the area-based approach was the Compana test method, where randomisation dramatically reduced the spread of estimates (\(\beta\)= -2.32; 95\% HDCI -2.35 - -2.29).
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Point estimates and 95\% credible intervals associated  with all population effects from the Bayesian Regression models aiming to predict deviation from the median estimate.}\label{fig:allEffectsPlot}
+\includegraphics[width=1\linewidth]{../figures/_allEffectsPlot} \caption{Point estimates and 95\% credible intervals associated  with all population effects from the Bayesian Regression models aiming to predict deviation from the median estimate using the information on analysis chocies. Negative effects indicate that the decisions tends to decrease the deviation from the median estimate, whereas positive effects suggest those decisions are increasingly connected to estimates far from the median estimate. The effects are grouped into those pertaining to sampling choices and tracking, those associated with the step-based analysis approaches (Two-Step, SSF, and Poisson), those connected just to the SSF approach, and those connected to the area-based Compana approach.}\label{fig:allEffectsPlot}
 \end{figure}
 
 \section{Discussion}\label{discussion}
 
 The multiverse approach highlights the diverse array of answers one can obtain even when analysing the same data, simulated using the same parameters.
-Fortunately the vast majority of the answers from the 287,040 analysis end points agree, and correctly recover the positive habitat selection programmed into the simulated animals in both positive selection and no selection scenarios.
+Fortunately the vast majority of the answers from the 287,040 analysis end points agree, and correctly recover the positive habitat selection programmed into the simulated animals in the positive selection and correctly recover the absence of habitat selection in the no selection scenarios.
 This broad agreement is cause for optimism, suggesting that the potentially deviating analysis choices made by researchers largely converge to an agreement --albeit within this given simulated scenario and given habitat preference strength.
 Looking back at past studies reporting habitat preference, we have have considerable confidence that different (or reported) choices during analysis likely would not have changed the overall conclusions.
 
-Unlike previous multiverse investigations into individual selection, the largest effect on whether an estimate was close to the median estimate did not come as a result of sampling.
+Unlike previous multiverse investigations into individual selection (\citeproc{ref-marshall_habitat_2024}{Marshall \& Duthie, 2024}), the largest effect on whether an estimate was close to the median estimate did not come as a result of sampling (either tracking regime or number of individuals).
 This is possibly due to the overall increase in data quantity that came from running a multi-individual sample, perhaps past the point of benefiting as dramatically from more data.
 There was no programmed individual variation (which is a key consideration in real-world scenarios Stuber, Carlson \& Jesmer (\citeproc{ref-stuber_spatial_2022}{2022})), therefore any variation between individuals of the same pseudo-species was the result of stochasticity.
 This lack of individuality may dampen the variation, reducing effects of increased sample sizes.
@@ -379,19 +383,19 @@ However, a failure to reduce the deviation from the median estimate does not mea
 Increased sample sizes may have actually led to estimates that were closer to the ``true'' selection of the animal, and Craiu et al. (\citeproc{ref-craiu_conditional_2011}{2011}) suggests greater stability in estimates with more data.
 
 When examining the impact of individual analysis choices, we see a few that appear to be key.
-In the area based (Compana) analysis, the decision to test selection using randomisation led to dramatically more consistent estimates.
+In the area-based (Compana) analysis, the decision to test selection using randomisation led to dramatically more consistent estimates.
 We suspect this is due to the parametric method making more stringent assumptions regarding the data's distribution, resulting in a greater frequency of unstable outlying estimates.
-For the SSF and Poisson models the decision on integrating step and turn angle into the model formulation appears critical.
-For SSF is it suggested that integrating step and turn is ideal as it limits bias by accounting for the movement tendencies of the animal, particularly for high selection scenarios (\citeproc{ref-forester_accounting_2009}{Forester, Im \& Rathouz, 2009}).
+For the SSF and Poisson models, the decision on integrating step and turn angle into the model formulation appears critical.
+For SSF, is it suggested that integrating step and turn is ideal as it limits bias by accounting for the movement tendencies of the animal, particularly for high selection scenarios (\citeproc{ref-forester_accounting_2009}{Forester, Im \& Rathouz, 2009}).
 We saw reduced extreme high and low estimates when using the integrated formulation that supports this.
 
 Poisson models are similarly affected, but in the opposite direction.
-Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) previously highlighted the potential contrasting impact of integration in the Poisson models, and our multiverse mirrors this with the integrated formulations leading to greater more variable estimates.
+Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}) previously highlighted the potential contrasting impact of integration in the Poisson models, and our multiverse mirrors this with the integrated formulations leading to estimates of greater strengths and that varied more.
 In the context of Muff, Signer \& Fieberg (\citeproc{ref-muff_accounting_2020}{2020}), we suspect the more outlying variable estimations are more bias results and ultimately further from the true selections strength.
 The most deviated estimations appear at low or intermediate sample sizes, and low tracking frequencies for the outlying low estimates.
 This could indicate that any bias resulting from the integrated formula could be mitigated with more data, but further investigation would be required to confirm this as we do not see greater tracking durations eliminating outlier estimates.
 
-Outside of the decision we can compare the different approaches.
+Outside of approach-specific decisions we can compare the different approaches.
 While we should be cautious comparing the different approaches as target and interpret selection in different ways, we can see that SSF, Poisson, and Compana approaches do better than the Two-Step approach when correctly identifying selection and no-selection.
 The Two-Step approach appears to be overly keen to consider selection significant (in either direction), and could frequently encounter convergence issues.
 The latter is likely caused by data inadequacies in either the strata or clusters (\citeproc{ref-craiu_conditional_2011}{Craiu et al., 2011}).
@@ -400,38 +404,38 @@ The SSF and Poisson approaches appear to be the stronger choices and offer incre
 
 \subsection{Multiverse in context}\label{multiverse-in-context}
 
-While multiverses can help us explore the possible answers that can come from a given dataset, they cannot provide guidance on which of those answers is correct.
+While multiverses can explore the possible answers that can come from a given dataset, they cannot provide guidance on which of those answers is correct.
 The creation of the multiverse is subject to the same decision making procedure that any single given pathway is: what decisions to include, and how to vary the choices (\citeproc{ref-simonsohn_specification_2020}{Simonsohn, Simmons \& Nelson, 2020}; \citeproc{ref-del_giudice_travelers_2021}{Del Giudice \& Gangestad, 2021}).
 Therefore, the overall median or mean answer is heavily dependent on the construction of the multiverse.
 Additionally, the choices and resulting analysis pathways are not equally as valid, nor equally likely to be undertaken by a researcher.
 This means the multiverse of answers may provide some insight on spread of estimates (\citeproc{ref-steegen_increasing_2016}{Steegen et al., 2016}), but should not be directly interpreted as providing more or less support for a given estimate based on the distribution of estimates.
 We can take this issue further, reminding ourselves that agreement is not necessarily a reliable proxy for accuracy (\citeproc{ref-devezer_case_2021}{Devezer et al., 2021}).
 A better model reflecting the mechanistic reality of the study system is preferable to a suite of models that agree but converge on a less accurate answer.
-An example in the conducted multiverse: we used AKDEs and MCPs as two alternative definitions of availability for the area based method.
+An example in the conducted multiverse: we used AKDEs and MCPs as two alternative definitions of availability for the area-based method.
 Arguably we should have excluded the MCP choice in favour of the AKDE choice, as the latter does a better job at capturing the movement processes/patterns underlying animal space-use (\citeproc{ref-Fleming2015}{Fleming et al., 2015}).
 Despite this, we felt, the frequency of MCP use in spatial ecology (\citeproc{ref-crane_lots_2021}{Crane et al., 2021}), warranted its inclusion as a conceivable choice.
 Judgement calls such as this are unavoidable, and determining whether a model better reflects the underlying system can be exceptionally difficult outside of simulated ``known-truth'' scenarios.
 It very well may be ideal to conduct multiple analysis as standard procedure to explore selection at different scales (\citeproc{ref-aebischer_compositional_1993}{Aebischer, Robertson \& Kenward, 1993}).
 
-When we are uncertain of the mechanism, or unable to truly model the vast complexity of the system (very frequent in ecology), then informed agreement may be our best option.
+When we are uncertain of the mechanism, or unable to truly model the vast complexity of the system (as is very frequent in ecology), then informed agreement may be our best option.
 Recent efforts looking at how many researchers answer the same question from the same dataset reveals that these judgement calls result in different answers (\citeproc{ref-gould_same_2023}{Gould et al., 2023}).
 In many ways the more organic real-world results from Gould et al. (\citeproc{ref-gould_same_2023}{2023}) reflect the multiverse results presented here --a general agreement on direction, but variation in uncertainty and magnitude.
-What differs, is that here we know the simulated correct answer is a positive effect, in Gould et al. (\citeproc{ref-gould_same_2023}{2023}) the truth is unknown and so we rely on the good agreement of many independent informed analyses.
+What differs, is that here we know the simulated correct answer is a positive effect, while in Gould et al. (\citeproc{ref-gould_same_2023}{2023}), the truth is unknown, so we rely on the good agreement of many independent informed analyses.
 The logistics of organising 246 researchers to assess uncertainty in analyses is infeasible on a broader scale.
 The multiverse approach presents a complementary method for assessing the scope of researcher choice on final results --albeit more vulnerable to the individual researcher's biases and potentially limited to analyses with lower computational costs.
 
-We have avoided suggesting rules or guides based on these results, instead suggesting broad trends.
+We have avoided suggesting rules or guides based on these results, instead reporting broad trends.
 The diverse array of species tracked and the habitats in which they reside makes specific guidance nigh impossible without informed assumptions tailored to a given study system.
 We simulated a three species to try and broaden the generalisability of our findings.
 However, they all shared core assumptions stemming from the agent-based simulation, namely: site fidelity, consistent cycadian cycles, and distinct behavioural states (\citeproc{ref-abmAnimalMovement}{Marshall \& Duthie, 2022}).
 For example, the routine use of shelter sites in a the preferred habitat would mean that missing those sites/locations is unlikely with a reasonably frequent tracking regime.
 This may have dampened the benefits of tracking frequency in our scenarios, and comparatively in scenarios where the use of preferred habitat is more fleeting or temporally inconsistent tracking frequency may be more crucial.
-Other studies have highlighted that certain decisions may assume increased importance in different scenarios.
+Other studies have highlighted that certain decisions may have increased importance in different scenarios.
 The number of available points in SSF analysis becomes more important when the analysis is required to identify the use of smaller/rarer habitat types (\citeproc{ref-thurfjell_applications_2014}{Thurfjell, Ciuti \& Boyce, 2014}).
 Some methods, such as Resource Selection Functions, have the means of estimating the required data quantity to detect a given strength of selection in a given landscape, and provide a guide to how consistent results would be from that dataset (\citeproc{ref-street_solving_2021}{Street et al., 2021}).
 These methods still require informed decisions to be made concerning the strength of selection that is of interest as well as how to define the landscape, but complement the goal of the multiverse assessment with a more rigorously mathematical approach.
 
-Habitat selection analyses continue to expand and develop further; for example, to better tackle the non-independence of observed animal locations while building agreement between movement (i.e., local selection) and overall habitat selection (\citeproc{ref-michelot_linking_2019}{Michelot, Blackwell \& Matthiopoulos, 2019}; \citeproc{ref-michelot_inference_2020}{Michelot et al., 2020}), integrate non-linear relationships (\citeproc{ref-klappstein_step_2024}{Klappstein et al., 2024}), and develop methods less influenced by data missingness (\citeproc{ref-michelot_langevin_2019}{Michelot et al., 2019}; \citeproc{ref-hofmann_methods_2024}{Hofmann, Cozzi \& Fieberg, 2024}).
+Habitat selection analyses continue to expand and develop further, for example, to better tackle the non-independence of observed animal locations while building agreement between movement (i.e., local selection) and overall habitat selection (\citeproc{ref-michelot_linking_2019}{Michelot, Blackwell \& Matthiopoulos, 2019}; \citeproc{ref-michelot_inference_2020}{Michelot et al., 2020}), integrate non-linear relationships (\citeproc{ref-klappstein_step_2024}{Klappstein et al., 2024}), and develop methods less influenced by data missingness (\citeproc{ref-michelot_langevin_2019}{Michelot et al., 2019}; \citeproc{ref-hofmann_methods_2024}{Hofmann, Cozzi \& Fieberg, 2024}).
 Repeating multiverse-like assessments may present a valuable context for these analyses, which is independent of the specific modelling approach.
 
 \subsection{Conclusions}\label{conclusions}
@@ -475,11 +479,9 @@ We have included further model diagnostic plots not included here in the reposit
 
 \section{Supplementary Material}\label{supplementary-material}
 
-\clearpage
-
 \begin{table}
 \centering
-\caption{\label{tab:directTable}An overall summary of all analyses and associated decisions in relation to the frequency of significant results.}
+\caption{\label{tab:directTableCompana}An overall summary of all Compana analyses and associated decisions in relation to the frequency of significant results.}
 \centering
 \resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
 \fontsize{6}{8}\selectfont
@@ -541,6 +543,20 @@ Compana & Scrambled Habitat Layer (i.e., No selection) & Available Area Method &
 Compana & Scrambled Habitat Layer (i.e., No selection) & Available Area Method & AKDE & 554 & 10804 & 13602 & 24960 & 0\\
 Compana & Scrambled Habitat Layer (i.e., No selection) & Available Area Contour (\%) & 95 & 571 & 10704 & 13685 & 24960 & 0\\
 Compana & Scrambled Habitat Layer (i.e., No selection) & Available Area Contour (\%) & 99 & 526 & 10959 & 13475 & 24960 & 0\\
+
+\end{tabular}}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:directTableSSF}An overall summary of all SSF analyses and associated decisions in relation to the frequency of significant results.}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\fontsize{6}{8}\selectfont
+\begin{tabular}[t]{lcclcclcc}
+
+Analysis & Selection Scenario & Decision & Value & Significantly Negative & Not Significant & Significantly Positive & Total Estimates & Significance Uncalculated\\
+
 SSF & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 7 & 5 & 1663 & 1966 & 4800 & 1166\\
 SSF & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 15 & 84 & 2104 & 3494 & 7200 & 1518\\
 SSF & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 30 & 22 & 2600 & 5178 & 9600 & 1800\\
@@ -593,6 +609,20 @@ SSF & Scrambled Habitat Layer (i.e., No selection) & Distribution of Turn Angles
 SSF & Scrambled Habitat Layer (i.e., No selection) & Distribution of Turn Angles & Von Mises & 612 & 10240 & 1729 & 15600 & 3019\\
 SSF & Scrambled Habitat Layer (i.e., No selection) & Model Averaging Method & Model average & 680 & 7019 & 1821 & 15600 & 6080\\
 SSF & Scrambled Habitat Layer (i.e., No selection) & Model Averaging Method & Naive average & 417 & 13626 & 1557 & 15600 & 0\\
+
+\end{tabular}}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:directTablePois}An overall summary of all Poisson analyses and associated decisions in relation to the frequency of significant results.}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\fontsize{6}{8}\selectfont
+\begin{tabular}[t]{lcclcclcc}
+
+Analysis & Selection Scenario & Decision & Value & Significantly Negative & Not Significant & Significantly Positive & Total Estimates & Significance Uncalculated\\
+
 Poisson & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 7 & 0 & 2400 & 0 & 2400 & 0\\
 Poisson & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 15 & 0 & 3600 & 0 & 3600 & 0\\
 Poisson & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 30 & 0 & 4800 & 0 & 4800 & 0\\
@@ -641,6 +671,20 @@ Poisson & Scrambled Habitat Layer (i.e., No selection) & Distribution of Step Le
 Poisson & Scrambled Habitat Layer (i.e., No selection) & Distribution of Step Lengths & Gamma & 0 & 7800 & 0 & 7800 & 0\\
 Poisson & Scrambled Habitat Layer (i.e., No selection) & Distribution of Turn Angles & Uniform & 0 & 7800 & 0 & 7800 & 0\\
 Poisson & Scrambled Habitat Layer (i.e., No selection) & Distribution of Turn Angles & Von Mises & 0 & 7800 & 0 & 7800 & 0\\
+
+\end{tabular}}
+\end{table}
+
+\begin{table}
+\centering
+\caption{\label{tab:directTableTwoStep}An overall summary of all Two-Step analyses and associated decisions in relation to the frequency of significant results.}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\fontsize{6}{8}\selectfont
+\begin{tabular}[t]{lcclcclcc}
+
+Analysis & Selection Scenario & Decision & Value & Significantly Negative & Not Significant & Significantly Positive & Total Estimates & Significance Uncalculated\\
+
 TwoStep & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 7 & 1699 & 2716 & 2785 & 7200 & 0\\
 TwoStep & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 15 & 3115 & 3636 & 4049 & 10800 & 0\\
 TwoStep & Correct Habitat Layer (i.e., Positive selection) & Tracking Duration (days) & 30 & 4687 & 4252 & 5461 & 14400 & 0\\
